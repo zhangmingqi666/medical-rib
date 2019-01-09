@@ -3,6 +3,17 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# my projects
+dataSet/ 
+logs/
+models/temp_data/
+*.pkl
+*.csv
+*.dcm
+*.png
+*.xls
+*ipynb
+
 # C extensions
 *.so
 

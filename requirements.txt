@@ -1,0 +1,15 @@
+Deprecated==1.2.4
+image==1.5.27
+imageio==2.4.1
+interval==1.0.0
+lxml==4.2.5
+matplotlib==3.0.0
+numpy==1.15.2
+opencv-python==3.4.3.18
+pydicom==1.2.0
+pyparsing==2.2.2
+scikit-image==0.14.1
+scikit-learn==0.20.0
+scipy==1.1.0
+six==1.11.0
+nibabel==2.3.1
