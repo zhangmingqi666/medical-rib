@@ -10,17 +10,17 @@ Refed is consist by two module: **rib extraction module** and **fracture detecti
 #### rib extraction module: extract ribs from source CT image
 1. *Input CT image*
 
-![source CT image](https://note.youdao.com/yws/api/personal/file/98D65B5E2C914306A82D115F122F1CA4?method=download&shareKey=73842286a8d649c73b64911432edabaf)
+![source CT image](https://github.com/jiangyy5318/medical-rib/blob/master/README_IMAGES/src_ct_image.png)
 
 **Note**: the source CT image is handled by HU value binary process (HU threshold = 400)
 
 2. *Cut sternum with envelope line*
 
-![sternum envelope line](https://note.youdao.com/yws/api/personal/file/065F2D7E0EF949B682848BD6588C23ED?method=download&shareKey=5fa8f724127a673a5babc01cc60ea563)
+![sternum envelope line](https://github.com/jiangyy5318/medical-rib/blob/master/README_IMAGES/half_front_bones_with_envelope_line.png)
 
 3. *remaining spine*
 
-![remaining spine](https://note.youdao.com/yws/api/personal/file/03F3B89AC8674828AAE835A4A0D6854D?method=download&shareKey=1c5dc65a25b72c2fddfa743d377a29e9)
+![remaining spine](https://github.com/jiangyy5318/medical-rib/blob/master/README_IMAGES/spine_remaining.png)
 
 4. *collect ribs*
 
@@ -28,7 +28,7 @@ Refed is consist by two module: **rib extraction module** and **fracture detecti
 
 you can also view every single rib as follows:
 
-![single rib](https://note.youdao.com/yws/api/personal/file/0EF665C3BBF540A58A198FE156B64F9B?method=download&shareKey=f34f3a9ad081dae18469201c353f12b6)
+![single rib](https://github.com/jiangyy5318/medical-rib/blob/master/README_IMAGES/single_rib.png)
 
 #### fracture detection module: fracture recognition and location
 <font color=red size=5>（fraction detection 的效果）</font>
