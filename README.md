@@ -24,7 +24,7 @@ Refed is consist by two module: **rib extraction module** and **fracture detecti
 
 4. *collect ribs*
 
-![collect ribs](https://note.youdao.com/yws/api/personal/file/53E247533B4B4B26980A56BCBFDDA564?method=download&shareKey=31ab83eec03007d81985f6400dab5ddb)
+![collect ribs](https://github.com/jiangyy5318/medical-rib/blob/master/README_IMAGES/collect_ribs.png)
 
 you can also view every single rib as follows:
 
