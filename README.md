@@ -1,6 +1,5 @@
 # medical-rib
-
-```mermaid
+<script src="/js/mermaid.full.min.js">
 graph TB
 	subgraph Preprocessing
         subgraph Extract Rib Model
@@ -34,7 +33,7 @@ graph TB
         style K fill:#f9f,stroke:#333,stroke-width:4px
         K --> L(output of detecting fracture location)
     end
-```
+</script>
 
 ```mermaid
 graph TB
