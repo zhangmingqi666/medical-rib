@@ -1,6 +1,6 @@
 # medical-rib
 
-```
+```mermaid
 graph TB
 	subgraph Preprocessing
         subgraph Extract Rib Model
@@ -36,7 +36,7 @@ graph TB
     end
 ```
 
-```
+```mermaid
 graph TB
     subgraph Extract Rib Model
     subgraph samples
