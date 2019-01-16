@@ -35,7 +35,7 @@ graph TB
     end
 </script>
 
-```mermaid
+<script src="/js/mermaid.full.min.js">
 graph TB
     subgraph Extract Rib Model
     subgraph samples
@@ -68,4 +68,4 @@ graph TB
     style K fill:#f9f,stroke:#333,stroke-width:4px
     K --> L(output of detecting fracture location)
     end
-```
+</script>
