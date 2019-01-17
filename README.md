@@ -1,4 +1,4 @@
-## Refed (Rib Extraction and Fracture Detection Model)
+## Refed
 ![Build Status](https://github.com/jiangyy5318/medical-rib/blob/master/README_IMAGES/build-passing.svg)
 
 **Refed (Rib Extaction and Fracture Detection Model)** by [Youyou Jiang](jiangyy5318@gmail.com) and [Shiye Lei](leishiye@gmail.com). Our model has a great performance on **extracting ribs** and **detecting fracture** from CT images. The model is based on python 3.6. 
@@ -39,7 +39,7 @@ you can also view every single rib as follows:
 ### Prerequisites
 ---
 - **operation system**: Linux (our OS is Ubuntu 16.04)
-- **interpreter**: higher than python 3.6.0
+- **interpreter**: More advanced than python 3.6.0
 - **some python packages**: [`skimage`](https://scikit-image.org/), [`opencv`](https://opencv.org/), [`tensorflow`](https://www.tensorflow.org/), [`sklearn`](https://scikit-learn.org/)
 
 ### Install
