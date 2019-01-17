@@ -33,6 +33,9 @@ you can also view every single rib as follows:
 #### fracture detection module: fracture recognition and location
 <font color=red size=5>（fraction detection 的效果）</font>
 
+### Data flowchart
+---
+![data flowchart](https://github.com/jiangyy5318/medical-rib/blob/master/README_IMAGES/data_flowchart.png)
 ### Prerequisites
 ---
 - **operation system**: Linux (our OS is Ubuntu 16.04)
@@ -154,44 +157,6 @@ Note:
 <font color=red size=5>（如何制作自己的VOC数据集）</font>
 #### feacture detection module    
 <font color=red size=5>（如何启动faster-rcnn）</font>
-
-### Data flowchart
----
-```
-graph TB
-	subgraph Preprocessing
-        subgraph Extract Rib Module
-            subgraph samples
-                A[source dicom file]
-            end
-            A --> |dicom_read| B(CT pkl file)
-            B --> |rib_cut_and_extract| C(rib_df_cache)
-        end
-
-        C --> |offset| G(offset_df.csv)
-
-        subgraph labels
-            D[.nii files]
-            E[patient_info_excel]
-        end
-
-        D --> F{label_info.csv}
-        E --> F
-        F --> H{data_join_label.csv}
-        C --> H
-
-        I{label_loc_type_info.csv}
-        G --> I
-        F --> I
-        H --> I
-    end
-    I --> J(VOC 2007 xml)
-    subgraph Fracture Detection Module
-        J --> K(faster r-cnn)
-        style K fill:#f9f,stroke:#333,stroke-width:4px
-        K --> L(output of detecting fracture location)
-    end
-```
 
 ### Change logs
 ---
