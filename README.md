@@ -3,7 +3,7 @@
 
 **Refed (Rib Extaction and Fracture Detection Model)** by [Youyou Jiang](jiangyy5318@gmail.com) and [Shiye Lei](leishiye@gmail.com). Our model has a great performance on **extracting ribs** and **detecting fracture** from CT images. The model is based on python 3.6. 
 
-Refed is consist by two module: **rib extraction module** and **fracture detection module**. *Fiist*, we design algorithm based on computer vision for extracting ribs from CT image. *Second*, we design DNN based on [faster-rcnn](https://github.com/endernewton/tf-faster-rcnn) for detecting fracture location with these ribs.
+Refed is consist by two module: **rib extraction module** and **fracture detection module**. *First*, we design algorithm based on computer vision for extracting ribs from CT image. *Second*, we design DNN based on [faster-rcnn](https://github.com/endernewton/tf-faster-rcnn) for detecting fracture location with these ribs.
 
 ### Performance
 ---
@@ -140,7 +140,7 @@ cd xxx/medical-rib/preprocessing/rib_cut_v6/
 ```
 - change the **pkl_dir** and **output_dir** in the run.sh
 ```shell
-vi run.sh
+vim run.sh
 ```
 ```text
 Note:
