@@ -53,8 +53,8 @@
 - 模型主体为GBDT.
 - [gbdt_judge.py](https://github.com/jiangyy5318/medical-rib/blob/master/preprocessing/Rib_Recognition_Model/gbdt_judge_rib.py) 中读入上一步生成的[all_bone_info_df.csv](https://github.com/jiangyy5318/medical-rib/blob/master/preprocessing/Rib_Recognition_Model/all_bone_info_df.csv)数据集，将'target'作为label，将去除'target'属性的数据作为samples，投入sklearn中的gbdt model进行训练.
 - 将训练完后的GBDT与FEATURE LIST以pkl的形式存储下来.
-**Note**: FEATURE LIST中不含有`target`以及`class_id`
-- 我们给出了已经训练完成的`肋骨识别模型`[gbdt.pkl](https://github.com/jiangyy5318/medical-rib/blob/master/preprocessing/Rib_Recognition_Model/gbdt.pkl)以及其对应的`FEATURE LIST` [feature.pkl](https://github.com/jiangyy5318/medical-rib/blob/master/preprocessing/Rib_Recognition_Model/feature.pkl).
+  - **Note**: FEATURE LIST中不含有`target`以及`class_id`
+- 我们给出了已经训练完成的`肋骨识别模型`[gbdt.pkl](https://github.com/jiangyy5318/medical-rib/blob/master/preprocessing/Rib_Recognition_Model/gbdt.pkl)以及其对应的`FEATURE LIST` [feature.pkl](https://github.com/jiangyy5318/medical-rib/blob/master/preprocessing/Rib_Recognition_Model/feature.pkl)的示例.
 ### 肋骨识别模型的使用
 - 读入肋骨识别模型：
 ```python
