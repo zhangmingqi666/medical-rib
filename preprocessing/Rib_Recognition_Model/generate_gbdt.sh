@@ -2,7 +2,7 @@
 
 path=$(pwd)
 
-feature_csv_dir=/home/jiangyy/projects/medical-rib/rib_feature_csv
+feature_csv_dir=${path}/rib_feature_csv
 output_dataset_dir=${path}/all_bone_info_df.csv
 
 gbdt_model_save_dir=${path}/gbdt.pkl
