@@ -1,0 +1,44 @@
+## 肋骨识别模型
+- 一张CT图片经过肋骨切割后形成多根分离的骨头，其中包括肋骨、肩胛骨、锁骨、头骨等等，我们通过肋骨识别模型来判断骨头是否为肋骨。
+- 肋骨识别模型的主体为GBDT，通过输入每根骨头的各项物理指标，例如骨头的长短、粗细等等来判断其是否为肋骨
+### 数据生成
+---
+- 所用的骨头的各项指标（Feature）：
+  - `z_centroid/z_shape` : 骨头质心的Z坐标值 / CT图片的Z轴长度
+  - `x_centroid/x_shape` :
+  - `y_centroid/y_shape` :
+  - `z_max/z_shape` : 骨头所有点的Z坐标最大值 / CT图片的Z轴长度
+  - `x_max/x_shape` :
+  - `y_max/y_shape` : 
+  - `z_length/z_shape` : 骨头所有点的Z坐标最大值与最小值之差 / CT图片的Z轴长度
+  - `x_length/x_shape` :
+  - `y_length/y_shape` :
+  - `mean_z_distance_on_xoy` : 以xoy为底，z方向上骨头的平均厚度
+  - `std_z_distance_on_xoy` : z方向上骨头厚度的方差
+  - `std_z_distance_div_mean_z_distance` : z方向上骨头厚度方差 / z方向上骨头厚度平均值
+  - `median_z_distance_on_xoy` : z方向上骨头厚度的中位数
+  - `skew_z_distance_on_xoy` : z方向上骨头厚度的斜度（skew）
+  - `kurt_z_distance_on_xoy` : z方向上骨头厚度的峰度（kurt）
+  - `quantile_down_z_distance_on_xoy` : z方向上骨头厚度的下分位数
+  - `quantile_on_z_distance_on_xoy` : z方向上骨头厚度的上分位数
+  - `mean_x_distance_on_zoy` : 
+  - `std_x_distance_on_zoy` : 
+  - `std_x_distance_div_mean_x_distance` : 
+  - `median_x_distance_on_zoy` : 
+  - `skew_x_distance_on_zoy` : 
+  - `kurt_x_distance_on_zoy` : 
+  - `quantile_down_x_distance_on_zoy` : 
+  - `quantile_on_x_distance_on_zoy` : 
+  - `mean_y_distance_on_zox` : 
+  - `std_y_distance_on_zox` : 
+  - `std_y_distance_div_mean_y_distance` : 
+  - `median_y_distance_on_zox` : 
+  - `skew_y_distance_on_zox` : 
+  - `kurt_y_distance_on_zox` : 
+  - `quantile_down_y_distance_on_zox` : 
+  - `quantile_on_y_distance_on_zox` : 
+  - `iou_on_xoy` : 将骨头投影到xoy平面度的IOU
+  - `distance_nearest_centroid` : 离骨头质心最近的点的距离
+  - `point_count` : 骨头中点的数量
+  - `max_nonzero_internal` : 肋骨之间的gap
+ 
