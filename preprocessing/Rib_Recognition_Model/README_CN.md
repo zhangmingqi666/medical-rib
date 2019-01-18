@@ -40,7 +40,7 @@
   - `distance_nearest_centroid` : 离骨头质心最近的点的距离
   - `point_count` : 骨头中点的数量
   - `max_nonzero_internal` : 肋骨之间的gap
-  - `class_num` : 做skimage.label时骨头的类名，仅仅用作数据集label标定，不用做训练和预测
+  - `class_id` : 做skimage.label时骨头的类名，仅仅用作数据集label标定，不用做训练和预测
   - `target` : （label）1代表骨头是肋骨，2代表不是肋骨
 - 原始数据生成：
   - 我们在[preprocessing.rib_cut_v7.src.Bone_decompose.py](https://github.com/jiangyy5318/medical-rib/blob/master/preprocessing/rib_cut_v7/src/Bone_decompose.py)中的collect_rib()中将切割后的CT图片中的每块骨头的features都存储到[rib_feature_csv](https://github.com/jiangyy5318/medical-rib/tree/master/preprocessing/Rib_Recognition_Model/rib_feature_csv)中.
@@ -53,6 +53,7 @@
 - 模型主体为GBDT.
 - [gbdt_judge.py](https://github.com/jiangyy5318/medical-rib/blob/master/preprocessing/Rib_Recognition_Model/gbdt_judge_rib.py) 中读入上一步生成的[all_bone_info_df.csv](https://github.com/jiangyy5318/medical-rib/blob/master/preprocessing/Rib_Recognition_Model/all_bone_info_df.csv)数据集，将'target'作为label，将去除'target'属性的数据作为samples，投入sklearn中的gbdt model进行训练.
 - 将训练完后的GBDT与FEATURE LIST以pkl的形式存储下来.
+**Note**: FEATURE LIST中不含有`target`以及`class_id`
 - 我们给出了已经训练完成的`肋骨识别模型`[gbdt.pkl](https://github.com/jiangyy5318/medical-rib/blob/master/preprocessing/Rib_Recognition_Model/gbdt.pkl)以及其对应的`FEATURE LIST` [feature.pkl](https://github.com/jiangyy5318/medical-rib/blob/master/preprocessing/Rib_Recognition_Model/feature.pkl).
 ### 肋骨识别模型的使用
 - 读入肋骨识别模型：
