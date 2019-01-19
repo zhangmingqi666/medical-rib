@@ -1,3 +1,4 @@
+![REFED_logo](https://github.com/jiangyy5318/medical-rib/blob/master/README_IMAGES/logo_refed_side_transparent.png)
 ## Refed
 ![Build Status](https://github.com/jiangyy5318/medical-rib/blob/master/README_IMAGES/build-passing.svg)
 
