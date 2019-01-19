@@ -1,3 +1,4 @@
+![REFED_logo](https://github.com/jiangyy5318/medical-rib/blob/master/README_IMAGES/logo_refed_side_transparent.png)
 ## Refed
 ![Build Status](https://github.com/jiangyy5318/medical-rib/blob/master/README_IMAGES/build-passing.svg)
 
@@ -42,48 +43,11 @@ you can also view every single rib as follows:
 - **interpreter**: More advanced than python 3.6.0
 - **some python packages**: [`skimage`](https://scikit-image.org/), [`opencv`](https://opencv.org/), [`tensorflow`](https://www.tensorflow.org/), [`sklearn`](https://scikit-learn.org/)
 
-### Installation
-1. Clone the repository
-    ```shell
-    git clone https://github.com/jiangyy5318/medical-rib.git
-    ```
-2. Install all the python prerequisites
-    ```shell
-    pip install -r requirements
-    # or add `--user` to install to user's local directories
-    ```
-3. may be add opencv and tensorflow
-
-### Generate the separated ribs
-1. Read Every patients' CT image and save its 3D array;
-    ```shell
-    ./preprocessing/dicom_read/dcm_to_3d_pkl.sh  [PATIENT_DCM_FOLDER]  [PATIENT_PKL_FOLDER]
-    ```
-2. Seperate all the bone and collect all the ribs among them from 3d bone structure for every patient. The method in which we sepeated and collected was detailedly described, see details,please refer to [seperated and collect]()
-    ```shell
-    /preprocessing/rib_cut_v6/run.sh 
-    ```
-3. Get the seperated-rib data;maybe need to move this title to the below parts
-    ```shell
-   ./preprocessing/create_voc2007/create_voc2007.sh [PATIENT_FOLDER]
-    ```
-4. train your own rib-recognition model to replace our internal infer models. Please refer to [link](****)
-
-### make dataSet to train detection models
-1. here, we only supported voc2007 format,
-    ```shell
-    please wait my shell
-    ```
-
-### Train fragmented location detection model
-1. here, we only.
-    ```shell
-    please wait my shell
-    ```
-
-
-
-
+### Install
+---
+```shell
+git clone https://github.com/jiangyy5318/medical-rib.git
+```
 
 ### Demo and test with the model
 ---
@@ -99,7 +63,96 @@ vim run.sh
 ```
 **Note**: change **pkl_dir** and **output_dir** in run.sh
 
+3. *run*
+```shell
+./run.sh
+```
 
+### Data set
+---
+1. *demo data set directory*
+```shell
+xxx/medical-rib/dataset-demo
+```
+
+2. *how to use every files or directory in the data set*
+- **./dataset**
+```text
+contain source CT images  (file type: .dicom)
+```
+- **./label**
+```text
+contain fracture location labeled by doctors  (file type: .nii)
+```
+- **./pkl_cache**
+```text
+contain 3D images with handling source CT image(.dicom files)  (file type: .pkl)
+```
+- **./rib_df_csv**
+```text
+contain all ribs of one patient extracted from the patien's 3D images(.pkl files)  (file type: .csv)
+```
+- **./voc2007**
+```text
+```
+- **./data_join_label**
+```text
+record correcspondence information of fracture ribs' locations and class numbers
+```
+- **./label_info.csv**
+```text
+record all fracture information
+```
+- **./label_loc_type_info.csv**
+```text
+```
+- **./offset_df.csv**
+```text
+```
+- **./rib_type_location.xls**
+```text
+record diagnostic data for all patients
+```
+
+### Run the model with your own data
+---
+#### preprocessing
+1. *convert CT image to pkl file*
+- change **dcm_folder** and **pkl_folder** in the pretreat.sh file
+```shell
+cd xxx/medical-rib/preprocessing/dicom_read/
+vim pretreat.sh
+```
+```text
+Note:
+    1. dcm_folder=your dicom file path
+    2. pkl_folder=the path you saving pkl files
+```
+- run pretreat.sh
+```shell
+./pretreat.sh
+```
+
+2. *extracte ribs from pkl files*
+
+- get into the rib cut directory
+```shell
+cd xxx/medical-rib/preprocessing/rib_cut_v6/
+```
+- change the **pkl_dir** and **output_dir** in the run.sh
+```shell
+vim run.sh
+```
+```text
+Note:
+    1. pkl_dir=your pkl file path  
+    2. output_dir=xxx/medical-rib/temp_output
+```
+
+- run
+```shell
+./run.sh
+```
 3. *make your own data set*  
 
 <font color=red size=5>（如何制作自己的VOC数据集）</font>
