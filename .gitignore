@@ -4,8 +4,6 @@ __pycache__/
 *$py.class
 
 # my projects
-dataSet/ 
-logs/
 models/temp_data/
 *.pkl
 *.csv
