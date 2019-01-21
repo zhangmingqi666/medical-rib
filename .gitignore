@@ -11,7 +11,8 @@ models/temp_data/
 *.png
 *.xls
 *ipynb
-
+dataSet/first20labeled
+dataSet/data*
 # C extensions
 *.so
 
