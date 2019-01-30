@@ -2,15 +2,15 @@
 
 dataset_folder=$1
 dcm_df_path="temp_dataset_new_dcm.csv"
-dcm_folder=$dataset_folder/"dataset"
-pkl_folder=$dataset_folder/"pkl_cache"
+dcm_folder=${dataset_folder}/"dataset"
+pkl_folder=${dataset_folder}/"pkl_cache"
 
-if [ ! -d ${dcm_folder} ]; then
+if [[ ! -d ${dcm_folder} ]]; then
      echo "$dcm_folder not exist"
      exit 1
 fi
 
-if [ ! -d ${pkl_folder} ]; then
+if [[ ! -d ${pkl_folder} ]]; then
      rm -rf ${pkl_folder}
      mkdir -p ${pkl_folder}
 fi

@@ -288,20 +288,20 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello',
                           save=False, fig_name='half_front_bone', output_prefix=output_prefix)
         plt.plot(sternum_remove.left_envelope_line, np.arange(binary_arr.shape[0]))
         plt.plot(sternum_remove.right_envelope_line, np.arange(binary_arr.shape[0]))
-        plt.savefig('{}half_front_bones_with_envelope_line.png'.format(output_prefix))
+        plt.savefig('{}/half_front_bones_with_envelope_line.png'.format(output_prefix))
 
     """plot split spine
     """
     if allow_debug:
         if len(spine_df) > 0:
             plot_yzd(temp_df=spine_df, shape_arr=(binary_arr.shape[0], binary_arr.shape[2]),
-                     save=True, save_path='{}spine_remaining.png'.format(output_prefix))
+                     save=True, save_path='{}/spine_remaining.png'.format(output_prefix))
         else:
             print("spine_df is empty!")
 
         if len(sternum_df) > 0:
             plot_yzd(temp_df=sternum_df, shape_arr=(binary_arr.shape[0], binary_arr.shape[2]),
-                     save=True, save_path='{}sternum_remaining.png'.format(output_prefix))
+                     save=True, save_path='{}/sternum_remaining.png'.format(output_prefix))
         else:
             print("sternum_df is empty")
 
