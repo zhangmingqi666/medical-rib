@@ -16,6 +16,7 @@ dataSet/first20labeled
 dataSet/data*
 # C extensions
 *.so
+models/darknet
 
 # Distribution / packaging
 .Python
