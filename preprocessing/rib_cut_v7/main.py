@@ -14,6 +14,9 @@ def main():
     parser.add_argument('--pkl_path', dest='pkl_path', action='store', help='pkl_path', default=None)
     parser.add_argument('--dcm_path', dest='dcm_path', action='store', help='dcm_path', default=None)
     parser.add_argument('--output_prefix',  dest='output_prefix', action='store', help='prefix', default='prefix')
+    parser.add_argument('--rib_df_cache_path',  dest='rib_df_cache_path', action='store', help='rib_df_cache_path', default=None)
+    parser.add_argument('--rib_recognition_model_path',  dest='rib_recognition_model_path', action='store', help='rib_recognition_model_path', default=None)
+    
     args = parser.parse_args()
 
     rib_data = None
@@ -27,7 +30,9 @@ def main():
         print('cannot create rib_data by providing path.')
         exit(1)
 
-    void_cut_ribs_process(rib_data, allow_debug=True, output_prefix=args.output_prefix)
+    void_cut_ribs_process(rib_data, allow_debug=True, output_prefix=args.output_prefix, 
+                          rib_df_cache_path=args.rib_df_cache_path,
+                          rib_recognition_model_path=args.rib_recognition_model_path)
 
     #remove = decompose.remove(rib_data)
     #result = remove.separate_Bones()

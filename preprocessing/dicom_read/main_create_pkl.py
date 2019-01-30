@@ -19,7 +19,7 @@ def main():
 
     pix_resampled = RibDataFrame().readDicom(path=args.dcm_path)
 
-    pickle.dump(pix_resampled, open(args.output_pkl_path, "w"))
+    pickle.dump(pix_resampled, open(args.output_pkl_path, "wb"))
 
 
 if __name__ == '__main__':

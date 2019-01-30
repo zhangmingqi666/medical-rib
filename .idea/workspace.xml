@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/preprocessing/rib_cut_v7/cut_ribs.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/dicom_read/main_create_pkl.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/dicom_read/main_create_pkl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/dicom_read/pretreat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/dicom_read/pretreat.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/rib_cut_v7/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_decompose.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_decompose.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_decompose_bak.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Dicom_Read.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Dicom_Read.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/pretreat.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/cut_ribs.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="32" column="74" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py" />
+        <option value="$PROJECT_DIR$/preprocessing/rib_cut_v7/cut_ribs_onlyone.sh" />
+        <option value="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_decompose.py" />
+        <option value="$PROJECT_DIR$/preprocessing/rib_cut_v7/cut_ribs.sh" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="292" />
+    <option name="y" value="24" />
+    <option name="width" value="1400" />
+    <option name="height" value="1028" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dataSet/second100unlabeled" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/preprocessing/rib_cut_v7" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/preprocessing/rib_cut_v7/src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="cut_ribs.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
+      <module name="medical-rib" />
+      <option name="INTERPRETER_OPTIONS" value="bash" />
+      <option name="INTERPRETER_PATH" value="/usr/bin/env" />
+      <option name="PROJECT_INTERPRETER" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preprocessing/rib_cut_v7" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing/rib_cut_v7/cut_ribs.sh" />
+      <option name="PARAMETERS" value="$PROJECT_DIR$/dataSet/second100unlabeled" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Bash.cut_ribs.sh" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="" />
+      <created>1548747008594</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1548747008594</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18828681" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5744681" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18777293" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Python Console" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/main_create_pkl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/cut_ribs.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/Dcm_Info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/main_read_dcm_path.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/pretreat.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Dicom_Read.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/temp_output/135402000607509collect_ribs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/temp_output/135402000607482collect_ribs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_decompose.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="220" column="24" selection-start-line="220" selection-start-column="24" selection-end-line="220" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="656" selection-start-line="656" selection-end-line="656" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/cut_ribs.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="32" column="74" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

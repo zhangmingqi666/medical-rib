@@ -18,8 +18,6 @@ from sklearn.externals import joblib
 # from .Sternum_Remove import SternumRemove
 
 # load gbdt model and feature list
-GBDT = joblib.load('/home/jiangyy/projects/temp/medical-rib/gbdt_model/gbdt.pkl')
-FEATURE_LIST = joblib.load('/home/jiangyy/projects/temp/medical-rib/gbdt_model/feature.pkl')
 
 sys.setrecursionlimit(10000)
 
@@ -83,10 +81,13 @@ def judge_collect_spine_judge_connected_rib(sparse_df=None, cluster_df=None, bon
         plt.figure()
         # z_max = single_bone.local_max_for_sternum[0]
         # x_center = single_bone.local_centroid_for_sternum[1]
-        plt.title('os:%d, r:%s, p_cnt:%s, y_mx_on_z:%d' % (opening_times, cluster_df[cluster_df['c'] == e].index[0],
-                                                           len(temp_sparse_df), single_bone.get_y_length_statistics_on_z(feature='max')
-                                                           ), color='red')
-        single_bone.plot_bone(save=True, save_path='{}opening_{}_label_{}_collect.png'.format(output_prefix, opening_times, e))
+        plt.title('os:%d, r:%s, p_cnt:%s, y_mx_on_z:%d' % (opening_times,
+                                                           cluster_df[cluster_df['c'] == e].index[0],
+                                                           len(temp_sparse_df),
+                                                           single_bone.get_y_length_statistics_on_z(feature='max')
+                                                           ),
+                  color='red')
+        single_bone.plot_bone(save=True, save_path='{}/opening_{}_label_{}_collect.png'.format(output_prefix, opening_times, e))
 
         if single_bone.is_spine():
             remaining_bone_df = remaining_bone_df.append(single_bone.get_bone_data())
@@ -100,7 +101,8 @@ def judge_collect_spine_judge_connected_rib(sparse_df=None, cluster_df=None, bon
     return loc_spine_connected_rib, remaining_bone_df, sternum_bone_df
 
 
-def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False, output_prefix=None):
+def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False, output_prefix=None,
+                 rib_df_cache_path=None, rib_recognition_model_path=None):
     """
     combine all ribs from source CT array after removing spine and sternum
     :param value_arr: HU array after removing spine and sternum
@@ -110,6 +112,10 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
     :param output_prefix:
     :return: rib_bone_df: containing all ribs' index(z,x,y)
     """
+    # read models from
+    GBDT = joblib.load('{}/gbdt.pkl'.format(rib_recognition_model_path))
+    FEATURE_LIST = joblib.load('{}/feature.pkl'.format(rib_recognition_model_path))
+
     # generate binary array from source HU array for labeling
     binary_arr = value_arr.copy()
     binary_arr[binary_arr < hu_threshold] = 0
@@ -124,7 +130,7 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
     del label_arr
 
     rib_bone_df = pd.DataFrame({})
-    bone_info_df = pd.DataFrame({}, columns=FEATURE_LIST+['target', 'class_num'])
+    bone_info_df = pd.DataFrame({}, columns=FEATURE_LIST+['target', 'class_id'])
 
     patient_id = output_prefix.split("/")[-2]
 
@@ -139,23 +145,19 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
                            prior_zoy_center_y_axis_line_df=bone_prior.get_zoy_symmetric_y_axis_line_df())
 
         print('***********************************************')
-        print('bone class num:%d' % e)
+        print('bone class id:%d' % e)
         single_bone.print_bone_info()
-        print('***********************************************')
+        # print('***********************************************')
 
         temp_single_bone_feature = single_bone.get_rib_feature_for_predict()
 
         if GBDT.predict([[temp_single_bone_feature[i] for i in FEATURE_LIST]]):
             temp_single_bone_feature['target'] = 1
             rib_bone_df = rib_bone_df.append(single_bone.get_bone_data())
-            single_bone.plot_bone(save=True, save_path='{}label_{}_collect_IS_RIB.png'.format(output_prefix, e))
-            # df_file_path = '/home/jiangyy/Desktop/rib_df_input/%s/%d.csv' % (patient_id, e)
-            # pkl.dump(single_bone.get_bone_data()[['x', 'y', 'z', 'v']], open(df_file_path, 'wb'))
-            # save single rib dataframe to csv file
-            # single_bone.get_bone_data()[['x', 'y', 'z', 'v']].to_csv(df_file_path)
+            single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_IS_RIB.png'.format(output_prefix, e))
         else:
             temp_single_bone_feature['target'] = 0
-            single_bone.plot_bone(save=True, save_path='{}label_{}_collect_NOT_RIB.png'.format(output_prefix, e))
+            single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_NOT_RIB.png'.format(output_prefix, e))
 
         temp_single_bone_feature['class_id'] = e
         bone_info_df.loc[len(bone_info_df)] = temp_single_bone_feature
@@ -163,7 +165,7 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
         del single_bone
 
     bone_info_df.sort_values(by='class_id', inplace=True)
-    bone_info_df.to_csv('/home/jiangyy/projects/medical-rib/bone_df_csv/%s.csv' % patient_id)
+    bone_info_df.to_csv('{}/%s.csv'.format(rib_df_cache_path, patient_id))
     return rib_bone_df
 
 
@@ -216,12 +218,13 @@ def plot_binary_array(binary_arr, title=None, save=True, fig_name=None, output_p
     plt.title(title, color='red')
     plt.imshow(binary_arr.sum(axis=1))
     if save:
-        plt.savefig('{}{}.png'.format(output_prefix, fig_name))
+        plt.savefig('{}/{}.png'.format(output_prefix, fig_name))
     else:
         pass
 
 
-def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello'):
+def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello',
+                          rib_df_cache_path=None, rib_recognition_model_path=None):
 
     with timer('calculate basic array and feature, data frame'):
         """covert source HU array to binary array with HU threshold = 400
@@ -264,7 +267,6 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello'):
     with timer('remove spine from source value arr'):
         """removing spine with operating value arr
         """
-        print("helologjdigdoigjdijg")
         print(bone_prior.get_prior_shape())
         spine_remove = SpineRemove(bone_data_df=spine_df, bone_data_shape=bone_prior.get_prior_shape(),
                                    allow_envelope_expand=True, expand_width=20)
@@ -276,7 +278,8 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello'):
     with timer('collect ribs'):
         """collecting ribs from value array after removing spine and sternum
         """
-        rib_bone_df = collect_ribs(value_arr, hu_threshold=150, bone_prior=bone_prior, output_prefix=output_prefix)
+        rib_bone_df = collect_ribs(value_arr, hu_threshold=150, bone_prior=bone_prior, output_prefix=output_prefix,
+                                   rib_df_cache_path=rib_df_cache_path, rib_recognition_model_path=rib_recognition_model_path)
 
     """plot half front bone
     """

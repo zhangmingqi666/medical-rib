@@ -1,19 +1,25 @@
 #coding=utf-8
 import pydicom as dicom
 import os
-import os.path as osp
 import numpy as np
 import scipy
 import scipy.ndimage
 import gc
-from .util import *
 import cv2 as cv
+import time
+from contextlib import contextmanager
+import matplotlib.pyplot as plt
 # Load the scans in given folder path
+@contextmanager
+def timer(title):
+    t0 = time.time()
+    yield
+    print("{} - done in {:.0f}s".format(title, time.time() - t0))
 
 
 def load_scan(path):
     slices = [dicom.read_file(path + '/' + s) for s in os.listdir(path)]
-    slices.sort(key = lambda x: int(x.ImagePositionPatient[2]))
+    slices.sort(key=lambda x: int(x.ImagePositionPatient[2]))
     try:
         slice_thickness = np.abs(slices[0].ImagePositionPatient[2] - slices[1].ImagePositionPatient[2])
     except:
@@ -66,6 +72,10 @@ def resample(image, scan, new_spacing=[1, 1, 1]):
     return new_image, new_spacing
 
 
+def read_dcm_info():
+    pass
+
+
 class RibDataFrame:
     def __init__(self):
         self.Data = None
@@ -85,15 +95,19 @@ class RibDataFrame:
 
         with timer("pix_resampled"):
             pix_resampled, _ = resample(first_patient_pixels, first_patient, [1, 1, 1])
+
         return pix_resampled
 
 
 if __name__=='__main__':
-    pix_resampled = RibDataFrame().readDicom(path='/Users/jiangyy/projects/medical-rib/dataset/A1076956')
+    pass
+    """
+    pix_resampled = RibDataFrame().readDicom(path='/Users/jiangyy/projects/medical-rib/dataset_first/A1076956')
     print(pix_resampled.shape)
     pix_resampled[pix_resampled < 400] = 0
     pix_resampled[pix_resampled >= 400] = 1
     plt.imshow(pix_resampled.sum(axis=2))
     plt.show()
+    """
 
 
