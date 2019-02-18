@@ -60,11 +60,16 @@ def resample(image, scan, new_spacing=[1, 1, 1]):
     print('new shape:{}, real_size_facor:{}'.format(new_shape, real_resize_factor))
     new_spacing = spacing * real_resize_factor
     print('new_spacing:{}'.format(new_spacing))
+    """
+        updated @ 2019.02.18 by issac
+        causes: when real_resize_factor[0] is not 1, 3d interpolation will need more six times than others.
+    """
     if real_resize_factor[0] == 1:
         new_image = np.zeros(tuple([int(i) for i in new_shape]))
         for i in range(int(new_shape[0])):
             new_image[i] = cv.resize(image[i], (0, 0), fx=real_resize_factor[1], fy=real_resize_factor[2], interpolation=cv.INTER_CUBIC)
     else:
+
         new_image = scipy.ndimage.interpolation.zoom(image, real_resize_factor, mode='nearest')
 
     del image
