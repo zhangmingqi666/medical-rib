@@ -14,7 +14,8 @@ logs/
 *ipynb
 dataSet/first20labeled
 dataSet/data*
-dataSet/second52labeled.1.31
+dataSet/updated48labeled_1.31
+.idea/*
 # C extensions
 *.so
 models/darknet
