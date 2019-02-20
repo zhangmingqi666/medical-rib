@@ -18,7 +18,10 @@ def timer(title):
 
 
 def load_scan(path):
-    slices = [dicom.read_file(path + '/' + s) for s in os.listdir(path)]
+    """
+    some dcm file have no header information
+    """
+    slices = [dicom.read_file(path + '/' + s, force=True) for s in os.listdir(path)]
     slices.sort(key=lambda x: int(x.ImagePositionPatient[2]))
     try:
         slice_thickness = np.abs(slices[0].ImagePositionPatient[2] - slices[1].ImagePositionPatient[2])
@@ -64,17 +67,25 @@ def resample(image, scan, new_spacing=[1, 1, 1]):
         updated @ 2019.02.18 by issac
         causes: when real_resize_factor[0] is not 1, 3d interpolation will need more six times than others.
     """
+    """
     if real_resize_factor[0] == 1:
         new_image = np.zeros(tuple([int(i) for i in new_shape]))
         for i in range(int(new_shape[0])):
             new_image[i] = cv.resize(image[i], (0, 0), fx=real_resize_factor[1], fy=real_resize_factor[2], interpolation=cv.INTER_CUBIC)
-    else:
-
+    else:        
         new_image = scipy.ndimage.interpolation.zoom(image, real_resize_factor, mode='nearest')
-
+    """
+    real_resize_factor0 = real_resize_factor[0]
+    real_resize_factor = real_resize_factor / real_resize_factor0
+    new_real_shape = image.shape * real_resize_factor
+    new_shape = np.round(new_real_shape)
+    new_image = np.zeros(tuple([int(i) for i in new_shape]))
+    for i in range(int(new_shape[0])):
+        new_image[i] = cv.resize(image[i], (0, 0), fx=real_resize_factor[1], fy=real_resize_factor[2],
+                                 interpolation=cv.INTER_CUBIC)
     del image
     gc.collect()
-    return new_image, new_spacing
+    return new_image, new_spacing, real_resize_factor0
 
 
 def read_dcm_info():
@@ -99,7 +110,7 @@ class RibDataFrame:
         gc.collect()
 
         with timer("pix_resampled"):
-            pix_resampled, _ = resample(first_patient_pixels, first_patient, [1, 1, 1])
+            pix_resampled, _, _ = resample(first_patient_pixels, first_patient, [1, 1, 1])
 
         return pix_resampled
 

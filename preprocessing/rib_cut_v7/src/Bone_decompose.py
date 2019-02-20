@@ -134,10 +134,6 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
 
     patient_id = output_prefix.split("/")[-2]
 
-    # load gbdt model and feature list
-    # gbdt = joblib.load('/home/jiangyy/projects/medical-rib/model/gbdt.pkl')
-    # feature_list = joblib.load('/home/jiangyy/projects/medical-rib/model/feature.pkl')
-
     for e in cluster_df['c'].values:
         temp_sparse_df = sparse_df[sparse_df['c'] == e]
         # will add center line , @issac
@@ -220,7 +216,7 @@ def plot_binary_array(binary_arr, title=None, save=True, fig_name=None, output_p
     if save:
         plt.savefig('{}/{}.png'.format(output_prefix, fig_name))
     else:
-        pass
+        raise NotImplementedError
 
 
 def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello',
@@ -281,8 +277,7 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello',
         rib_bone_df = collect_ribs(value_arr, hu_threshold=150, bone_prior=bone_prior, output_prefix=output_prefix,
                                    rib_df_cache_path=rib_df_cache_path, rib_recognition_model_path=rib_recognition_model_path)
 
-    """plot half front bone
-    """
+    """plot half front bone"""
     if allow_debug:
         plot_binary_array(binary_arr=binary_arr[:, :x_center, :], title='half_front_bone',
                           save=False, fig_name='half_front_bone', output_prefix=output_prefix)
@@ -290,8 +285,7 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello',
         plt.plot(sternum_remove.right_envelope_line, np.arange(binary_arr.shape[0]))
         plt.savefig('{}/half_front_bones_with_envelope_line.png'.format(output_prefix))
 
-    """plot split spine
-    """
+    """plot split spine"""
     if allow_debug:
         if len(spine_df) > 0:
             plot_yzd(temp_df=spine_df, shape_arr=(binary_arr.shape[0], binary_arr.shape[2]),
@@ -305,8 +299,7 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello',
         else:
             print("sternum_df is empty")
 
-    """plot collected ribs
-    """
+    """plot collected ribs"""
     if allow_debug:
         restore_arr = np.zeros(bone_prior.get_prior_shape())
         if len(rib_bone_df) > 0:

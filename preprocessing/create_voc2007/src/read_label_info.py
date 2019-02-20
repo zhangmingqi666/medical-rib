@@ -88,6 +88,8 @@ if __name__ == '__main__':
         location_df = location_read(folder_path=args.nii_folder)
 
     # if excel_df is not None and location_df is not None:
+    #print(location_df)
+    #print(excel_df)
     assert (excel_df is not None and location_df is not None)
 
     label_df = location_df.merge(excel_df, on=['id', 'location_id'])

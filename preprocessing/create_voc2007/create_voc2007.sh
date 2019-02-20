@@ -9,7 +9,8 @@
 #
 #
 PY=python3
-dataSet_folder="/Users/jiangyy/projects/temp/medical-rib/dataSet/first20labeled"
+#dataSet_folder="/Users/jiangyy/projects/temp/medical-rib/dataSet/first20labeled"
+dataSet_folder=$1
 
 dataset_offset_df_file="offset_df.csv"
 rib_type_file="rib_type_location.xls"
@@ -68,6 +69,7 @@ ${PY}  src/read_label_info.py  --excel_path  ${rib_type_path}  \
                                --nii_folder  ${label_folder}  \
                                --output_path  ${label_info_path}
 
+exit
 echo "######## only one rib data join with label, id-R4 join id-338 ########"
 
 ${PY}  src/data_join_label.py  --rib_only_cache_folder  ${rib_only_cache_folder}  \

@@ -33,6 +33,7 @@ class SternumRemove:
 
         sternum_df_group_by_z['y.min'] = sternum_df_group_by_z['y.min'].apply(lambda x: None if x < y_limit_min + 10 else x)
         sternum_df_group_by_z['y.max'] = sternum_df_group_by_z['y.max'].apply(lambda x: None if x > y_limit_max - 10 else x)
+
         # sternum_df_group_by_z.fillna(method='bfill')
 
         self.left_envelope_line = np.ones(self.arr_shape[0]) * self.center_line
