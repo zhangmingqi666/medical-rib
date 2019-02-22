@@ -72,7 +72,7 @@ def resample(image, scan, new_spacing=[1, 1, 1]):
         new_image = np.zeros(tuple([int(i) for i in new_shape]))
         for i in range(int(new_shape[0])):
             new_image[i] = cv.resize(image[i], (0, 0), fx=real_resize_factor[1], fy=real_resize_factor[2], interpolation=cv.INTER_CUBIC)
-    else:        
+    else:
         new_image = scipy.ndimage.interpolation.zoom(image, real_resize_factor, mode='nearest')
     """
     real_resize_factor0 = real_resize_factor[0]
@@ -110,9 +110,9 @@ class RibDataFrame:
         gc.collect()
 
         with timer("pix_resampled"):
-            pix_resampled, _, _ = resample(first_patient_pixels, first_patient, [1, 1, 1])
+            pix_resampled, _, spacing0 = resample(first_patient_pixels, first_patient, [1, 1, 1])
 
-        return pix_resampled
+        return pix_resampled, spacing0
 
 
 if __name__=='__main__':
