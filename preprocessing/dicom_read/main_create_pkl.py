@@ -24,10 +24,13 @@ def main():
         id, dcm_path = row['id'], row['dcm_path']
         output_pkl_path = "{}/{}.pkl".format(args.output_pkl_folder, id)
         print("start make {}".format(output_pkl_path))
-        pix_resampled, spacing0 = RibDataFrame().readDicom(path=dcm_path)
-        pix_resampled = pix_resampled.astype(np.int16)
-        pickle.dump(pix_resampled, open(output_pkl_path, "wb"))
-        spacing_df.loc[len(spacing_df)] = {'id': id, 'spacing0': spacing0}
+        try:
+            pix_resampled, spacing0 = RibDataFrame().readDicom(path=dcm_path)
+            pix_resampled = pix_resampled.astype(np.int16)
+            pickle.dump(pix_resampled, open(output_pkl_path, "wb"))
+            spacing_df.loc[len(spacing_df)] = {'id': id, 'spacing0': spacing0}
+        except Exception:
+            print("Exception exsit in processing {}.pkl".format(id))        
     spacing_df.to_csv(args.spacing_df_path)
 
 

@@ -21,7 +21,7 @@ def load_scan(path):
     """
     some dcm file have no header information
     """
-    slices = [dicom.read_file(path + '/' + s, force=True) for s in os.listdir(path)]
+    slices = [dicom.read_file(path + '/' + s) for s in os.listdir(path)]
     slices.sort(key=lambda x: int(x.ImagePositionPatient[2]))
     try:
         slice_thickness = np.abs(slices[0].ImagePositionPatient[2] - slices[1].ImagePositionPatient[2])
@@ -116,14 +116,6 @@ class RibDataFrame:
 
 
 if __name__=='__main__':
-    pass
-    """
-    pix_resampled = RibDataFrame().readDicom(path='/Users/jiangyy/projects/medical-rib/dataset_first/A1076956')
-    print(pix_resampled.shape)
-    pix_resampled[pix_resampled < 400] = 0
-    pix_resampled[pix_resampled >= 400] = 1
-    plt.imshow(pix_resampled.sum(axis=2))
-    plt.show()
-    """
+    pix_resampled = RibDataFrame().readDicom(path='../../dataSet/updated48labeled_1.31/dataset/41121210/STU12539050/SER1063')
 
 

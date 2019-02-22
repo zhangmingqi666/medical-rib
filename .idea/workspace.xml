@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/test_dicom_files.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/darknet/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/create_voc2007/create_voc2007.sh" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/create_voc2007/create_voc2007.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/create_voc2007/src/read_label_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/create_voc2007/src/read_label_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataSet/second52labeled.1.31" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_decompose.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_decompose.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Remove_Sternum.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Remove_Sternum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/dicom_read/main_create_pkl.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/dicom_read/main_create_pkl.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,111 +14,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="896658968">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="bak" value="1" />
-          <entry key="gitignore" value="1" />
-          <entry key="jpg" value="4" />
-          <entry key="md" value="2" />
-          <entry key="png" value="10" />
-          <entry key="py" value="26" />
-          <entry key="sh" value="7" />
-          <entry key="svg" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Bash" value="7" />
-          <entry key="Image" value="14" />
-          <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="26" />
-          <entry key="SVG" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="gitignore" value="15" />
-          <entry key="py" value="410" />
-          <entry key="sh" value="8" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Bash" value="8" />
-          <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="410" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/create_voc2007/create_voc2007.sh">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="202" column="12" lean-forward="true" selection-start-line="202" selection-start-column="12" selection-end-line="202" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_decompose.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="296" column="17" lean-forward="true" selection-start-line="296" selection-start-column="12" selection-end-line="296" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="170" column="4" selection-start-line="170" selection-start-column="4" selection-end-line="170" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="74" column="17" lean-forward="true" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/pretreat.sh">
+        <entry file="file://$PROJECT_DIR$/tools/test_dicom_files.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="19">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -142,13 +53,15 @@
         <option value="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_prior.py" />
         <option value="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Remove_Sternum.py" />
         <option value="$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py" />
+        <option value="$PROJECT_DIR$/tools/test_dicom_files.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="341" />
+    <option name="y" value="124" />
     <option name="width" value="1440" />
-    <option name="height" value="832" />
+    <option name="height" value="834" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -167,13 +80,7 @@
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="dicom_read" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -240,9 +147,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="832" extended-state="0" />
+    <frame x="341" y="124" width="1440" height="834" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18816067" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18767706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -279,9 +186,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Dicom_Read.py">
@@ -397,13 +301,7 @@
     <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/main_read_dcm_path.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file:///usr/local/lib/python3.7/site-packages/scipy/ndimage/interpolation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-628">
-          <caret line="514" column="4" selection-start-line="514" selection-start-column="4" selection-end-line="514" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/scipy/ndimage/interpolation.py" />
     <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/generate_bone_info_csv.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -465,13 +363,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Python/3.7/lib/python/site-packages/pydicom/filereader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1788">
-          <caret line="887" selection-start-line="887" selection-end-line="887" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Library/Python/3.7/lib/python/site-packages/pydicom/filereader.py" />
     <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -483,6 +375,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/test_dicom_files.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
