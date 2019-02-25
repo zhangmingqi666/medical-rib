@@ -2,12 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/read_all_dicom_info.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/read_nii_location.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_reconstruct/Dcm_Info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_reconstruct/Dicom_Read.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_reconstruct/main_create_pkl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_reconstruct/main_read_dcm_path.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/Verify_data_join_label.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/Verify_dicom_read_speedup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/Verify_dicom_shape_speedup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/Verify_nii_location.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/medical-rib.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/medical-rib.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataSet/second52labeled.1.31" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/dicom_read/main_create_pkl.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/dicom_read/main_create_pkl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/darknet/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/create_voc2007/src/read_label_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_read_nii_location/read_label_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/dicom_read/Dcm_Info.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/deprecated/dicom_read/Dcm_Info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/deprecated/dicom_read/Dicom_Read.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/dicom_read/main_create_pkl.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/deprecated/dicom_read/main_create_pkl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/dicom_read/main_read_dcm_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/deprecated/dicom_read/main_read_dcm_path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/dicom_read/pretreat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/deprecated/dicom_read/pretreat.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/cut_ribs.sh" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/cut_recognize_ribs.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/Bone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_decompose.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/Bone_decompose.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_prior.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/Bone_prior.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Dicom_Read.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/Dicom_Read.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Front_Half_Prior.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/Front_Half_Prior.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Remove_Sternum.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/Remove_Sternum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Spine_Remove.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/Spine_Remove.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/gbdt_judge_rib.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/gbdt_judge_rib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/generate_bone_info_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/generate_bone_info_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/viz.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/test_dicom_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/test_dicom_files.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,13 +44,71 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="896658968">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="csv" value="1" />
+          <entry key="jpg" value="1" />
+          <entry key="md" value="1" />
+          <entry key="png" value="59" />
+          <entry key="py" value="56" />
+          <entry key="sh" value="17" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Bash" value="17" />
+          <entry key="CSV" value="1" />
+          <entry key="Image" value="60" />
+          <entry key="Markdown" value="1" />
+          <entry key="Python" value="56" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="28" />
+          <entry key="py" value="2968" />
+          <entry key="sh" value="866" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Bash" value="866" />
+          <entry key="PLAIN_TEXT" value="28" />
+          <entry key="Python" value="2968" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preprocessing/create_voc2007/create_voc2007.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+            <state relative-caret-position="169">
+              <caret line="13" lean-forward="true" selection-end-line="98" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/read_nii_location.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tools/Verify_data_join_label.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="26" column="37" lean-forward="true" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+              <folding>
+                <element signature="e#68#77#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,21 +135,40 @@
       <list>
         <option value="$PROJECT_DIR$/preprocessing/rib_cut_v7/cut_ribs_onlyone.sh" />
         <option value="$PROJECT_DIR$/preprocessing/rib_cut_v7/cut_ribs.sh" />
-        <option value="$PROJECT_DIR$/preprocessing/dicom_read/pretreat.sh" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_decompose.py" />
         <option value="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_prior.py" />
         <option value="$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Remove_Sternum.py" />
         <option value="$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py" />
+        <option value="$PROJECT_DIR$/tools/test_data.py" />
+        <option value="$PROJECT_DIR$/tools/Verify_huadong_data.py" />
+        <option value="$PROJECT_DIR$/tools/Verify_dicom_read_speedup.py" />
+        <option value="$PROJECT_DIR$/tools/Verify_nii_location.py" />
         <option value="$PROJECT_DIR$/tools/test_dicom_files.py" />
+        <option value="$PROJECT_DIR$/preprocessing/dicom_read/pretreat.sh" />
+        <option value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/util.py" />
+        <option value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_reconstruct/Dcm_Info.py" />
+        <option value="$PROJECT_DIR$/tools/test.py" />
+        <option value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_reconstruct/main_read_dcm_path.py" />
+        <option value="$PROJECT_DIR$/preprocessing/create_voc2007/src/read_label_info.py" />
+        <option value="$PROJECT_DIR$/tools/Verify_logs/test_dicom_shape_speedup.py" />
+        <option value="$PROJECT_DIR$/tools/test_dicom_shape_speedup.py" />
+        <option value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_reconstruct/Dicom_Read.py" />
+        <option value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_reconstruct/main_create_pkl.py" />
+        <option value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_read_nii_location/main.py" />
+        <option value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/read_all_dicom_info.sh" />
+        <option value="$PROJECT_DIR$/tools/Verify_dicom_shape_speedup.py" />
+        <option value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_read_nii_location/read_label_info.py" />
+        <option value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/read_nii_location.sh" />
+        <option value="$PROJECT_DIR$/tools/Verify_data_join_label.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="341" />
-    <option name="y" value="96" />
-    <option name="width" value="1440" />
-    <option name="height" value="862" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="43" />
+    <option name="y" value="23" />
+    <option name="width" value="1066" />
+    <option name="height" value="805" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -81,18 +187,43 @@
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
               <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
               <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="dicom_read" type="462c0819:PsiDirectoryNode" />
+              <item name="create_voc2007" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
+              <item name="create_voc2007" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
               <item name="tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="Verify_logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="Verify_logs" type="462c0819:PsiDirectoryNode" />
+              <item name="Verify_dicom_read_speedup" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -105,14 +236,17 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/preprocessing/rib_cut_v7/src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_read_nii_location" />
+      <recent name="$PROJECT_DIR$/tools" />
       <recent name="$PROJECT_DIR$/preprocessing/deprecated" />
       <recent name="$PROJECT_DIR$/models/classification/generate_coco_format" />
       <recent name="$PROJECT_DIR$/models/classification/" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/preprocessing/rib_cut_v7" />
+      <recent name="$PROJECT_DIR$/preprocessing/rib_cut_v7/src_read" />
+      <recent name="$PROJECT_DIR$/preprocessing/rib_cut_v7/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -127,19 +261,30 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test_dicom_files">
-    <configuration name="cut_ribs.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
+  <component name="RunManager" selected="Python.Verify_data_join_label">
+    <configuration name="read_all_dicom_info.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="bash" />
       <option name="INTERPRETER_PATH" value="/usr/bin/env" />
       <option name="PROJECT_INTERPRETER" value="false" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preprocessing/rib_cut_v7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing/rib_cut_v7/cut_ribs.sh" />
-      <option name="PARAMETERS" value="$PROJECT_DIR$/dataSet/second100unlabeled" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/read_all_dicom_info.sh" />
+      <option name="PARAMETERS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_dicom_files" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="read_nii_location.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
+      <module name="medical-rib" />
+      <option name="INTERPRETER_OPTIONS" value="bash" />
+      <option name="INTERPRETER_PATH" value="/usr/bin/env" />
+      <option name="PROJECT_INTERPRETER" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/read_nii_location.sh" />
+      <option name="PARAMETERS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Verify_data_join_label" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -151,7 +296,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/test_dicom_files.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/Verify_data_join_label.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,10 +305,62 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Verify_dicom_read_speedup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="medical-rib" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/Verify_dicom_read_speedup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_dicom_shape_speedup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="medical-rib" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/Verify_dicom_shape_speedup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Verify_dicom_read_speedup" />
+      <item itemvalue="Bash.read_all_dicom_info.sh" />
+      <item itemvalue="Python.test_dicom_shape_speedup" />
+      <item itemvalue="Bash.read_nii_location.sh" />
+      <item itemvalue="Python.Verify_data_join_label" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_dicom_files" />
-        <item itemvalue="Bash.cut_ribs.sh" />
+        <item itemvalue="Python.Verify_data_join_label" />
+        <item itemvalue="Bash.read_nii_location.sh" />
+        <item itemvalue="Python.test_dicom_shape_speedup" />
+        <item itemvalue="Bash.read_all_dicom_info.sh" />
+        <item itemvalue="Python.Verify_dicom_read_speedup" />
       </list>
     </recent_temporary>
   </component>
@@ -181,14 +378,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14504652" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4981685" visible="true" weight="0.15151516" />
+      <window_info id="Structure" order="1" sideWeight="0.50183153" side_tool="true" weight="0.2555024" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4212766" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32771084" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35421687" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -222,210 +420,274 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Dicom_Read.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000409254.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/main.py">
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000409289.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000409341.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000409347.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000409413.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000409412.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000409439.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000409459.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000409537.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000409579.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000409620.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000450130.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000450131.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000539718.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000550272.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000550735.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000566013.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000568675.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000573834.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000572309.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000566996.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000565843.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000555684.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000555459.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/135402000555091.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/deprecated/dicom_read/Dicom_Read.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        <state>
+          <folding>
+            <element signature="e#14#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/temp_output/135402000607509collect_ribs.png" />
-    <entry file="file://$PROJECT_DIR$/logs/temp_output/135402000607482collect_ribs.png" />
-    <entry file="file://$PROJECT_DIR$/models/classification/slim_models/mk_tf_records.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/create_voc2007/src/data_join_label.py">
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-550" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/create_voc2007/src/write_imagesets_voc2007.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/create_voc2007/src/generate_xml_voc2007.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="124" column="26" lean-forward="true" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md.bak">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-149" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/build-passing.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/collect_ribs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/flowchart.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/half_front_bones_with_envelope_line.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/logo_refed_bottom_transparent.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/logo_refed_pure_transparent.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/logo_refed_pure_white.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/single_rib.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/src_ct_image.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/logo_refed_side_transparent.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/logo_refed_internal_white.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/logo_refed_internal_transparent.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/logo_refed_side_white.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/spine_remaining.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README_IMAGES/logo_refed_bottom_white.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/Rib_Recognition_Model/README_zh.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="315">
-            <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/data_augmentation/src/data_augmentation.py" />
-    <entry file="file://$PROJECT_DIR$/preprocessing/data_augmentation/data_augmetation.sh" />
-    <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/Dcm_Info.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/main_read_dcm_path.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file:///usr/local/lib/python3.7/site-packages/scipy/ndimage/interpolation.py" />
-    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/generate_bone_info_csv.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_prior.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Spine_Remove.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="73" column="75" selection-start-line="73" selection-start-column="75" selection-end-line="73" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/cut_ribs.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Remove_Sternum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/main_create_pkl.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/create_voc2007/create_voc2007.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="202" column="12" lean-forward="true" selection-start-line="202" selection-start-column="12" selection-end-line="202" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/Bone_decompose.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="296" column="17" lean-forward="true" selection-start-line="296" selection-start-column="12" selection-end-line="296" selection-end-column="20" />
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/rib_cut_v7/src/util.py">
+    <entry file="file://$PROJECT_DIR$/preprocessing/deprecated/dicom_read/pretreat.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="170" column="4" selection-start-line="170" selection-start-column="4" selection-end-line="170" selection-end-column="4" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Python/3.7/lib/python/site-packages/pydicom/filereader.py" />
-    <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/pretreat.sh">
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_reconstruct/Dcm_Info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="655">
+          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+          <folding>
+            <marker date="1551065650943" expanded="true" signature="1523:1668" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/pydicom/filereader.py">
+    <entry file="file://$PROJECT_DIR$/tools/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="879" selection-start-line="879" selection-end-line="879" />
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/argparse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-310">
+          <caret line="1321" column="8" selection-start-line="1321" selection-start-column="8" selection-end-line="1321" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/temp_dataset_new_dcm.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="1648">
+          <caret line="226" column="77" selection-start-line="226" selection-start-column="77" selection-end-line="226" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/dicom_reconstruct.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="25" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/create_voc2007/src/generate_xml_voc2007.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_reconstruct/Dicom_Read.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="96" column="8" lean-forward="true" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/create_voc2007/create_voc2007.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="13" lean-forward="true" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_read_nii_location/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_dicom_shape_speedup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#1#10#0" expanded="true" />
+            <marker date="1551081961344" expanded="true" signature="84:118" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/cut_recognize_ribs.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="29" column="6" lean-forward="true" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/read_all_dicom_info.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/create_voc2007/src/bounding_box_shift.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_reconstruct/main_read_dcm_path.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_reconstruct/main_create_pkl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src_read_nii_location/read_label_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="79" column="44" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
+          <folding>
+            <element signature="e#14#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/read_nii_location.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/test_dicom_files.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        <state relative-caret-position="150">
+          <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/dicom_read/Dicom_Read.py">
+    <entry file="file://$PROJECT_DIR$/tools/Verify_dicom_read_speedup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="21" />
+          <folding>
+            <element signature="e#109#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/create_voc2007/src/data_join_label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" selection-start-line="12" selection-end-line="16" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_logs/Verify_dicom_read_speedup/41121210.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_data_join_label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="26" column="37" lean-forward="true" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+          <folding>
+            <element signature="e#68#77#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

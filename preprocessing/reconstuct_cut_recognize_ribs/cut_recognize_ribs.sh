@@ -4,7 +4,7 @@ dataset_folder=${1}
 pkl_dir=${dataset_folder}/"pkl_cache"
 rib_df_dir=${dataset_folder}/"rib_df_cache"
 rib_recognition_model_path="../Rib_Recognition_Model"
-output_dir="../../logs/temp_output"
+output_dir="../../Verify_logs/temp_output"
 
 if [[ ! -d ${pkl_dir} ]]; then
      echo "${pkl_dir} not exist"
@@ -31,7 +31,7 @@ do
             rm -rf "$folder"
         fi
         echo "Load rib recognition model from ${rib_recognition_model_path}"
-        echo "save logs to ${folder}"
+        echo "save Verify_logs to ${folder}"
         echo "save rib_df_cache to ${rib_df_dir}"
         mkdir -p ${folder}
 
