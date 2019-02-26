@@ -12,9 +12,7 @@ logs/
 *.png
 *.xls
 *ipynb
-dataSet/first20labeled
-dataSet/data*
-dataSet/updated48labeled_1.31
+data/*
 .idea/*
 # C extensions
 *.so

@@ -1,6 +1,6 @@
 
 """
-Verify that all ribs can match with several bounding box
+Verify that all ribs_obtain can match with several bounding box
 """
 
 
@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import matplotlib.patches as patches
+
 pkl_path = "/Users/jiangyy/DataSet/rib_dataSet/updated48labeled_1.31/pkl_cache"
 files = os.listdir(pkl_path)
 
@@ -31,10 +32,16 @@ for file in files:
 
     for index, row in temp_df.iterrows():
         # exchange x with y, label reason.
+        location_id = row['location_id']
+        location = location_id.split('-')
+        location_name = "**" if len(location) == 1 else location[-1]
         y_min, y_max = row['y.min'], row['y.max']
         z_min, z_max = row['z.min'], row['z.max']
         rect = patches.Rectangle((y_min, z_min), (y_max - y_min), (z_max - z_min), linewidth=1, edgecolor='r', facecolor='none')
         ax.add_patch(rect)
+        ax.text(y_max, z_max, location_name, fontsize=10)
 
-    plt.savefig(os.path.join('/Users/jiangyy/projects/medical-rib/tools/Verify_logs/Verify_data_join_label', save_f_name))
+    fig.savefig(os.path.join('/Users/jiangyy/projects/medical-rib/tools/Verify_logs/Verify_data_join_label',
+                             save_f_name))
+    plt.close(fig)
 

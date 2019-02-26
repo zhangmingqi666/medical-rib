@@ -1,8 +1,21 @@
+#!/usr/bin/env bash
 
 
-cd preprocessing/dicom_read
-./pretreat.sh ../../dataSet/updated48labeled_1.31
+DATA=updated48labeled_1.31
+KEEP_SLICING=1
+LOGS_DIR=$1
+FORMAT=dcm
+# DATA=all_labeled
+# read nii file
+./experiments/scripts/nii_read.sh ${DATA} ${KEEP_SLICING}
 
-cd -
-cd preprocessing/rib_cut_v7
-./cut_ribs.sh ../../dataSet/updated48labeled_1.31
+# scanning dcm nodes
+./experiments/scripts/dcm_read.sh ${DATA}
+
+# ribs obtain
+./experiments/scripts/ribs_obtain.sh ${LOGS_DIR} ${FORMAT} ${KEEP_SLICING}
+
+# rib match
+
+
+# make data

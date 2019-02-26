@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import numpy as np
 
 path="/data/jiangyy/rib_dataSet"
 excel_path="rib_type_location.xls"
@@ -34,10 +35,10 @@ label_df = pd.DataFrame({'id': label_id, 'nii_id': label_nii_id, 'label_group': 
 dataset_df = pd.DataFrame({'id': dataset_id, 'dataset_group': dataset_group})
 data_df = label_df.merge(dataset_df, how='outer', on='id')
 
-excel_df = pd.read_excel(excel_path)
-excel_df = excel_df[['id', 'loaction_id', 'type']]
+excel_df = pd.read_excel(excel_path, dtype={'id': np.str, 'location_id': np.str})
+excel_df = excel_df[['id', 'location_id', 'type']]
 excel_df = excel_df.fillna(method='ffill')
-excel_df.rename(columns={'loaction_id': 'nii_id'}, inplace=True)
+excel_df.rename(columns={'location_id': 'nii_id'}, inplace=True)
 excel_df['type'] = 'From xls'
 df = excel_df.merge(data_df, how='outer', on=['id', 'nii_id'])
 df.to_csv('hehe.csv', index=False)
