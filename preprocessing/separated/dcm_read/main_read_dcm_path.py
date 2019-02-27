@@ -22,7 +22,7 @@ def main():
     args = parser.parse_args()
 
     dcm_df = Dcm_Info.find_all_dcm_info_and_its_id(paths=args.dcm_folder)
-    dcm_df.to_csv(args.dcm_file_csv_path, index=False)
+    dcm_df.to_csv(args.dcm_file_csv_path, index=False, columns=['id', 'dcm_path'])
 
 
 if __name__ == '__main__':
