@@ -6,7 +6,15 @@ import gc
 import sys
 from skimage.measure import label
 from sklearn.externals import joblib
+import sys, os
 
+
+def add_python_path(path):
+    if path not in sys.path:
+        sys.path.insert(0, path)
+
+
+add_python_path(os.getcwd())
 # from projects
 from preprocessing.separated.ribs_obtain.Bone import Bone
 from preprocessing.separated.ribs_obtain.Bone_prior import BonePrior

@@ -1,3 +1,14 @@
+import sys, os
+
+
+def add_python_path(path):
+    if path not in sys.path:
+        sys.path.insert(0, path)
+
+
+add_python_path(os.getcwd())
+
+
 from preprocessing.separated.dcm_read import Dcm_Info
 
 

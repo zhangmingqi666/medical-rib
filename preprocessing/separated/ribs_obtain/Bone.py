@@ -4,7 +4,15 @@ import gc
 import numpy as np
 from interval import Interval
 import warnings
+import sys, os
 
+
+def add_python_path(path):
+    if path not in sys.path:
+        sys.path.insert(0, path)
+
+
+add_python_path(os.getcwd())
 # from projects
 from preprocessing.separated.ribs_obtain.util import sparse_df_to_arr
 warnings.filterwarnings('ignore')

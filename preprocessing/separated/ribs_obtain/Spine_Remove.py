@@ -1,6 +1,15 @@
 import pandas as pd
 import numpy as np
 # from projects
+import sys, os
+
+
+def add_python_path(path):
+    if path not in sys.path:
+        sys.path.insert(0, path)
+
+
+add_python_path(os.getcwd())
 from preprocessing.separated.ribs_obtain.util import arr_to_sparse_df_only
 
 

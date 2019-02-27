@@ -2,6 +2,16 @@ import pickle
 import warnings
 import numpy as np
 import pandas as pd
+import sys, os
+
+
+def add_python_path(path):
+    if path not in sys.path:
+        sys.path.insert(0, path)
+
+
+add_python_path(os.getcwd())
+
 
 # from projects
 from preprocessing.separated.dcm_read import Dicom_Read
