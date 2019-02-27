@@ -43,7 +43,7 @@ def location_read(folder_path=None, keep_slicing=True):
         for file_name in os.listdir(next_dir):
 
             next_next_dir = os.path.join(next_dir, file_name)
-            if pattern.search(next_next_dir) is None:
+            if pattern.search(file_name) is None:
                 continue
 
             bounding_box = nii_read(nii_file_path=next_next_dir, keep_slicing=keep_slicing)
