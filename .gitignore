@@ -6,7 +6,6 @@ __pycache__/
 # my projects
 models/temp_data/
 logs/
-*.pkl
 *.csv
 *.dcm
 *.png

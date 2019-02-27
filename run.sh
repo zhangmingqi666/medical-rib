@@ -7,6 +7,10 @@ LOGS_DIR=$1
 FORMAT=dcm
 # DATA=all_labeled
 # read nii file
+
+
+source activate venv
+
 ./experiments/scripts/nii_read.sh ${DATA} ${KEEP_SLICING}
 
 # scanning dcm nodes
@@ -19,3 +23,5 @@ FORMAT=dcm
 
 
 # make data
+
+source deactivate
