@@ -47,7 +47,7 @@ def location_read(folder_path=None, keep_slicing=True):
     """read all the nii in folder_path"""
     location_df = pd.DataFrame(columns=('id', 'location_id', 'x.max', 'x.min', 'y.max', 'y.min', 'z.max', 'z.min'))
     import re
-    pattern = re.compile('^[A-Za-z1-9]+.nii$')
+    pattern = re.compile('^[a-zA-Z1-9].*nii')
     for f in os.listdir(folder_path):
         next_dir = os.path.join(folder_path, f)
         if not os.path.isdir(next_dir):
