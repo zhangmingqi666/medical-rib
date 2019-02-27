@@ -11,7 +11,6 @@ def one_ct_df_join_bounding_box(data_df=None, bounding_box_df=None, ct_id=''):
     dataset_map_label_df = pd.DataFrame(columns=('location_id', 'dataSet_id'))
     only_bounding_box_df = bounding_box_df[bounding_box_df['id'] == ct_id]
     for index, row in only_bounding_box_df.iterrows():
-        # exchange x with y, label reason.
         x_min, x_max = row['x.min'], row['x.max']
         y_min, y_max = row['y.min'], row['y.max']
         z_min, z_max = row['z.min'], row['z.max']

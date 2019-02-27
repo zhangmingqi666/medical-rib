@@ -1,5 +1,4 @@
 from preprocessing.separated.dcm_read import Dcm_Info
-import os
 
 
 def main():

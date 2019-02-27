@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 
 # some folders
 DATA=$1

@@ -33,6 +33,8 @@ def nii_read(nii_file_path=None, keep_slicing=True, new_spacing=[1, 1, 1]):
 def location_read(folder_path=None, keep_slicing=True):
     """read all the nii in folder_path"""
     location_df = pd.DataFrame(columns=('id', 'location_id', 'x.max', 'x.min', 'y.max', 'y.min', 'z.max', 'z.min'))
+    import re
+    pattern = re.compile('^[A-Za-z1-9]+.nii$')
     for f in os.listdir(folder_path):
         next_dir = os.path.join(folder_path, f)
         if not os.path.isdir(next_dir):
@@ -41,10 +43,7 @@ def location_read(folder_path=None, keep_slicing=True):
         for file_name in os.listdir(next_dir):
 
             next_next_dir = os.path.join(next_dir, file_name)
-            if not next_next_dir.endswith('.nii'):
-                continue
-
-            if next_next_dir.startswith('._'):
+            if pattern.search(next_next_dir) is None:
                 continue
 
             bounding_box = nii_read(nii_file_path=next_next_dir, keep_slicing=keep_slicing)

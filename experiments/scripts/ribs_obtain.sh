@@ -19,7 +19,7 @@ function ribs_obtain_from_dcm() {
     # $* 空格链接起来的所有参数，类型是字符串
 
     # transfer all dcm to array pkl for every patient
-    cat ${DCM_DF_OUT_PATH} | tail -n +2 | head -n 1 | while IFS=, read id dcm_path
+    cat ${DCM_DF_OUT_PATH} | tail -n +2 | while IFS=, read id dcm_path
     do
         out_put_prefix=${LOGS_DIR}/${id}
         rm -rf ${out_put_prefix} && mkdir -p ${out_put_prefix}
