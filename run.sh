@@ -9,7 +9,7 @@ FORMAT=dcm
 # read nii file
 
 
-source activate venv
+# source activate venv
 
 ./experiments/scripts/nii_read.sh ${DATA} ${KEEP_SLICING}
 
@@ -24,4 +24,4 @@ source activate venv
 
 # make data
 
-source deactivate
+# source deactivate

@@ -29,6 +29,11 @@ function ribs_obtain_from_dcm() {
         echo "start make rib data for ${id}"
         echo "logs saved to ${out_put_prefix}"
         echo "ribs cached to ${BONE_INFO_PATH}"
+
+        if [[ -f ${RIB_DF_CACHE_PATH} ]];then
+            echo "${RIB_DF_CACHE_PATH} existed, ignore this step"
+            continue
+        fi
         python3  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}   \
                                                     --dcm_path  ${dcm_path} \
                                                     --keep_slicing  ${SLICING}  \
@@ -53,7 +58,10 @@ function ribs_obtain_from_pkl() {
             out_put_prefix=${LOGS_DIR}/${id}
             rm -rf ${out_put_prefix} && mkdir -p ${out_put_prefix}
             echo "start make rib data for ${id}"
-
+            if [[ -f ${RIB_DF_CACHE_PATH} ]];then
+                echo "${RIB_DF_CACHE_PATH} existed, ignore this step"
+                continue
+            fi
             python3  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}   \
                                                         --pkl_path  ${file_path} \
                                                         --rib_df_cache_path  ${RIB_DF_CACHE_PATH} \
