@@ -2,7 +2,7 @@
 
 DATA=$1
 nii_folder=./data/nii_files_merges/
-
+nii_loc_df_path=./data/csv_files/nii_loc_df.csv
 
 case ${DATA} in
   updated48labeled_1.31)
