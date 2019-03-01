@@ -53,13 +53,14 @@ function ribs_obtain_from_pkl() {
             out_put_prefix=${LOGS_DIR}/${id}
             rm -rf ${out_put_prefix} && mkdir -p ${out_put_prefix}
             echo "start make rib data for ${id}"
+
             python3  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}   \
-                                                        --dcm_path  ${file_path} \
+                                                        --pkl_path  ${file_path} \
                                                         --rib_df_cache_path  ${RIB_DF_CACHE_PATH} \
+                                                        --bone_info_path  ${BONE_INFO_PATH}  \
                                                         --output_prefix  ${out_put_prefix}  \
                                                         --rib_recognition_model_path  ${RIBS_MODEL_WEIGHTS}  \
                                                         > ${out_put_prefix}".log"
-
         fi
     done
 }

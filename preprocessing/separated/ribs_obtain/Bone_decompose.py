@@ -156,7 +156,7 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
         del single_bone
 
     bone_info_df.sort_values(by='class_id', inplace=True)
-    bone_info_df.to_csv(bone_info_path, index=False)
+    bone_info_df.to_csv(bone_info_path, index=False, columns=FEATURE_LIST+['target', 'class_id'])
     return rib_bone_df
 
 

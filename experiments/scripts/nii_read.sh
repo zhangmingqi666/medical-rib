@@ -50,4 +50,3 @@ python3 ./preprocessing/separated/nii_read/read_label_info.py   --nii_folder_lis
                                                                 --output_path ${nii_loc_df_path} \
                                                                 --keep_slicing ${KEEP_SLICING}
 
-

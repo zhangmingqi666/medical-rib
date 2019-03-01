@@ -16,6 +16,7 @@ function re_mkdir_folder(){
     mkdir -p $1
     echo "re mkdir $1"
 }
+
 re_mkdir_folder  ${Voc2007_Annotations_folder}
 re_mkdir_folder  ${Voc2007_ImageSets_folder}
 re_mkdir_folder  ${Voc2007_JPEGSImages_folder}
