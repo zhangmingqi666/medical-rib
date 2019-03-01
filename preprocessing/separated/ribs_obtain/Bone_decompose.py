@@ -108,16 +108,7 @@ def judge_collect_spine_judge_connected_rib(sparse_df=None, cluster_df=None, bon
 
 
 def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False, output_prefix=None,
-                 rib_df_cache_path=None, rib_recognition_model_path=None):
-    """
-    combine all ribs_obtain from source CT array after removing spine and sternum
-    :param value_arr: HU array after removing spine and sternum
-    :param hu_threshold: 150
-    :param bone_prior:
-    :param allow_debug:
-    :param output_prefix:
-    :return: rib_bone_df: containing all ribs_obtain' index(z,x,y)
-    """
+                 bone_info_path=None, rib_recognition_model_path=None):
     # read models from
     GBDT = joblib.load('{}/gbdt.pkl'.format(rib_recognition_model_path))
     FEATURE_LIST = joblib.load('{}/feature.pkl'.format(rib_recognition_model_path))
@@ -137,8 +128,6 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
 
     rib_bone_df = pd.DataFrame({})
     bone_info_df = pd.DataFrame({}, columns=FEATURE_LIST+['target', 'class_id'])
-
-    patient_id = output_prefix.split("/")[-2]
 
     for e in cluster_df['c'].values:
         temp_sparse_df = sparse_df[sparse_df['c'] == e]
@@ -167,7 +156,7 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
         del single_bone
 
     bone_info_df.sort_values(by='class_id', inplace=True)
-    bone_info_df.to_csv('{}/%s.csv'.format(rib_df_cache_path, patient_id))
+    bone_info_df.to_csv(bone_info_path, index=False)
     return rib_bone_df
 
 
@@ -225,7 +214,7 @@ def plot_binary_array(binary_arr, title=None, save=True, fig_name=None, output_p
         raise NotImplementedError
 
 
-def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello',
+def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', bone_info_path=None,
                           rib_df_cache_path=None, rib_recognition_model_path=None):
 
     with timer('calculate basic array and feature, data frame'):
@@ -281,7 +270,9 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello',
         """collecting ribs_obtain from value array after removing spine and sternum
         """
         rib_bone_df = collect_ribs(value_arr, hu_threshold=150, bone_prior=bone_prior, output_prefix=output_prefix,
-                                   rib_df_cache_path=rib_df_cache_path, rib_recognition_model_path=rib_recognition_model_path)
+                                   bone_info_path=bone_info_path, rib_recognition_model_path=rib_recognition_model_path)
+
+        rib_bone_df.to_csv(rib_df_cache_path, index=False)
 
     """plot half front bone"""
     if allow_debug:

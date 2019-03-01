@@ -27,6 +27,8 @@ def main():
     parser.add_argument('--output_prefix',  dest='output_prefix', action='store', help='prefix', default='prefix')
     parser.add_argument('--rib_df_cache_path',  dest='rib_df_cache_path', action='store',
                         help='rib_df_cache_path', default=None)
+    parser.add_argument('--bone_info_path', dest='bone_info_path', action='store',
+                        help='bone_info_path', default=None)
     parser.add_argument('--rib_recognition_model_path',  dest='rib_recognition_model_path',
                         action='store', help='rib_recognition_model_path', default=None)
 
@@ -51,7 +53,7 @@ def main():
         exit(1)
 
     void_cut_ribs_process(rib_data, allow_debug=True, output_prefix=args.output_prefix, 
-                          rib_df_cache_path=args.rib_df_cache_path,
+                          rib_df_cache_path=args.rib_df_cache_path, bone_info_path=args.bone_info_path,
                           rib_recognition_model_path=args.rib_recognition_model_path)
 
 

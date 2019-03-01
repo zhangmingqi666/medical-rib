@@ -53,8 +53,8 @@ def create_object_node(doc, attrs):
     _bndbox_node = doc.createElement('bndbox')
     create_child_node(doc, 'xmin', str(_bndbox_list[0]), _bndbox_node)
     create_child_node(doc, 'ymin', str(_bndbox_list[1]), _bndbox_node)
-    create_child_node(doc, 'xmax', str(int(_bndbox_list[0] + _bndbox_list[2])), _bndbox_node)
-    create_child_node(doc, 'ymax', str(int(_bndbox_list[1] + _bndbox_list[3])), _bndbox_node)
+    create_child_node(doc, 'xmax', str(_bndbox_list[2]), _bndbox_node)
+    create_child_node(doc, 'ymax', str(_bndbox_list[3]), _bndbox_node)
     _object_node.appendChild(_bndbox_node)
 
     return _object_node
@@ -144,17 +144,18 @@ if __name__ == '__main__':
     df = pd.read_csv(args.label_loc_type_info_path)
 
     folder = args.voc2007_Annotations_folder
-
     for idx, row in df.iterrows():
-        xml_file_path = '{}/{}.xml'.format(folder, row['dataSet_id'])
-        # now, exchange bndbox, x,y
-        generate_voc2007format_xml(xml_file_name=xml_file_path,
+        # now, exchange bndbox, x, y
+        generate_voc2007format_xml(xml_file_name='{}/{}.xml'.format(folder, row['dataSet_id']),
                                    folder='JPEGImages',
                                    filename='{}.jpg'.format(row['dataSet_id']),
-                                   size_width=row['length_x'],
-                                   size_height=row['length_y'],
+                                   size_width=row['range.x.max'] - row['range.x.min'],
+                                   size_height=row['range.y.max'] - row['range.y.min'],
                                    size_depth=1,
-                                   bndbox=[row['y.min'], row['x.min'], row['y.max'], row['x.max']])
+                                   bndbox=[row['box.y.min'] - row['range.y.min'],
+                                           row['box.x.min'] - row['range.x.min'],
+                                           row['box.y.max'] - row['range.y.min'],
+                                           row['box.x.max'] - row['range.x.min']])
 
 
 
