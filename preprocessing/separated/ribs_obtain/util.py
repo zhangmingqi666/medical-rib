@@ -172,8 +172,8 @@ def plot_yzd(temp_df=None, shape_arr=None, save=False, save_path=None):
     temp_arr[index] = temp_df_yz['x.count'].values
     plt.figure()
     plt.imshow(temp_arr)
-    plt.savefig(save_path)
-    #plt.show()
+    #plt.savefig(save_path)
+    plt.show()
 
 
 def plot_3d(image, threshold=0.5):

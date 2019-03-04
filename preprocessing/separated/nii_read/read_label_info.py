@@ -53,12 +53,14 @@ def location_read(folder_path=None, keep_slicing=True):
         if not os.path.isdir(next_dir):
             continue
 
+        print("read folder {}".format(f))
         for file_name in os.listdir(next_dir):
 
             next_next_dir = os.path.join(next_dir, file_name)
             if pattern.search(file_name) is None:
                 continue
 
+            print("read nii {}".format(file_name))
             bounding_box = nii_read(nii_file_path=next_next_dir, keep_slicing=keep_slicing)
             new_row = {'id': f, 'location_id': file_name.replace('.nii', '')}
             new_row.update(bounding_box)

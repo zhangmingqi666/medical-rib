@@ -22,7 +22,7 @@ case ${DATA} in
     ;;
   added201-237labeled_2.21)
     batch_data_names=("added201-237labeled_2.21")
-    nii_loc_df_path=./data/csv_files/nii_loc_df_added201-200.csv
+    nii_loc_df_path=./data/csv_files/nii_loc_df_added201-237.csv
     ;;
   all_labeled)
     batch_data_names=("updated48labeled_1.31"     \
