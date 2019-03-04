@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 
 path=$(pwd)
@@ -5,8 +6,8 @@ path=$(pwd)
 feature_csv_dir=${path}/rib_feature_csv
 output_dataset_dir=${path}/all_bone_info_df.csv
 
-gbdt_model_save_dir=${path}/gbdt.pkl
-feature_list_save_dir=${path}/feature.pkl
+gbdt_model_save_dir=./experiments/cfgs/gbdt.pkl
+feature_list_save_dir=./experiments/cfgs/feature.pkl
 
 echo "Start generate dataset"
 python3 -W ignore generate_bone_info_csv.py --feature_csv_path "$feature_csv_dir" --output_dataset_path "$output_dataset_dir"
@@ -18,3 +19,4 @@ python3 -W ignore gbdt_judge_rib.py --dataset_path "$output_dataset_dir" --saved
 
 echo "Saved GBDT model: $gbdt_model_save_dir"
 echo "Saved feature list: $feature_list_save_dir"
+

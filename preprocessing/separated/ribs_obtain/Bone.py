@@ -64,7 +64,7 @@ class Bone:
         # self.rib_width = 30
         self.spine_half_width = spine_width / 2
         self.rib_diameter = rib_diameter  # set the threshold of bone's thickness
-        # set the y threshold if spine don't combine ribs_obtain
+        # set the y threshold if spine don't combine ribs
         self.spine_connected_rib_y_length_thresholds = spine_connected_rib_y_length_thresholds
         self.through_thresholds = through_thresholds
 
@@ -77,7 +77,7 @@ class Bone:
         self.basic_axis_feature = None
         self.set_basic_axis_feature()
 
-        # calc y Max(Max-Min),Mean(Max-Min) group by y, judge whether connected with ribs_obtain
+        # calc y Max(Max-Min),Mean(Max-Min) group by y, judge whether connected with ribs
         self.y_length_statistics_on_z = None
         self.set_y_length_statistics_on_z()
 
@@ -170,7 +170,7 @@ class Bone:
             # calc the prob : df in center line +/- spine_half_width.
             self.calc_prob_bone_in_spine_width()
 
-            # calc used for judging spine connected to ribs_obtain
+            # calc used for judging spine connected to ribs
             self.set_y_length_statistics_on_z()
 
             # calc local centroid for sternum
@@ -194,7 +194,7 @@ class Bone:
         return self.basic_axis_feature.get(feature)
 
     """
-    used for calc whether some ribs_obtain connected with spine.
+    used for calc whether some ribs connected with spine.
     """
     def set_y_length_statistics_on_z(self):
 
@@ -217,11 +217,6 @@ class Bone:
             return np.sqrt((row['z'] - z_centroid)**2 + (row['x'] - x_centroid)**2 + (row['y'] - y_centroid)**2)
         # warning
         self.bone_data['dis_nearest'] = self.bone_data.apply(lambda row: f(row), axis=1)
-        # self.bone_data['dis_nearest'] = ((self.bone_data['z'] - z_centroid)**2 +
-        #                                 (self.bone_data['x'] - x_centroid)**2 +
-        #                                 (self.bone_data['y'] - y_centroid)**2)
-        # self.bone_data['dis_nearest'] = self.bone_data['dis_nearest'].apply(lambda x: np.sqrt(x))
-        # self.bone_data.loc[:, 'dis_nearest'] = self.bone_data['dis_nearest'].apply(lambda x: np.sqrt(x))
         self.distance_nearest_centroid = self.bone_data['dis_nearest'].min()
 
     def get_distance_between_centroid_and_nearest_point(self):
@@ -358,31 +353,23 @@ class Bone:
     def is_first_rib(self):
         if self.get_iou_on_xoy() >= 0.38:
             return False
-
         _, _, y_centroid = self.get_basic_axis_feature(feature='centroid')
         # cannot deviate far away from the center line.
         if abs(y_centroid - self.y_mid_line) > 40:
                 return False
-
         if self.get_distance_between_centroid_and_nearest_point() < 20:
             return False
-
         return True
-
     def is_mid_rib(self):
         if self.get_iou_on_xoy() >= 0.23:
             return False
-
         if self.get_distance_between_centroid_and_nearest_point() < 10:
             return False
-
         if self.get_features_z_distance_on_xoy()['median'] > self.rib_diameter:
             return False
-
         z_centroid, _, _ = self.get_basic_axis_feature(feature='centroid')
         _, _, y_max = self.get_basic_axis_feature(feature='max')
         _, _, y_min = self.get_basic_axis_feature(feature='min')
-
         if self.left_or_right() == Direction.Right:
             if self.bone_data[self.bone_data['y'] == y_min]['z'].mean() < z_centroid:
                 return False
@@ -390,45 +377,34 @@ class Bone:
             if self.bone_data[self.bone_data['y'] == y_max]['z'].mean() < z_centroid:
                 return False
         return True
-
     def is_low_rib(self):
-
         if self.get_features_z_distance_on_xoy()['median'] > self.rib_diameter:
             return False
-
         # prior distriction
         z_centroid, _, _ = self.get_basic_axis_feature(feature='centroid')
         _, _, y_max = self.get_basic_axis_feature(feature='max')
         _, _, y_min = self.get_basic_axis_feature(feature='min')
-
         if self.left_or_right() == Direction.Right:
             if self.bone_data[self.bone_data['y'] == y_min]['z'].mean() < z_centroid:
                 return False
         else:
             if self.bone_data[self.bone_data['y'] == y_max]['z'].mean() < z_centroid:
                 return False
-
         if self.get_cube_volume() < 100000:
             return False
         return True
-
     def is_rib(self):
         return self.bone_type == BoneType.Rib_Bone
-
     def is_multi_rib(self):
         if self.get_iou_on_xoy() >= 0.45:
             return False
-
         if len(self.get_bone_data()) < 40000:
             return False
-
         if self.get_distance_between_centroid_and_nearest_point() < 20:
             return False
-
         max_nonzero_internal = self.detect_multi_ribs()
         if max_nonzero_internal < 5:
             return False
-
         return True
     """
     def detect_multi_ribs(self):
@@ -656,7 +632,6 @@ class Bone:
             img_arr = sparse_df_to_arr(arr_expected_shape=self.arr_shape, sparse_df=self.bone_data)
         else:
             img_arr = self.calc_external_cuboid_arr()
-
         if show_3d:
             plot_3d(img_arr, threshold=0.5)
         else:

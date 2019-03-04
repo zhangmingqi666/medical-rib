@@ -22,7 +22,8 @@ from contextlib import contextmanager
 import warnings
 warnings.filterwarnings('ignore')
 
-rc('font',**{'family':'sans-serif','sans-serif':['Times New Roman']})
+# 'normal', 'italic', 'oblique'
+rc('font',**{'family':'Times New Roman', 'style': 'normal'})
 ## for Palatino and other serif fonts use:
 #rc('font',**{'family':'serif','serif':['Palatino']})
 rc('text', usetex=True)
@@ -127,6 +128,6 @@ with plotcontext(savepath='test.pdf'):
     plt.ylim(20,130)
     plt.legend([pup1[0], pup2[0], pup3[0], pup4[0], pup1f[0], ptpc[0]],
                ("59.2 kW/m$^2$ - UP", "70.5 kW/m$^2$ - UP", "87.6 kW/m$^2$ - UP", "102.6 kW/m$^2$ - UP", "T$_f$ -UP", "T$_{pc}$", "DW","DW", "DW", "DW", "T$_f$ -DW",),
-               loc='best', ncol=2, prop={'size': 12, 'family': 'Times New Roman'})
+               loc='best', ncol=2, prop={'size': 12})
 
 # plt.legend(loc='upper center', bbox_to_anchor=(0.5,0.95),ncol=5,fancybox=True,shadow=True,prop={'size': 10})

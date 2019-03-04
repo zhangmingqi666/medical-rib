@@ -16,56 +16,22 @@ def add_python_path(path):
 
 add_python_path(os.getcwd())
 # from projects
-from preprocessing.separated.ribs_obtain.Bone import Bone
+from preprocessing.separated.ribs_obtain.Bone_Spine import BoneSpine
 from preprocessing.separated.ribs_obtain.Bone_prior import BonePrior
 from preprocessing.separated.ribs_obtain.Spine_Remove import SpineRemove
 from preprocessing.separated.ribs_obtain.Remove_Sternum import SternumRemove
 from preprocessing.separated.ribs_obtain.util import (plot_yzd, sparse_df_to_arr, arr_to_sparse_df, timer,
                                                       loop_morphology_binary_opening, source_hu_value_arr_to_binary,
                                                       arr_to_sparse_df_only)
+#from preprocessing.separated.ribs_obtain.Bone_v2 import BonePredict
+from preprocessing.separated.ribs_obtain.Bone_Predict import BonePredict
 # load gbdt model and feature list
 
 sys.setrecursionlimit(10000)
 
 
-def skull_remove_operation(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False, output_prefix=None):
-    """
-    remove skull bone
-    :param value_arr:
-    :param hu_threshold:
-    :param bone_prior:
-    :param allow_debug:
-    :param output_prefix:
-    :return: None
-    """
-    binary_arr = value_arr.copy()
-    binary_arr[binary_arr < hu_threshold] = 0
-    binary_arr[binary_arr >= hu_threshold] = 1
-    label_arr = skimage.measure.label(binary_arr, connectivity=2)
-    del binary_arr
-
-    sparse_df, cluster_df = arr_to_sparse_df(label_arr=label_arr, add_pixel=True, pixel_arr=value_arr,
-                                             sort=True, sort_key='c.count',
-                                             keep_by_top=True, top_nth=20,
-                                             keep_by_threshold=True, threshold_min=5000)
-    del label_arr
-
-    for e in cluster_df['c'].values:
-        temp_sparse_df = sparse_df[sparse_df['c'] == e]
-        # will add center line , @issac
-        single_bone = Bone(bone_data=temp_sparse_df, arr_shape=bone_prior.get_prior_shape(), spine_width=100,
-                           prior_zoy_center_y_axis_line_df=bone_prior.get_zoy_symmetric_y_axis_line_df())
-        if single_bone.is_skull():
-            plot_yzd(temp_df=temp_sparse_df, shape_arr=(value_arr.shape[0], value_arr.shape[2]), save=True,
-                     save_path='{}sternum_remaining.png'.format(output_prefix))
-            skull_arr = sparse_df_to_arr(arr_expected_shape=value_arr.shape, sparse_df=temp_sparse_df, fill_bool=True)
-            value_arr[skull_arr > 0] = 0
-            del skull_arr
-        del single_bone
-        gc.collect()
-
-
-def judge_collect_spine_judge_connected_rib(sparse_df=None, cluster_df=None, bone_prior=None, output_prefix=None, opening_times=None):
+def judge_collect_spine_judge_connected_rib(sparse_df=None, cluster_df=None, bone_prior=None, output_prefix=None,
+                                            opening_times=None, all_debug=False):
     """
     Combine all spine bone , and decide whether the combine spine connected ribs_obtain?
     :return loc_spine_connected_rib: if the remaining bone connect with ribs_obtain?
@@ -73,38 +39,78 @@ def judge_collect_spine_judge_connected_rib(sparse_df=None, cluster_df=None, bon
     :return sternum_bone_df: the sternum
     """
     remaining_bone_df = pd.DataFrame({})
-    sternum_bone_df = pd.DataFrame({})
     loc_spine_connected_rib = False
     for e in cluster_df['c'].values:
         temp_sparse_df = sparse_df[sparse_df['c'] == e]
         # will add center line , @issac
-        single_bone = Bone(bone_data=temp_sparse_df, arr_shape=bone_prior.get_prior_shape(), spine_width=100,
-                           prior_zoy_center_y_axis_line_df=bone_prior.get_zoy_symmetric_y_axis_line_df(),
-                           detection_objective='spine or sternum')
+        single_bone = BoneSpine(bone_data=temp_sparse_df, arr_shape=bone_prior.get_prior_shape(), spine_width=100,
+                                prior_zoy_center_y_axis_line_df=bone_prior.get_zoy_symmetric_y_axis_line_df(),
+                                detection_objective='spine or sternum')
+
         single_bone.detect_spine_and_sternum()
 
         # save single bone fig
-        plt.figure()
-        # z_max = single_bone.local_max_for_sternum[0]
-        # x_center = single_bone.local_centroid_for_sternum[1]
-        plt.title('os:%d, r:%s, p_cnt:%s, y_mx_on_z:%d' % (opening_times,
-                                                           cluster_df[cluster_df['c'] == e].index[0],
-                                                           len(temp_sparse_df),
-                                                           single_bone.get_y_length_statistics_on_z(feature='max')
-                                                           ),
-                  color='red')
-        single_bone.plot_bone(save=True, save_path='{}/opening_{}_label_{}_collect.png'.format(output_prefix, opening_times, e))
+        if all_debug:
+            plt.figure()
+            plt.title('os:%d, r:%s, p_cnt:%s, y_mx_on_z:%d' % (opening_times,
+                                                               cluster_df[cluster_df['c'] == e].index[0],
+                                                               len(temp_sparse_df),
+                                                               single_bone.get_y_length_statistics_on_z(feature='max')
+                                                               ),
+                      color='red')
+            single_bone.plot_bone(save=True, save_path='{}/opening_{}_label_{}_collect.png'.format(output_prefix,
+                                                                                                   opening_times,
+                                                                                                   e))
 
         if single_bone.is_spine():
             remaining_bone_df = remaining_bone_df.append(single_bone.get_bone_data())
             if single_bone.spine_connected_rib():
                 loc_spine_connected_rib = True
 
+        """
         if single_bone.is_sternum():
-            sternum_bone_df = sternum_bone_df.append(single_bone.get_bone_data())
+            sternum_bone_df = sternum_bone_df.append(single_bone.get_bone_data()) 
+        """
         del single_bone
 
-    return loc_spine_connected_rib, remaining_bone_df, sternum_bone_df
+    return loc_spine_connected_rib, remaining_bone_df
+
+"""
+def collect_ribs_v2(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False, output_prefix=None,
+                 bone_info_path=None, rib_recognition_model_path=None):
+    # read models from
+    GBDT = joblib.load('{}/gbdt.pkl'.format(rib_recognition_model_path))
+    FEATURE_LIST = joblib.load('{}/feature.pkl'.format(rib_recognition_model_path))
+
+    # generate binary array from source HU array for labeling
+    binary_arr = value_arr.copy()
+    binary_arr[binary_arr < hu_threshold] = 0
+    binary_arr[binary_arr >= hu_threshold] = 1
+    # bone labeling
+    label_arr = skimage.measure.label(binary_arr, connectivity=2)
+    del binary_arr
+
+    with timer("########_collect arr to sparse"):
+        sparse_df, cluster_df = arr_to_sparse_df(label_arr=label_arr, add_pixel=True, pixel_arr=value_arr,
+                                                 sort=True, sort_key='c.count', keep_by_top=True, top_nth=40,
+                                                 keep_by_threshold=True, threshold_min=5000)
+
+    with timer("########_bone predict"):
+        bone_predict = BonePredict(bone_data=sparse_df, arr_shape=bone_prior.get_prior_shape())
+        features = bone_predict.get_features_for_all_bones()
+        # features.to_csv('/Users/jiangyy/Desktop/chek-nan.csv')
+        features['target'] = GBDT.predict(features[FEATURE_LIST])
+        features.to_csv(bone_info_path, index=False, columns=FEATURE_LIST + ['target'])
+        for idx, row in features.iterrows():
+            class_id = row['class_id']
+            target = row['target']
+            save_path = '{}/label_{}_collect_{}_RIB.png'.format(output_prefix, 'IS' if target == 1 else 'NOT', class_id)
+            bone_predict.plot_bone(class_id=class_id, save=True, save_path=save_path)
+
+        is_rib_list = features[features['target'] == 1]['class_id']
+
+    return sparse_df[sparse_df['c'].isin(is_rib_list)]
+"""
 
 
 def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False, output_prefix=None,
@@ -121,37 +127,37 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
     label_arr = skimage.measure.label(binary_arr, connectivity=2)
     del binary_arr
 
-    sparse_df, cluster_df = arr_to_sparse_df(label_arr=label_arr, add_pixel=True, pixel_arr=value_arr,
-                                             sort=True, sort_key='c.count', keep_by_top=True, top_nth=40,
-                                             keep_by_threshold=True, threshold_min=5000)
+    with timer("########_collect arr to sparse"):
+        sparse_df, cluster_df = arr_to_sparse_df(label_arr=label_arr, add_pixel=True, pixel_arr=value_arr,
+                                                 sort=True, sort_key='c.count', keep_by_top=True, top_nth=40,
+                                                 keep_by_threshold=True, threshold_min=5000)
     del label_arr
 
     rib_bone_df = pd.DataFrame({})
+    no_rib_bone_df = pd.DataFrame({})
     bone_info_df = pd.DataFrame({}, columns=FEATURE_LIST+['target', 'class_id'])
 
     for e in cluster_df['c'].values:
         temp_sparse_df = sparse_df[sparse_df['c'] == e]
         # will add center line , @issac
-        single_bone = Bone(bone_data=temp_sparse_df, arr_shape=bone_prior.get_prior_shape(), spine_width=100,
-                           prior_zoy_center_y_axis_line_df=bone_prior.get_zoy_symmetric_y_axis_line_df())
+        with timer("########_only rib bone"):
+            single_bone = BonePredict(bone_data=temp_sparse_df, arr_shape=bone_prior.get_prior_shape(), spine_width=100,
+                                      prior_zoy_center_y_axis_line_df=bone_prior.get_zoy_symmetric_y_axis_line_df())
 
-        print('***********************************************')
-        print('bone class id:%d' % e)
-        single_bone.print_bone_info()
-        # print('***********************************************')
+        with timer("########_only rib bone predict"):
+            temp_single_bone_feature = single_bone.get_rib_feature_for_predict()
 
-        temp_single_bone_feature = single_bone.get_rib_feature_for_predict()
+            if GBDT.predict([[temp_single_bone_feature[i] for i in FEATURE_LIST]]):
+                temp_single_bone_feature['target'] = 1
+                rib_bone_df = rib_bone_df.append(single_bone.get_bone_data())
+                single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_IS_RIB.png'.format(output_prefix, e))
+            else:
+                temp_single_bone_feature['target'] = 0
+                single_bone.get_bone_data().to_csv('{}/label_{}_collect_NOT_RIB.csv'.format(output_prefix, e), index=False)
+                single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_NOT_RIB.png'.format(output_prefix, e))
 
-        if GBDT.predict([[temp_single_bone_feature[i] for i in FEATURE_LIST]]):
-            temp_single_bone_feature['target'] = 1
-            rib_bone_df = rib_bone_df.append(single_bone.get_bone_data())
-            single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_IS_RIB.png'.format(output_prefix, e))
-        else:
-            temp_single_bone_feature['target'] = 0
-            single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_NOT_RIB.png'.format(output_prefix, e))
-
-        temp_single_bone_feature['class_id'] = e
-        bone_info_df.loc[len(bone_info_df)] = temp_single_bone_feature
+            temp_single_bone_feature['class_id'] = e
+            bone_info_df.loc[len(bone_info_df)] = temp_single_bone_feature
 
         del single_bone
 
@@ -163,9 +169,10 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
 def loop_opening_get_spine(binary_arr, hu_threshold=400, bone_prior=None, allow_debug=False, output_prefix=None):
 
     # calc bone prior
-    sternum_bone_df = pd.DataFrame({})
+    # sternum_bone_df = pd.DataFrame({})
     opening_times = 0
-    while True:
+    remaining_bone_df = None
+    while opening_times < 2:
         # circulation times
 
         with timer('_________label'):
@@ -175,33 +182,32 @@ def loop_opening_get_spine(binary_arr, hu_threshold=400, bone_prior=None, allow_
         with timer('_________arr to sparse df'):
             # add select objective.
             sparse_df, cluster_df = arr_to_sparse_df(label_arr=label_arr, sort=True, sort_key='c.count',
-                                                     keep_by_top=True, top_nth=100,
-                                                     keep_by_threshold=True, threshold_min=1000)
+                                                     keep_by_top=True, top_nth=10,
+                                                     keep_by_threshold=True, threshold_min=4000)
         del label_arr
         with timer('_________collect spine and judge connected'):
-            glb_spine_connected_rib, remaining_bone_df, temp = judge_collect_spine_judge_connected_rib(sparse_df=sparse_df,
+            glb_spine_connected_rib, remaining_bone_df = judge_collect_spine_judge_connected_rib(sparse_df=sparse_df,
                                                                                                        cluster_df=cluster_df,
                                                                                                        bone_prior=bone_prior,
                                                                                                        output_prefix=output_prefix,
                                                                                                        opening_times=opening_times)
-        if temp is not None:
-            sternum_bSternumRemoveone_df = sternum_bone_df.append(temp)
-        del sparse_df, cluster_df, temp
 
-        if (glb_spine_connected_rib is False) or (opening_times > 9):
+        del sparse_df, cluster_df
+
+        if (glb_spine_connected_rib is False) or (opening_times >= 2):
             break
         else:
             opening_times = opening_times + 1
 
         with timer('_________sparse df to arr'):
-            binary_arr = sparse_df_to_arr(arr_expected_shape=bone_prior.get_prior_shape(), sparse_df=remaining_bone_df)
-            binary_arr[binary_arr > 0] = 1
+            binary_arr = sparse_df_to_arr(arr_expected_shape=bone_prior.get_prior_shape(),
+                                          sparse_df=remaining_bone_df, fill_bool=True)
         del remaining_bone_df
 
         with timer('_________binary opening'):
-            binary_arr = loop_morphology_binary_opening(binary_arr, use_cv=False)
+            binary_arr = loop_morphology_binary_opening(binary_arr, use_cv=False, opening_times=opening_times)
 
-    return remaining_bone_df, sternum_bone_df
+    return remaining_bone_df, None
 
 
 def plot_binary_array(binary_arr, title=None, save=True, fig_name=None, output_prefix=None):
@@ -263,6 +269,7 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', b
                                    allow_envelope_expand=True, expand_width=20)
         spine_remove.spine_remove_operation(value_arr=value_arr)
 
+
         del spine_remove
         gc.collect()
 
@@ -270,7 +277,8 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', b
         """collecting ribs_obtain from value array after removing spine and sternum
         """
         rib_bone_df = collect_ribs(value_arr, hu_threshold=150, bone_prior=bone_prior, output_prefix=output_prefix,
-                                   bone_info_path=bone_info_path, rib_recognition_model_path=rib_recognition_model_path)
+                                      bone_info_path=bone_info_path,
+                                      rib_recognition_model_path=rib_recognition_model_path)
 
         rib_bone_df.to_csv(rib_df_cache_path, index=False)
 

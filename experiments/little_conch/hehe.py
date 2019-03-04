@@ -25,7 +25,7 @@ from contextlib import contextmanager
 import warnings
 warnings.filterwarnings('ignore')
 
-rc('font',**{'family':'sans-serif','sans-serif':['Times New Roman']})
+rc('font', **{'family': 'sans-serif', 'sans-serif': ['Times New Roman']})
 ## for Palatino and other serif fonts use:
 #rc('font',**{'family':'serif','serif':['Palatino']})
 rc('text', usetex=True)

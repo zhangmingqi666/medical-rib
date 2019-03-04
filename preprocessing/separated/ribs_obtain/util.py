@@ -26,13 +26,14 @@ def sparse_df_to_arr(arr_expected_shape=None, sparse_df=None, fill_bool=True):
     """
     expected_arr = np.zeros(arr_expected_shape)
     point_index = sparse_df['z'].values, sparse_df['x'].values, sparse_df['y'].values
-    expected_arr[point_index] = sparse_df['c']
-
     if fill_bool:
-        expected_arr[expected_arr > 0] = 1      # if fill_bool is True, transfer value arr to binary arr
+        expected_arr[point_index] = 1
+    else:
+        expected_arr[point_index] = sparse_df['c']
+
     del point_index
     del sparse_df
-    gc.collect()
+    # gc.collect()
     return expected_arr
 
 
@@ -76,9 +77,8 @@ def arr_to_sparse_df(label_arr=None, add_pixel=False, pixel_arr=None, sort=False
     if keep_by_threshold:
         cluster_df = cluster_df[cluster_df['c.count'] > threshold_min]
 
-    # for e in ['x', 'y', 'z']:
-    #    print("cluster.columns", cluster_df.columns)
-    #    cluster_df['%s.length' % e] = cluster_df.apply(lambda row: row['%s.max' % e] - row['%s.min' % e], axis=1)
+    sparse_df = sparse_df[sparse_df['c'].isin(cluster_df['c'])]
+
     del index
     return sparse_df, cluster_df
 
@@ -120,21 +120,16 @@ def morphology_binary_opening(binary_arr, use_cv=False, transfer_to_binary=False
         return skimage.morphology.binary_opening(binary_arr, selem)
 
 
-def loop_morphology_binary_opening(binary_arr, use_cv=False, allow_debug=False):
+def loop_morphology_binary_opening(binary_arr, use_cv=False, allow_debug=False, opening_times=None):
     """
     :param binary_arr: binary array waited be opened.
     :param use_cv: if True, use open-cv, else use scipy.ndimage or skimage
     :param allow_debug: if True, print some debug info.
     :return:
     """
-    # ball kernel radium r
-    r = 1
-    arr_non_zero_sum = binary_arr.sum()
-    while True:                                                     # opening continuously until change.
-        binary_arr = morphology_binary_opening(binary_arr, use_cv=use_cv, selem=sm.ball(r))
-        if binary_arr.sum() != arr_non_zero_sum:
-            break
-        r = r + 0.4
+    r_list = [1, 1, 2]
+    r = r_list[opening_times]
+    binary_arr = morphology_binary_opening(binary_arr, use_cv=use_cv, selem=sm.ball(r))
     if allow_debug:
         print("binary_opening use the biggest radius is {}.".format(r))
     return binary_arr
@@ -178,7 +173,7 @@ def plot_yzd(temp_df=None, shape_arr=None, save=False, save_path=None):
     plt.figure()
     plt.imshow(temp_arr)
     plt.savefig(save_path)
-    # plt.show()
+    #plt.show()
 
 
 def plot_3d(image, threshold=0.5):
@@ -198,3 +193,4 @@ def plot_3d(image, threshold=0.5):
     ax.set_xlim(0, p.shape[0])
     ax.set_ylim(0, p.shape[1])
     ax.set_zlim(0, p.shape[2])
+    plt.show()
