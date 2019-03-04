@@ -171,8 +171,7 @@ def loop_opening_get_spine(binary_arr, hu_threshold=400, bone_prior=None, allow_
     # calc bone prior
     # sternum_bone_df = pd.DataFrame({})
     opening_times = 0
-    remaining_bone_df = None
-    while opening_times < 2:
+    while True:
         # circulation times
 
         with timer('_________label'):
@@ -187,10 +186,10 @@ def loop_opening_get_spine(binary_arr, hu_threshold=400, bone_prior=None, allow_
         del label_arr
         with timer('_________collect spine and judge connected'):
             glb_spine_connected_rib, remaining_bone_df = judge_collect_spine_judge_connected_rib(sparse_df=sparse_df,
-                                                                                                       cluster_df=cluster_df,
-                                                                                                       bone_prior=bone_prior,
-                                                                                                       output_prefix=output_prefix,
-                                                                                                       opening_times=opening_times)
+                                                                                                 cluster_df=cluster_df,
+                                                                                                 bone_prior=bone_prior,
+                                                                                                 output_prefix=output_prefix,
+                                                                                                 opening_times=opening_times)
 
         del sparse_df, cluster_df
 
@@ -202,7 +201,7 @@ def loop_opening_get_spine(binary_arr, hu_threshold=400, bone_prior=None, allow_
         with timer('_________sparse df to arr'):
             binary_arr = sparse_df_to_arr(arr_expected_shape=bone_prior.get_prior_shape(),
                                           sparse_df=remaining_bone_df, fill_bool=True)
-        del remaining_bone_df
+        # del remaining_bone_df
 
         with timer('_________binary opening'):
             binary_arr = loop_morphology_binary_opening(binary_arr, use_cv=False, opening_times=opening_times)
@@ -298,11 +297,13 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', b
         else:
             print("spine_df is empty!")
 
+        """
         if len(sternum_df) > 0:
             plot_yzd(temp_df=sternum_df, shape_arr=(binary_arr.shape[0], binary_arr.shape[2]),
                      save=True, save_path='{}/sternum_remaining.png'.format(output_prefix))
         else:
             print("sternum_df is empty")
+        """
 
     """plot collected ribs_obtain"""
     if allow_debug:

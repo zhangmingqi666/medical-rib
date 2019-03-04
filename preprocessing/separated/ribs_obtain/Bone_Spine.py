@@ -60,6 +60,8 @@ class BoneSpine:
         self.x_mid_line, self.half_x_shape = arr_shape[1] / 2, arr_shape[1] / 2
         self.y_mid_line, self.half_y_shape = arr_shape[2] / 2, arr_shape[2] / 2
 
+        self.prior_zoy_center_y_axis_line_df = prior_zoy_center_y_axis_line_df
+
         # deprecated, version 3.1.1
         # self.rib_width = 30
         self.spine_half_width = spine_width / 2

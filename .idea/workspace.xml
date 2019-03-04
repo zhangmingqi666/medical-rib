@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/Experiment-Tw,Tf-0.68lq-UP.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/cfgs/feature.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/cfgs/feature.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/cfgs/gbdt.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/cfgs/gbdt.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/hehe.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/test.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/rib_recognition/README_zh.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/rib_recognition/gbdt_judge_rib.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/rib_recognition/gbdt_judge_rib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/rib_recognition/generate_bone_info_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/rib_recognition/generate_bone_info_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/rib_recognition/generate_gbdt.sh" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/rib_recognition/generate_gbdt.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/oberved_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/oberved_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_prior.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_prior.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_v2.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +25,7 @@
           <entry key="log" value="7" />
           <entry key="md" value="5" />
           <entry key="png" value="194" />
-          <entry key="py" value="257" />
+          <entry key="py" value="262" />
           <entry key="sh" value="108" />
           <entry key="txt" value="4" />
           <entry key="xml" value="9" />
@@ -49,7 +38,7 @@
           <entry key="Image" value="196" />
           <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="257" />
+          <entry key="Python" value="262" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -57,7 +46,7 @@
         <counts>
           <entry key="csv" value="4" />
           <entry key="dummy" value="40" />
-          <entry key="py" value="10196" />
+          <entry key="py" value="10240" />
           <entry key="sh" value="4025" />
           <entry key="txt" value="4" />
         </counts>
@@ -67,7 +56,7 @@
           <entry key="Bash" value="4025" />
           <entry key="CSV" value="4" />
           <entry key="PLAIN_TEXT" value="44" />
-          <entry key="Python" value="10196" />
+          <entry key="Python" value="10240" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -83,11 +72,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="228" column="37" selection-start-line="228" selection-start-column="37" selection-end-line="228" selection-end-column="37" />
+            <state relative-caret-position="421">
+              <caret line="221" column="18" lean-forward="true" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_prior.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="54" column="66" selection-start-line="54" selection-start-column="66" selection-end-line="54" selection-end-column="66" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="305" column="11" selection-start-line="305" selection-start-column="11" selection-end-line="305" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,6 +128,8 @@
       <find>y_mid_line</find>
       <find>local_centroid_for_sternum</find>
       <find>set_local_centroid</find>
+      <find>zoy_center_y_axis_line_df</find>
+      <find>get_zoy_symmetric_y_axis_line_df</find>
       <find>prior_zoy_center_y_axis_line_df</find>
     </findStrings>
     <replaceStrings>
@@ -143,7 +158,6 @@
         <option value="$PROJECT_DIR$/experiments/scripts/read_nii_location.sh" />
         <option value="$PROJECT_DIR$/experiments/scripts/read_all_dicom_info.sh" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_prior.py" />
         <option value="$PROJECT_DIR$/experiments/scripts/run.sh" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/data_join_label.py" />
         <option value="$PROJECT_DIR$/experiments/scripts/dcm_read.sh" />
@@ -179,9 +193,10 @@
         <option value="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Predict.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" />
-        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone.py" />
+        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_prior.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py" />
+        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" />
       </list>
     </option>
   </component>
@@ -225,13 +240,6 @@
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
               <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
               <item name="separated" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="separated" type="462c0819:PsiDirectoryNode" />
-              <item name="dcm_read" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
@@ -620,15 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_prior.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1569">
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/rib_recognition/generate_bone_info_csv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -713,17 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_v2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1551624111175" expanded="true" signature="7476:7482" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/rib_recognition/rib_feature_csv/41121210.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" rowLines="3" />
@@ -769,16 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="38" column="40" lean-forward="true" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Predict.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -789,10 +767,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1247">
+          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_prior.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="54" column="66" selection-start-line="54" selection-start-column="66" selection-end-line="54" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="522" column="110" selection-start-line="522" selection-start-column="110" selection-end-line="534" selection-end-column="46" />
+        <state relative-caret-position="469">
+          <caret line="557" selection-start-line="557" selection-end-line="564" selection-end-column="20" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -801,8 +799,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="228" column="37" selection-start-line="228" selection-start-column="37" selection-end-line="228" selection-end-column="37" />
+        <state relative-caret-position="421">
+          <caret line="221" column="18" lean-forward="true" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="305" column="11" selection-start-line="305" selection-start-column="11" selection-end-line="305" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -114,27 +114,3 @@ def calc_sternum_center_line(value_arr, hu_threshold=400):
     # plt.show()
     return y_line_center
 
-    """
-    y_line['z.count'] = y_line['z.count'].rolling(10, min_periods=1, center=True).max()
-    y_line['z.count'] = y_line['z.count'].rolling(10, min_periods=1, center=True).min()
-
-    z_count_arr = y_line['z.count'].values
-    z_count_backward_shift = np.zeros(len(z_count_arr))
-    z_count_backward_shift[:-1] = z_count_arr[1:] - z_count_arr[:-1]
-
-    ax2 = plt.subplot(312, sharex=ax1)
-    plt.plot(y_line['y'], y_line['z.count'])
-
-    ax3 = plt.subplot(313, sharex=ax1)
-    plt.plot(y_line['y'], z_count_backward_shift)
-    plt.show()
-    """
-
-def final_filter(arr):
-    """
-    filter ribs_obtain at last
-    :param arr: array just containing ribs_obtain
-    :return: real ribs_obtain array
-    """
-    pass
-
