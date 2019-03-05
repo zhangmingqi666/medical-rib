@@ -9,7 +9,6 @@ logs/
 *.csv
 *.dcm
 *.png
-*.xls
 *ipynb
 data/*
 .idea/*
