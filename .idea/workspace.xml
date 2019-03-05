@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/experiments/scripts/nii_read.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/nii_read.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/oberved_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/oberved_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +43,7 @@
         <counts>
           <entry key="csv" value="4" />
           <entry key="dummy" value="40" />
-          <entry key="py" value="10621" />
+          <entry key="py" value="10671" />
           <entry key="sh" value="4027" />
           <entry key="txt" value="4" />
         </counts>
@@ -56,7 +53,7 @@
           <entry key="Bash" value="4027" />
           <entry key="CSV" value="4" />
           <entry key="PLAIN_TEXT" value="44" />
-          <entry key="Python" value="10621" />
+          <entry key="Python" value="10671" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -93,20 +90,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/experiments/scripts/nii_read.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-47">
+            <state relative-caret-position="109">
               <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+            <state relative-caret-position="34">
+              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
               <folding>
                 <element signature="e#14#33#0" expanded="true" />
               </folding>
@@ -228,8 +225,8 @@
         <option value="$PROJECT_DIR$/experiments/test/region.py" />
         <option value="$PROJECT_DIR$/experiments/test/ridge.py" />
         <option value="$PROJECT_DIR$/tools/oberved_data.py" />
-        <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" />
         <option value="$PROJECT_DIR$/experiments/scripts/nii_read.sh" />
+        <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" />
       </list>
     </option>
   </component>
@@ -845,20 +842,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
+    <entry file="file://$PROJECT_DIR$/experiments/scripts/nii_read.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="109">
+          <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/nii_read.sh">
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
+        <state relative-caret-position="34">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+          <folding>
+            <element signature="e#14#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

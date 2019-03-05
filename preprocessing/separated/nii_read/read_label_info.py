@@ -23,23 +23,26 @@ warnings.filterwarnings('ignore')
 
 def nii_read(nii_file_path=None, keep_slicing=True, new_spacing=[1, 1, 1]):
     """read box min,max from nii file"""
-    img = nib.load(nii_file_path)
-    header = img.header
-    pixel_zoom = header.get_zooms()
-    if keep_slicing:
-        new_spacing = [pixel_zoom[2], pixel_zoom[2], pixel_zoom[2]]
+    try:
+        img = nib.load(nii_file_path)
+        header = img.header
+        pixel_zoom = header.get_zooms()
+        if keep_slicing:
+            new_spacing = [pixel_zoom[2], pixel_zoom[2], pixel_zoom[2]]
 
-    ratio_scale = [1.0 * e / f for e, f in zip(new_spacing, pixel_zoom)]
-    img_arr = img.get_fdata()
-    index = img_arr.nonzero()
-    # exchange x,y
-    tmp_df = pd.DataFrame({'y': index[0] * ratio_scale[0],
-                           'x': index[1] * ratio_scale[1],
-                           'z': index[2] * ratio_scale[2]})
-    x_min, x_max = int(tmp_df['x'].min()) + 1, int(tmp_df['x'].max()) + 1
-    y_min, y_max = int(tmp_df['y'].min()) + 1, int(tmp_df['y'].max()) + 1
-    z_min, z_max = int(tmp_df['z'].min()) + 1, int(tmp_df['z'].max()) + 1
-
+        ratio_scale = [1.0 * e / f for e, f in zip(new_spacing, pixel_zoom)]
+        img_arr = img.get_fdata()
+        index = img_arr.nonzero()
+        # exchange x,y
+        tmp_df = pd.DataFrame({'y': index[0] * ratio_scale[0],
+                               'x': index[1] * ratio_scale[1],
+                               'z': index[2] * ratio_scale[2]})
+        x_min, x_max = int(tmp_df['x'].min()) + 1, int(tmp_df['x'].max()) + 1
+        y_min, y_max = int(tmp_df['y'].min()) + 1, int(tmp_df['y'].max()) + 1
+        z_min, z_max = int(tmp_df['z'].min()) + 1, int(tmp_df['z'].max()) + 1
+    except Exception as e:
+        print(e)
+        return {'x.max': None, 'x.min': None, 'y.max': None, 'y.min': None, 'z.max': None, 'z.min': None}
     return {'x.max': x_max, 'x.min': x_min, 'y.max': y_max, 'y.min': y_min, 'z.max': z_max, 'z.min': z_min}
 
 
@@ -61,6 +64,7 @@ def location_read(folder_path=None, keep_slicing=True):
                 continue
 
             print("read nii {}".format(file_name))
+
             bounding_box = nii_read(nii_file_path=next_next_dir, keep_slicing=keep_slicing)
             new_row = {'id': f, 'location_id': file_name.replace('.nii', '')}
             new_row.update(bounding_box)
