@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/models/darknet/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +21,7 @@
           <entry key="log" value="7" />
           <entry key="md" value="5" />
           <entry key="png" value="194" />
-          <entry key="py" value="276" />
+          <entry key="py" value="277" />
           <entry key="sh" value="111" />
           <entry key="txt" value="4" />
           <entry key="xml" value="9" />
@@ -35,7 +34,7 @@
           <entry key="Image" value="196" />
           <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="276" />
+          <entry key="Python" value="277" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -43,7 +42,7 @@
         <counts>
           <entry key="csv" value="4" />
           <entry key="dummy" value="40" />
-          <entry key="py" value="10671" />
+          <entry key="py" value="10725" />
           <entry key="sh" value="4027" />
           <entry key="txt" value="4" />
         </counts>
@@ -53,7 +52,7 @@
           <entry key="Bash" value="4027" />
           <entry key="CSV" value="4" />
           <entry key="PLAIN_TEXT" value="44" />
-          <entry key="Python" value="10671" />
+          <entry key="Python" value="10725" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -73,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1404">
-              <caret line="221" column="18" lean-forward="true" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
+              <caret line="221" column="18" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -82,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/tools/oberved_data.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="e#1#20#0" expanded="true" />
               </folding>
@@ -93,19 +92,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/experiments/scripts/nii_read.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
+            <state relative-caret-position="-11">
+              <caret line="16" column="64" lean-forward="true" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="28">
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
+        <entry file="file://$PROJECT_DIR$/tools/test_header.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+            <state relative-caret-position="60">
+              <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
               <folding>
-                <element signature="e#14#33#0" expanded="true" />
+                <element signature="e#64#77#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,7 +123,7 @@
         <entry file="file://$PROJECT_DIR$/experiments/test/ridge.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="147">
-              <caret line="28" column="45" lean-forward="true" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+              <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -127,7 +135,7 @@
         <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
-              <caret line="119" column="67" lean-forward="true" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="67" />
+              <caret line="119" column="67" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="67" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -176,7 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/read_all_dicom_info.sh" />
         <option value="$PROJECT_DIR$/tools/Verify_dicom_shape_speedup.py" />
         <option value="$PROJECT_DIR$/tools/Verify_huadong_data.py" />
         <option value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/read_nii_location.sh" />
@@ -227,6 +234,7 @@
         <option value="$PROJECT_DIR$/tools/oberved_data.py" />
         <option value="$PROJECT_DIR$/experiments/scripts/nii_read.sh" />
         <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" />
+        <option value="$PROJECT_DIR$/tools/test_header.py" />
       </list>
     </option>
   </component>
@@ -253,31 +261,17 @@
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
               <item name="experiments" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="separated" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="separated" type="462c0819:PsiDirectoryNode" />
-              <item name="nii_read" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -317,18 +311,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.oberved_data">
-    <configuration name="generate_gbdt.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
-      <module name="medical-rib" />
-      <option name="INTERPRETER_OPTIONS" value="bash" />
-      <option name="INTERPRETER_PATH" value="/usr/bin/env" />
-      <option name="PROJECT_INTERPRETER" value="false" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preprocessing/rib_recognition" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing/rib_recognition/generate_gbdt.sh" />
-      <option name="PARAMETERS" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.test_header">
     <configuration name="oberved_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -413,20 +396,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_header" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="medical-rib" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/test_header.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Bash.generate_gbdt.sh" />
       <item itemvalue="Python.oberved_data" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.region" />
       <item itemvalue="Python.ridge" />
+      <item itemvalue="Python.test_header" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test_header" />
         <item itemvalue="Python.oberved_data" />
         <item itemvalue="Python.ridge" />
         <item itemvalue="Python.region" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Bash.generate_gbdt.sh" />
       </list>
     </recent_temporary>
   </component>
@@ -445,7 +449,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="115" y="23" width="1214" height="763" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8185567" visible="true" weight="0.29170159" />
       <window_info id="Structure" order="1" sideWeight="0.1814433" side_tool="true" visible="true" weight="0.29170159" />
@@ -489,13 +492,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/voc2007/Annotations/41121210-219.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/voc2007/Annotations/41121210-287.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -747,7 +743,7 @@
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1404">
-          <caret line="221" column="18" lean-forward="true" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
+          <caret line="221" column="18" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -808,7 +804,7 @@
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="119" column="67" lean-forward="true" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="67" />
+          <caret line="119" column="67" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="67" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -818,7 +814,7 @@
     <entry file="file://$PROJECT_DIR$/experiments/test/ridge.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
-          <caret line="28" column="45" lean-forward="true" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -828,7 +824,7 @@
     <entry file="file://$PROJECT_DIR$/tools/oberved_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="e#1#20#0" expanded="true" />
           </folding>
@@ -844,17 +840,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/experiments/scripts/nii_read.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
+        <state relative-caret-position="-11">
+          <caret line="16" column="64" lean-forward="true" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        <state relative-caret-position="28">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/test_header.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
           <folding>
-            <element signature="e#14#33#0" expanded="true" />
+            <element signature="e#64#77#0" expanded="true" />
           </folding>
         </state>
       </provider>
