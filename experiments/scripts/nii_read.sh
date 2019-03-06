@@ -13,7 +13,7 @@ case ${DATA} in
     nii_loc_df_path=./data/csv_files/nii_loc_df_added51-100.csv
     ;;
   added101-150labeled_2.21)
-    batch_data_names=("added101-150labeled_2.21")
+    batch_data_names=("added101-150l   、abeled_2.21")
     nii_loc_df_path=./data/csv_files/nii_loc_df_added101-150.csv
     ;;
   added151-200labeled_2.21)

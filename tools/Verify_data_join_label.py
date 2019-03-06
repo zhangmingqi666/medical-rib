@@ -11,20 +11,20 @@ import pandas as pd
 import numpy as np
 import matplotlib.patches as patches
 
-pkl_path = "/Users/jiangyy/DataSet/rib_dataSet/updated48labeled_1.31/pkl_cache"
+pkl_path = "/Users/jiangyy/projects/medical-rib/data/ribs_df_cache"
 files = os.listdir(pkl_path)
 
 # id,location_id,x.max,x.min,y.max,y.min,z.max,z.min
-nii_loc_df_path = "/Users/jiangyy/DataSet/rib_dataSet/nii_loc_df.csv"
+nii_loc_df_path = "/Users/jiangyy/projects/medical-rib/data/csv_files/merge_nii_loc_df.csv"
 df = pd.read_csv(nii_loc_df_path, dtype={'id': np.str,'location_id': np.str})
-
+from preprocessing.separated.ribs_obtain import util
 for file in files:
     f_path = os.path.join(pkl_path, file)
-    rib_data = pkl.load(open(f_path, 'rb'))
-    rib_data[rib_data <= 400] = 0
-    rib_data[rib_data > 400] = 1
-    save_f_name = file.replace('.pkl', '.png')
-    temp_id = file.replace('.pkl', '')
+    df1 = pd.read_csv(f_path)
+    rib_data = util.sparse_df_to_arr(arr_expected_shape=[df1['z'].max()+30,df1['x'].max()+30,df1['y'].max()+30],
+                                     sparse_df=df1, fill_bool=True)
+    save_f_name = file.replace('.csv', '.png')
+    temp_id = file.replace('.csv', '')
     temp_df = df[df['id'] == temp_id]
 
     fig, ax = plt.subplots(1)
@@ -41,7 +41,7 @@ for file in files:
         ax.add_patch(rect)
         ax.text(y_max, z_max, location_name, fontsize=10)
 
-    fig.savefig(os.path.join('/Users/jiangyy/projects/medical-rib/tools/Verify_logs/Verify_data_join_label',
+    fig.savefig(os.path.join('/Users/jiangyy/projects/medical-rib/experiments/logs/Verify_data_join_label',
                              save_f_name))
     plt.close(fig)
 

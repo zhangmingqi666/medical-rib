@@ -47,6 +47,7 @@ def get_all_map_between_ct_and_location(csv_dataset_folder=None, bounding_box_df
     ct_id_arr = bounding_box_df['id'].unique()
     map_between_ct_and_location = pd.DataFrame({})
     for ct_id in ct_id_arr:
+        # print(ct_id)
 
         if not os.path.exists("{}/{}.csv".format(csv_dataset_folder, ct_id)):
             continue
@@ -103,6 +104,8 @@ if __name__ == '__main__':
     bounding_box_df = pd.read_csv(args.nii_loc_df_path)
     excel_df = read_excel(args.rib_type_location_path)
     map_df = get_all_map_between_ct_and_location(csv_dataset_folder=args.ribs_df_cache_folder, bounding_box_df=bounding_box_df)
+    print(excel_df.columns)
+    print(map_df.columns)
     map_df = map_df.merge(excel_df, on='location_id', how='inner')
     map_df = map_df.merge(bounding_box_df, on='location_id', how='inner')
     map_df.to_csv(args.data_join_label_path, index=False)
