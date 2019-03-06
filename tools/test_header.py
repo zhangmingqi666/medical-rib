@@ -2,7 +2,7 @@
 
 
 
-folder_path='../data/nii_files_merges/updated48labeled_1.31'
+folder_path='../data/nii_files_merges/'
 import os, re
 import nibabel as nib
 pattern = re.compile('^[a-zA-Z1-9].*nii')

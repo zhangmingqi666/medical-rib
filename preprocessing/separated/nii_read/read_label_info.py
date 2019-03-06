@@ -30,7 +30,10 @@ def nii_read(nii_file_path=None, keep_slicing=True, new_spacing=[1, 1, 1]):
         if keep_slicing:
             new_spacing = [pixel_zoom[2], pixel_zoom[2], pixel_zoom[2]]
 
+        print('spacing', new_spacing)
+        print('zoom', pixel_zoom)
         ratio_scale = [1.0 * e / f for e, f in zip(new_spacing, pixel_zoom)]
+        print('ratio', ratio_scale)
         img_arr = img.get_fdata()
         index = img_arr.nonzero()
         # exchange x,y
