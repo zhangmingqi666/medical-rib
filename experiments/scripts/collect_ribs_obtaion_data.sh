@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 path=/Users/jiangyy/Desktop/gbdt_model_data
 FROM_RIB_DF_CACHE_DIR=${path}/ribs_df_cache
 FROM_BONE_INFO_DIR=${path}/bone_info_merges
