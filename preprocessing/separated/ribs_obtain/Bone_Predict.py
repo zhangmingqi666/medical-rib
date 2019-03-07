@@ -192,7 +192,6 @@ class BonePredict:
         del img_2d_df, img_yzd_arr
         gc.collect()
 
-
     def get_rib_feature_for_predict(self):
 
         single_bone_feature = {'z_centroid/z_shape': self.get_basic_axis_feature(feature='centroid')[0] / self.arr_shape[0],

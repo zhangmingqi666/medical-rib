@@ -3,7 +3,7 @@
 # 需要对after_join.csv 做出注释.
 NII_LOC_PATH=./data/csv_files/nii_loc_df.csv
 RIB_TYPE_LOCATION_PATH=./data/csv_files/rib_type_location.xls
-RIB_DF_CACHE_DIR=./data/temp_csv
+RIB_DF_CACHE_DIR=./data/
 JOIN_LABEL_PATH=./data/csv_files/join_label.csv
 
 Voc2007_folder=./data/voc2007

@@ -11,11 +11,33 @@ import matplotlib.pyplot as plt
 from scipy import ndimage as ndi
 from skimage import morphology,feature
 
+
+def sparse_df_to_arr(arr_expected_shape=None, sparse_df=None, fill_bool=True):
+    """
+    :param arr_expected_shape: arr's expected shape
+    :param sparse_df:
+    :return: expected_arr
+    """
+    expected_arr = np.zeros(arr_expected_shape)
+    point_index = sparse_df['z'].values, sparse_df['x'].values, sparse_df['y'].values
+    if fill_bool:
+        expected_arr[point_index] = 1
+    else:
+        expected_arr[point_index] = sparse_df['c']
+
+    del point_index
+    del sparse_df
+    # gc.collect()
+    return expected_arr
+
+
 RIB_DF_CACHE_PATH="~/Desktop/logs/135402000150175/label_88785_collect_NOT_RIB.csv"
 bone_df = pd.read_csv(RIB_DF_CACHE_PATH)
 # print(bone_df.head(10))
 z_max, x_max, y_max = bone_df['z'].max() + 1, bone_df['x'].max()+1, bone_df['y'].max()+1
+image = sparse_df_to_arr([z_max, x_max, y_max], sparse_df=bone_df, fill_bool=False)
 
+"""
 from preprocessing.separated.ribs_obtain import util
 image = util.sparse_df_to_arr([z_max, x_max, y_max], sparse_df=bone_df, fill_bool=False)
 
@@ -34,6 +56,7 @@ sparse_df, cluster_df = arr_to_sparse_df(label_arr=label_arr, sort=True, sort_ke
                                          keep_by_threshold=True, threshold_min=4000)
 
 print(cluster_df)
+"""
 from preprocessing.separated.ribs_obtain.util import plot_yzd
 #print(sparse_df[sparse_df['c']==16])
 #plot_yzd(sparse_df[sparse_df['c']==2], shape_arr=[z_max, y_max])

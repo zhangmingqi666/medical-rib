@@ -276,8 +276,8 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', b
         """collecting ribs_obtain from value array after removing spine and sternum
         """
         rib_bone_df = collect_ribs(value_arr, hu_threshold=150, bone_prior=bone_prior, output_prefix=output_prefix,
-                                      bone_info_path=bone_info_path,
-                                      rib_recognition_model_path=rib_recognition_model_path)
+                                   bone_info_path=bone_info_path,
+                                   rib_recognition_model_path=rib_recognition_model_path)
 
         rib_bone_df.to_csv(rib_df_cache_path, index=False)
 
