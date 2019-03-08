@@ -47,13 +47,16 @@ def nii_read(nii_file_path=None, keep_slicing=True, new_spacing=[1, 1, 1]):
         z_min, z_max = int(tmp_df['z'].min()) + 1, int(tmp_df['z'].max()) + 1
     except Exception as e:
         print(e)
-        return {'x.max': None, 'x.min': None, 'y.max': None, 'y.min': None, 'z.max': None, 'z.min': None}
-    return {'x.max': x_max, 'x.min': x_min, 'y.max': y_max, 'y.min': y_min, 'z.max': z_max, 'z.min': z_min}
+        return {'box.x.max': None, 'box.x.min': None, 'box.y.max': None,
+                'box.y.min': None, 'box.z.max': None, 'box.z.min': None}
+    return {'box.x.max': x_max, 'box.x.min': x_min, 'box.y.max': y_max,
+            'box.y.min': y_min, 'box.z.max': z_max, 'box.z.min': z_min}
 
 
 def location_read(folder_path=None, keep_slicing=True):
     """read all the nii in folder_path"""
-    location_df = pd.DataFrame(columns=('id', 'location_id', 'x.max', 'x.min', 'y.max', 'y.min', 'z.max', 'z.min'))
+    location_df = pd.DataFrame(columns=('id', 'location_id', 'box.x.max', 'box.x.min',
+                                        'box.y.max', 'box.y.min', 'box.z.max', 'box.z.min'))
     import re
     pattern = re.compile('^[a-zA-Z1-9].*nii')
     for f in os.listdir(folder_path):

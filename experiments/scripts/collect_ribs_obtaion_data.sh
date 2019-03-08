@@ -7,6 +7,7 @@ FROM_BONE_INFO_DIR=${path}/bone_info_merges
 FROM_LOGS_DIR=${path}/logs
 
 OUTPUT=${path}/output
+rm -rf ${OUTPUT}
 mkdir -p ${OUTPUT}
 maxsize=$((1024*10))
 files=$(ls ${FROM_RIB_DF_CACHE_DIR})
