@@ -11,11 +11,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.patches as patches
 
-pkl_path = "/Users/jiangyy/projects/medical-rib/data/ribs_df_cache"
+
+pkl_path = "../data/ribs_df_cache"
 files = os.listdir(pkl_path)
 
 # id,location_id,x.max,x.min,y.max,y.min,z.max,z.min
-nii_loc_df_path = "/Users/jiangyy/projects/medical-rib/data/csv_files/merge_nii_loc_df.csv"
+nii_loc_df_path = "../data/csv_files/merge_nii_df.csv"
 df = pd.read_csv(nii_loc_df_path, dtype={'id': np.str,'location_id': np.str})
 from preprocessing.separated.ribs_obtain import util
 for file in files:
