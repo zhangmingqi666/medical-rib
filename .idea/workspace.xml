@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/experiments/scripts/predict.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out.file" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/Verify_data_join_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/Verify_data_join_label.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,20 +23,20 @@
           <entry key="log" value="7" />
           <entry key="md" value="5" />
           <entry key="png" value="223" />
-          <entry key="py" value="305" />
-          <entry key="sh" value="139" />
+          <entry key="py" value="307" />
+          <entry key="sh" value="145" />
           <entry key="txt" value="4" />
           <entry key="xml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="139" />
+          <entry key="Bash" value="145" />
           <entry key="CSV" value="37" />
           <entry key="Image" value="225" />
           <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="305" />
+          <entry key="Python" value="307" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -46,17 +45,17 @@
           <entry key="Python Console" value="36" />
           <entry key="csv" value="4" />
           <entry key="dummy" value="41" />
-          <entry key="py" value="11054" />
-          <entry key="sh" value="4833" />
+          <entry key="py" value="11072" />
+          <entry key="sh" value="4908" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="4833" />
+          <entry key="Bash" value="4908" />
           <entry key="CSV" value="4" />
           <entry key="PLAIN_TEXT" value="45" />
-          <entry key="Python" value="11090" />
+          <entry key="Python" value="11108" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -79,10 +78,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tools/Verify_data_join_label.py">
+        <entry file="file://$PROJECT_DIR$/preprocessing/todarknet/voc_label.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="100">
+              <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,8 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/preprocessing/reconstuct_cut_recognize_ribs/src/util.py" />
-        <option value="$PROJECT_DIR$/experiments/scripts/read_nii_location.sh" />
         <option value="$PROJECT_DIR$/experiments/scripts/read_all_dicom_info.sh" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/experiments/scripts/run.sh" />
@@ -179,6 +179,8 @@
         <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" />
         <option value="$PROJECT_DIR$/tools/Verify_data_join_label.py" />
+        <option value="$PROJECT_DIR$/experiments/scripts/predict.sh" />
+        <option value="$PROJECT_DIR$/preprocessing/todarknet/voc_label.py" />
       </list>
     </option>
   </component>
@@ -210,13 +212,13 @@
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="csv_files" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
+              <item name="todarknet" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -395,12 +397,12 @@
     <frame x="156" y="64" width="1214" height="763" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6124031" visible="true" weight="0.29170159" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6124031" visible="true" weight="0.29170159" />
       <window_info id="Structure" order="1" sideWeight="0.3875969" side_tool="true" visible="true" weight="0.29170159" />
       <window_info id="Favorites" order="2" sideWeight="0.38222224" side_tool="true" weight="0.29170159" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32650602" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4232489" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4232489" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -437,12 +439,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label_no_slicings/41121210.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_dicom_read_speedup/41121210.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_v2.py" />
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -599,13 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/test/region.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Predict.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -667,24 +656,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/prepare_data.sh">
+    <entry file="file://$PROJECT_DIR$/tools/Verify_data_join_label.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+        <state relative-caret-position="286">
+          <caret line="37" selection-start-line="37" selection-end-line="44" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/Verify_data_join_label.py">
+    <entry file="file://$PROJECT_DIR$/experiments/test/region.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="165">
+          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/scripts/predict.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/scripts/prepare_data.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/todarknet/voc_label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
