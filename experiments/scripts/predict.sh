@@ -17,6 +17,7 @@ python3  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}  \
                                             --rib_recognition_model_path  ${RIBS_MODEL_WEIGHTS}  \
                                             > ${out_put_prefix}".log"
 
+
 # 这里文件和文件夹不对应.
 python3  ./preprocessing/prepare_data/voc2007/to_ribs_dataset_voc2007.py  --in_folder_path  ${RIB_DF_CACHE_DIR}  \
                                          --output_independent_rib_folder  ${Voc2007_JPEGSImages_folder}  \

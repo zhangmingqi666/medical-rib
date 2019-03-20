@@ -42,6 +42,7 @@ def nii_read(nii_file_path=None, keep_slicing=True, new_spacing=[1, 1, 1]):
         tmp_df = pd.DataFrame({'y': index[0] * ratio_scale[0],
                                'x': index[1] * ratio_scale[1],
                                'z': index[2] * ratio_scale[2]})
+        # @tmp_df.to_csv(, index=False)
         x_min, x_max = int(tmp_df['x'].min()) + 1, int(tmp_df['x'].max()) + 1
         y_min, y_max = int(tmp_df['y'].min()) + 1, int(tmp_df['y'].max()) + 1
         z_min, z_max = int(tmp_df['z'].min()) + 1, int(tmp_df['z'].max()) + 1
