@@ -23,6 +23,7 @@ warnings.filterwarnings('ignore')
 
 def nii_read(nii_file_path=None, keep_slicing=True, new_spacing=[1, 1, 1]):
     """read box min,max from nii file"""
+    tmp_df = None
     try:
         img = nib.load(nii_file_path)
         header = img.header
