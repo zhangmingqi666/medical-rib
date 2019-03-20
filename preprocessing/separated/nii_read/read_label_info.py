@@ -50,7 +50,7 @@ def nii_read(nii_file_path=None, keep_slicing=True, new_spacing=[1, 1, 1]):
     except Exception as e:
         print(e)
         return {'box.x.max': None, 'box.x.min': None, 'box.y.max': None,
-                'box.y.min': None, 'box.z.max': None, 'box.z.min': None}, temp_df
+                'box.y.min': None, 'box.z.max': None, 'box.z.min': None}, None
     return {'box.x.max': x_max, 'box.x.min': x_min, 'box.y.max': y_max,
             'box.y.min': y_min, 'box.z.max': z_max, 'box.z.min': z_min}, temp_df
 
@@ -77,7 +77,8 @@ def location_read(folder_path=None, keep_slicing=True):
 
             bounding_box, temp_df = nii_read(nii_file_path=next_next_dir, keep_slicing=keep_slicing)
             new_row = {'id': f, 'location_id': file_name.replace('.nii', '')}
-            temp_df.to_csv("./data/nii_csv_files/{}.csv".format(file_name.replace('.nii', '')), index=False)
+            if temp_df is not None:
+                temp_df.to_csv("./data/nii_csv_files/{}.csv".format(file_name.replace('.nii', '')), index=False)
             new_row.update(bounding_box)
             location_df.loc[len(location_df)] = new_row
     return location_df
