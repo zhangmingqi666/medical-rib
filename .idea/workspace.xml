@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +22,8 @@
           <entry key="jpg" value="2" />
           <entry key="log" value="7" />
           <entry key="md" value="5" />
-          <entry key="png" value="223" />
-          <entry key="py" value="314" />
+          <entry key="png" value="224" />
+          <entry key="py" value="316" />
           <entry key="sh" value="158" />
           <entry key="txt" value="4" />
           <entry key="xml" value="9" />
@@ -32,10 +33,10 @@
         <counts>
           <entry key="Bash" value="158" />
           <entry key="CSV" value="37" />
-          <entry key="Image" value="225" />
+          <entry key="Image" value="226" />
           <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="314" />
+          <entry key="Python" value="316" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -44,7 +45,7 @@
           <entry key="Python Console" value="36" />
           <entry key="csv" value="4" />
           <entry key="dummy" value="41" />
-          <entry key="py" value="11304" />
+          <entry key="py" value="11305" />
           <entry key="sh" value="5387" />
           <entry key="txt" value="4" />
         </counts>
@@ -54,19 +55,19 @@
           <entry key="Bash" value="5387" />
           <entry key="CSV" value="4" />
           <entry key="PLAIN_TEXT" value="45" />
-          <entry key="Python" value="11340" />
+          <entry key="Python" value="11341" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.4" value="3" />
+          <entry key="project.open.time.4" value="4" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
     </session>
@@ -75,14 +76,23 @@
     <favorites_list name="medical-rib" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
+        <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-131">
-              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+            <state relative-caret-position="431">
+              <caret line="126" column="64" selection-start-line="126" selection-start-column="64" selection-end-line="126" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
               <folding>
-                <element signature="e#14#33#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,7 +180,6 @@
         <option value="$PROJECT_DIR$/tools/oberved_data.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Predict.py" />
-        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" />
         <option value="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" />
         <option value="$PROJECT_DIR$/experiments/scripts/collect_ribs_obtaion_data.sh" />
         <option value="$PROJECT_DIR$/tools/Verify_data_join_label.py" />
@@ -181,6 +190,7 @@
         <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/test_label_info.py" />
         <option value="$PROJECT_DIR$/experiments/temp_script/find_same_nii.sh" />
         <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" />
+        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" />
       </list>
     </option>
   </component>
@@ -207,7 +217,7 @@
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="experiments" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
@@ -225,7 +235,7 @@
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
               <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
               <item name="separated" type="462c0819:PsiDirectoryNode" />
-              <item name="nii_read" type="462c0819:PsiDirectoryNode" />
+              <item name="ribs_obtain" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -394,12 +404,12 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.82417583" visible="true" weight="0.14235377" />
-      <window_info id="Structure" order="1" sideWeight="0.17582418" side_tool="true" visible="true" weight="0.14235377" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8228916" visible="true" weight="0.22269204" />
+      <window_info id="Structure" order="1" sideWeight="0.17710844" side_tool="true" visible="true" weight="0.22269204" />
       <window_info id="Favorites" order="2" sideWeight="0.38222224" side_tool="true" weight="0.29170159" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32650602" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3421687" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3988764" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -436,13 +446,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Library/Python/3.7/lib/python/site-packages/skimage/measure/_regionprops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2610">
-          <caret line="360" column="4" selection-start-line="360" selection-start-column="4" selection-end-line="360" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Python/3.7/lib/python/site-packages/django/contrib/gis/gdal/geometries.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -567,20 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="279" column="54" selection-start-line="279" selection-start-column="54" selection-end-line="279" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/voc2007/generate_xml_voc2007.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="503">
@@ -620,9 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,37 +664,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/test_label_info.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/temp_script/test.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/temp_script/find_same_nii.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/test_label_info.py" />
+    <entry file="file://$PROJECT_DIR$/experiments/temp_script/test.sh" />
+    <entry file="file://$PROJECT_DIR$/experiments/temp_script/find_same_nii.sh" />
+    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label_no_slicings/135402000409413.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-131">
+        <state relative-caret-position="375">
           <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding>
             <element signature="e#14#33#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="126" column="64" selection-start-line="126" selection-start-column="64" selection-end-line="126" selection-end-column="64" />
         </state>
       </provider>
     </entry>

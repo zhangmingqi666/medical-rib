@@ -124,7 +124,7 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
     binary_arr[binary_arr < hu_threshold] = 0
     binary_arr[binary_arr >= hu_threshold] = 1
     # bone labeling
-    label_arr = skimage.measure.label(binary_arr, connectivity=2)
+    label_arr = skimage.measure.label(binary_arr, connectivity=1)
     del binary_arr
 
     with timer("########_collect arr to sparse"):
