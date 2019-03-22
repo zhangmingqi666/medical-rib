@@ -49,10 +49,12 @@ class BoneSpine:
 
     def __init__(self, bone_data=None, arr_shape=None, spine_width=100, rib_diameter=30,
                  spine_connected_rib_y_length_thresholds=180, through_thresholds=0.6,
-                 prior_zoy_center_y_axis_line_df=None, detection_objective='rib'):
+                 prior_zoy_center_y_axis_line_df=None, detection_objective='rib',
+                 output_prefix=None):
         # DataFrame
         self.bone_data = bone_data
         self.arr_shape = arr_shape
+        self.output_prefix = output_prefix
 
         self.detection_objective = detection_objective
 
@@ -218,6 +220,9 @@ class BoneSpine:
     def set_local_centroid(self):
         local_df = self.bone_data[(self.bone_data['y'] > self.y_mid_line - 60) &
                                   (self.bone_data['y'] < self.y_mid_line + 60)]
+        print("local_df and bone_data, the y_mid_line is {}".format(self.y_mid_line))
+        self.bone_data.to_csv(os.path.join(self.output_prefix, 'bone_data.csv'))
+        local_df.to_csv(os.path.join(self.output_prefix, 'local.csv'))
         if len(local_df) < 1000:
             return
         self.local_centroid = local_df['z'].mean(), local_df['x'].mean(), local_df['y'].mean()

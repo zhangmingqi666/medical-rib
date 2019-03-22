@@ -22,7 +22,7 @@ from preprocessing.separated.ribs_obtain.Spine_Remove import SpineRemove
 from preprocessing.separated.ribs_obtain.Remove_Sternum import SternumRemove
 from preprocessing.separated.ribs_obtain.util import (plot_yzd, sparse_df_to_arr, arr_to_sparse_df, timer,
                                                       loop_morphology_binary_opening, source_hu_value_arr_to_binary,
-                                                      arr_to_sparse_df_only)
+                                                      arr_to_sparse_df_only, plot_binary_array)
 #from preprocessing.separated.ribs_obtain.Bone_v2 import BonePredict
 from preprocessing.separated.ribs_obtain.Bone_Predict import BonePredict
 # load gbdt model and feature list
@@ -45,7 +45,7 @@ def judge_collect_spine_judge_connected_rib(sparse_df=None, cluster_df=None, bon
         # will add center line , @issac
         single_bone = BoneSpine(bone_data=temp_sparse_df, arr_shape=bone_prior.get_prior_shape(), spine_width=100,
                                 prior_zoy_center_y_axis_line_df=bone_prior.get_zoy_symmetric_y_axis_line_df(),
-                                detection_objective='spine or sternum')
+                                detection_objective='spine or sternum', output_prefix=output_prefix)
 
         single_bone.detect_spine_and_sternum()
 
@@ -74,6 +74,7 @@ def judge_collect_spine_judge_connected_rib(sparse_df=None, cluster_df=None, bon
         del single_bone
 
     return loc_spine_connected_rib, remaining_bone_df
+
 
 """
 def collect_ribs_v2(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False, output_prefix=None,
@@ -134,7 +135,6 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
     del label_arr
 
     rib_bone_df = pd.DataFrame({})
-    no_rib_bone_df = pd.DataFrame({})
     bone_info_df = pd.DataFrame({}, columns=FEATURE_LIST+['target', 'class_id'])
 
     for e in cluster_df['c'].values:
@@ -166,14 +166,14 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
     return rib_bone_df
 
 
-def loop_opening_get_spine(binary_arr, hu_threshold=400, bone_prior=None, allow_debug=False, output_prefix=None):
+def loop_opening_get_spine(binary_arr, bone_prior=None, output_prefix=None,
+                           hyper_opening_times=1):
 
     # calc bone prior
     # sternum_bone_df = pd.DataFrame({})
-    opening_times = 0
+    _opening_times = 0
     while True:
         # circulation times
-
         with timer('_________label'):
             label_arr = skimage.measure.label(binary_arr, connectivity=2)
         del binary_arr
@@ -185,42 +185,30 @@ def loop_opening_get_spine(binary_arr, hu_threshold=400, bone_prior=None, allow_
                                                      keep_by_threshold=True, threshold_min=4000)
         del label_arr
         with timer('_________collect spine and judge connected'):
-            glb_spine_connected_rib, remaining_bone_df = judge_collect_spine_judge_connected_rib(sparse_df=sparse_df,
-                                                                                                 cluster_df=cluster_df,
-                                                                                                 bone_prior=bone_prior,
-                                                                                                 output_prefix=output_prefix,
-                                                                                                 opening_times=opening_times)
-
+            glb_spine_connected_rib, _remaining_bone_df = judge_collect_spine_judge_connected_rib(sparse_df=sparse_df,
+                                                                                                  cluster_df=cluster_df,
+                                                                                                  bone_prior=bone_prior,
+                                                                                                  output_prefix=output_prefix,
+                                                                                                  opening_times=_opening_times)
         del sparse_df, cluster_df
 
-        if (glb_spine_connected_rib is False) or (opening_times >= 2):
+        if (glb_spine_connected_rib is False) or (_opening_times >= hyper_opening_times):
             break
         else:
-            opening_times = opening_times + 1
+            _opening_times = _opening_times + 1
 
         with timer('_________sparse df to arr'):
             binary_arr = sparse_df_to_arr(arr_expected_shape=bone_prior.get_prior_shape(),
-                                          sparse_df=remaining_bone_df, fill_bool=True)
-        # del remaining_bone_df
+                                          sparse_df=_remaining_bone_df, fill_bool=True)
 
         with timer('_________binary opening'):
-            binary_arr = loop_morphology_binary_opening(binary_arr, use_cv=False, opening_times=opening_times)
+            binary_arr = loop_morphology_binary_opening(binary_arr, use_cv=False, opening_times=_opening_times)
 
-    return remaining_bone_df, None
-
-
-def plot_binary_array(binary_arr, title=None, save=True, fig_name=None, output_prefix=None):
-    plt.figure()
-    plt.title(title, color='red')
-    plt.imshow(binary_arr.sum(axis=1))
-    if save:
-        plt.savefig('{}/{}.png'.format(output_prefix, fig_name))
-    else:
-        raise NotImplementedError
+    return _remaining_bone_df
 
 
 def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', bone_info_path=None,
-                          rib_df_cache_path=None, rib_recognition_model_path=None):
+                          rib_df_cache_path=None, rib_recognition_model_path=None, hyper_opening_times=1):
 
     with timer('calculate basic array and feature, data frame'):
         """covert source HU array to binary array with HU threshold = 400
@@ -238,37 +226,60 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', b
         """
         bone_prior = BonePrior(binary_arr=binary_arr)
 
-    with timer('remove sternum with sternum envelope'):
+    with timer('calculate envelope of sternum and remove sternum with sternum envelope'):
         """calculate envelope of sternum
         """
         half_front_bone_df = arr_to_sparse_df_only(binary_arr=binary_arr[:, :x_center, :])
 
         """remove sternum
         """
-        sternum_remove = SternumRemove(bone_data_arr=value_arr, bone_data_df=half_front_bone_df,
-                                       bone_data_shape=value_arr.shape, center_line=y_center,
-                                       hu_threshold=400, width=100, output_prefix=output_prefix)
+        sternum_remove = SternumRemove(bone_data_arr=value_arr,
+                                       bone_data_df=half_front_bone_df,
+                                       bone_data_shape=value_arr.shape,
+                                       center_line=y_center,
+                                       hu_threshold=400, width=100,
+                                       output_prefix=output_prefix)
 
         sternum_remove.sternum_remove_operation(value_arr=value_arr)
 
+        """plot half front bone"""
+        if allow_debug:
+
+            plot_binary_array(binary_arr=binary_arr[:, :x_center, :], title='half_front_bone',
+                              save=True, save_path=os.path.join(output_prefix, 'half_front_bone.png'),
+                              line_tuple_list=[(np.arange(binary_arr.shape[0]), sternum_remove.left_envelope_line),
+                                               (np.arange(binary_arr.shape[0]), sternum_remove.right_envelope_line)])
+
         del half_front_bone_df
+        del sternum_remove
         gc.collect()
 
-    with timer('get spine with looping opening'):
+    with timer('get spine with looping opening and remove remaining spine from CT images'):
         """looping spine to get opening
         """
-        spine_df, sternum_df = loop_opening_get_spine(binary_arr=binary_arr, hu_threshold=400, bone_prior=bone_prior,
-                                                      allow_debug=allow_debug, output_prefix=output_prefix)
+        remaining_bone_df = loop_opening_get_spine(binary_arr=binary_arr,
+                                                   bone_prior=bone_prior,
+                                                   output_prefix=output_prefix,
+                                                   hyper_opening_times=hyper_opening_times)
 
-    with timer('remove spine from source value arr'):
-        """removing spine with operating value arr
-        """
-        print(bone_prior.get_prior_shape())
-        spine_remove = SpineRemove(bone_data_df=spine_df, bone_data_shape=bone_prior.get_prior_shape(),
-                                   allow_envelope_expand=True, expand_width=20)
+        spine_remove = SpineRemove(bone_data_df=remaining_bone_df,
+                                   bone_data_shape=bone_prior.get_prior_shape(),
+                                   allow_envelope_expand=True,
+                                   expand_width=20)
         spine_remove.spine_remove_operation(value_arr=value_arr)
 
+        """plot split spine"""
+        if allow_debug:
+            if len(remaining_bone_df) > 0:
+                _all_index_in_envelope = spine_remove.get_all_index_in_envelope()
+                plot_yzd(temp_df=remaining_bone_df, shape_arr=(binary_arr.shape[0], binary_arr.shape[2]),
+                         save=True, save_path='{}/spine_remaining.png'.format(output_prefix),
+                         line_tuple_list=[(_all_index_in_envelope['z'], _all_index_in_envelope['y.min']),
+                                          (_all_index_in_envelope['z'], _all_index_in_envelope['y.max'])])
+            else:
+                print("remaining_bone_df is empty!")
 
+        del remaining_bone_df
         del spine_remove
         gc.collect()
 
@@ -281,44 +292,19 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', b
 
         rib_bone_df.to_csv(rib_df_cache_path, index=False)
 
-    """plot half front bone"""
-    if allow_debug:
-        plot_binary_array(binary_arr=binary_arr[:, :x_center, :], title='half_front_bone',
-                          save=True, fig_name='half_front_bone', output_prefix=output_prefix)
-        plt.plot(sternum_remove.left_envelope_line, np.arange(binary_arr.shape[0]))
-        plt.plot(sternum_remove.right_envelope_line, np.arange(binary_arr.shape[0]))
-        plt.savefig('{}/half_front_bones_with_envelope_line.png'.format(output_prefix))
+        """plot collected ribs_obtain"""
+        if allow_debug:
+            restore_arr = np.zeros(bone_prior.get_prior_shape())
+            if len(rib_bone_df) > 0:
+                rib_index_all = rib_bone_df['z'].values, rib_bone_df['x'].values, rib_bone_df['y'].values
+                restore_arr[rib_index_all] = 1
 
-    """plot split spine"""
-    if allow_debug:
-        if len(spine_df) > 0:
-            plot_yzd(temp_df=spine_df, shape_arr=(binary_arr.shape[0], binary_arr.shape[2]),
-                     save=True, save_path='{}/spine_remaining.png'.format(output_prefix))
-        else:
-            print("spine_df is empty!")
+                plot_binary_array(binary_arr=restore_arr, title='collect_ribs',
+                                  save=True, save_path=os.path.join(output_prefix, 'collect_ribs.png'))
+            else:
+                print("collect rib bone df = 0")
+            del restore_arr
 
-        """
-        if len(sternum_df) > 0:
-            plot_yzd(temp_df=sternum_df, shape_arr=(binary_arr.shape[0], binary_arr.shape[2]),
-                     save=True, save_path='{}/sternum_remaining.png'.format(output_prefix))
-        else:
-            print("sternum_df is empty")
-        """
-
-    """plot collected ribs_obtain"""
-    if allow_debug:
-        restore_arr = np.zeros(bone_prior.get_prior_shape())
-        if len(rib_bone_df) > 0:
-            rib_index_all = rib_bone_df['z'].values, rib_bone_df['x'].values, rib_bone_df['y'].values
-            restore_arr[rib_index_all] = 1
-            plot_binary_array(binary_arr=restore_arr, title='collect_ribs',
-                              save=True, fig_name='collect_ribs', output_prefix=output_prefix)
-        else:
-            print("rib bone df = 0")
-        del restore_arr
-
-    del sternum_remove
-    del spine_df
     del binary_arr
     del rib_bone_df
     del bone_prior

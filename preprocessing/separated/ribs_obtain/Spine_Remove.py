@@ -26,8 +26,6 @@ class SpineRemove:
         self.allow_envelope_expand = allow_envelope_expand
         self.expand_width = expand_width
 
-        # print(self.sparse_df.columns)
-
         """
         self.z_all_index = range(self.bone_data_shape[0])
         self.sparse_df_min_max = pd.DataFrame({})
@@ -69,13 +67,30 @@ class SpineRemove:
 
     def set_y_min_max_for_every_z(self, rolling_window=20, min_periods=10):
 
-        def relu_interpolate(section_df, full_length=self.bone_data_shape[0], margin_min=5, margin_max = 20,
+        def railings_interpolate(spine_remaining_df=None,
+                                 spine_width=150):
+            _y_center_df = spine_remaining_df.groupby('z').agg({'y': ['mean', 'min', 'max']})
+            _y_center_df.columns = ['%s.%s' % e for e in _y_center_df.columns]
+            _y_center_df.reset_index(inplace=True)
+            _y_center_df.rename(columns={'index': 'z'}, inplace=True)
+            _y_center_df['min'] = _y_center_df.apply(lambda row: max(row['y.mean']-spine_width, row['y.min']), axis=1)
+            _y_center_df['max'] = _y_center_df.apply(lambda row: min(row['y.mean']+spine_width, row['y.max']), axis=1)
+
+            return _y_center_df
+
+        def relu_interpolate(section_df, full_length=self.bone_data_shape[0], margin_min=5, margin_max=20,
                              is_expand=self.allow_envelope_expand, expand_width=self.expand_width):
+
+            # get spine width for every z
             section_df['y.length'] = section_df.apply(lambda row: row['y.max']-row['y.min'], axis=1)
             average_y_length = section_df['y.length'].mean()
+
+            # when a rib connected spine, the width near the rib will be greater than others.
             section_df[(section_df['y.length'] < average_y_length - margin_min) |
                        (section_df['y.length'] > average_y_length + margin_max)] = None
             full_df = pd.DataFrame(index=[i for i in range(full_length)])
+
+            # interpolate the location for connected ribs.
             full_df['y.min'] = pd.Series(section_df['y.min'].values, index=section_df['y.min'].index)
             full_df['y.max'] = pd.Series(section_df['y.max'].values, index=section_df['y.max'].index)
             full_df.interpolate(inplace=True)
@@ -86,13 +101,13 @@ class SpineRemove:
                 full_df['y.min'] = full_df['y.min'] - expand_width
                 full_df['y.max'] = full_df['y.max'] + expand_width
 
-            print("shape: ", self.bone_data_shape[0])
-            print("len: ", len(full_df['y.min']))
+            # print("shape: ", self.bone_data_shape[0])
+            # print("len: ", len(full_df['y.min']))
 
             return full_df
 
-        self.sparse_df_y_min_max_for_every_z = self.sparse_df.groupby('z').agg({'y': ['min', 'max']})
-        self.sparse_df_y_min_max_for_every_z.columns = ['%s.%s' % e for e in self.sparse_df_y_min_max_for_every_z.columns]
+        center_df = railings_interpolate(spine_remaining_df=self.sparse_df, spine_width=150)
+        _relu_score = relu_interpolate(section_df=center_df, margin_min=5, margin_max=50, is_expand=False)
         z_min_max, _, y_min_max = self.get_min_max_for_every_axis()
         cartesian_y = pd.DataFrame({'y': np.arange(y_min_max[0], y_min_max[1] + 1, 1),
                                     'key': np.zeros(y_min_max[1] - y_min_max[0] + 1)})
@@ -100,11 +115,14 @@ class SpineRemove:
                                     'key': np.zeros(self.bone_data_shape[0])})
         cartesian_all = cartesian_y.merge(cartesian_z, on='key', how='left')
 
-        all_index_df_in_envelope = cartesian_all.merge(relu_interpolate(section_df=self.sparse_df_y_min_max_for_every_z), on='z')
+        all_index_df_in_envelope = cartesian_all.merge(_relu_score, on='z')
         self.all_index_in_envelope = all_index_df_in_envelope[(all_index_df_in_envelope['y'] <= all_index_df_in_envelope['y.max'])
                                                               & (all_index_df_in_envelope['y'] >= all_index_df_in_envelope['y.min'])]
 
         del all_index_df_in_envelope
+
+    def get_all_index_in_envelope(self):
+        return self.all_index_in_envelope
 
     def spine_remove_operation(self, value_arr=None):
         _, x_min_max, _ = self.get_min_max_for_every_axis()

@@ -163,7 +163,7 @@ def plot_separated_bone(top_df, rib_df, shape, scatter_point_list=None):
     plt.show()
 
 
-def plot_yzd(temp_df=None, shape_arr=None, save=False, save_path=None):
+def plot_yzd(temp_df=None, shape_arr=None, save=False, save_path=None, line_tuple_list=[]):
     temp_arr = np.zeros(shape_arr)
     temp_df_yz = temp_df.groupby(['y', 'z']).agg({'x': ['count']})
     temp_df_yz.columns = ['%s.%s' % e for e in temp_df_yz.columns.tolist()]
@@ -172,8 +172,28 @@ def plot_yzd(temp_df=None, shape_arr=None, save=False, save_path=None):
     temp_arr[index] = temp_df_yz['x.count'].values
     plt.figure()
     plt.imshow(temp_arr)
-    plt.savefig(save_path)
-    #plt.show()
+    for e, f in line_tuple_list:
+        # e stands for z index.
+        # f stands for y index.
+        plt.plot(f, e)
+    if save:
+        plt.savefig(save_path)
+    else:
+        raise NotImplementedError
+
+
+def plot_binary_array(binary_arr, title=None, save=True, save_path=None, line_tuple_list=[]):
+    plt.figure()
+    plt.title(title, color='red')
+    plt.imshow(binary_arr.sum(axis=1))
+    for e, f in line_tuple_list:
+        # e stands for z index.
+        # f stands for y index.
+        plt.plot(f, e)
+    if save:
+        plt.savefig(save_path)
+    else:
+        raise NotImplementedError
 
 
 def plot_3d(image, threshold=0.5):
