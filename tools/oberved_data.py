@@ -1,62 +1,18 @@
 
 import pandas as pd
-from skimage.measure import label
-import skimage
-import skimage.morphology as sm
-from preprocessing.separated.ribs_obtain.util import arr_to_sparse_df
-import numpy as np
+from preprocessing.separated.ribs_obtain.util import sparse_df_to_arr, plot_binary_array
 
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy import ndimage as ndi
-from skimage import morphology,feature
+ids = ['135402000404222', '135402000404891', '135402000404065', '135402000357765', '135402000555091',
+       '135402000572309', '135402000555684', '135402000404090']
 
+main_path = '../experiments/last_logs'
+output_main_path = '../experiments/debug_logs/Verify_observe_data'
+for id in ids:
+    for file in ['local.csv', 'bone_data.csv']:
+        csv_path = "{}/{}/{}".format(main_path, id, file)
+        bone_df = pd.read_csv(csv_path)
+        z_max, x_max, y_max = bone_df['z'].max() + 1, bone_df['x'].max()+1, bone_df['y'].max()+1
+        image = sparse_df_to_arr([z_max, x_max, y_max], sparse_df=bone_df, fill_bool=False)
+        plot_binary_array(image, title=file.replace('csv', ''), save=True,
+                          save_path='{}/{}_{}.png'.format(output_main_path, id, file.replace('csv', '')))
 
-def sparse_df_to_arr(arr_expected_shape=None, sparse_df=None, fill_bool=True):
-    """
-    :param arr_expected_shape: arr's expected shape
-    :param sparse_df:
-    :return: expected_arr
-    """
-    expected_arr = np.zeros(arr_expected_shape)
-    point_index = sparse_df['z'].values, sparse_df['x'].values, sparse_df['y'].values
-    if fill_bool:
-        expected_arr[point_index] = 1
-    else:
-        expected_arr[point_index] = sparse_df['c']
-
-    del point_index
-    del sparse_df
-    # gc.collect()
-    return expected_arr
-
-
-RIB_DF_CACHE_PATH="~/Desktop/logs/135402000150175/label_88785_collect_NOT_RIB.csv"
-bone_df = pd.read_csv(RIB_DF_CACHE_PATH)
-# print(bone_df.head(10))
-z_max, x_max, y_max = bone_df['z'].max() + 1, bone_df['x'].max()+1, bone_df['y'].max()+1
-image = sparse_df_to_arr([z_max, x_max, y_max], sparse_df=bone_df, fill_bool=False)
-
-"""
-from preprocessing.separated.ribs_obtain import util
-image = util.sparse_df_to_arr([z_max, x_max, y_max], sparse_df=bone_df, fill_bool=False)
-
-distance = ndi.distance_transform_edt(image) #距离变换
-local_maxi =feature.peak_local_max(distance, indices=False, footprint=np.ones((3, 3)),
-                                   labels=image)   #寻找峰值
-markers = ndi.label(local_maxi)[0] #初始标记点
-labels = skimage.morphology.watershed(-distance, markers, mask=image) #基于距离变换的分水岭算法
-
-
-label_arr = skimage.measure.label(labels, connectivity=1)
-
-
-sparse_df, cluster_df = arr_to_sparse_df(label_arr=label_arr, sort=True, sort_key='c.count',
-                                         keep_by_top=True, top_nth=10,
-                                         keep_by_threshold=True, threshold_min=4000)
-
-print(cluster_df)
-"""
-from preprocessing.separated.ribs_obtain.util import plot_yzd
-#print(sparse_df[sparse_df['c']==16])
-#plot_yzd(sparse_df[sparse_df['c']==2], shape_arr=[z_max, y_max])

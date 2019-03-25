@@ -3,7 +3,6 @@ import pandas as pd
 import skimage
 import matplotlib.pyplot as plt
 import gc
-import sys
 from skimage.measure import label
 from sklearn.externals import joblib
 import sys, os
@@ -16,7 +15,7 @@ def add_python_path(path):
 
 add_python_path(os.getcwd())
 # from projects
-from preprocessing.separated.ribs_obtain.Bone_Spine import BoneSpine
+from preprocessing.separated.ribs_obtain.Bone_Spine_Predict import BoneSpine
 from preprocessing.separated.ribs_obtain.Bone_prior import BonePrior
 from preprocessing.separated.ribs_obtain.Spine_Remove import SpineRemove
 from preprocessing.separated.ribs_obtain.Remove_Sternum import SternumRemove
@@ -63,14 +62,11 @@ def judge_collect_spine_judge_connected_rib(sparse_df=None, cluster_df=None, bon
                                                                                                    e))
 
         if single_bone.is_spine():
+            # single_bone.get_bone_data().to_csv('{}/is_spine_{}', index=False)
             remaining_bone_df = remaining_bone_df.append(single_bone.get_bone_data())
             if single_bone.spine_connected_rib():
                 loc_spine_connected_rib = True
 
-        """
-        if single_bone.is_sternum():
-            sternum_bone_df = sternum_bone_df.append(single_bone.get_bone_data()) 
-        """
         del single_bone
 
     return loc_spine_connected_rib, remaining_bone_df
@@ -166,7 +162,7 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
     return rib_bone_df
 
 
-def loop_opening_get_spine(binary_arr, bone_prior=None, output_prefix=None,
+def loop_opening_get_spine(binary_arr, bone_prior=None, output_prefix=None, allow_debug=True,
                            hyper_opening_times=1):
 
     # calc bone prior
@@ -190,13 +186,14 @@ def loop_opening_get_spine(binary_arr, bone_prior=None, output_prefix=None,
                                                                                                   bone_prior=bone_prior,
                                                                                                   output_prefix=output_prefix,
                                                                                                   opening_times=_opening_times)
+
+        if allow_debug:
+            _remaining_bone_df.to_csv("{}/is_spine_opening_{}th.csv".format(output_prefix, _opening_times), index=False)
         del sparse_df, cluster_df
 
         if (glb_spine_connected_rib is False) or (_opening_times >= hyper_opening_times):
             break
-        else:
-            _opening_times = _opening_times + 1
-
+        _opening_times = _opening_times + 1
         with timer('_________sparse df to arr'):
             binary_arr = sparse_df_to_arr(arr_expected_shape=bone_prior.get_prior_shape(),
                                           sparse_df=_remaining_bone_df, fill_bool=True)
@@ -208,7 +205,7 @@ def loop_opening_get_spine(binary_arr, bone_prior=None, output_prefix=None,
 
 
 def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', bone_info_path=None,
-                          rib_df_cache_path=None, rib_recognition_model_path=None, hyper_opening_times=1):
+                          rib_df_cache_path=None, rib_recognition_model_path=None, hyper_opening_times=2):
 
     with timer('calculate basic array and feature, data frame'):
         """covert source HU array to binary array with HU threshold = 400

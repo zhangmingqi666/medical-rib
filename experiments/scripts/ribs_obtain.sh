@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 ###
 DCM_DF_OUT_PATH=./data/csv_files/dicom_info.csv
 RIB_DF_CACHE_DIR=./data/ribs_df_cache
@@ -10,7 +9,6 @@ FORMAT=$2
 SLICING=$3
 RIBS_MODEL_WEIGHTS=./experiments/cfgs
 PKL_FOLDER=$4
-
 
 function ribs_obtain_from_dcm() {
     # $1 代表第一个参数，$N 代表第 N 个参数
@@ -27,7 +25,7 @@ function ribs_obtain_from_dcm() {
         RIB_DF_CACHE_PATH=${RIB_DF_CACHE_DIR}/${id}".csv"
         rm -rf ${out_put_prefix} && mkdir -p ${out_put_prefix}
         echo "start make rib data for ${id}"
-        echo "logs saved to ${out_put_prefix}"
+        echo "last_logs saved to ${out_put_prefix}"
         echo "ribs cached to ${BONE_INFO_PATH}"
 
         #if [[ -f ${RIB_DF_CACHE_PATH} ]];then

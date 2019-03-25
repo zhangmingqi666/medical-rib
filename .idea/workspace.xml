@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tools/view_spine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/little_conch/Experiment-Tw,Tf-0.68lq-UP.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/little_conch/hehe.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/little_conch/test.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/test/region.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/test/ridge.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine_Predict.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Spine_Remove.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Spine_Remove.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/Image_SingleChannel_2_ThreeChannel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/Verify_data_join_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/Verify_data_join_label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/Verify_dicom_read_speedup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/Verify_dicom_shape_speedup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/oberved_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/oberved_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/test.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,14 +27,14 @@
     <session id="896658968">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="bak" value="2" />
-          <entry key="csv" value="38" />
+          <entry key="bak" value="3" />
+          <entry key="csv" value="40" />
           <entry key="gitignore" value="3" />
           <entry key="jpg" value="2" />
-          <entry key="log" value="7" />
+          <entry key="log" value="9" />
           <entry key="md" value="5" />
-          <entry key="png" value="224" />
-          <entry key="py" value="333" />
+          <entry key="png" value="448" />
+          <entry key="py" value="380" />
           <entry key="sh" value="161" />
           <entry key="txt" value="4" />
           <entry key="xml" value="9" />
@@ -41,11 +43,11 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bash" value="161" />
-          <entry key="CSV" value="38" />
-          <entry key="Image" value="226" />
+          <entry key="CSV" value="40" />
+          <entry key="Image" value="450" />
           <entry key="Markdown" value="5" />
-          <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="333" />
+          <entry key="PLAIN_TEXT" value="19" />
+          <entry key="Python" value="380" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -53,8 +55,8 @@
         <counts>
           <entry key="Python Console" value="36" />
           <entry key="csv" value="4" />
-          <entry key="dummy" value="41" />
-          <entry key="py" value="12885" />
+          <entry key="dummy" value="61" />
+          <entry key="py" value="16043" />
           <entry key="sh" value="5422" />
           <entry key="txt" value="4" />
         </counts>
@@ -63,8 +65,8 @@
         <counts>
           <entry key="Bash" value="5422" />
           <entry key="CSV" value="4" />
-          <entry key="PLAIN_TEXT" value="45" />
-          <entry key="Python" value="12921" />
+          <entry key="PLAIN_TEXT" value="65" />
+          <entry key="Python" value="16079" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -85,26 +87,7 @@
     <favorites_list name="medical-rib" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-380">
-              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="266" column="62" lean-forward="true" selection-start-line="266" selection-start-column="62" selection-end-line="266" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -127,11 +110,13 @@
       <find>set_local_centroid</find>
       <find>zoy_center_y_axis_line_df</find>
       <find>get_zoy_symmetric_y_axis_line_df</find>
-      <find>prior_zoy_center_y_axis_line_df</find>
       <find>convert</find>
       <find>5684</find>
-      <find>loop_opening_get_spine</find>
       <find>local_centroid_for_sternum</find>
+      <find>loop_opening_get_spine</find>
+      <find>void_cut_ribs_process</find>
+      <find>center_line_through_spine_prob</find>
+      <find>prior_zoy_center_y_axis_line_df</find>
     </findStrings>
     <replaceStrings>
       <replace>info_df_on_zoy</replace>
@@ -147,9 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/preprocessing/prepare_data/data_join_label.py" />
-        <option value="$PROJECT_DIR$/experiments/scripts/dcm_read.sh" />
-        <option value="$PROJECT_DIR$/preprocessing/separated/dcm_read/_init_paths.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/dcm_read/main_create_pkl.py" />
         <option value="$PROJECT_DIR$/preprocessing/clean_data/reg.sh" />
         <option value="$PROJECT_DIR$/preprocessing/clean_data/clean_huadong.sh" />
@@ -180,11 +162,9 @@
         <option value="$PROJECT_DIR$/tools/read_mii.py" />
         <option value="$PROJECT_DIR$/tools/read_nii.py" />
         <option value="$PROJECT_DIR$/experiments/common/calc_elapsed_time.sh" />
-        <option value="$PROJECT_DIR$/tools/oberved_data.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Predict.py" />
         <option value="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" />
         <option value="$PROJECT_DIR$/experiments/scripts/collect_ribs_obtaion_data.sh" />
-        <option value="$PROJECT_DIR$/tools/Verify_data_join_label.py" />
         <option value="$PROJECT_DIR$/preprocessing/todarknet/voc_label.py" />
         <option value="$PROJECT_DIR$/experiments/scripts/predict.sh" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" />
@@ -192,19 +172,23 @@
         <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/test_label_info.py" />
         <option value="$PROJECT_DIR$/experiments/temp_script/find_same_nii.sh" />
         <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" />
-        <option value="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" />
-        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Spine_Remove.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone.py" />
-        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" />
+        <option value="$PROJECT_DIR$/tools/Verify_data_join_label.py" />
+        <option value="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" />
+        <option value="$PROJECT_DIR$/tools/oberved_data.py" />
+        <option value="$PROJECT_DIR$/tools/test_spine.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py" />
+        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" />
+        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine_Predict.py" />
+        <option value="$PROJECT_DIR$/tools/view_spine.py" />
+        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Spine_Remove.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="154" />
     <option name="y" value="23" />
-    <option name="width" value="830" />
+    <option name="width" value="1067" />
     <option name="height" value="804" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -230,25 +214,7 @@
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
               <item name="experiments" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="separated" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="separated" type="462c0819:PsiDirectoryNode" />
-              <item name="ribs_obtain" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -261,19 +227,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/experiments/debug_logs/Verify_observe_data" />
+      <recent name="$PROJECT_DIR$/experiments/debug_logs" />
+      <recent name="$PROJECT_DIR$/experiments/little_conch" />
+      <recent name="$PROJECT_DIR$/experiments" />
+      <recent name="$PROJECT_DIR$/experiments/cfgs" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/preprocessing/separated/ribs_obtain" />
       <recent name="$PROJECT_DIR$/experiments/cfgs" />
       <recent name="$PROJECT_DIR$/data/temp_csv" />
       <recent name="$PROJECT_DIR$/experiments/scripts" />
       <recent name="$PROJECT_DIR$/preprocessing/rib_cut_v7" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/experiments/little_conch" />
-      <recent name="$PROJECT_DIR$/experiments" />
-      <recent name="$PROJECT_DIR$/experiments/cfgs" />
-      <recent name="$PROJECT_DIR$/experiments/scripts" />
-      <recent name="$PROJECT_DIR$/preprocessing/prepare_data" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -288,7 +254,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Bash.test.sh">
+  <component name="RunManager" selected="Python.test_spine">
     <configuration name="collect_ribs_obtaion_data.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="bash" />
@@ -332,7 +298,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="read_nii" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="oberved_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -344,7 +310,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/read_nii.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/oberved_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -353,7 +319,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_header" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test_spine" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -365,7 +331,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/test_header.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/view_spine.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -375,19 +341,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test_header" />
       <item itemvalue="Python.Verify_data_join_label" />
-      <item itemvalue="Python.read_nii" />
       <item itemvalue="Bash.collect_ribs_obtaion_data.sh" />
       <item itemvalue="Bash.test.sh" />
+      <item itemvalue="Python.oberved_data" />
+      <item itemvalue="Python.test_spine" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test_spine" />
+        <item itemvalue="Python.oberved_data" />
         <item itemvalue="Bash.test.sh" />
         <item itemvalue="Python.Verify_data_join_label" />
         <item itemvalue="Bash.collect_ribs_obtaion_data.sh" />
-        <item itemvalue="Python.read_nii" />
-        <item itemvalue="Python.test_header" />
       </list>
     </recent_temporary>
   </component>
@@ -414,15 +380,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1067" height="804" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8228916" visible="true" weight="0.22269204" />
-      <window_info id="Structure" order="1" sideWeight="0.17710844" side_tool="true" visible="true" weight="0.22269204" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.82251906" visible="true" weight="0.33652008" />
+      <window_info id="Structure" order="1" sideWeight="0.17748092" side_tool="true" visible="true" weight="0.33652008" />
       <window_info id="Favorites" order="2" sideWeight="0.38222224" side_tool="true" weight="0.29170159" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32650602" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3988764" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26404494" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -459,280 +424,212 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000404096.png">
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000404090/spine_remaining.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000404090.png">
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000404090/remaining_spine_196.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000404064.png">
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000404090/remaining_spine_636.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000392998.png">
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000404222/remaining_spine_62.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000151454.png">
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000404891/remaining_spine_1063.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000150175.png">
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000404891/remaining_spine_983.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000404097.png">
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000555091/remaining_spine_67.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000550272.png">
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000572309/remaining_spine_747.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000539718.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000450130.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000404891.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000409620.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000404065.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/test.py">
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-        </state>
+        <state relative-caret-position="-171" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000404222.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000404094.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000409537.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000572309.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/test_header.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/test_dicom_files.py">
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000404222.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/read_nii.py">
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000404891.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label/135402000357765.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/voc2007/generate_xml_voc2007.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/oberved_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-335">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/Verify_data_join_label.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/predict.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/todarknet/voc_label.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/merge_csv.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/prepare_data.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/clean_huadong.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/collect_ribs_obtaion_data.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/dcm_read.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-320" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="103" selection-start-line="103" selection-end-line="110" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/nii_read.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/test_label_info.py" />
-    <entry file="file://$PROJECT_DIR$/experiments/temp_script/test.sh" />
-    <entry file="file://$PROJECT_DIR$/experiments/temp_script/find_same_nii.sh" />
-    <entry file="file://$PROJECT_DIR$/experiments/logs/Verify_data_join_label_no_slicings/135402000409413.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/common/calc_elapsed_time.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/test/region.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/csv_files/dicom_info.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="313">
-          <caret line="26" column="15" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="15" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" rowLines="3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Remove_Sternum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2391">
-          <caret line="351" column="4" selection-start-line="351" selection-start-column="4" selection-end-line="351" selection-end-column="4" />
+        <state relative-caret-position="-784">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_prior.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="373">
+          <caret line="63" column="13" lean-forward="true" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
+    <entry file="file://$PROJECT_DIR$/experiments/merge_ids/spine_135402000357765.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000357765/remaining_spine_4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000404090/remaining_spine_3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000404222/spine_remaining.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000555684/spine_remaining.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000572309/spine_remaining.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="188" column="31" selection-start-line="188" selection-start-column="31" selection-end-line="188" selection-end-column="31" />
+        <state relative-caret-position="362">
+          <caret line="191" column="33" lean-forward="true" selection-start-line="191" selection-start-column="33" selection-end-line="191" selection-end-column="33" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine.py">
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="225" column="32" lean-forward="true" selection-start-line="225" selection-start-column="32" selection-end-line="225" selection-end-column="32" />
+        <state relative-caret-position="322">
+          <caret line="129" column="24" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000404222/remaining_spine_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000404222/remaining_spine_248.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000404891/remaining_spine_680.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000404891/remaining_spine_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000404065/remaining_spine_423.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000404065/remaining_spine_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000357765/remaining_spine_279.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000555091/remaining_spine_2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000572309/remaining_spine_702.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000572309/remaining_spine_410.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000572309/remaining_spine_4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000555684/remaining_spine_2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/last_logs/135402000404090/remaining_spine_324.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000357765/spine_remaining.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Verify_data_join_label.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000572309/remaining_spine_702.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000572309/spine_remaining.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000555684/remaining_spine_2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000572309/remaining_spine_4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000555091/remaining_spine_2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000404090/remaining_spine_3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000404065/remaining_spine_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000404891/remaining_spine_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000357765/remaining_spine_4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000404222/remaining_spine_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine_Predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="191" column="8" selection-start-line="191" selection-start-column="8" selection-end-line="191" selection-end-column="8" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Predict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Spine_Remove.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="53" column="11" lean-forward="true" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+        <state relative-caret-position="28">
+          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1553237585572" expanded="true" signature="5695:5743" ph="..." />
+            <element signature="e#2494#3055#0" />
+            <element signature="e#3277#4601#0" />
+            <marker date="1553518884805" expanded="true" signature="7740:7788" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh">
+    <entry file="file://$PROJECT_DIR$/tools/view_spine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-380">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="254">
+          <caret line="58" column="38" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+          <folding>
+            <element signature="e#1#20#0" expanded="true" />
+            <marker date="1553518179216" expanded="true" signature="668:673" ph="..." />
+            <marker date="1553518179216" expanded="true" signature="1503:1504" ph="..." />
+            <marker date="1553518179216" expanded="true" signature="1503:2699" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="266" column="62" lean-forward="true" selection-start-line="266" selection-start-column="62" selection-end-line="266" selection-end-column="62" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000404222/collect_ribs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000555091/collect_ribs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/logs/135402000404065/collect_ribs.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>

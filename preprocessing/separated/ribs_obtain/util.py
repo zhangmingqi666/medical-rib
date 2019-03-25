@@ -127,7 +127,7 @@ def loop_morphology_binary_opening(binary_arr, use_cv=False, allow_debug=False, 
     :param allow_debug: if True, print some debug info.
     :return:
     """
-    r_list = [1, 1, 2]
+    r_list = [1, 1, 1, 1]
     r = r_list[opening_times]
     binary_arr = morphology_binary_opening(binary_arr, use_cv=use_cv, selem=sm.ball(r))
     if allow_debug:

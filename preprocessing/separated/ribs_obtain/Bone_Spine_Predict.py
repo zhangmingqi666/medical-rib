@@ -92,7 +92,7 @@ class BoneSpine:
             return
 
         # calc the prob which center line go through bone with, when prob > 0.6, its a spine.
-        # self.set_center_line_through_spine_prob()
+        self.set_center_line_through_spine_prob()
 
         # calc the prob : df in center line +/- spine_half_width.
         # self.calc_prob_bone_in_spine_width()
@@ -151,7 +151,6 @@ class BoneSpine:
         spine_body_statistics = self.prior_zoy_center_y_axis_line_df.merge(y_min_max_grpby_z, on='z', how='inner')
         # center line through spine
         spine_body_statistics['through'] = spine_body_statistics.apply(lambda row: row['y.center'] in Interval(row['y.min'], row['y.max']), axis=1)
-
         self.center_line_through_spine_prob = 1.0 * spine_body_statistics['through'].sum() / len(spine_body_statistics)
 
     def get_center_line_through_spine_prob(self):
@@ -162,29 +161,35 @@ class BoneSpine:
 
     def is_complete_spine(self):
 
-        # _, x_centroid, _ = self.get_basic_axis_feature(feature='centroid')
-        _, x_local_centroid, _ = self.local_centroid
-        if x_local_centroid < self.x_mid_line:
+        _, x_centroid, _ = self.get_basic_axis_feature(feature='centroid')
+        # _, x_local_centroid, _ = self.local_centroid
+        # if x_local_centroid < self.x_mid_line:
+        #    return False
+        if x_centroid < self.x_mid_line:
             return False
 
         if self.get_basic_axis_feature(feature='length')[0] < self.half_z_shape:
             return False
 
-        # if not self.center_line_through_bone(through_thresholds=0.6):
-            # return False
+        if not self.center_line_through_bone(through_thresholds=0.6):
+            return False
+
         return True
 
     def is_half_spine(self):
-        # _, x_centroid, _ = self.get_basic_axis_feature(feature='centroid')
-        _, x_local_centroid, _ = self.local_centroid
-        if x_local_centroid < self.x_mid_line:
+
+        _, x_centroid, _ = self.get_basic_axis_feature(feature='centroid')
+        # _, x_local_centroid, _ = self.local_centroid
+        # if x_local_centroid < self.x_mid_line:
+        #    return False
+        if x_centroid < self.x_mid_line:
             return False
 
         if self.get_basic_axis_feature(feature='max')[0] > self.arr_shape[0] - 5:
             return False
 
-        # if not self.center_line_through_bone(through_thresholds=0.6):
-            # return False
+        if not self.center_line_through_bone(through_thresholds=0.6):
+            return False
 
         if self.get_basic_axis_feature(feature='length')[2] / self.get_basic_axis_feature(feature='length')[0] > 5:
             return False

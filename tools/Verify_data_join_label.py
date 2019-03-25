@@ -42,7 +42,7 @@ for file in files:
         ax.add_patch(rect)
         ax.text(y_max, z_max, location_name, fontsize=10)
 
-    fig.savefig(os.path.join('/Users/jiangyy/projects/medical-rib/experiments/logs/Verify_data_join_label',
+    fig.savefig(os.path.join('../experiments/last_logs/Verify_data_join_label',
                              save_f_name))
     plt.close(fig)
 

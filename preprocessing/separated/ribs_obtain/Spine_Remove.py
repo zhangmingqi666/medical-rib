@@ -65,16 +65,16 @@ class SpineRemove:
     def get_min_max_for_every_axis(self):
         return self.min_max_for_z, self.min_max_for_x, self.min_max_for_y
 
-    def set_y_min_max_for_every_z(self, rolling_window=20, min_periods=10):
+    def set_y_min_max_for_every_z(self, rolling_window=20, min_periods=10, apart_distance=100):
 
         def railings_interpolate(spine_remaining_df=None,
-                                 spine_width=150):
-            _y_center_df = spine_remaining_df.groupby('z').agg({'y': ['mean', 'min', 'max']})
+                                 spine_width=None):
+            _y_center_df = spine_remaining_df.groupby('z').agg({'y': ['mean', 'min', 'max', 'std']})
             _y_center_df.columns = ['%s.%s' % e for e in _y_center_df.columns]
             _y_center_df.reset_index(inplace=True)
             _y_center_df.rename(columns={'index': 'z'}, inplace=True)
-            _y_center_df['min'] = _y_center_df.apply(lambda row: max(row['y.mean']-spine_width, row['y.min']), axis=1)
-            _y_center_df['max'] = _y_center_df.apply(lambda row: min(row['y.mean']+spine_width, row['y.max']), axis=1)
+            _y_center_df['min'] = _y_center_df.apply(lambda row: max(row['y.mean']-row['y.std'], row['y.min']), axis=1)
+            _y_center_df['max'] = _y_center_df.apply(lambda row: min(row['y.mean']+row['y.std'], row['y.max']), axis=1)
 
             return _y_center_df
 
@@ -106,8 +106,39 @@ class SpineRemove:
 
             return full_df
 
-        center_df = railings_interpolate(spine_remaining_df=self.sparse_df, spine_width=150)
-        _relu_score = relu_interpolate(section_df=center_df, margin_min=5, margin_max=50, is_expand=False)
+        def railings_relu_interpolate(spine_remaining_df=None):
+            # groupby y.statistics by z, y.std Equivalent to radius @ z
+            _y_center_df = spine_remaining_df.groupby('z').agg({'y': ['mean', 'min', 'max', 'std']})
+            _y_center_df.columns = ['%s.%s' % e for e in _y_center_df.columns]
+
+            y_std_mean, y_std_std = _y_center_df['y.std'].mean(), _y_center_df['y.std'].std()
+            _y_center_df['y.std.distribution'] = _y_center_df['y.std'].apply(
+                lambda x: np.abs(x - y_std_mean) / y_std_std)
+            _y_center_df[_y_center_df['y.std.distribution'] > 1.0] = np.NAN
+            interpolate_columns = ['y.mean', 'y.min', 'y.max', 'y.std']
+            _y_center_df[interpolate_columns] = _y_center_df[interpolate_columns].interpolate()
+            _y_center_df[interpolate_columns] = _y_center_df[interpolate_columns].fillna(method='ffill').fillna(
+                method='bfill')
+            _y_center_df.reset_index(inplace=True)
+            _y_center_df.rename(columns={'index': 'z'})
+            _y_center_df['y.mean'] = _y_center_df['y.mean'].rolling(30).mean().fillna(method='ffill').fillna(
+                method='bfill')
+
+            return _y_center_df
+
+        y_mean = self.sparse_df['y'].mean()
+        y_left, y_right = y_mean - apart_distance, y_mean + apart_distance
+        apart_spine_remaining_df = self.sparse_df[(self.sparse_df['y'] > y_left) &
+                                                  (self.sparse_df['y'] < y_right)]
+        y_center_df = railings_relu_interpolate(spine_remaining_df=apart_spine_remaining_df)
+
+        temp_df = apart_spine_remaining_df.merge(y_center_df, on='z', how='inner')
+        temp_df['inner'] = temp_df.apply(lambda row: np.abs(row['y'] - row['y.mean']) / row['y.std'], axis=1)
+        apart_spine_remaining_df_enhanced = temp_df[temp_df['inner'] < 3.0]
+        y_center_df_enhanced = railings_relu_interpolate(spine_remaining_df=apart_spine_remaining_df_enhanced)
+
+        # center_df = railings_interpolate(spine_remaining_df=apart_spine_remaining_df_enhanced, spine_width=150)
+        # _relu_score = relu_interpolate(section_df=center_df, margin_min=5, margin_max=50, is_expand=False)
         z_min_max, _, y_min_max = self.get_min_max_for_every_axis()
         cartesian_y = pd.DataFrame({'y': np.arange(y_min_max[0], y_min_max[1] + 1, 1),
                                     'key': np.zeros(y_min_max[1] - y_min_max[0] + 1)})
@@ -115,7 +146,7 @@ class SpineRemove:
                                     'key': np.zeros(self.bone_data_shape[0])})
         cartesian_all = cartesian_y.merge(cartesian_z, on='key', how='left')
 
-        all_index_df_in_envelope = cartesian_all.merge(_relu_score, on='z')
+        all_index_df_in_envelope = cartesian_all.merge(y_center_df_enhanced, on='z')
         self.all_index_in_envelope = all_index_df_in_envelope[(all_index_df_in_envelope['y'] <= all_index_df_in_envelope['y.max'])
                                                               & (all_index_df_in_envelope['y'] >= all_index_df_in_envelope['y.min'])]
 
