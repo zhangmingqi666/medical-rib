@@ -1,10 +1,8 @@
 import xml.etree.ElementTree as ET
-import pickle
 import os
 from os import listdir, getcwd
-from os.path import join
 
-sets=[('2007', 'train'), ('2007', 'val'), ('2007', 'test')]
+sets = [('2007', 'train'), ('2007', 'val'), ('2007', 'test')]
 
 classes = ["hurt"]
 
@@ -20,12 +18,12 @@ def convert(size, box):
     w = w*dw
     y = y*dh
     h = h*dh
-    return (x,y,w,h)
+    return x, y, w, h
 
 
 def convert_annotation(year, image_id):
-    in_file = open('VOCdevkit/VOC%s/Annotations/%s.xml'%(year, image_id))
-    out_file = open('VOCdevkit/VOC%s/labels/%s.txt'%(year, image_id), 'w')
+    in_file = open('./data/voc%s/Annotations/%s.xml' % (year, image_id))
+    out_file = open('./data/voc%s/labels/%s.txt' % (year, image_id), 'w')
     tree=ET.parse(in_file)
     root = tree.getroot()
     size = root.find('size')
@@ -43,15 +41,17 @@ def convert_annotation(year, image_id):
         bb = convert((w,h), b)
         out_file.write(str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n')
 
+
 wd = getcwd()
 
+
 for year, image_set in sets:
-    if not os.path.exists('VOCdevkit/VOC%s/labels/'%(year)):
-        os.makedirs('VOCdevkit/VOC%s/labels/'%(year))
-    image_ids = open('VOCdevkit/VOC%s/ImageSets/Main/%s.txt'%(year, image_set)).read().strip().split()
-    list_file = open('%s_%s.txt'%(year, image_set), 'w')
+    if not os.path.exists('./data/voc%s/labels/' % year):
+        os.makedirs('./data/voc%s/labels/' % year)
+    image_ids = open('./data/voc%s/ImageSets/%s.txt' % (year, image_set)).read().strip().split()
+    list_file = open('./data/voc%s/%s_%s.txt' % (year, year, image_set), 'w')
     for image_id in image_ids:
-        list_file.write('%s/VOCdevkit/VOC%s/JPEGImages/%s.jpg\n'%(wd, year, image_id))
+        list_file.write('%s/data/voc%s/JPEGImages/%s.jpg\n' % (wd, year, image_id))
         convert_annotation(year, image_id)
     list_file.close()
 

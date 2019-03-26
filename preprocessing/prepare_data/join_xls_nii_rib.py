@@ -17,7 +17,7 @@ def read_excel(excel_path=None):
 
 
 def one_ct_df_join_bounding_box(data_df=None, bounding_box_df=None, ct_id=''):
-    dataset_map_label_df = pd.DataFrame(columns=('location_id', 'dataSet_id'))
+    dataset_map_label_df = pd.DataFrame(columns=('id', 'location_id', 'dataSet_id'))
     only_bounding_box_df = bounding_box_df[bounding_box_df['id'] == ct_id]
     for index, row in only_bounding_box_df.iterrows():
         box_x_min, box_x_max = row['box.x.min'], row['box.x.max']
@@ -29,11 +29,13 @@ def one_ct_df_join_bounding_box(data_df=None, bounding_box_df=None, ct_id=''):
                           (data_df['y'] < box_y_max) & (data_df['z'] > box_z_min) & (data_df['z'] < box_z_max)]
         mode = temp_df['c'].mode()
         if len(mode) == 1:
-            dataset_map_label_df.loc[len(dataset_map_label_df)] = {'location_id': row['location_id'],
+            dataset_map_label_df.loc[len(dataset_map_label_df)] = {'id': ct_id,
+                                                                   'location_id': row['location_id'],
                                                                    'dataSet_id': "{}-{}".format(ct_id, mode[0])}
         else:
             # ribs_obtain are not all
-            dataset_map_label_df.loc[len(dataset_map_label_df)] = {'location_id': row['location_id'],
+            dataset_map_label_df.loc[len(dataset_map_label_df)] = {'id': ct_id,
+                                                                   'location_id': row['location_id'],
                                                                    'dataSet_id': None}
     return dataset_map_label_df
 
@@ -52,7 +54,9 @@ def get_all_map_between_ct_and_location(csv_dataset_folder=None, bounding_box_df
         if not os.path.exists("{}/{}.csv".format(csv_dataset_folder, ct_id)):
             continue
 
-        data_df = pd.read_csv("{}/{}.csv".format(csv_dataset_folder, ct_id))
+        data_df = pd.read_csv("{}/{}.csv".format(csv_dataset_folder, ct_id), dtype={'x': np.int,
+                                                                                    'y': np.int,
+                                                                                    'z': np.int})
         # get global erea for every ribs.
         range_data_df = data_df.groupby('c').agg({'x': ['min', 'max'],
                                                   'y': ['min', 'max'],
@@ -67,6 +71,7 @@ def get_all_map_between_ct_and_location(csv_dataset_folder=None, bounding_box_df
 
         if len(data_df) == 0:
             continue
+
         temp_map = one_ct_df_join_bounding_box(data_df=data_df, bounding_box_df=bounding_box_df, ct_id=ct_id)
         temp_map = temp_map.merge(range_data_df, on='dataSet_id', how='outer')
         map_between_ct_and_location = map_between_ct_and_location.append(temp_map)
@@ -100,12 +105,15 @@ if __name__ == '__main__':
 
     print('Called with args:')
     print(args)
-
-    bounding_box_df = pd.read_csv(args.nii_loc_df_path)
+    bounding_box_df = pd.read_csv(args.nii_loc_df_path, dtype={'id': np.str, 'location_id': np.str,
+                                                               'box.x.max': np.int, 'box.x.min': np.int,
+                                                               'box.y.max': np.int, 'box.y.min': np.int,
+                                                               'box.z.max': np.int, 'box.z.min': np.int})
     excel_df = read_excel(args.rib_type_location_path)
     map_df = get_all_map_between_ct_and_location(csv_dataset_folder=args.ribs_df_cache_folder, bounding_box_df=bounding_box_df)
+    # map_df between id-xxxx, id-Lx
     print(excel_df.columns)
     print(map_df.columns)
-    map_df = map_df.merge(excel_df, on='location_id', how='inner')
-    map_df = map_df.merge(bounding_box_df, on='location_id', how='inner')
+    map_df = map_df.merge(excel_df, on=['id', 'location_id'], how='inner')
+    map_df = map_df.merge(bounding_box_df, on=['id', 'location_id'], how='inner')
     map_df.to_csv(args.data_join_label_path, index=False)

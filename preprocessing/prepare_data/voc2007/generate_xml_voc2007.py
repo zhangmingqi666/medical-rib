@@ -23,7 +23,7 @@ _IMAGE_SOURCE = 'hua-dong hospital'
 _AUTHOR = 'jiangyy,leaves'
 _SEGMENTED = '0'
 # object
-_NAME = 'person'
+_NAME = 'hurt'
 _DIFFICULT = '0'
 _TRUNCATED = '0'
 _POSE = 'Unspecified'
@@ -142,15 +142,17 @@ if __name__ == '__main__':
 
     assert os.path.exists(args.label_loc_type_info_path) and os.path.exists(args.voc2007_Annotations_folder)
     df = pd.read_csv(args.label_loc_type_info_path)
-
+    df = df.dropna(how='any', axis=1)
+    print(df.columns)
     folder = args.voc2007_Annotations_folder
     for idx, row in df.iterrows():
         # now, exchange bndbox, x, y
+        print(row)
         generate_voc2007format_xml(xml_file_name='{}/{}.xml'.format(folder, row['dataSet_id']),
                                    folder='JPEGImages',
                                    filename='{}.jpg'.format(row['dataSet_id']),
-                                   size_width=row['range.x.max'] - row['range.x.min'],
-                                   size_height=row['range.y.max'] - row['range.y.min'],
+                                   size_width=int(row['range.x.max'] - row['range.x.min']),
+                                   size_height=int(row['range.y.max'] - row['range.y.min']),
                                    size_depth=1,
                                    bndbox=[row['box.y.min'] - row['range.y.min'],
                                            row['box.x.min'] - row['range.x.min'],

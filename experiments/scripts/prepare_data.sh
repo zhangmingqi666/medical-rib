@@ -9,7 +9,7 @@ JOIN_LABEL_PATH=./data/csv_files/join_label.csv
 Voc2007_folder=./data/voc2007
 Voc2007_Annotations_folder=./data/voc2007/Annotations
 Voc2007_ImageSets_folder=./data/voc2007/ImageSets
-Voc2007_JPEGSImages_folder=./data/voc2007/JPEGSImages
+Voc2007_JPEGImages_folder=./data/voc2007/JPEGImages
 
 function re_mkdir_folder(){
     rm -rf $1
@@ -19,7 +19,7 @@ function re_mkdir_folder(){
 
 re_mkdir_folder  ${Voc2007_Annotations_folder}
 re_mkdir_folder  ${Voc2007_ImageSets_folder}
-re_mkdir_folder  ${Voc2007_JPEGSImages_folder}
+re_mkdir_folder  ${Voc2007_JPEGImages_folder}
 
 # join all the rib, bounding box, excel_df
 python3 ./preprocessing/prepare_data/join_xls_nii_rib.py  --ribs_df_cache_folder  ${RIB_DF_CACHE_DIR} \
@@ -30,7 +30,7 @@ python3 ./preprocessing/prepare_data/join_xls_nii_rib.py  --ribs_df_cache_folder
 # separate voc2007 part from join part
 echo "######## split ribs_dataSet into independent picture and save offset shift ########"
 python3  ./preprocessing/prepare_data/voc2007/to_ribs_dataset_voc2007.py  --in_folder_path  ${RIB_DF_CACHE_DIR}  \
-                                         --output_independent_rib_folder  ${Voc2007_JPEGSImages_folder}  \
+                                         --output_independent_rib_folder  ${Voc2007_JPEGImages_folder}  \
                                          --output_format  ".jpg"
 
 echo "######## generate voc2007 format: annotations ########"
@@ -42,3 +42,8 @@ echo "######## generate voc2007 format: imageSets ########"
 python3  ./preprocessing/prepare_data/voc2007/write_imagesets_voc2007.py  \
                                        --voc2007_Annotations_folder  ${Voc2007_Annotations_folder}  \
                                        --voc2007_ImageSets_folder  ${Voc2007_ImageSets_folder}
+
+
+# echo "######## voc_label from voc2007 to darknet format data"
+python3 ./preprocessing/todarknet/voc_label.py
+# maybe 需要增强.
