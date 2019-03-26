@@ -10,6 +10,7 @@ SLICING=$3
 RIBS_MODEL_WEIGHTS=./experiments/cfgs
 PKL_FOLDER=$4
 
+
 function ribs_obtain_from_dcm() {
     # $1 代表第一个参数，$N 代表第 N 个参数
     # $# 代表参数个数
@@ -23,15 +24,16 @@ function ribs_obtain_from_dcm() {
         out_put_prefix=${LOGS_DIR}/${id}
         BONE_INFO_PATH=${BONE_INFO_DIR}/${id}".csv"
         RIB_DF_CACHE_PATH=${RIB_DF_CACHE_DIR}/${id}".csv"
-        rm -rf ${out_put_prefix} && mkdir -p ${out_put_prefix}
         echo "start make rib data for ${id}"
         echo "last_logs saved to ${out_put_prefix}"
         echo "ribs cached to ${BONE_INFO_PATH}"
 
-        #if [[ -f ${RIB_DF_CACHE_PATH} ]];then
-        #    echo "${RIB_DF_CACHE_PATH} existed, ignore this step"
-        #    continue
-        #fi
+        OS=`uname -s`
+        if [[ ${OS} == "Linux"  ]] && [[ -f ${RIB_DF_CACHE_PATH} ]];then
+            echo "${RIB_DF_CACHE_PATH} existed, ignore this step"
+            continue
+        fi
+        rm -rf ${out_put_prefix} && mkdir -p ${out_put_prefix}
 
         python3  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}  \
                                                     --dcm_path  ${dcm_path}  \
