@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/experiments/scripts/hist_rib_id_cnt.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/scripts/train_dark_net.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/train_dark_net.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/voc2007/generate_xml_voc2007.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/prepare_data/voc2007/generate_xml_voc2007.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/todarknet/voc_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/todarknet/voc_label.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/view_spine.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/view_spine.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,14 +23,14 @@
           <entry key="md" value="5" />
           <entry key="png" value="461" />
           <entry key="py" value="392" />
-          <entry key="sh" value="173" />
+          <entry key="sh" value="174" />
           <entry key="txt" value="4" />
           <entry key="xml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="173" />
+          <entry key="Bash" value="174" />
           <entry key="CSV" value="40" />
           <entry key="Image" value="463" />
           <entry key="Markdown" value="5" />
@@ -53,13 +45,13 @@
           <entry key="csv" value="4" />
           <entry key="dummy" value="61" />
           <entry key="py" value="16448" />
-          <entry key="sh" value="5924" />
+          <entry key="sh" value="5942" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="5924" />
+          <entry key="Bash" value="5942" />
           <entry key="CSV" value="4" />
           <entry key="PLAIN_TEXT" value="65" />
           <entry key="Python" value="16484" />
@@ -87,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/experiments/scripts/prepare_data.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="26" column="82" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="82" />
+            <state relative-caret-position="180">
+              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -186,9 +178,9 @@
         <option value="$PROJECT_DIR$/experiments/scripts/hist_rib_id_cnt.sh" />
         <option value="$PROJECT_DIR$/experiments/scripts/train_dark_net.sh" />
         <option value="$PROJECT_DIR$/preprocessing/todarknet/voc_label.py" />
-        <option value="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/voc2007/generate_xml_voc2007.py" />
+        <option value="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" />
       </list>
     </option>
   </component>
@@ -216,6 +208,12 @@
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
               <item name="experiments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
@@ -665,8 +663,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/experiments/scripts/prepare_data.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="26" column="82" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="82" />
+        <state relative-caret-position="180">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
         </state>
       </provider>
     </entry>
