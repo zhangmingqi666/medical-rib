@@ -13,6 +13,7 @@ logs/
 data/*
 .idea/*
 .idea/workspace.xml
+.idea
 # C extensions
 *.so
 models/darknet
