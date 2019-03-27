@@ -10,6 +10,7 @@ Voc2007_folder=./data/voc2007
 Voc2007_Annotations_folder=./data/voc2007/Annotations
 Voc2007_ImageSets_folder=./data/voc2007/ImageSets
 Voc2007_JPEGImages_folder=./data/voc2007/JPEGImages
+Voc2007_darknet_labels=./data/voc2007/labels
 
 function re_mkdir_folder(){
     rm -rf $1
@@ -20,6 +21,7 @@ function re_mkdir_folder(){
 re_mkdir_folder  ${Voc2007_Annotations_folder}
 re_mkdir_folder  ${Voc2007_ImageSets_folder}
 re_mkdir_folder  ${Voc2007_JPEGImages_folder}
+re_mkdir_folder  ${Voc2007_darknet_labels}
 
 # join all the rib, bounding box, excel_df
 python3 ./preprocessing/prepare_data/join_xls_nii_rib.py  --ribs_df_cache_folder  ${RIB_DF_CACHE_DIR} \
@@ -46,4 +48,5 @@ python3  ./preprocessing/prepare_data/voc2007/write_imagesets_voc2007.py  \
 
 # echo "######## voc_label from voc2007 to darknet format data"
 python3 ./preprocessing/todarknet/voc_label.py
+cat ./data/voc2007/2007_train.txt ./data/voc2007/2007_val.txt > ./data/voc2007/train.txt
 # maybe 需要增强.
