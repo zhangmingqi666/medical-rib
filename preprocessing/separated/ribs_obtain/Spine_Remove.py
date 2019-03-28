@@ -111,13 +111,17 @@ class SpineRemove:
             _y_center_df = spine_remaining_df.groupby('z').agg({'y': ['mean', 'min', 'max', 'std']})
             _y_center_df.columns = ['%s.%s' % e for e in _y_center_df.columns]
 
+            ### add missing index:
+            #_y_center_df = pd.concat((_y_center_df, pd.DataFrame(index=[i for i in range(self.bone_data_shape[0])])),
+            #                         axis=1)
+
             y_std_mean, y_std_std = _y_center_df['y.std'].mean(), _y_center_df['y.std'].std()
             _y_center_df['y.std.distribution'] = _y_center_df['y.std'].apply(
                 lambda x: np.abs(x - y_std_mean) / y_std_std)
-            _y_center_df[_y_center_df['y.std.distribution'] > 1.0] = np.NAN
-            interpolate_columns = ['y.mean', 'y.min', 'y.max', 'y.std']
-            _y_center_df[interpolate_columns] = _y_center_df[interpolate_columns].interpolate()
-            _y_center_df[interpolate_columns] = _y_center_df[interpolate_columns].fillna(method='ffill').fillna(
+            _y_center_df[_y_center_df['y.std.distribution'] > 1.0][['y.min', 'y.max']] = np.NAN
+
+            _y_center_df[['y.min', 'y.max']] = _y_center_df[['y.min', 'y.max']].interpolate()
+            _y_center_df[['y.min', 'y.max']] = _y_center_df[['y.min', 'y.max']].fillna(method='ffill').fillna(
                 method='bfill')
             _y_center_df.reset_index(inplace=True)
             _y_center_df.rename(columns={'index': 'z'})
@@ -125,6 +129,24 @@ class SpineRemove:
                 method='bfill')
 
             return _y_center_df
+
+        def nan_cave_relu_interpolate(section_df, margin_min=50, expand_width=30):
+            section_df['y.length'] = section_df.apply(lambda row: row['y.max'] - row['y.min'], axis=1)
+            average_y_length = section_df['y.length'].mean()
+            # when a rib connected spine, the width near the rib will be greater than others.
+            section_df[(section_df['y.length'] < average_y_length - margin_min)] = None
+            section_df = pd.concat((section_df, pd.DataFrame(index=[i for i in range(self.bone_data_shape[0])])),
+                                   axis=1)
+            section_df[['y.min', 'y.max']] = section_df[['y.min', 'y.max']].\
+                interpolate().\
+                fillna(method='ffill').\
+                fillna(method='bfill')
+
+            section_df['y.min'] = section_df.apply(lambda row: row['y.min'] - (expand_width if row['y.length'] is None
+                                                                               else 0), axis=1)
+            section_df['y.max'] = section_df.apply(lambda row: row['y.max'] + (expand_width if row['y.length'] is None
+                                                                               else 0), axis=1)
+            return section_df
 
         y_mean = self.sparse_df['y'].mean()
         y_left, y_right = y_mean - apart_distance, y_mean + apart_distance
@@ -137,16 +159,31 @@ class SpineRemove:
         apart_spine_remaining_df_enhanced = temp_df[temp_df['inner'] < 3.0]
         y_center_df_enhanced = railings_relu_interpolate(spine_remaining_df=apart_spine_remaining_df_enhanced)
 
+        y_center_df_enhanced_caved = nan_cave_relu_interpolate(y_center_df_enhanced)
+
         # center_df = railings_interpolate(spine_remaining_df=apart_spine_remaining_df_enhanced, spine_width=150)
         # _relu_score = relu_interpolate(section_df=center_df, margin_min=5, margin_max=50, is_expand=False)
         z_min_max, _, y_min_max = self.get_min_max_for_every_axis()
+
+        def make_cartesian(df1=None, df2=None, cartesian_key='cartesian_key'):
+            df1[cartesian_key] = 1
+            df2[cartesian_key] = 1
+            df3 = df1.merge(df2, on=cartesian_key)
+            df3.drop([cartesian_key], axis=1, inplace=True)
+            return df3
+
+        cartesian_all = make_cartesian(df1=pd.DataFrame({'y': np.arange(y_min_max[0], y_min_max[1] + 1, 1)}),
+                                       df2=pd.DataFrame({'z': np.arange(0, self.bone_data_shape[0], 1)}))
+
+        """
         cartesian_y = pd.DataFrame({'y': np.arange(y_min_max[0], y_min_max[1] + 1, 1),
                                     'key': np.zeros(y_min_max[1] - y_min_max[0] + 1)})
         cartesian_z = pd.DataFrame({'z': np.arange(0, self.bone_data_shape[0], 1),
                                     'key': np.zeros(self.bone_data_shape[0])})
         cartesian_all = cartesian_y.merge(cartesian_z, on='key', how='left')
+        """
 
-        all_index_df_in_envelope = cartesian_all.merge(y_center_df_enhanced, on='z')
+        all_index_df_in_envelope = cartesian_all.merge(y_center_df_enhanced_caved, on='z')
         self.all_index_in_envelope = all_index_df_in_envelope[(all_index_df_in_envelope['y'] <= all_index_df_in_envelope['y.max'])
                                                               & (all_index_df_in_envelope['y'] >= all_index_df_in_envelope['y.min'])]
 

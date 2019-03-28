@@ -2,10 +2,11 @@ from enum import Enum
 import matplotlib.pyplot as plt
 import gc
 import numpy as np
-from interval import Interval
+import pandas as pd
 import warnings
 import sys, os
-
+import skimage
+from skimage.measure import label
 
 def add_python_path(path):
     if path not in sys.path:
@@ -14,7 +15,9 @@ def add_python_path(path):
 
 add_python_path(os.getcwd())
 # from projects
-from preprocessing.separated.ribs_obtain.util import sparse_df_to_arr
+from preprocessing.separated.ribs_obtain.util import (plot_yzd, sparse_df_to_arr, arr_to_sparse_df, timer,
+                                                      loop_morphology_binary_opening, source_hu_value_arr_to_binary,
+                                                      arr_to_sparse_df_only, plot_binary_array)
 warnings.filterwarnings('ignore')
 
 
@@ -68,6 +71,9 @@ class BonePredict:
         self.set_features_z_distance_on_xoy()
         self.set_features_x_distance_on_zoy()
         self.set_features_y_distance_on_zox()
+
+        self.multi_ribs = False
+        self.detect_multi_ribs()
 
     def get_bone_data(self):
         return self.bone_data
@@ -171,6 +177,111 @@ class BonePredict:
 
     def get_iou_on_xoy(self):
         return self.bone_iou_on_xoy
+
+    def detect_multi_ribs(self):
+
+        _, _, y_min = self.get_basic_axis_feature(feature='min')
+        _, _, y_max = self.get_basic_axis_feature(feature='max')
+
+        if len(self.bone_data) < 10000:
+            return
+
+        if y_min < self.y_mid_line and y_max < self.y_mid_line:
+            rib_min_or_max = 'min'
+            shadow_threhold = (y_min + 2*y_max) // 3
+        elif y_max > self.y_mid_line and y_min > self.y_mid_line:
+            rib_min_or_max = 'max'
+            shadow_threhold = (2*y_min + y_max) // 3
+        else:
+            return
+
+        # print("############ hello")
+
+        map2d_df = self.bone_data.groupby(['y', 'z']).agg({'x': 'sum'})
+        map2d_df.reset_index(inplace=True)
+
+        map2d_image = np.ones((self.arr_shape[0], self.arr_shape[2]))
+        map2d_image[(map2d_df['z'].values, map2d_df['y'].values)] = 0
+
+        if rib_min_or_max is 'min':
+            map2d_image[:, :shadow_threhold] = 0
+        else:
+            map2d_image[:, shadow_threhold:] = 0
+
+        label_arr = skimage.measure.label(map2d_image, connectivity=2)
+        index = label_arr.nonzero()
+        sparse_df = pd.DataFrame({'y': index[1],
+                                  'z': index[0],
+                                  'c': label_arr[index]})
+        cluster_df = sparse_df.groupby('c').agg({'c': ['count']})
+        cluster_df.columns = ['c.count']
+        max_c_count = cluster_df['c.count'].max()
+        cluster_df.reset_index(inplace=True)
+        cluster_df.rename(columns={'index': 'c'})
+        cluster_df = cluster_df[(cluster_df['c.count'] > 10) & (cluster_df['c.count'] < max_c_count)]
+
+        if len(cluster_df) == 0:
+            return
+        print("############ hello2")
+        self.multi_ribs = True
+
+        multi_ribs_num = len(cluster_df) + 1
+
+        sparse_df = sparse_df[sparse_df['c'].isin(cluster_df['c'].values)]
+        thin_line_df = sparse_df.groupby(['c', 'y']).agg({'z': ['mean']})
+        thin_line_df.columns = ['z']
+        thin_line_df['z'] = thin_line_df['z'].apply(lambda x: np.int(x))
+        thin_line_df.reset_index(inplace=True)
+
+        if rib_min_or_max is 'min':
+            choose_point = thin_line_df.groupby('c').agg({'y': ['max']})
+        else:
+            choose_point = thin_line_df.groupby('c').agg({'y': ['min']})
+        choose_point.columns = ['y']
+        choose_point.reset_index(inplace=True)
+        choose_point.rename(columns={'index': 'c'})
+        thin_point_df = thin_line_df.merge(choose_point, on=['c', 'y'], how='inner')
+        thin_point_df.reset_index(inplace=True)
+        if rib_min_or_max is 'min':
+            thin_point_df.rename(columns={'y': 'y.min'}, inplace=True)
+            thin_point_df['y.max'] = y_max
+        else:
+            thin_point_df.rename(columns={'y': 'y.max'}, inplace=True)
+            thin_point_df['y.min'] = y_min
+
+        print("thin_point_df columns :", thin_point_df.columns)
+
+        def make_cartesian(df1=None, df2=None, cartesian_key='cartesian_key'):
+            df1[cartesian_key] = 1
+            df2[cartesian_key] = 1
+            df3 = df1.merge(df2, on=cartesian_key)
+            df3.drop([cartesian_key], axis=1, inplace=True)
+            return df3
+
+        cartesian_all = make_cartesian(df1=pd.DataFrame({'y': np.arange(y_min, y_max, 1)}), df2=thin_point_df)
+
+        print(cartesian_all.columns)
+        print(cartesian_all)
+
+        cartesian_all = cartesian_all[(cartesian_all['y'] <= cartesian_all['y.max']) &
+                                      (cartesian_all['y'] >= cartesian_all['y.min'])]
+
+        old_class_id = self.bone_data['c'].unique()[0]
+        new_bone_data_df = self.bone_data.merge(cartesian_all, on=['y', 'z'], how='left')
+        new_bone_data_df = new_bone_data_df[new_bone_data_df['y.min'].notnull()]
+        new_bone_data_df.drop(['y.min', 'y.max'], axis=1, inplace=True)
+
+        new_bone_data_3d = sparse_df_to_arr(arr_expected_shape=self.arr_shape, sparse_df=new_bone_data_df)
+        new_bone_data_3d_label = skimage.measure.label(new_bone_data_3d, connectivity=2)
+
+        new_bone_data_df, _ = arr_to_sparse_df(label_arr=new_bone_data_3d_label, sort=True, sort_key='c.count',
+                                               keep_by_top=True, top_nth=multi_ribs_num)
+        new_bone_data_df['c'] = new_bone_data_df['c'].apply(lambda x: "{}-{}".format(old_class_id, x))
+        self.bone_data = new_bone_data_df
+
+    def is_multi_ribs(self):
+        # print(self.multi_ribs)
+        return self.multi_ribs
 
     def plot_bone(self, show_all=False, show_3d=False, save=False, save_path=None):
         """

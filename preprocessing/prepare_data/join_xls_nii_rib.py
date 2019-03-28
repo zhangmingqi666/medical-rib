@@ -32,11 +32,11 @@ def one_ct_df_join_bounding_box(data_df=None, bounding_box_df=None, ct_id=''):
             dataset_map_label_df.loc[len(dataset_map_label_df)] = {'id': ct_id,
                                                                    'location_id': row['location_id'],
                                                                    'dataSet_id': "{}-{}".format(ct_id, mode[0])}
-        else:
-            # ribs_obtain are not all
-            dataset_map_label_df.loc[len(dataset_map_label_df)] = {'id': ct_id,
-                                                                   'location_id': row['location_id'],
-                                                                   'dataSet_id': None}
+        #else:
+        #    # ribs_obtain are not all
+        #    dataset_map_label_df.loc[len(dataset_map_label_df)] = {'id': ct_id,
+        #                                                           'location_id': row['location_id'],
+        #                                                           'dataSet_id': None}
     return dataset_map_label_df
 
 
@@ -61,10 +61,12 @@ def get_all_map_between_ct_and_location(csv_dataset_folder=None, bounding_box_df
         range_data_df = data_df.groupby('c').agg({'x': ['min', 'max'],
                                                   'y': ['min', 'max'],
                                                   'z': ['min', 'max']})
+
         range_data_df.columns = ['range.{}.{}'.format(e[0], e[1]) for e in range_data_df.columns.tolist()]
         for e in ['x', 'y', 'z']:
             range_data_df['range.{}.min'.format(e)] = range_data_df['range.{}.min'.format(e)].apply(lambda x: x-2)
             range_data_df['range.{}.max'.format(e)] = range_data_df['range.{}.max'.format(e)].apply(lambda x: x+2)
+
         range_data_df.reset_index(inplace=True)
         range_data_df.rename(columns={'index': 'dataSet_id', 'c': 'dataSet_id'}, inplace=True)
         range_data_df['dataSet_id'] = range_data_df['dataSet_id'].apply(lambda x: '{}-{}'.format(ct_id, x))
@@ -73,8 +75,11 @@ def get_all_map_between_ct_and_location(csv_dataset_folder=None, bounding_box_df
             continue
 
         temp_map = one_ct_df_join_bounding_box(data_df=data_df, bounding_box_df=bounding_box_df, ct_id=ct_id)
+
         temp_map = temp_map.merge(range_data_df, on='dataSet_id', how='outer')
+
         map_between_ct_and_location = map_between_ct_and_location.append(temp_map)
+
     return map_between_ct_and_location
 
 
@@ -111,9 +116,11 @@ if __name__ == '__main__':
                                                                'box.z.max': np.int, 'box.z.min': np.int})
     excel_df = read_excel(args.rib_type_location_path)
     map_df = get_all_map_between_ct_and_location(csv_dataset_folder=args.ribs_df_cache_folder, bounding_box_df=bounding_box_df)
+
     # map_df between id-xxxx, id-Lx
-    print(excel_df.columns)
-    print(map_df.columns)
+    #print(excel_df.dtypes)
+    #print(map_df.dtypes)
     map_df = map_df.merge(excel_df, on=['id', 'location_id'], how='inner')
     map_df = map_df.merge(bounding_box_df, on=['id', 'location_id'], how='inner')
     map_df.to_csv(args.data_join_label_path, index=False)
+    print(map_df.dtypes)
