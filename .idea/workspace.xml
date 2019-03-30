@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/experiments/scripts/generate_gbdt.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/scripts/update_bone_info.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/cfgs/gbdt.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/cfgs/gbdt.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/scripts/merge_csv.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/merge_csv.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/scripts/hist_rib_id_cnt.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/hist_rib_id_cnt.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/rib_recognition/gbdt_judge_rib.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/rib_recognition/gbdt_judge_rib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/rib_recognition/generate_bone_info_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/rib_recognition/generate_bone_info_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/rib_recognition/generate_gbdt.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Predict.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Spine_Remove.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Spine_Remove.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,14 +19,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="bak" value="3" />
-          <entry key="csv" value="53" />
+          <entry key="csv" value="55" />
           <entry key="gitignore" value="3" />
           <entry key="jpg" value="2" />
           <entry key="log" value="10" />
           <entry key="md" value="6" />
           <entry key="png" value="461" />
-          <entry key="py" value="444" />
-          <entry key="sh" value="194" />
+          <entry key="py" value="446" />
+          <entry key="sh" value="196" />
           <entry key="test" value="4" />
           <entry key="txt" value="5" />
           <entry key="xml" value="9" />
@@ -44,12 +34,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="194" />
-          <entry key="CSV" value="53" />
+          <entry key="Bash" value="196" />
+          <entry key="CSV" value="55" />
           <entry key="Image" value="463" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="25" />
-          <entry key="Python" value="444" />
+          <entry key="Python" value="446" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -58,18 +48,18 @@
           <entry key="Python Console" value="36" />
           <entry key="csv" value="4" />
           <entry key="dummy" value="61" />
-          <entry key="py" value="21267" />
-          <entry key="sh" value="6472" />
+          <entry key="py" value="21641" />
+          <entry key="sh" value="6559" />
           <entry key="test" value="29" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="6472" />
+          <entry key="Bash" value="6559" />
           <entry key="CSV" value="4" />
           <entry key="PLAIN_TEXT" value="94" />
-          <entry key="Python" value="21303" />
+          <entry key="Python" value="21677" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -90,17 +80,7 @@
     <favorites_list name="medical-rib" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -135,6 +115,7 @@
       <find>is_multi_ribs</find>
       <find>9413</find>
       <find>4094</find>
+      <find>785</find>
     </findStrings>
     <replaceStrings>
       <replace>info_df_on_zoy</replace>
@@ -181,7 +162,6 @@
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Spine_Predict.py" />
         <option value="$PROJECT_DIR$/tools/view_spine.py" />
         <option value="$PROJECT_DIR$/experiments/scripts/test.sh" />
-        <option value="$PROJECT_DIR$/experiments/scripts/hist_rib_id_cnt.sh" />
         <option value="$PROJECT_DIR$/experiments/scripts/train_dark_net.sh" />
         <option value="$PROJECT_DIR$/preprocessing/todarknet/voc_label.py" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/voc2007/generate_xml_voc2007.py" />
@@ -197,16 +177,17 @@
         <option value="$PROJECT_DIR$/preprocessing/rib_recognition/generate_bone_info_csv.py" />
         <option value="$PROJECT_DIR$/preprocessing/rib_recognition/generate_gbdt.sh" />
         <option value="$PROJECT_DIR$/preprocessing/rib_recognition/gbdt_judge_rib.py" />
-        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py" />
-        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Predict.py" />
+        <option value="$PROJECT_DIR$/experiments/scripts/hist_rib_id_cnt.sh" />
+        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py" />
         <option value="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" />
+        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Predict.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="110" />
-    <option name="y" value="43" />
+    <option name="x" value="264" />
+    <option name="y" value="29" />
     <option name="width" value="958" />
     <option name="height" value="798" />
   </component>
@@ -232,18 +213,8 @@
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="experiments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="separated" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="csv_files" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -409,7 +380,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="110" y="43" width="958" height="798" extended-state="0" />
+    <frame x="264" y="29" width="958" height="798" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8229462" visible="true" weight="0.2828175" />
       <window_info id="Structure" order="1" sideWeight="0.17705382" side_tool="true" visible="true" weight="0.2828175" />
@@ -585,13 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/hist_rib_id_cnt.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/experiments/scripts/test">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -715,26 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/csv_files/dicom_info.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" rowLines="3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -746,23 +690,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Predict.py">
+    <entry file="file://$PROJECT_DIR$/experiments/scripts/hist_rib_id_cnt.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2921">
-          <caret line="18" column="110" selection-start-line="18" selection-start-column="110" selection-end-line="18" selection-end-column="110" />
+        <state relative-caret-position="255">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="302" column="81" selection-start-line="302" selection-start-column="81" selection-end-line="302" selection-end-column="81" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1553938608542" expanded="true" signature="8274:11656" ph="..." />
-            <marker date="1553938608542" expanded="true" signature="16711:16717" ph="..." />
-            <marker date="1553938608542" expanded="true" signature="16796:16805" ph="..." />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_Predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="175" lean-forward="true" selection-start-line="175" selection-end-line="175" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#11067#11376#1" />
+            <marker date="1553964265449" expanded="true" signature="8274:12319" ph="..." />
+            <marker date="1553964265449" expanded="true" signature="17374:17380" ph="..." />
+            <marker date="1553964265449" expanded="true" signature="17459:17468" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/csv_files/dicom_info.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="268">
+          <caret line="23" column="15" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        <state relative-caret-position="315">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
         </state>
       </provider>
     </entry>

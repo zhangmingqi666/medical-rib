@@ -300,7 +300,7 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', b
                                    bone_info_path=bone_info_path,
                                    rib_recognition_model_path=rib_recognition_model_path)
 
-        rib_bone_df.to_csv(rib_df_cache_path, index=False)
+        rib_bone_df.to_csv(rib_df_cache_path, columns=['x', 'y', 'z', 'c', 'v'], index=False)
 
         """plot collected ribs_obtain"""
         if allow_debug:
