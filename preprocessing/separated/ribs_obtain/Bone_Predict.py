@@ -8,6 +8,7 @@ import sys, os
 import skimage
 from skimage.measure import label
 
+
 def add_python_path(path):
     if path not in sys.path:
         sys.path.insert(0, path)
@@ -15,9 +16,7 @@ def add_python_path(path):
 
 add_python_path(os.getcwd())
 # from projects
-from preprocessing.separated.ribs_obtain.util import (plot_yzd, sparse_df_to_arr, arr_to_sparse_df, timer,
-                                                      loop_morphology_binary_opening, source_hu_value_arr_to_binary,
-                                                      arr_to_sparse_df_only, plot_binary_array)
+from preprocessing.separated.ribs_obtain.util import (sparse_df_to_arr, arr_to_sparse_df, sparse_df_remove_min)
 warnings.filterwarnings('ignore')
 
 
@@ -72,8 +71,8 @@ class BonePredict:
         self.set_features_x_distance_on_zoy()
         self.set_features_y_distance_on_zox()
 
-        self.multi_ribs = False
-        self.detect_multi_ribs()
+        # self.multi_ribs = False
+        # self.detect_multi_ribs()
 
     def get_bone_data(self):
         return self.bone_data
@@ -178,12 +177,81 @@ class BonePredict:
     def get_iou_on_xoy(self):
         return self.bone_iou_on_xoy
 
+    def cut_multi_ribs(self):
+        _, x_min, _ = self.get_basic_axis_feature(feature='min')
+        _, x_max, _ = self.get_basic_axis_feature(feature='max')
+
+        map2d_df = self.bone_data.groupby(['x', 'z']).agg({'y': 'sum'})
+        map2d_df.reset_index(inplace=True)
+
+        map2d_image = np.ones((self.arr_shape[0], self.arr_shape[1]))
+        map2d_image[(map2d_df['z'].values, map2d_df['x'].values)] = 0
+        map2d_image[:, :((x_min + x_max)//2)] = 0
+        label_arr = skimage.measure.label(map2d_image, connectivity=2)
+        index = label_arr.nonzero()
+        sparse_df = pd.DataFrame({'x': index[1],
+                                  'z': index[0],
+                                  'c': label_arr[index]})
+        cluster_df = sparse_df.groupby('c').agg({'c': ['count']})
+        cluster_df.columns = ['c.count']
+        max_c_count = cluster_df['c.count'].max()
+        cluster_df.reset_index(inplace=True)
+        cluster_df.rename(columns={'index': 'c'})
+        cluster_df = cluster_df[(cluster_df['c.count'] > 30) & (cluster_df['c.count'] < max_c_count)]
+
+        if len(cluster_df) == 0:
+            return
+
+        multi_ribs_num = len(cluster_df) + 1
+
+        sparse_df = sparse_df[sparse_df['c'].isin(cluster_df['c'].values)]
+        thin_line_df = sparse_df.groupby(['c']).agg({'x': ['max']})
+        thin_line_df.columns = ['x']
+        thin_line_df.reset_index(inplace=True)
+        thin_line_df.rename(columns={'index': 'c'}, inplace=True)
+        thin_line_point = sparse_df.merge(thin_line_df, on=['c', 'x'], how='inner')
+
+        remove_point_df = sparse_df.merge(thin_line_point, on=['x', 'z'], how='inner')
+        remove_point_df.rename(columns={'x': 'x.min'}, inplace=True)
+
+        def make_cartesian(df1=None, df2=None, cartesian_key='cartesian_key'):
+            df1[cartesian_key] = 1
+            df2[cartesian_key] = 1
+            df3 = df1.merge(df2, on=cartesian_key)
+            df3.drop([cartesian_key], axis=1, inplace=True)
+            return df3
+
+        cartesian_all = make_cartesian(df1=pd.DataFrame({'x': np.arange(x_min, x_max+1, 1)}), df2=remove_point_df)
+
+        cartesian_all = cartesian_all[cartesian_all['x'] >= cartesian_all['x.min']]
+        """
+        plt.imshow(map2d_image)
+        for e in cartesian_all['c'].unique():
+            temp_df = cartesian_all[cartesian_all['c'] == e]
+            plt.plot(temp_df['y'], temp_df['z'])
+        plt.title("{}.map2d_image_thin_lines".format(self.bone_data['c'].unique()[0]))
+        plt.show()
+        """
+
+        old_class_id = self.bone_data['c'].unique()[0]
+        new_bone_data_df = self.bone_data.merge(cartesian_all, on=['x', 'z'], how='left')
+        new_bone_data_df = new_bone_data_df[new_bone_data_df['x.min'].isnull()]
+        new_bone_data_df.drop(['x.min'], axis=1, inplace=True)
+
+        new_bone_data_3d = sparse_df_to_arr(arr_expected_shape=self.arr_shape, sparse_df=new_bone_data_df)
+        new_bone_data_3d_label = skimage.measure.label(new_bone_data_3d, connectivity=2)
+
+        new_bone_data_df, _ = arr_to_sparse_df(label_arr=new_bone_data_3d_label, sort=True, sort_key='c.count',
+                                               keep_by_top=True, top_nth=multi_ribs_num)
+        new_bone_data_df['c'] = new_bone_data_df['c'].apply(lambda x: "{}-{}".format(old_class_id, x))
+        self.bone_data = sparse_df_remove_min(sparse_df=new_bone_data_df, threshold_min=5000)
+
     def detect_multi_ribs(self):
 
         _, _, y_min = self.get_basic_axis_feature(feature='min')
         _, _, y_max = self.get_basic_axis_feature(feature='max')
 
-        if len(self.bone_data) < 10000:
+        if len(self.bone_data) < 20000:
             return
 
         if y_min < self.y_mid_line and y_max < self.y_mid_line:
@@ -207,6 +275,12 @@ class BonePredict:
             map2d_image[:, :shadow_threhold] = 0
         else:
             map2d_image[:, shadow_threhold:] = 0
+
+        """
+        plt.imshow(map2d_image)
+        plt.title("{}.map2d_image".format(self.bone_data['c'].unique()[0]))
+        plt.show()
+        """
 
         label_arr = skimage.measure.label(map2d_image, connectivity=2)
         index = label_arr.nonzero()
@@ -260,15 +334,22 @@ class BonePredict:
 
         cartesian_all = make_cartesian(df1=pd.DataFrame({'y': np.arange(y_min, y_max, 1)}), df2=thin_point_df)
 
-        print(cartesian_all.columns)
-        print(cartesian_all)
-
         cartesian_all = cartesian_all[(cartesian_all['y'] <= cartesian_all['y.max']) &
                                       (cartesian_all['y'] >= cartesian_all['y.min'])]
+        """
+        plt.imshow(map2d_image)
+        for e in cartesian_all['c'].unique():
+            temp_df = cartesian_all[cartesian_all['c'] == e]
+            plt.plot(temp_df['y'], temp_df['z'])
+        plt.title("{}.map2d_image_thin_lines".format(self.bone_data['c'].unique()[0]))
+        plt.show()
+        """
 
         old_class_id = self.bone_data['c'].unique()[0]
         new_bone_data_df = self.bone_data.merge(cartesian_all, on=['y', 'z'], how='left')
+        # print("before choose:{},cnt:{}".format(old_class_id, len(new_bone_data_df)))
         new_bone_data_df = new_bone_data_df[new_bone_data_df['y.min'].notnull()]
+        # print("after choose:{},cnt:{}".format(old_class_id, len(new_bone_data_df)))
         new_bone_data_df.drop(['y.min', 'y.max'], axis=1, inplace=True)
 
         new_bone_data_3d = sparse_df_to_arr(arr_expected_shape=self.arr_shape, sparse_df=new_bone_data_df)
@@ -336,12 +417,10 @@ class BonePredict:
                                }
         return single_bone_feature
 
-    #def print_bone_info(self):
-        #print('#'*30 + ' bone ' + '#' * 30)
-        #print('bone direction:', self.left_or_right())
-        #print('bone Type:', self.bone_type)
-        #print('rib type:', self.rib_type)
-        #print('iou = %.2f' % self.get_iou_on_xoy())
-        #print('z_distance_max is', self.get_features_z_distance_on_xoy())
-        #print('nearest point is', self.get_distance_between_centroid_and_nearest_point())
-        #print('through center line rate = {}'.format(self.center_line_through_spine_prob))
+
+if __name__ == "__main__":
+    sparse_df = pd.read_csv("/Users/jiangyy/projects/medical-rib/data/ribs_df_cache/135402000404094.csv")
+    sparse_df_mult = sparse_df[sparse_df['c'] == 17]
+
+    pass
+

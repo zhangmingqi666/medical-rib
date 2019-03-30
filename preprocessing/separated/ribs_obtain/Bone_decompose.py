@@ -141,19 +141,28 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
                                       prior_zoy_center_y_axis_line_df=bone_prior.get_zoy_symmetric_y_axis_line_df())
 
         with timer("########_only rib bone predict"):
-            if single_bone.is_multi_ribs():
-                rib_bone_df = rib_bone_df.append(single_bone.get_bone_data())
-                single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_IS_MULTI_RIB.png'.format(output_prefix, e))
+            #if single_bone.is_multi_ribs():
+            #    rib_bone_df = rib_bone_df.append(single_bone.get_bone_data())
+            #    single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_IS_MULTI_RIB.png'.format(output_prefix, e))
 
             temp_single_bone_feature = single_bone.get_rib_feature_for_predict()
-
-            if GBDT.predict([[temp_single_bone_feature[i] for i in FEATURE_LIST]]):
-                temp_single_bone_feature['target'] = 1
+            pre_target = GBDT.predict([[temp_single_bone_feature[i] for i in FEATURE_LIST]])
+            temp_single_bone_feature['target'] = pre_target[0]
+            # print(pre_target)
+            if pre_target[0] > 1.5:
+                single_bone.cut_multi_ribs()
                 rib_bone_df = rib_bone_df.append(single_bone.get_bone_data())
-                single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_IS_RIB.png'.format(output_prefix, e))
+                single_bone.plot_bone(save=True,
+                                      save_path='{}/label_{}_collect_IS_MULT_RIB.png'.format(output_prefix, e))
+                single_bone.get_bone_data().to_csv('{}/label_{}_collect_IS_MULT_RIB.csv'.format(output_prefix, e),
+                                                   index=False)
+            if pre_target[0] > 0.5:
+                rib_bone_df = rib_bone_df.append(single_bone.get_bone_data())
+                single_bone.plot_bone(save=True,
+                                      save_path='{}/label_{}_collect_IS_RIB.png'.format(output_prefix, e))
             else:
-                temp_single_bone_feature['target'] = 0
-                single_bone.get_bone_data().to_csv('{}/label_{}_collect_NOT_RIB.csv'.format(output_prefix, e), index=False)
+                single_bone.get_bone_data().to_csv('{}/label_{}_collect_NOT_RIB.csv'.format(output_prefix, e),
+                                                   index=False)
                 single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_NOT_RIB.png'.format(output_prefix, e))
 
             temp_single_bone_feature['class_id'] = e

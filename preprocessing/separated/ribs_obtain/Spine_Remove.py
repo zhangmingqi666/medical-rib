@@ -135,12 +135,14 @@ class SpineRemove:
             average_y_length = section_df['y.length'].mean()
             # when a rib connected spine, the width near the rib will be greater than others.
             section_df[(section_df['y.length'] < average_y_length - margin_min)] = None
-            section_df = pd.concat((section_df, pd.DataFrame(index=[i for i in range(self.bone_data_shape[0])])),
-                                   axis=1)
+            section_df = section_df.merge(pd.DataFrame({'z': [i for i in range(self.bone_data_shape[0])]}),
+                                          on='z', how='outer')
             section_df[['y.min', 'y.max']] = section_df[['y.min', 'y.max']].\
                 interpolate().\
                 fillna(method='ffill').\
                 fillna(method='bfill')
+
+            section_df.to_csv("/Users/jiangyy/Desktop/hehehe.csv", index=False)
 
             section_df['y.min'] = section_df.apply(lambda row: row['y.min'] - (expand_width if row['y.length'] is None
                                                                                else 0), axis=1)

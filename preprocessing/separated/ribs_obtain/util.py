@@ -47,6 +47,15 @@ def arr_to_sparse_df_only(binary_arr=None):
     return sparse_df
 
 
+def sparse_df_remove_min(sparse_df=None, threshold_min=5000):
+    cluster_df = sparse_df.groupby('c').agg({'c': ['count']})
+    cluster_df.columns = ['%s.%s' % e for e in cluster_df.columns.tolist()]
+    cluster_df.reset_index(inplace=True)
+    cluster_df.rename(columns={'index': 'c'})
+    cluster_df = cluster_df[cluster_df['c.count'] > threshold_min]
+    return sparse_df[sparse_df['c'].isin(cluster_df['c'].values)]
+
+
 def arr_to_sparse_df(label_arr=None, add_pixel=False, pixel_arr=None, sort=False, sort_key='c.count',
                      keep_by_top=False, top_nth=30, keep_by_threshold=False, threshold_min=2000, allow_debug=False):
     index = label_arr.nonzero()

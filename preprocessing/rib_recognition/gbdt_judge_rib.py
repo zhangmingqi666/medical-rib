@@ -24,10 +24,8 @@ def main():
     parser.add_argument('--saved_feature_path', required=True, dest='saved_feature_path', action='store', help='saved_feature_path')
     args = parser.parse_args()
 
-    bone_data = pd.read_csv(open(args.dataset_path))
-    #features_list = list(bone_data.columns)[1:]
-    #features_list.remove('class_id')
-    #features_list.remove('target')
+    bone_data = pd.read_csv(args.dataset_path)
+    # print(bone_data.columns)
     features_list = ['x_min/x_shape', 'x_max/x_shape', 'x_centroid/x_shape', 'y_min/y_shape', 'y_max/y_shape',
                      'y_centroid/y_shape', 'z_min/z_shape', 'z_max/z_shape', 'z_centroid/z_shape', 'point_count',
                      'std_z_distance_on_xoy', 'mean_z_distance_on_xoy', 'std_z_distance_div_mean_z_distance',
@@ -38,9 +36,9 @@ def main():
 
     x = bone_data[features_list]
     y = bone_data[['target']]
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1, stratify=y)
 
-    gbdt = GradientBoostingClassifier(random_state=3)
+    gbdt = GradientBoostingClassifier(random_state=3, subsample=0.7, min_samples_leaf=5)
     gbdt.fit(x_train, y_train)
 
     # sava gbdt model and feature list
@@ -49,11 +47,11 @@ def main():
 
     y_pred = gbdt.predict(x_test)
     x_test['new_target'] = gbdt.predict(x_test)
-    print(type(x_test),type(y_pred))
-    print(x_test, y_pred)
+    # print(type(x_test),type(y_pred))
+    # print(x_test, y_pred)
     print("accuracy: %.4g" % (metrics.accuracy_score(y_test, y_pred)))
-    print(features_list)
-    print(gbdt.n_features)
+    # print(features_list)
+    # print(gbdt.n_features)
     print(gbdt.feature_importances_)
 
 

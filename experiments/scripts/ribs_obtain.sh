@@ -19,14 +19,15 @@ function ribs_obtain_from_dcm() {
     # $* 空格链接起来的所有参数，类型是字符串
 
     # transfer all dcm to array pkl for every patient
-    cat ${DCM_DF_OUT_PATH} | tail -n +13 | head -n 1 | while IFS=, read id dcm_path
+    cat ${DCM_DF_OUT_PATH} | tail -n +2 | while IFS=, read id dcm_path
     do
         out_put_prefix=${LOGS_DIR}/${id}
         BONE_INFO_PATH=${BONE_INFO_DIR}/${id}".csv"
         RIB_DF_CACHE_PATH=${RIB_DF_CACHE_DIR}/${id}".csv"
         echo "start make rib data for ${id}"
-        echo "last_logs saved to ${out_put_prefix}"
-        echo "ribs cached to ${BONE_INFO_PATH}"
+        echo "logs saved to ${out_put_prefix}"
+        echo "rib info saved to ${BONE_INFO_PATH}"
+        echo "ribs cached into ${RIB_DF_CACHE_PATH}"
 
         OS=`uname -s`
         if [[ ${OS} == "Linux"  ]] && [[ -f ${RIB_DF_CACHE_PATH} ]];then
