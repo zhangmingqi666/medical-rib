@@ -142,7 +142,7 @@ class SpineRemove:
                 fillna(method='ffill').\
                 fillna(method='bfill')
 
-            section_df.to_csv("/Users/jiangyy/Desktop/hehehe.csv", index=False)
+            #section_df.to_csv("/Users/jiangyy/Desktop/hehehe.csv", index=False)
 
             section_df['y.min'] = section_df.apply(lambda row: row['y.min'] - (expand_width if row['y.length'] is None
                                                                                else 0), axis=1)
