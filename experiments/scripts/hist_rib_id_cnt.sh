@@ -14,6 +14,6 @@ files=$(ls ${path})
 for file in ${files}:
 do
     f_name=${path}/${file}
-    cnt=$(cat ${f_name} | tail -n +1 | awk -F',' '{print $1}' | sort | uniq -c | wc -l)
+    cnt=$(cat ${f_name} | tail -n +1 | awk -F',' '{print $4}' | sort | uniq -c | wc -l)
     echo ${file}" "${cnt}
 done

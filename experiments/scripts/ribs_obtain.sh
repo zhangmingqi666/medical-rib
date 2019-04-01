@@ -19,7 +19,7 @@ function ribs_obtain_from_dcm() {
     # $* 空格链接起来的所有参数，类型是字符串
 
     # transfer all dcm to array pkl for every patient
-    cat ${DCM_DF_OUT_PATH} | tail -n +24 | while IFS=, read id dcm_path
+    cat ${DCM_DF_OUT_PATH} | tail -n +$1 | head -n $2 | while IFS=, read id dcm_path
     do
         out_put_prefix=${LOGS_DIR}/${id}
         BONE_INFO_PATH=${BONE_INFO_DIR}/${id}".csv"
@@ -80,9 +80,24 @@ if [[ ! -d ${LOGS_DIR} ]]; then
 fi
 
 if [[ "$FORMAT" = "dcm" ]]; then
-    ribs_obtain_from_dcm
+    ribs_obtain_from_dcm 2 236
 elif [[ "$FORMAT" = "pkl" ]]; then
     ribs_obtain_from_pkl
+elif [[ "$FORMAT" = "dcm_mult" ]]; then
+    tasks_every_thread=30
+    threads_num=8
+    date
+    for i in `seq 1 ${threads_num}`
+    do
+    {
+        echo "threads $i"
+        start_line_no=`expr $i \* $tasks_every_thread + 2`
+        ribs_obtain_from_dcm ${start_line_no} ${tasks_every_thread}
+    } &
+    done
+    wait  ##等待所有子后台进程结束
+    date
+
 else
     echo "Invalid format!"
 fi

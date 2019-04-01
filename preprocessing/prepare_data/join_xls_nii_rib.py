@@ -10,7 +10,8 @@ warnings.filterwarnings('ignore')
 
 def read_excel(excel_path=None):
     """read (patient_id, location_id, rib_type) from **.xls"""
-    df = pd.read_excel(excel_path, dtype={'id': np.str, 'location_id': np.str, 'type': np.str})
+    df = pd.read_excel(excel_path, dtype={'id': np.str, 'location_id': np.str, 'type': np.str},
+                       na_values=['nan', 'NaN'])
     df = df[['id', 'location_id', 'type']]
     df = df.fillna(method='ffill')
     return df
@@ -32,11 +33,7 @@ def one_ct_df_join_bounding_box(data_df=None, bounding_box_df=None, ct_id=''):
             dataset_map_label_df.loc[len(dataset_map_label_df)] = {'id': ct_id,
                                                                    'location_id': row['location_id'],
                                                                    'dataSet_id': "{}-{}".format(ct_id, mode[0])}
-        #else:
-        #    # ribs_obtain are not all
-        #    dataset_map_label_df.loc[len(dataset_map_label_df)] = {'id': ct_id,
-        #                                                           'location_id': row['location_id'],
-        #                                                           'dataSet_id': None}
+            print("rib:{}<---->rib:{}".format(row['location_id'], mode[0]))
     return dataset_map_label_df
 
 
@@ -78,8 +75,7 @@ def get_all_map_between_ct_and_location(csv_dataset_folder=None, bounding_box_df
 
         temp_map = temp_map.merge(range_data_df, on='dataSet_id', how='outer')
 
-        map_between_ct_and_location = map_between_ct_and_location.append(temp_map)
-
+        map_between_ct_and_location = map_between_ct_and_location.append(temp_map.dropna(how='any', axis=0))
     return map_between_ct_and_location
 
 
@@ -115,12 +111,15 @@ if __name__ == '__main__':
                                                                'box.y.max': np.int, 'box.y.min': np.int,
                                                                'box.z.max': np.int, 'box.z.min': np.int})
     excel_df = read_excel(args.rib_type_location_path)
+    excel_df.drop(columns=['id'], inplace=True)
     map_df = get_all_map_between_ct_and_location(csv_dataset_folder=args.ribs_df_cache_folder, bounding_box_df=bounding_box_df)
-
-    # map_df between id-xxxx, id-Lx
-    #print(excel_df.dtypes)
-    #print(map_df.dtypes)
-    map_df = map_df.merge(excel_df, on=['id', 'location_id'], how='inner')
+    # print("hello")
+    # print(map_df)
+    map_df = map_df.merge(excel_df, on=['location_id'], how='inner')
+    # print("wolrd")
+    # print(map_df)
     map_df = map_df.merge(bounding_box_df, on=['id', 'location_id'], how='inner')
+    # print("ccccc")
+    # print(map_df)
     map_df.to_csv(args.data_join_label_path, index=False)
-    print(map_df.dtypes)
+    # print(map_df.dtypes)
