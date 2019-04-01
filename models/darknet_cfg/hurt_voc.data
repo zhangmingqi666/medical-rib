@@ -1,5 +1,5 @@
 classes= 1
-train  = data/voc2007/train.txt
-valid  = data/voc2007/2007_test.txt
-names = models/darknet_cfg/hurt_voc.names
-backup = models/darknet/backup
+train  = ../../../data/voc2007/train.txt
+valid  = ../../../data/voc2007/2007_test.txt
+names = ../data/hurt_voc.names
+backup = backup
