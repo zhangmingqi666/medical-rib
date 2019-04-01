@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet_cfg/hurt_voc.data" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet_cfg/hurt_voc.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out.file" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +17,7 @@
         <counts>
           <entry key="bak" value="3" />
           <entry key="csv" value="57" />
+          <entry key="data" value="1" />
           <entry key="gitignore" value="3" />
           <entry key="jpg" value="2" />
           <entry key="log" value="10" />
@@ -38,7 +37,7 @@
           <entry key="CSV" value="57" />
           <entry key="Image" value="531" />
           <entry key="Markdown" value="6" />
-          <entry key="PLAIN_TEXT" value="26" />
+          <entry key="PLAIN_TEXT" value="27" />
           <entry key="Python" value="453" />
           <entry key="XML" value="9" />
         </counts>
@@ -80,13 +79,7 @@
     <favorites_list name="medical-rib" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/models/darknet_cfg/hurt_voc.names">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -137,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/preprocessing/prepare_data/create_voc2007.sh" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/nii_join_xls.py" />
         <option value="$PROJECT_DIR$/data/csv_files/nii_loc_df.csv" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/voc2007/to_ribs_dataset_voc2007.py" />
@@ -188,10 +180,11 @@
         <option value="$PROJECT_DIR$/experiments/scripts/test.sh" />
         <option value="$PROJECT_DIR$/tools/Verify_data_join_label.py" />
         <option value="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" />
+        <option value="$PROJECT_DIR$/models/darknet_cfg/hurt_voc.data" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="326" />
     <option name="y" value="23" />
     <option name="width" value="958" />
@@ -209,22 +202,6 @@
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="experiments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="darknet_cfg" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -391,8 +368,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="326" y="23" width="958" height="798" extended-state="1" />
-    <editor active="true" />
+    <frame x="326" y="23" width="958" height="798" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.82071716" visible="true" weight="0.2828175" />
       <window_info id="Structure" order="1" sideWeight="0.17928287" side_tool="true" visible="true" weight="0.2828175" />
@@ -436,9 +412,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/experiments/debug_logs/Verify_data_join_label/135402000409459.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/experiments/debug_logs/Verify_data_join_label/135402000409537.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -598,8 +571,19 @@
     <entry file="file://$PROJECT_DIR$/experiments/debug_logs/Verify_data_join_label/135402000409065.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/darknet_cfg/hurt_voc.data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/models/darknet_cfg/hurt_voc.names">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
