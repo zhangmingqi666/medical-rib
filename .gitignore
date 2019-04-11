@@ -10,7 +10,7 @@ logs/
 *.dcm
 *.png
 *ipynb
-data/*
+data
 .idea/*
 .idea/workspace.xml
 .idea
