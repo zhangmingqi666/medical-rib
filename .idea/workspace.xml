@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/preprocessing/rib_recognition/update_err_labels_and_aggregate_bone_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/metric/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/my_script.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/run.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/rib_recognition/generate_bone_info_csv.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/test_tools.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/metric/reval_voc_py3.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/metric/reval_voc_py3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/metric/voc_eval_py3.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/metric/voc_eval_py3.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +19,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="bak" value="3" />
-          <entry key="csv" value="57" />
+          <entry key="csv" value="58" />
           <entry key="data" value="2" />
           <entry key="gitignore" value="3" />
           <entry key="jpg" value="2" />
@@ -29,8 +27,8 @@
           <entry key="md" value="6" />
           <entry key="names" value="1" />
           <entry key="png" value="574" />
-          <entry key="py" value="481" />
-          <entry key="sh" value="226" />
+          <entry key="py" value="492" />
+          <entry key="sh" value="233" />
           <entry key="test" value="4" />
           <entry key="txt" value="6" />
           <entry key="xml" value="9" />
@@ -38,12 +36,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="226" />
-          <entry key="CSV" value="57" />
+          <entry key="Bash" value="233" />
+          <entry key="CSV" value="58" />
           <entry key="Image" value="576" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="29" />
-          <entry key="Python" value="481" />
+          <entry key="Python" value="492" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -52,18 +50,18 @@
           <entry key="Python Console" value="36" />
           <entry key="csv" value="4" />
           <entry key="dummy" value="128" />
-          <entry key="py" value="22464" />
-          <entry key="sh" value="7045" />
+          <entry key="py" value="22546" />
+          <entry key="sh" value="7163" />
           <entry key="test" value="29" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="7045" />
+          <entry key="Bash" value="7163" />
           <entry key="CSV" value="4" />
           <entry key="PLAIN_TEXT" value="161" />
-          <entry key="Python" value="22500" />
+          <entry key="Python" value="22582" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -84,7 +82,38 @@
     <favorites_list name="medical-rib" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/experiments/scripts/generate_gbdt.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/metric/voc_eval_py3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1622">
+              <caret line="109" column="48" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="48" />
+              <folding>
+                <element signature="e#225#259#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/metric/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -121,6 +150,9 @@
       <find>4094</find>
       <find>785</find>
       <find>cPickle</find>
+      <find>get_voc_results_file_template</find>
+      <find>voc_ap</find>
+      <find>voc_eval</find>
     </findStrings>
     <replaceStrings>
       <replace>info_df_on_zoy</replace>
@@ -136,11 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_prior.py" />
-        <option value="$PROJECT_DIR$/experiments/test/region.py" />
-        <option value="$PROJECT_DIR$/experiments/test/ridge.py" />
-        <option value="$PROJECT_DIR$/experiments/scripts/nii_read.sh" />
-        <option value="$PROJECT_DIR$/tools/test_header.py" />
         <option value="$PROJECT_DIR$/tools/read_mii.py" />
         <option value="$PROJECT_DIR$/tools/read_nii.py" />
         <option value="$PROJECT_DIR$/experiments/common/calc_elapsed_time.sh" />
@@ -183,18 +210,21 @@
         <option value="$PROJECT_DIR$/experiments/my_script.sh" />
         <option value="$PROJECT_DIR$/experiments/run.sh" />
         <option value="$PROJECT_DIR$/models/metric/darknet_cmp.py" />
-        <option value="$PROJECT_DIR$/models/metric/reval_voc_py3.py" />
         <option value="$PROJECT_DIR$/models/metric/voc_eval.py" />
         <option value="$PROJECT_DIR$/tools/test_tools.py" />
         <option value="$PROJECT_DIR$/preprocessing/rib_recognition/update_err_labels_and_aggregate_bone_info.py" />
+        <option value="$PROJECT_DIR$/experiments/scripts/generate_gbdt.sh" />
+        <option value="$PROJECT_DIR$/experiments/scripts/darknet_metric.sh" />
+        <option value="$PROJECT_DIR$/models/metric/reval_voc_py3.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/models/metric/voc_eval_py3.py" />
+        <option value="$PROJECT_DIR$/models/metric/test.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="11" />
-    <option name="y" value="23" />
-    <option name="width" value="958" />
-    <option name="height" value="798" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -213,6 +243,17 @@
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="voc2007" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -220,17 +261,6 @@
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
               <item name="metric" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="rib_recognition" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -251,8 +281,8 @@
       <recent name="$PROJECT_DIR$/preprocessing/rib_cut_v7" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/preprocessing/rib_recognition" />
       <recent name="$PROJECT_DIR$/experiments/scripts" />
+      <recent name="$PROJECT_DIR$/preprocessing/rib_recognition" />
       <recent name="$PROJECT_DIR$/experiments/debug_logs/Verify_observe_data" />
       <recent name="$PROJECT_DIR$/experiments/debug_logs" />
       <recent name="$PROJECT_DIR$/experiments/little_conch" />
@@ -270,7 +300,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Bash.run.sh">
+  <component name="RunManager" selected="Python.test (2)">
     <configuration name="my_script.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="bash" />
@@ -293,18 +323,7 @@
       <option name="PARAMETERS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test.sh (1)" type="BashConfigurationType" factoryName="Bash" temporary="true">
-      <module name="medical-rib" />
-      <option name="INTERPRETER_OPTIONS" value="bash" />
-      <option name="INTERPRETER_PATH" value="/usr/bin/env" />
-      <option name="PROJECT_INTERPRETER" value="false" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments/scripts" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/experiments/scripts/test.sh" />
-      <option name="PARAMETERS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Verify_data_join_label" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -312,11 +331,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/Verify_data_join_label.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="medical-rib" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models/metric" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/metric/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -347,19 +387,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Bash.test.sh (1)" />
-      <item itemvalue="Python.Verify_data_join_label" />
       <item itemvalue="Python.test" />
       <item itemvalue="Bash.run.sh" />
       <item itemvalue="Bash.my_script.sh" />
+      <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.test (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test (2)" />
+        <item itemvalue="Python.test (1)" />
         <item itemvalue="Bash.run.sh" />
         <item itemvalue="Bash.my_script.sh" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.Verify_data_join_label" />
-        <item itemvalue="Bash.test.sh (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -386,15 +426,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="11" y="23" width="958" height="798" extended-state="0" />
+    <frame x="22" y="23" width="958" height="798" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8201133" visible="true" weight="0.45570973" />
-      <window_info id="Structure" order="1" sideWeight="0.17988668" side_tool="true" visible="true" weight="0.45570973" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.75503355" visible="true" weight="0.21237993" />
+      <window_info id="Structure" order="1" sideWeight="0.24496645" side_tool="true" visible="true" weight="0.21237993" />
       <window_info id="Favorites" order="2" sideWeight="0.38222224" side_tool="true" weight="0.29170159" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3258427" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.50708216" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.5779037" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33975902" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32935917" />
@@ -429,26 +470,18 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="95" column="7" lean-forward="true" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/debug_logs/Verify_data_join_label/135402000392998.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/debug_logs/Verify_data_join_label/135402000404008.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/debug_logs/Verify_data_join_label/135402000357765.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/debug_logs/Verify_data_join_label/135402000338785.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/experiments/logs/135402000404008/collect_ribs.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -543,16 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/metric/voc_eval_py3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-597">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="e#225#259#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/experiments/run.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -591,9 +614,6 @@
     <entry file="file://$PROJECT_DIR$/tools/test_header.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/generate_gbdt.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/rib_recognition/update_err_labels_and_aggregate_bone_info.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -606,16 +626,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/read_nii.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/metric/reval_voc_py3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="43" column="46" lean-forward="true" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
-          <folding>
-            <element signature="e#370#394#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/rib_recognition/gbdt_judge_rib.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -631,6 +641,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/rib_recognition/update_err_labels_and_aggregate_bone_info.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/rib_recognition/update_err_bone_info.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/scripts/darknet_metric.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="65" selection-start-line="3" selection-start-column="65" selection-end-line="3" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/python/3.7.2_2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/tokenize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="445" column="7" lean-forward="true" selection-start-line="445" selection-start-column="7" selection-end-line="445" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/scripts/generate_gbdt.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/metric/voc_eval_py3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1622">
+          <caret line="109" column="48" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="48" />
+          <folding>
+            <element signature="e#225#259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/metric/reval_voc_py3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/metric/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

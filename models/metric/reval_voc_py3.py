@@ -49,14 +49,11 @@ def get_voc_results_file_template(image_set, out_dir='results'):
 def do_python_eval(devkit_path, year, image_set, classes, output_dir = 'results'):
     annopath = os.path.join(
         devkit_path,
-        'VOC' + year,
         'Annotations',
         '{}.xml')
     imagesetfile = os.path.join(
         devkit_path,
-        'VOC' + year,
         'ImageSets',
-        'Main',
         image_set + '.txt')
     cachedir = os.path.join(devkit_path, 'annotations_cache')
     aps = []
@@ -70,7 +67,8 @@ def do_python_eval(devkit_path, year, image_set, classes, output_dir = 'results'
     for i, cls in enumerate(classes):
         if cls == '__background__':
             continue
-        filename = get_voc_results_file_template(image_set).format(cls)
+
+        filename = get_voc_results_file_template(image_set, output_dir=output_dir).format(cls)
         rec, prec, ap = voc_eval(
             filename, annopath, imagesetfile, cls, cachedir, ovthresh=0.5,
             use_07_metric=use_07_metric)
@@ -97,6 +95,7 @@ if __name__ == '__main__':
     args = parse_args()
 
     output_dir = os.path.abspath(args.output_dir[0])
+    print(output_dir)
     with open(args.class_file, 'r') as f:
         lines = f.readlines()
 
