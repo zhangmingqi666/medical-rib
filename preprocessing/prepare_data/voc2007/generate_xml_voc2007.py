@@ -151,13 +151,13 @@ if __name__ == '__main__':
         generate_voc2007format_xml(xml_file_name='{}/{}.xml'.format(folder, row['dataSet_id']),
                                    folder='JPEGImages',
                                    filename='{}.jpg'.format(row['dataSet_id']),
-                                   size_width=int(row['range.x.max'] - row['range.x.min']),
+                                   size_width=int(row['range.z.max'] - row['range.z.min']),
                                    size_height=int(row['range.y.max'] - row['range.y.min']),
                                    size_depth=1,
                                    bndbox=[row['box.y.min'] - row['range.y.min'],
-                                           row['box.x.min'] - row['range.x.min'],
+                                           row['box.z.min'] - row['range.z.min'],
                                            row['box.y.max'] - row['range.y.min'],
-                                           row['box.x.max'] - row['range.x.min']])
+                                           row['box.z.max'] - row['range.z.min']])
 
 
 
