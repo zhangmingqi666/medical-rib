@@ -2,8 +2,8 @@
 from voc_eval_py3 import voc_eval
 
 #/Users/jiangyy/projects/medical-rib/data/voc2007/ImageSets/test.txt
-rec,prec,ap = voc_eval('./darknet/results/{}.txt', '../data/voc2007/Annotations/{}.xml',
-                       '../data/voc2007/ImageSets/test.txt', 'comp4_det_test_hurt', '.')
+rec,prec,ap = voc_eval('/Users/jiangyy/projects/medical-rib/models/darknet/results/{}.txt', '/Users/jiangyy/voc2007.xoy/Annotations/{}.xml',
+                       '/Users/jiangyy/voc2007.xoy/ImageSets/trainval.txt', 'hurt', '.')
 
 print('rec',rec)
 print('prec',prec)
