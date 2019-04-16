@@ -36,9 +36,9 @@ def nii_read(nii_file_path=None, keep_slicing=True, new_spacing=[1, 1, 1]):
         ratio_scale = [1.0 * e / f for e, f in zip(new_spacing, pixel_zoom)]
         print('ratio', ratio_scale)
         img_arr = img.get_fdata()
-        print(img_arr.sum())
+        # print(img_arr.sum())
         index = img_arr.nonzero()
-        print(index)
+        # print(index)
         # exchange x,y
         tmp_df = pd.DataFrame({'y': index[0] * ratio_scale[0],
                                'x': index[1] * ratio_scale[1],
@@ -53,7 +53,7 @@ def nii_read(nii_file_path=None, keep_slicing=True, new_spacing=[1, 1, 1]):
         return {'box.x.max': None, 'box.x.min': None, 'box.y.max': None,
                 'box.y.min': None, 'box.z.max': None, 'box.z.min': None}, None
     return {'box.x.max': x_max, 'box.x.min': x_min, 'box.y.max': y_max,
-            'box.y.min': y_min, 'box.z.max': z_max, 'box.z.min': z_min}, temp_df
+            'box.y.min': y_min, 'box.z.max': z_max, 'box.z.min': z_min}, tmp_df
 
 
 def location_read(folder_path=None, keep_slicing=True):
