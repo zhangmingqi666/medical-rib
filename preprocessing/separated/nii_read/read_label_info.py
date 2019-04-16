@@ -74,6 +74,9 @@ def location_read(folder_path=None, keep_slicing=True):
             if pattern.search(file_name) is None:
                 continue
 
+            if not file_name.__contains__('-'):
+                continue
+
             print("read nii {}".format(file_name))
 
             bounding_box, temp_df = nii_read(nii_file_path=next_next_dir, keep_slicing=keep_slicing)
