@@ -59,6 +59,8 @@ def get_all_map_between_ct_and_location(csv_dataset_folder=None, bounding_box_df
                                                   'y': ['min', 'max'],
                                                   'z': ['min', 'max']})
 
+        range_data_df.to_csv("./data/temp/range1-{}.csv".format(ct_id), index=False)
+
         range_data_df.columns = ['range.{}.{}'.format(e[0], e[1]) for e in range_data_df.columns.tolist()]
         for e in ['x', 'y', 'z']:
             range_data_df['range.{}.min'.format(e)] = range_data_df['range.{}.min'.format(e)].apply(lambda x: x-2)
