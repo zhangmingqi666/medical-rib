@@ -72,7 +72,8 @@ def get_all_map_between_ct_and_location(csv_dataset_folder=None, bounding_box_df
             continue
 
         temp_map = one_ct_df_join_bounding_box(data_df=data_df, bounding_box_df=bounding_box_df, ct_id=ct_id)
-
+        range_data_df.to_csv("./data/temp/range-{}.csv".format(ct_id), index=False)
+        temp_map.to_csv("./data/temp/map-{}.csv".format(ct_id), index=False)
         temp_map = temp_map.merge(range_data_df, on='dataSet_id', how='outer')
 
         map_between_ct_and_location = map_between_ct_and_location.append(temp_map.dropna(how='any', axis=0))
