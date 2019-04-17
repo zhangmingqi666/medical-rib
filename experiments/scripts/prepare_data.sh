@@ -18,17 +18,17 @@ function re_mkdir_folder(){
     echo "re mkdir $1"
 }
 
-re_mkdir_folder  ${Voc2007_Annotations_folder}
-re_mkdir_folder  ${Voc2007_ImageSets_folder}
-re_mkdir_folder  ${Voc2007_JPEGImages_folder}
-re_mkdir_folder  ${Voc2007_darknet_labels}
+#re_mkdir_folder  ${Voc2007_Annotations_folder}
+#re_mkdir_folder  ${Voc2007_ImageSets_folder}
+#re_mkdir_folder  ${Voc2007_JPEGImages_folder}
+#re_mkdir_folder  ${Voc2007_darknet_labels}
 
 # join all the rib, bounding box, excel_df
-#python3 ./preprocessing/prepare_data/join_xls_nii_rib.py  --ribs_df_cache_folder  ${RIB_DF_CACHE_DIR} \
-#                                                          --nii_loc_df_path  ${NII_LOC_PATH}  \
-#                                                          --rib_type_location_path  ${RIB_TYPE_LOCATION_PATH}  \
-#                                                          --data_join_label_path  ${JOIN_LABEL_PATH}
-
+python3 ./preprocessing/prepare_data/join_xls_nii_rib.py  --ribs_df_cache_folder  ${RIB_DF_CACHE_DIR} \
+                                                          --nii_loc_df_path  ${NII_LOC_PATH}  \
+                                                          --rib_type_location_path  ${RIB_TYPE_LOCATION_PATH}  \
+                                                          --data_join_label_path  ${JOIN_LABEL_PATH}
+exit
 # separate voc2007 part from join part
 # echo "######## split ribs_dataSet into independent picture and save offset shift ########"
 python3  ./preprocessing/prepare_data/voc2007/to_ribs_dataset_voc2007.py  --in_folder_path  ${RIB_DF_CACHE_DIR}  \
