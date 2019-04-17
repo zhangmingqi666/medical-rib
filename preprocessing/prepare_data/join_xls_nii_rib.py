@@ -53,13 +53,14 @@ def get_all_map_between_ct_and_location(csv_dataset_folder=None, bounding_box_df
 
         data_df = pd.read_csv("{}/{}.csv".format(csv_dataset_folder, ct_id), dtype={'x': np.int,
                                                                                     'y': np.int,
-                                                                                    'z': np.int})
+                                                                                    'z': np.int,
+                                                                                    'c': np.str})
         # get global erea for every ribs.
         range_data_df = data_df.groupby('c').agg({'x': ['min', 'max'],
                                                   'y': ['min', 'max'],
                                                   'z': ['min', 'max']})
 
-        range_data_df.to_csv("./data/temp/range1-{}.csv".format(ct_id), index=False)
+        range_data_df.to_csv("./data/temp/range1-{}.csv".format(ct_id), index=True)
 
         range_data_df.columns = ['range.{}.{}'.format(e[0], e[1]) for e in range_data_df.columns.tolist()]
         for e in ['x', 'y', 'z']:
