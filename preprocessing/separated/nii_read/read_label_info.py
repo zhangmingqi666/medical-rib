@@ -46,13 +46,13 @@ def nii_read(nii_file_path=None, keep_slicing=True, new_spacing=[1, 1, 1]):
         img_arr = img.get_fdata()
         img_arr_label = skimage.measure.label(img_arr, connectivity=2)
 
-        index = img_arr.nonzero()
+        index = img_arr_label.nonzero()
         # print(index)
         # exchange x,y
         tmp_df = pd.DataFrame({'y': index[0] * ratio_scale[0],
                                'x': index[1] * ratio_scale[1],
                                'z': index[2] * ratio_scale[2],
-                               'box-c': img_arr[index]})
+                               'box-c': img_arr_label[index]})
         #temp_df.to_csv("./data/nii_csv_files")
         # @tmp_df.to_csv(, index=False)
         # x_min, x_max = int(tmp_df['x'].min()) + 1, int(tmp_df['x'].max()) + 1
@@ -90,9 +90,11 @@ def location_read(folder_path=None, keep_slicing=True):
 
             if temp_df is not None:
                 temp_df.to_csv("./data/nii_csv_files/{}.csv".format(file_name.replace('.nii', '')), index=False)
+
             box_df = temp_df.groupby('box-c').agg({'x': ['min', 'max'],
                                                    'y': ['min', 'max'],
                                                    'z': ['min', 'max']})
+            box_df.columns = ['box.{}.{}'.format(e[0], e[1]) for e in box_df.columns.tolist()]
             box_df['location_id'] = file_name.replace('.nii', '')
             box_df['id'] = f
             location_df = location_df.append(box_df)
