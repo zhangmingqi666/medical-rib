@@ -10,10 +10,11 @@ warnings.filterwarnings('ignore')
 
 def read_excel(excel_path=None):
     """read (patient_id, location_id, rib_type) from **.xls"""
-    df = pd.read_excel(excel_path, dtype={'id': np.str, 'location_id': np.str, 'type': np.str},
-                       na_values=['nan', 'NaN'])
-    df = df[['id', 'location_id', 'type']]
-    df = df.fillna(method='ffill')
+    df = pd.read_excel(excel_path, dtype={'id': np.str, 'location_id': np.str, 'type': np.str, 'cnt':np.int},
+                       na_values=['nan', 'NaN', np.NAN, np.nan])
+    df = df[['id', 'location_id', 'type', 'cnt']]
+    df['id'] = df['id'].replace('nan', np.NAN)
+    df = df.fillna(method='ffill', axis=0)
     return df
 
 

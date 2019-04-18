@@ -1,18 +1,32 @@
-
-
+#coding=utf-8
 import pandas as pd
 import numpy as np
-csv_dataset_folder = '/Users/jiangyy/projects/medical-rib/data/ribs_df_cache'
-ct_id = '135402000151454'
-data_df = pd.read_csv("{}/{}.csv".format(csv_dataset_folder, ct_id), dtype={'x': np.int,
-                                                                            'y': np.int,
-                                                                            'z': np.int,
-                                                                            'c': np.str})
-print(data_df['c'].value_counts())
-# get global erea for every ribs.
-range_data_df = data_df.groupby('c').agg({'x': ['min', 'max'],
-                                          'y': ['min', 'max'],
-                                          'z': ['min', 'max']})
+import os
+import argparse
+import sys
+import warnings
+warnings.filterwarnings('ignore')
 
-print(range_data_df)
-#range_data_df.to_csv("./data/temp/range1-{}.csv".format(ct_id), index=True)
+
+def read_excel(excel_path=None):
+    """read (patient_id, location_id, rib_type) from **.xls"""
+    df = pd.read_excel(excel_path, dtype={'id': np.str, 'location_id': np.str, 'type': np.str, 'cnt':np.int},
+                       na_values=['nan', 'NaN', np.NAN, np.nan])
+    df = df[['id', 'location_id', 'type', 'cnt']]
+    df['id'] = df['id'].replace('nan', np.NAN)
+    df = df.fillna(method='ffill', axis=0)
+    return df
+
+
+excel_df = read_excel("/Users/jiangyy/projects/medical-rib/data/csv_files/rib_type_location.xls")
+
+
+print(excel_df[excel_df['cnt']>1])
+exit(1)
+box_df = pd.read_csv("/Users/jiangyy/projects/medical-rib/preprocessing/prepare_data/multi_box.csv", dtype={'cnt': np.int})
+
+heheh_df = excel_df.merge(box_df, how='left', on='location_id')
+
+heheh_df['cnt'] = heheh_df['cnt'].fillna(1)
+
+heheh_df[['location_id', 'cnt']].to_csv("/Users/jiangyy/Desktop/ccccccc.csv")

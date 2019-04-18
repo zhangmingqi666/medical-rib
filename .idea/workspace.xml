@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" line="99" />
+    <bookmark url="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" line="101" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/join2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib_multi_box.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/prepare_data/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +25,7 @@
         <counts>
           <entry key="bak" value="3" />
           <entry key="cfg" value="2" />
-          <entry key="csv" value="69" />
+          <entry key="csv" value="71" />
           <entry key="data" value="2" />
           <entry key="gitignore" value="3" />
           <entry key="jpg" value="2" />
@@ -28,7 +33,7 @@
           <entry key="md" value="6" />
           <entry key="names" value="1" />
           <entry key="png" value="574" />
-          <entry key="py" value="550" />
+          <entry key="py" value="558" />
           <entry key="sh" value="242" />
           <entry key="test" value="4" />
           <entry key="txt" value="6" />
@@ -38,11 +43,11 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bash" value="242" />
-          <entry key="CSV" value="69" />
+          <entry key="CSV" value="71" />
           <entry key="Image" value="576" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="31" />
-          <entry key="Python" value="550" />
+          <entry key="Python" value="558" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -50,9 +55,9 @@
         <counts>
           <entry key="Python Console" value="36" />
           <entry key="cfg" value="8" />
-          <entry key="csv" value="51" />
+          <entry key="csv" value="67" />
           <entry key="dummy" value="128" />
-          <entry key="py" value="26479" />
+          <entry key="py" value="27092" />
           <entry key="sh" value="7239" />
           <entry key="test" value="29" />
           <entry key="txt" value="4" />
@@ -61,9 +66,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="7239" />
-          <entry key="CSV" value="51" />
+          <entry key="CSV" value="67" />
           <entry key="PLAIN_TEXT" value="169" />
-          <entry key="Python" value="26515" />
+          <entry key="Python" value="27128" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -89,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/voc2007/add_box.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="23" selection-end-column="18" />
+            <state relative-caret-position="-313">
+              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
               <folding>
                 <element signature="e#1#20#0" expanded="true" />
               </folding>
@@ -99,10 +104,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
+        <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/treat_repeat.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="116" column="4" selection-start-line="116" selection-start-column="4" selection-end-line="117" selection-end-column="47" />
+            <state relative-caret-position="135">
+              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="11" selection-start-line="11" selection-end-line="16" selection-end-column="42" />
               <folding>
                 <element signature="e#14#33#0" expanded="true" />
               </folding>
@@ -111,10 +128,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/view_nii.py">
+        <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
-              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+            <state relative-caret-position="-292">
+              <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="e#14#33#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,68 +142,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+            <state relative-caret-position="281">
+              <caret line="87" column="24" lean-forward="true" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
               <folding>
                 <element signature="e#14#33#0" expanded="true" />
-                <marker date="1555572232921" expanded="true" signature="371:386" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Spine_Remove.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3480">
-              <caret line="232" column="28" selection-start-line="232" selection-start-column="28" selection-end-line="232" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="8" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1335">
-              <caret line="89" column="61" lean-forward="true" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
-              <folding>
-                <element signature="e#14#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/treat_repeat.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="65" selection-start-line="65" selection-end-line="90" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
+                <marker date="1555593686430" expanded="true" signature="351:354" ph="..." />
               </folding>
             </state>
           </provider>
@@ -246,7 +209,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/experiments/scripts/update_bone_info.sh" />
         <option value="$PROJECT_DIR$/experiments/scripts/merge_csv.sh" />
         <option value="$PROJECT_DIR$/preprocessing/rib_recognition/generate_bone_info_csv.py" />
         <option value="$PROJECT_DIR$/preprocessing/rib_recognition/generate_gbdt.sh" />
@@ -291,11 +253,12 @@
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/voc2007/add_box.py" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/join2.py" />
         <option value="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" />
-        <option value="$PROJECT_DIR$/preprocessing/prepare_data/test.py" />
-        <option value="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/treat_repeat.py" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/view_nii.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Spine_Remove.py" />
+        <option value="$PROJECT_DIR$/preprocessing/prepare_data/multi_box.csv" />
+        <option value="$PROJECT_DIR$/preprocessing/prepare_data/test.py" />
+        <option value="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" />
       </list>
     </option>
@@ -349,13 +312,6 @@
               <item name="separated" type="462c0819:PsiDirectoryNode" />
               <item name="nii_read" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="separated" type="462c0819:PsiDirectoryNode" />
-              <item name="ribs_obtain" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -395,7 +351,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.view_nii">
+  <component name="RunManager" selected="Python.test">
     <configuration name="add_box" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -488,9 +444,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.view_nii" />
         <item itemvalue="Python.treat_repeat" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.add_box" />
       </list>
     </recent_temporary>
@@ -524,12 +480,12 @@
     <frame x="4" y="23" width="836" height="795" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.81834865" visible="true" weight="0.401227" />
-      <window_info id="Structure" order="1" sideWeight="0.18165137" side_tool="true" visible="true" weight="0.401227" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.81724846" visible="true" weight="0.2404908" />
+      <window_info id="Structure" order="1" sideWeight="0.18275154" side_tool="true" visible="true" weight="0.2404908" />
       <window_info id="Favorites" order="2" sideWeight="0.38222224" side_tool="true" weight="0.29170159" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32409638" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22475107" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3072546" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33734939" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -577,7 +533,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/preprocessing/rib_recognition/generate_bone_info_csv.py" />
     <entry file="file://$PROJECT_DIR$/preprocessing/rib_recognition/update_err_labels_and_aggregate_bone_info.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -813,13 +768,6 @@
         <state showInfoPanel="true" rowLines="3" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/voc2007/relabel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Python/3.7/lib/python/site-packages/PIL/Image.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -834,50 +782,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="89" lean-forward="true" selection-start-line="9" selection-start-column="89" selection-end-line="9" selection-end-column="89" />
-          <folding>
-            <element signature="e#2#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/temp.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="355">
-          <caret line="88" column="34" lean-forward="true" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" rowLines="3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/voc2007/add_box.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <element signature="e#1#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="82" column="25" lean-forward="true" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="116" column="4" selection-start-line="116" selection-start-column="4" selection-end-line="117" selection-end-column="47" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -888,37 +796,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/view_nii.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/treat_repeat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="65" selection-start-line="65" selection-end-line="90" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" selection-start-line="5" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="89" column="61" lean-forward="true" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -934,7 +815,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Bone_decompose.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
+        <state relative-caret-position="153">
           <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -942,13 +823,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/voc2007/relabel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+        <state relative-caret-position="-65">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="89" column="61" lean-forward="true" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
           <folding>
             <element signature="e#14#33#0" expanded="true" />
-            <marker date="1555572232921" expanded="true" signature="371:386" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/multi_box.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="1335">
+          <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/temp.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="1035">
+          <caret line="69" column="9" lean-forward="true" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/voc2007/add_box.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-313">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+          <folding>
+            <element signature="e#1#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/treat_repeat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="11" selection-start-line="11" selection-end-line="16" selection-end-column="42" />
+          <folding>
+            <element signature="e#14#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/view_nii.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding>
+            <element signature="e#14#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-292">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="e#14#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="87" column="24" lean-forward="true" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+          <folding>
+            <element signature="e#14#33#0" expanded="true" />
+            <marker date="1555593686430" expanded="true" signature="351:354" ph="..." />
           </folding>
         </state>
       </provider>
