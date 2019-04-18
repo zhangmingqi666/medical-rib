@@ -29,7 +29,7 @@
           <entry key="names" value="1" />
           <entry key="png" value="574" />
           <entry key="py" value="559" />
-          <entry key="sh" value="242" />
+          <entry key="sh" value="243" />
           <entry key="test" value="4" />
           <entry key="txt" value="6" />
           <entry key="xml" value="9" />
@@ -37,7 +37,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="242" />
+          <entry key="Bash" value="243" />
           <entry key="CSV" value="71" />
           <entry key="Image" value="576" />
           <entry key="Markdown" value="6" />
@@ -52,7 +52,7 @@
           <entry key="cfg" value="8" />
           <entry key="csv" value="67" />
           <entry key="dummy" value="128" />
-          <entry key="py" value="27217" />
+          <entry key="py" value="27228" />
           <entry key="sh" value="7239" />
           <entry key="test" value="29" />
           <entry key="txt" value="4" />
@@ -63,7 +63,7 @@
           <entry key="Bash" value="7239" />
           <entry key="CSV" value="67" />
           <entry key="PLAIN_TEXT" value="169" />
-          <entry key="Python" value="27253" />
+          <entry key="Python" value="27264" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -122,7 +122,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-292">
@@ -134,15 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/experiments/scripts/nii_read.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="98" column="61" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
-              <folding>
-                <element signature="e#14#33#0" expanded="true" />
-                <marker date="1555597430462" expanded="true" signature="351:354" ph="..." />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="43" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -288,6 +284,11 @@
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="experiments" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
@@ -494,12 +495,12 @@
     <frame x="4" y="23" width="836" height="795" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.81724846" visible="true" weight="0.3006135" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.81724846" visible="true" weight="0.3006135" />
       <window_info id="Structure" order="1" sideWeight="0.18275154" side_tool="true" visible="true" weight="0.3006135" />
       <window_info id="Favorites" order="2" sideWeight="0.38222224" side_tool="true" weight="0.29170159" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32409638" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3072546" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3072546" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33734939" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -749,9 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/nii_read.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/experiments/label_data/error.csv">
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="60">
@@ -907,16 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-292">
-          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -927,13 +915,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/scripts/nii_read.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="43" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="98" column="61" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
+        <state relative-caret-position="282">
+          <caret line="136" column="63" selection-start-line="136" selection-start-column="63" selection-end-line="136" selection-end-column="63" />
           <folding>
             <element signature="e#14#33#0" expanded="true" />
-            <marker date="1555597430462" expanded="true" signature="351:354" ph="..." />
+            <marker date="1555598132625" expanded="true" signature="351:354" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-292">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="e#14#33#0" expanded="true" />
           </folding>
         </state>
       </provider>

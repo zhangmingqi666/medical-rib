@@ -133,8 +133,8 @@ if __name__ == '__main__':
         temp_df = location_read(folder_path=folder, keep_slicing=keep_slicing)
         location_df = location_df.append(temp_df)
 
-    location_df.to_csv(args.output_path, index=False, columns=['id', 'location_id', 'x.max',
-                                                               'x.min', 'y.max', 'y.min', 'z.max', 'z.min'])
+    location_df.to_csv(args.output_path, index=False, columns=['id', 'location_id', 'box.x.max', 'box.x.min',
+                                                               'box.y.max', 'box.y.min', 'box.z.max', 'box.z.min'])
 
 
 
