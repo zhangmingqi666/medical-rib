@@ -194,7 +194,6 @@ class SpineRemove:
             # section_df.to_csv("/home/wangshuli/Desktop/3.csv", index=False)
             return section_df
 
-
         y_mean = self.sparse_df['y'].mean()
         y_left, y_right = y_mean - apart_distance, y_mean + apart_distance    # apart_distance = 100
         apart_spine_remaining_df = self.sparse_df[(self.sparse_df['y'] > y_left) &
@@ -235,7 +234,6 @@ class SpineRemove:
         self.all_index_in_envelope = all_index_df_in_envelope[(all_index_df_in_envelope['y'] <= all_index_df_in_envelope['y.max'])
                                                               & (all_index_df_in_envelope['y'] >= all_index_df_in_envelope['y.min'])]
 
-        self.all_index_in_envelope.to_csv("/home/wangshuli/Desktop/la.csv", index=False)
         del all_index_df_in_envelope
 
     def get_all_index_in_envelope(self):

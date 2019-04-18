@@ -14,11 +14,18 @@ def add_python_path(path):
     if path not in sys.path:
         sys.path.insert(0, path)
 
+from add
+
 
 add_python_path(os.getcwd())
 
 
 warnings.filterwarnings('ignore')
+
+
+def multi_box_detect(img_arr=None):
+
+    return
 
 
 def nii_read(nii_file_path=None, keep_slicing=True, new_spacing=[1, 1, 1]):
@@ -36,13 +43,15 @@ def nii_read(nii_file_path=None, keep_slicing=True, new_spacing=[1, 1, 1]):
         ratio_scale = [1.0 * e / f for e, f in zip(new_spacing, pixel_zoom)]
         print('ratio', ratio_scale)
         img_arr = img.get_fdata()
+        img_arr_label =
         # print(img_arr.sum())
         index = img_arr.nonzero()
         # print(index)
         # exchange x,y
         tmp_df = pd.DataFrame({'y': index[0] * ratio_scale[0],
                                'x': index[1] * ratio_scale[1],
-                               'z': index[2] * ratio_scale[2]})
+                               'z': index[2] * ratio_scale[2],
+                               'box-c':img_arr[index]})
         #temp_df.to_csv("./data/nii_csv_files")
         # @tmp_df.to_csv(, index=False)
         x_min, x_max = int(tmp_df['x'].min()) + 1, int(tmp_df['x'].max()) + 1
