@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" line="101" />
+    <bookmark url="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" line="102" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/join2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib_multi_box.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/prepare_data/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,7 +28,7 @@
           <entry key="md" value="6" />
           <entry key="names" value="1" />
           <entry key="png" value="574" />
-          <entry key="py" value="558" />
+          <entry key="py" value="559" />
           <entry key="sh" value="242" />
           <entry key="test" value="4" />
           <entry key="txt" value="6" />
@@ -47,7 +42,7 @@
           <entry key="Image" value="576" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="31" />
-          <entry key="Python" value="558" />
+          <entry key="Python" value="559" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -57,7 +52,7 @@
           <entry key="cfg" value="8" />
           <entry key="csv" value="67" />
           <entry key="dummy" value="128" />
-          <entry key="py" value="27092" />
+          <entry key="py" value="27217" />
           <entry key="sh" value="7239" />
           <entry key="test" value="29" />
           <entry key="txt" value="4" />
@@ -68,7 +63,7 @@
           <entry key="Bash" value="7239" />
           <entry key="CSV" value="67" />
           <entry key="PLAIN_TEXT" value="169" />
-          <entry key="Python" value="27128" />
+          <entry key="Python" value="27253" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -142,11 +137,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="87" column="24" lean-forward="true" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+            <state relative-caret-position="207">
+              <caret line="98" column="61" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
               <folding>
                 <element signature="e#14#33#0" expanded="true" />
-                <marker date="1555593686430" expanded="true" signature="351:354" ph="..." />
+                <marker date="1555597430462" expanded="true" signature="351:354" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="75" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -311,6 +318,13 @@
               <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
               <item name="separated" type="462c0819:PsiDirectoryNode" />
               <item name="nii_read" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
+              <item name="separated" type="462c0819:PsiDirectoryNode" />
+              <item name="ribs_obtain" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -480,12 +494,12 @@
     <frame x="4" y="23" width="836" height="795" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.81724846" visible="true" weight="0.2404908" />
-      <window_info id="Structure" order="1" sideWeight="0.18275154" side_tool="true" visible="true" weight="0.2404908" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.81724846" visible="true" weight="0.3006135" />
+      <window_info id="Structure" order="1" sideWeight="0.18275154" side_tool="true" visible="true" weight="0.3006135" />
       <window_info id="Favorites" order="2" sideWeight="0.38222224" side_tool="true" weight="0.29170159" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32409638" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3072546" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3072546" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33734939" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -796,13 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Spine_Remove.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3480">
@@ -910,13 +917,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="87" column="24" lean-forward="true" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+        <state relative-caret-position="207">
+          <caret line="98" column="61" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
           <folding>
             <element signature="e#14#33#0" expanded="true" />
-            <marker date="1555593686430" expanded="true" signature="351:354" ph="..." />
+            <marker date="1555597430462" expanded="true" signature="351:354" ph="..." />
           </folding>
         </state>
       </provider>

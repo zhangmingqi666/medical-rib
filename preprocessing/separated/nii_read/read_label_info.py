@@ -93,13 +93,14 @@ def location_read(folder_path=None, keep_slicing=True):
                                                    'y': ['min', 'max'],
                                                    'z': ['min', 'max']})
 
-            box_df = box_df.apply(lambda: np.int)
+            box_df.columns = ['box.%s.%s' % e for e in box_df.columns.tolist()]
 
-            box_df.columns = ['box.{}.{}'.format(e[0], e[1]) for e in box_df.columns.tolist()]
+            for e in box_df.columns:
+                box_df[e] = box_df[e].apply(lambda x: int(x))
 
             box_df['location_id'] = file_name.replace('.nii', '')
             box_df['id'] = f
-            location_df = location_df.append(box_df)
+            location_df = location_df.append(box_df, ignore_index=True)
 
     return location_df
 
