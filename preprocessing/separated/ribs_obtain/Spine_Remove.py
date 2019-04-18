@@ -49,6 +49,8 @@ class SpineRemove:
             self.set_cartesian_product_in_envelope()
 
         self.pixel_in_envelope = None
+
+
         with timer('_________calc intersect between cartesian product and envelope'):
             self.set_all_pixel_in_envelope()
         """
@@ -130,28 +132,71 @@ class SpineRemove:
 
             return _y_center_df
 
-        def nan_cave_relu_interpolate(section_df, margin_min=50, expand_width=30):
+        def nan_cave_relu_interpolate(section_df, margin_min=50, expand_width=20):
             section_df['y.length'] = section_df.apply(lambda row: row['y.max'] - row['y.min'], axis=1)
             average_y_length = section_df['y.length'].mean()
             # when a rib connected spine, the width near the rib will be greater than others.
             section_df[(section_df['y.length'] < average_y_length - margin_min)] = None
+            # section_df[(section_df['y.length'] > average_y_length + margin_min)] = None    # 长的肋骨
             section_df = section_df.merge(pd.DataFrame({'z': [i for i in range(self.bone_data_shape[0])]}),
                                           on='z', how='outer')
+
             section_df[['y.min', 'y.max']] = section_df[['y.min', 'y.max']].\
                 interpolate().\
                 fillna(method='ffill').\
                 fillna(method='bfill')
 
+
             #section_df.to_csv("/Users/jiangyy/Desktop/hehehe.csv", index=False)
 
             section_df['y.min'] = section_df.apply(lambda row: row['y.min'] - (expand_width if row['y.length'] is None
-                                                                               else 0), axis=1)
+                                                                              else 0), axis=1)
             section_df['y.max'] = section_df.apply(lambda row: row['y.max'] + (expand_width if row['y.length'] is None
                                                                                else 0), axis=1)
+
+            # 长的肋骨
+            # section_df['y.min'] = section_df.apply(lambda row: row['y.min'] + (expand_width if row['y.length'] == 1
+            #                                                                   else 0), axis=1)
+            # section_df['y.max'] = section_df.apply(lambda row: row['y.max'] - (expand_width if row['y.length'] == 1
+            #                                                                   else 0), axis=1)
+
+            # section_df['y.max'] = section_df['y.max'].rolling(15).min().fillna(method='ffill').fillna(
+            #   method='bfill')
+
+            # section_df.to_csv("/home/wangshuli/Desktop/1.csv", index=False)
+            section_df = section_df.dropna(subset=['z'])
+            section_df.sort_values('z', inplace=True)
             return section_df
 
+        def resize_long_y(section_df, margin_max=40):
+            series_y_maxMin = section_df['y.max'].rolling(15).min()
+            series_y_maxMax = section_df['y.max'].rolling(15).max()
+            series_y_minMin = section_df['y.min'].rolling(15).min()
+            series_y_minMax = section_df['y.min'].rolling(15).max()
+
+            df_y_max_maxmin = pd.DataFrame({'y.max_min':series_y_maxMin,'y.max_max':series_y_maxMax,'y.min_min':series_y_minMin,'y.min_max':series_y_minMax})
+            # df_y_max_maxmin.to_csv('/home/wangshuli/Desktop/roll.csv')
+            df_y_max_maxmin[['y.max_min', 'y.max_max','y.min_min','y.min_max']] = df_y_max_maxmin[['y.max_min', 'y.max_max','y.min_min','y.min_max']]. \
+                interpolate(). \
+                fillna(method='ffill'). \
+                fillna(method='bfill')
+            section_df = section_df.join(df_y_max_maxmin)
+            section_df['y.gap_right'] = section_df.apply(lambda row: row['y.max_max'] - row['y.max_min'], axis=1)
+            section_df['y.gap_left'] = section_df.apply(lambda row: row['y.min_max'] - row['y.min_min'], axis=1)
+
+            # section_df.to_csv("/home/wangshuli/Desktop/2.csv", index=False)
+
+            section_df['y.max'] = section_df.apply(
+                lambda row: row['y.max'] if row['y.gap_right'] < margin_max else row['y.max_min'], axis=1)
+            section_df['y.min'] = section_df.apply(
+                lambda row: row['y.min'] if row['y.gap_left'] < margin_max else row['y.min_max'], axis=1)
+
+            # section_df.to_csv("/home/wangshuli/Desktop/3.csv", index=False)
+            return section_df
+
+
         y_mean = self.sparse_df['y'].mean()
-        y_left, y_right = y_mean - apart_distance, y_mean + apart_distance
+        y_left, y_right = y_mean - apart_distance, y_mean + apart_distance    # apart_distance = 100
         apart_spine_remaining_df = self.sparse_df[(self.sparse_df['y'] > y_left) &
                                                   (self.sparse_df['y'] < y_right)]
         y_center_df = railings_relu_interpolate(spine_remaining_df=apart_spine_remaining_df)
@@ -162,6 +207,7 @@ class SpineRemove:
         y_center_df_enhanced = railings_relu_interpolate(spine_remaining_df=apart_spine_remaining_df_enhanced)
 
         y_center_df_enhanced_caved = nan_cave_relu_interpolate(y_center_df_enhanced)
+        y_center_df_enhanced_caved = resize_long_y(y_center_df_enhanced_caved)
 
         # center_df = railings_interpolate(spine_remaining_df=apart_spine_remaining_df_enhanced, spine_width=150)
         # _relu_score = relu_interpolate(section_df=center_df, margin_min=5, margin_max=50, is_expand=False)
@@ -189,6 +235,7 @@ class SpineRemove:
         self.all_index_in_envelope = all_index_df_in_envelope[(all_index_df_in_envelope['y'] <= all_index_df_in_envelope['y.max'])
                                                               & (all_index_df_in_envelope['y'] >= all_index_df_in_envelope['y.min'])]
 
+        self.all_index_in_envelope.to_csv("/home/wangshuli/Desktop/la.csv", index=False)
         del all_index_df_in_envelope
 
     def get_all_index_in_envelope(self):
