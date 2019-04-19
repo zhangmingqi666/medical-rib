@@ -8,8 +8,6 @@
       <change beforePath="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/prepare_data/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +30,7 @@
           <entry key="names" value="1" />
           <entry key="png" value="574" />
           <entry key="py" value="561" />
-          <entry key="sh" value="245" />
+          <entry key="sh" value="246" />
           <entry key="test" value="4" />
           <entry key="txt" value="6" />
           <entry key="xml" value="9" />
@@ -40,7 +38,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="245" />
+          <entry key="Bash" value="246" />
           <entry key="CSV" value="76" />
           <entry key="Image" value="576" />
           <entry key="Markdown" value="6" />
@@ -55,7 +53,7 @@
           <entry key="cfg" value="8" />
           <entry key="csv" value="72" />
           <entry key="dummy" value="128" />
-          <entry key="py" value="29312" />
+          <entry key="py" value="29351" />
           <entry key="sh" value="7239" />
           <entry key="test" value="29" />
           <entry key="txt" value="4" />
@@ -66,7 +64,7 @@
           <entry key="Bash" value="7239" />
           <entry key="CSV" value="72" />
           <entry key="PLAIN_TEXT" value="169" />
-          <entry key="Python" value="29348" />
+          <entry key="Python" value="29387" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -101,16 +99,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="743">
-              <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+            <state relative-caret-position="163">
+              <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
               <folding>
                 <element signature="e#14#33#0" expanded="true" />
                 <element signature="e#2512#3394#1" />
                 <element signature="e#5247#5700#1" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/experiments/scripts/prepare_data.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -244,8 +251,8 @@
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/multi_box.csv" />
         <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/hehehehe.csv" />
-        <option value="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/test.py" />
+        <option value="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" />
       </list>
     </option>
@@ -471,12 +478,12 @@
     <frame x="115" y="23" width="1093" height="795" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7645161" visible="true" weight="0.31716418" />
-      <window_info id="Structure" order="1" sideWeight="0.23548387" side_tool="true" visible="true" weight="0.31716418" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8171206" visible="true" weight="0.31436568" />
+      <window_info id="Structure" order="1" sideWeight="0.18287937" side_tool="true" visible="true" weight="0.31436568" />
       <window_info id="Favorites" order="2" sideWeight="0.38222224" side_tool="true" weight="0.29170159" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32290184" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.55903274" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2688478" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33734939" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -893,13 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/prepare_data.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="42" column="59" lean-forward="true" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -922,13 +922,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+        <state relative-caret-position="163">
+          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
           <folding>
             <element signature="e#14#33#0" expanded="true" />
             <element signature="e#2512#3394#1" />
             <element signature="e#5247#5700#1" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/scripts/prepare_data.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
         </state>
       </provider>
     </entry>

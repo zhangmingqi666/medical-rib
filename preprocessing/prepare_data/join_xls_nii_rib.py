@@ -32,12 +32,12 @@ def one_ct_df_join_one_bounding_box(data_df=None, _bounding_box_df=None, locatio
         in_box_df = in_box_df.append(temp_df)
 
     if len(in_box_df) == 0:
-        print("Error:{} box can not cover ribs or ribs unavailable")
+        print("Error:{} box can not cover ribs or ribs unavailable".format(location_id))
         return None
 
-    hist_df = in_box_df.value_counts().reset_index()
+    hist_df = in_box_df['c'].value_counts().reset_index()
     c1, c1_count = hist_df.loc[0, ['index', 'c']]
-    c2, c2_count = hist_df.loc[1, ['index', 'c']]
+    c2, c2_count = (0, 0) if len(hist_df) == 1 else hist_df.loc[1, ['index', 'c']]
 
     if c1_count < 2*c2_count:
         print("Error:{} ribs cannot dominate bounding box {}".format(c1, location_id))
