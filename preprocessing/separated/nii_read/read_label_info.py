@@ -68,7 +68,6 @@ def location_read(folder_path=None, keep_slicing=True):
         next_dir = os.path.join(folder_path, f)
         if not os.path.isdir(next_dir):
             continue
-
         print("read folder {}".format(f))
         for file_name in os.listdir(next_dir):
 

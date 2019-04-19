@@ -17,16 +17,21 @@ def read_excel(excel_path=None):
     df = df.fillna(method='ffill', axis=0)
     return df
 
-
 excel_df = read_excel("/Users/jiangyy/projects/medical-rib/data/csv_files/rib_type_location.xls")
 
+print(len(excel_df))
 
-print(excel_df[excel_df['cnt']>1])
-exit(1)
-box_df = pd.read_csv("/Users/jiangyy/projects/medical-rib/preprocessing/prepare_data/multi_box.csv", dtype={'cnt': np.int})
+location_df = pd.read_csv("/Users/jiangyy/projects/medical-rib/data/csv_files/nii_loc_df.csv")
+location_df_cnt = location_df.groupby(['id', 'location_id']).agg({'location_id': ['count']})
+location_df_cnt.columns = ['box.count']
+location_df_cnt.reset_index(inplace=True)
 
-heheh_df = excel_df.merge(box_df, how='left', on='location_id')
+print(len(location_df_cnt))
 
-heheh_df['cnt'] = heheh_df['cnt'].fillna(1)
+ddd = excel_df.merge(location_df_cnt, on=['id', 'location_id'])
 
-heheh_df[['location_id', 'cnt']].to_csv("/Users/jiangyy/Desktop/ccccccc.csv")
+print(ddd[(ddd['cnt'] < ddd['box.count']) & (ddd['cnt'] != 1)])
+
+
+
+
