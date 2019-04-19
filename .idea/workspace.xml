@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" afterDir="false" />
@@ -30,7 +31,7 @@
           <entry key="names" value="1" />
           <entry key="png" value="574" />
           <entry key="py" value="561" />
-          <entry key="sh" value="246" />
+          <entry key="sh" value="247" />
           <entry key="test" value="4" />
           <entry key="txt" value="6" />
           <entry key="xml" value="9" />
@@ -38,7 +39,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="246" />
+          <entry key="Bash" value="247" />
           <entry key="CSV" value="76" />
           <entry key="Image" value="576" />
           <entry key="Markdown" value="6" />
@@ -53,18 +54,18 @@
           <entry key="cfg" value="8" />
           <entry key="csv" value="72" />
           <entry key="dummy" value="128" />
-          <entry key="py" value="29351" />
-          <entry key="sh" value="7239" />
+          <entry key="py" value="29431" />
+          <entry key="sh" value="7274" />
           <entry key="test" value="29" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="7239" />
+          <entry key="Bash" value="7274" />
           <entry key="CSV" value="72" />
           <entry key="PLAIN_TEXT" value="169" />
-          <entry key="Python" value="29387" />
+          <entry key="Python" value="29467" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -90,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/voc2007/add_box.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-227">
+            <state relative-caret-position="-237">
               <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
               <folding>
                 <element signature="e#1#20#0" expanded="true" />
@@ -102,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+            <state relative-caret-position="1095">
+              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
               <folding>
                 <element signature="e#14#33#0" expanded="true" />
                 <element signature="e#2512#3394#1" />
@@ -116,8 +117,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/experiments/scripts/prepare_data.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+            <state relative-caret-position="105">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -252,8 +262,8 @@
         <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label_info.py" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/hehehehe.csv" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/test.py" />
-        <option value="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" />
+        <option value="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" />
       </list>
     </option>
   </component>
@@ -478,12 +488,12 @@
     <frame x="115" y="23" width="1093" height="795" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8171206" visible="true" weight="0.31436568" />
-      <window_info id="Structure" order="1" sideWeight="0.18287937" side_tool="true" visible="true" weight="0.31436568" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8181818" visible="true" weight="0.25652984" />
+      <window_info id="Structure" order="1" sideWeight="0.18181819" side_tool="true" visible="true" weight="0.25652984" />
       <window_info id="Favorites" order="2" sideWeight="0.38222224" side_tool="true" weight="0.29170159" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32290184" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2688478" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.15504979" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33734939" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -761,13 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="82" column="25" lean-forward="true" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib_multi_box.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
@@ -890,16 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/voc2007/add_box.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-227">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-          <folding>
-            <element signature="e#1#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -920,10 +913,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/voc2007/add_box.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-237">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+          <folding>
+            <element signature="e#1#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+        <state relative-caret-position="1095">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
           <folding>
             <element signature="e#14#33#0" expanded="true" />
             <element signature="e#2512#3394#1" />
@@ -932,10 +935,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/experiments/scripts/prepare_data.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        <state relative-caret-position="105">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>

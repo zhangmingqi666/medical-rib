@@ -85,8 +85,7 @@ def get_all_map_between_ct_and_location(csv_dataset_folder=None, bounding_box_df
         """
 
         all_box_for_ct_id_df = bounding_box_df[bounding_box_df['id'] == ct_id]
-        for _, row in all_box_for_ct_id_df.iterrows():
-            location_id = row['location_id']
+        for location_id in all_box_for_ct_id_df['location_id'].unique():
             rib_id = one_ct_df_join_one_bounding_box(data_df=data_df, _bounding_box_df=bounding_box_df,
                                                      location_id=location_id)
             if rib_id is None:
