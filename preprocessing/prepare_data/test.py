@@ -17,10 +17,9 @@ def read_excel(excel_path=None):
     df = df.fillna(method='ffill', axis=0)
     return df
 
+
 excel_df = read_excel("/Users/jiangyy/projects/medical-rib/data/csv_files/rib_type_location.xls")
-
 print(len(excel_df))
-
 location_df = pd.read_csv("/Users/jiangyy/projects/medical-rib/data/csv_files/nii_loc_df.csv")
 location_df_cnt = location_df.groupby(['id', 'location_id']).agg({'location_id': ['count']})
 location_df_cnt.columns = ['box.count']

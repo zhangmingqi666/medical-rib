@@ -40,7 +40,7 @@ def one_ct_df_join_one_bounding_box(data_df=None, _bounding_box_df=None, locatio
     c2, c2_count = (0, 0) if len(hist_df) == 1 else hist_df.loc[1, ['index', 'c']]
 
     if c1_count < 2*c2_count:
-        print("Error:{} ribs cannot dominate bounding box {}".format(c1, location_id))
+        print("Warning:{} ribs cannot dominate bounding box {}".format(c1, location_id))
 
     return c1
 

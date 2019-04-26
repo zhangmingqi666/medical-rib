@@ -1,0 +1,160 @@
+re mkdir ./data/voc2007/Annotations
+re mkdir ./data/voc2007/ImageSets
+re mkdir ./data/voc2007/JPEGImages
+re mkdir ./data/voc2007/labels
+Called with args:
+Namespace(data_join_label_path='./data/csv_files/join_label.csv', nii_loc_df_path='./data/csv_files/nii_loc_df.csv', rib_type_location_path='./data/csv_files/rib_type_location.xls', ribs_df_cache_folder='./data/ribs_df_cache')
+Error:135402000409065-R7 box can not cover ribs or ribs unavailable
+Error:135402000409065-L8 box can not cover ribs or ribs unavailable
+Error:135402000404222-L4 box can not cover ribs or ribs unavailable
+Error:135402000404222-L3 box can not cover ribs or ribs unavailable
+Error:135402000404098-R5 box can not cover ribs or ribs unavailable
+Error:135402000404098-R6 box can not cover ribs or ribs unavailable
+Error:135402000404098-R7 box can not cover ribs or ribs unavailable
+Error:135402000404098-R8 box can not cover ribs or ribs unavailable
+Error:135402000409347-L7 box can not cover ribs or ribs unavailable
+Error:135402000409347-L5 box can not cover ribs or ribs unavailable
+Error:135402000572309-R4 box can not cover ribs or ribs unavailable
+error: ct data 135402000150175 very few.
+Error:135402000357765-L5 box can not cover ribs or ribs unavailable
+Error:135402000357765-L4 box can not cover ribs or ribs unavailable
+Warning:335 ribs cannot dominate bounding box 41121210-L9
+Error:135402000404127-L6 box can not cover ribs or ribs unavailable
+error: ct data 135402000558459 not exist.
+Warning:2280-3 ribs cannot dominate bounding box 135402000151454-L6
+Error:135402000404097-R5 box can not cover ribs or ribs unavailable
+error: ct data 135402000404395 not exist.
+Error:135402000617470-L5 box can not cover ribs or ribs unavailable
+Error:135402000617292-L10 box can not cover ribs or ribs unavailable
+Error:135402000617292-L2 box can not cover ribs or ribs unavailable
+Error:135402000621964-R7 box can not cover ribs or ribs unavailable
+Error:135402000616599-L5 box can not cover ribs or ribs unavailable
+Error:135402000616952-R12 box can not cover ribs or ribs unavailable
+Error:135402000611010-R5 box can not cover ribs or ribs unavailable
+Error:135402000617217-L2 box can not cover ribs or ribs unavailable
+Error:135402000617415-L6 box can not cover ribs or ribs unavailable
+Error:135402000617415-L5 box can not cover ribs or ribs unavailable
+Error:135402000617233-L6 box can not cover ribs or ribs unavailable
+Error:135402000617420-L1 box can not cover ribs or ribs unavailable
+Warning:29165-2 ribs cannot dominate bounding box 135402000611660-R8
+Warning:29165-1 ribs cannot dominate bounding box 135402000611660-R9
+Error:135402000611659-L1 box can not cover ribs or ribs unavailable
+Error:135402000611805-R2 box can not cover ribs or ribs unavailable
+Error:135402000612947-R10 box can not cover ribs or ribs unavailable
+Error:135402000612947-R4 box can not cover ribs or ribs unavailable
+Error:135402000612947-R5 box can not cover ribs or ribs unavailable
+Error:135402000612947-R6 box can not cover ribs or ribs unavailable
+Error:135402000612702-L6 box can not cover ribs or ribs unavailable
+Error:135402000612702-L7 box can not cover ribs or ribs unavailable
+Error:135402000612794-L5 box can not cover ribs or ribs unavailable
+Error:135402000612794-L4 box can not cover ribs or ribs unavailable
+Error:135402000612949-R3 box can not cover ribs or ribs unavailable
+Error:135402000612949-R7 box can not cover ribs or ribs unavailable
+Error:135402000612949-R5 box can not cover ribs or ribs unavailable
+Error:135402000612949-R6 box can not cover ribs or ribs unavailable
+Error:135402000612949-L5 box can not cover ribs or ribs unavailable
+Error:135402000612949-R4 box can not cover ribs or ribs unavailable
+Error:135402000612949-L6 box can not cover ribs or ribs unavailable
+Error:135402000612703-R1 box can not cover ribs or ribs unavailable
+Error:135402000612703-R2 box can not cover ribs or ribs unavailable
+Error:CT-A1056207-R5 box can not cover ribs or ribs unavailable
+Error:CT-A1056207-R3 box can not cover ribs or ribs unavailable
+Error:CT-A1056207-R6 box can not cover ribs or ribs unavailable
+Error:135402000623182-R6 box can not cover ribs or ribs unavailable
+Error:135402000623182-R5 box can not cover ribs or ribs unavailable
+Error:135402000625963-R4 box can not cover ribs or ribs unavailable
+Error:135402000625963-R6 box can not cover ribs or ribs unavailable
+Error:135402000625963-R7 box can not cover ribs or ribs unavailable
+Error:135402000625963-R5 box can not cover ribs or ribs unavailable
+Warning:77311-41 ribs cannot dominate bounding box 135402000624081-R1
+Called with args:
+Namespace(data_join_label_path='./data/csv_files/join_label.csv', nii_loc_df_path='./data/csv_files/nii_loc_df.csv', output_format='.jpg', output_independent_rib_folder='./data/voc2007/JPEGImages', project_method='x,y', rib_type_location_path='./data/csv_files/rib_type_location.xls', ribs_df_cache_folder='./data/ribs_df_cache', voc2007_Annotations_folder='./data/voc2007/Annotations')
+error: 135402000151454-2280-3 rib data boxes from 2 labels
+A box in 135402000151454-L6 has low data, so dropped
+error: 135402000404064-144905-3 rib data boxes from 2 labels
+error: 135402000404065-117136 rib data boxes from 2 labels
+error: 135402000404693-302 rib data boxes from 2 labels
+A box in 135402000611614-R6 has low data, so dropped
+A box in 135402000611614-R6 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L9 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+A box in 135402000611660-L8 has low data, so dropped
+error: 135402000611988-64241-1 rib data boxes from 2 labels
+error: 135402000611989-90698 rib data boxes from 2 labels
+A box in 135402000612702-L5 has low data, so dropped
+A box in 135402000612702-L5 has low data, so dropped
+Error: all boxes are dropped due to covering low data
+error: 135402000612792-2800 rib data boxes from 2 labels
+error: 135402000612879-19701-1 rib data boxes from 2 labels
+error: 135402000612947-242 rib data boxes from 2 labels
+A box in 135402000612947-R3 has low data, so dropped
+error: 135402000612947-854 rib data boxes from 2 labels
+A box in 135402000612947-R7 has low data, so dropped
+A box in 135402000612947-R7 has low data, so dropped
+A box in 135402000612947-R7 has low data, so dropped
+error: 135402000612949-6007 rib data boxes from 2 labels
+A box in 135402000612949-L4 has low data, so dropped
+A box in 135402000612949-L4 has low data, so dropped
+A box in 135402000612949-L4 has low data, so dropped
+A box in 135402000612949-L4 has low data, so dropped
+error: 135402000612949-6924 rib data boxes from 2 labels
+A box in 135402000612949-R1 has low data, so dropped
+error: 135402000612952-3007 rib data boxes from 2 labels
+A box in 135402000612952-R6 has low data, so dropped
+A box in 135402000612952-R6 has low data, so dropped
+error: 135402000616561-34601-8 rib data boxes from 2 labels
+A box in 135402000616561-L2 has low data, so dropped
+error: 135402000616599-29632 rib data boxes from 2 labels
+A box in 135402000616599-L6 has low data, so dropped
+A box in 135402000616599-L6 has low data, so dropped
+A box in 135402000616599-L6 has low data, so dropped
+A box in 135402000616599-L6 has low data, so dropped
+A box in 135402000616599-L6 has low data, so dropped
+error: 135402000616599-75957 rib data boxes from 2 labels
+A box in 135402000616599-L4 has low data, so dropped
+A box in 135402000616599-L4 has low data, so dropped
+A box in 135402000616599-L4 has low data, so dropped
+A box in 135402000616599-L4 has low data, so dropped
+A box in 135402000617292-L5 has low data, so dropped
+error: 135402000617292-230355 rib data boxes from 2 labels
+A box in 135402000617296-R2 has low data, so dropped
+error: 135402000617415-42149-1 rib data boxes from 2 labels
+error: 135402000623182-130347 rib data boxes from 2 labels
+A box in 135402000623182-R4 has low data, so dropped
+error: 135402000623182-38773 rib data boxes from 2 labels
+error: 135402000624081-77311-41 rib data boxes from 2 labels
+error: 135402000625981-19173-1 rib data boxes from 2 labels
+error: CT-A1056242-1693-1 rib data boxes from 2 labels
+error: CT-A1056306-5280 rib data boxes from 2 labels
+error: F02052110-331 rib data boxes from 2 labels
+######## generate voc2007 format: imageSets ########
+Called with args:
+Namespace(voc2007_Annotations_folder='./data/voc2007/Annotations', voc2007_ImageSets_folder='./data/voc2007/ImageSets')
+sed: 1: "./data/voc2007/2007_tes ...": invalid command code .

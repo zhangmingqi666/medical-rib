@@ -41,7 +41,7 @@ def create_child_node(doc, tag, attr, parent_node):
     parent_node.appendChild(child_node)
 
 
-def create_object_node(doc, attrs):
+def create_object_node(doc, attrs, _bndbox):
     _object_node = doc.createElement('object')
 
     create_child_node(doc, 'name', attrs.get('name', _NAME), _object_node)
@@ -49,12 +49,12 @@ def create_object_node(doc, attrs):
     create_child_node(doc, 'truncated', attrs.get('object.truncated', _TRUNCATED), _object_node)
     create_child_node(doc, 'difficult', attrs.get('object.difficult', _DIFFICULT), _object_node)
 
-    _bndbox_list = attrs.get('bndbox', [0, 0, 0, 0])
+    #_bndbox_list = attrs.get('bndbox', [0, 0, 0, 0])
     _bndbox_node = doc.createElement('bndbox')
-    create_child_node(doc, 'xmin', str(_bndbox_list[0]), _bndbox_node)
-    create_child_node(doc, 'ymin', str(_bndbox_list[1]), _bndbox_node)
-    create_child_node(doc, 'xmax', str(_bndbox_list[2]), _bndbox_node)
-    create_child_node(doc, 'ymax', str(_bndbox_list[3]), _bndbox_node)
+    create_child_node(doc, 'xmin', str(_bndbox[0]), _bndbox_node)
+    create_child_node(doc, 'ymin', str(_bndbox[1]), _bndbox_node)
+    create_child_node(doc, 'xmax', str(_bndbox[2]), _bndbox_node)
+    create_child_node(doc, 'ymax', str(_bndbox[3]), _bndbox_node)
     _object_node.appendChild(_bndbox_node)
 
     return _object_node
@@ -91,22 +91,24 @@ def create_annotation_node(attrs={}):
 
     # segmented
     create_child_node(doc, 'segmented', _SEGMENTED, root_node)
-    object_node = create_object_node(doc, attrs=attrs)
-    root_node.appendChild(object_node)
+    bndbox_list = attrs.get('bndboxes', [0, 0, 0, 0])
+    for bndbox in bndbox_list:
+        object_node = create_object_node(doc, attrs=attrs, _bndbox=bndbox)
+        root_node.appendChild(object_node)
     return doc
 
 
 def generate_voc2007format_xml(xml_file_name='./my.xml', folder='JPEGImages', filename='000001.jpg', size_width=300,
-                           size_height=300, size_depth=3, bndbox=[0, 0, 0, 0]):
+                           size_height=300, size_depth=3, bndboxes=[]):
     """generate xml in voc2007"""
-    assert len(bndbox) == 4
+    #assert len(bndbox) == 4
 
     attrs = {'folder': folder,
              'filename': filename,
              'size.width': size_width,
              'size.height': size_height,
              'size.depth': size_depth,
-             'bndbox': bndbox}
+             'bndboxes': bndboxes}
 
     file_path, _ = os.path.split(xml_file_name)
     assert xml_file_name.endswith('.xml') and os.path.exists(file_path)
@@ -143,21 +145,19 @@ if __name__ == '__main__':
     assert os.path.exists(args.label_loc_type_info_path) and os.path.exists(args.voc2007_Annotations_folder)
     df = pd.read_csv(args.label_loc_type_info_path)
     df = df.dropna(how='any', axis=1)
-    print(df.columns)
     folder = args.voc2007_Annotations_folder
     for idx, row in df.iterrows():
         # now, exchange bndbox, x, y
-        print(row)
         generate_voc2007format_xml(xml_file_name='{}/{}.xml'.format(folder, row['dataSet_id']),
                                    folder='JPEGImages',
                                    filename='{}.jpg'.format(row['dataSet_id']),
                                    size_width=int(row['range.z.max'] - row['range.z.min']),
                                    size_height=int(row['range.y.max'] - row['range.y.min']),
                                    size_depth=1,
-                                   bndbox=[row['box.y.min'] - row['range.y.min'],
-                                           row['box.z.min'] - row['range.z.min'],
-                                           row['box.y.max'] - row['range.y.min'],
-                                           row['box.z.max'] - row['range.z.min']])
+                                   bndboxes=[[row['box.y.min'] - row['range.y.min'],
+                                              row['box.z.min'] - row['range.z.min'],
+                                              row['box.y.max'] - row['range.y.min'],
+                                              row['box.z.max'] - row['range.z.min']]])
 
 
 
