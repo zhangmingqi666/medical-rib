@@ -19,8 +19,10 @@ unavail_files['id'] = unavail_files['location_id'].apply(lambda x: '-'.join(x.sp
 files = unavail_files['id'].unique()
 """
 
-double_ribs = pd.read_csv("/Users/jiangyy/projects/medical-rib/tools/problems_for_labels/share_box_ribs.csv")
-files = double_ribs['id'].unique()
+#double_ribs = pd.read_csv("/Users/jiangyy/projects/medical-rib/tools/problems_for_labels/share_box_ribs.csv")
+#files = double_ribs['id'].unique()
+id_df = pd.read_csv("/Users/jiangyy/projects/medical-rib/tools/problems_for_labels/all_id.csv", dtype={'id': np.str})
+files = id_df['id'].unique()
 
 # id,location_id,x.max,x.min,y.max,y.min,z.max,z.min
 nii_loc_df_path = "{}/data/csv_files/nii_loc_df.csv".format(main_path)
@@ -29,9 +31,11 @@ nii_loc_df = pd.read_csv(nii_loc_df_path, dtype={'id': np.str, 'location_id': np
 
 for _id in files:
     ribs_df_path = "{}/{}.csv".format(ribs_cache_df_path, _id)
+
     if not os.path.exists(ribs_df_path):
         print("{} ct not exist".format(_id))
         continue
+
     ribs_df = pd.read_csv(ribs_df_path, dtype={'x': np.int, 'y': np.int, 'z': np.int,
                                                                          'c': np.str})
 
@@ -41,7 +45,7 @@ for _id in files:
 
     #related_locations = unavail_files[unavail_files['id'] == _id]['location_id'].unique()
     #temp_df = nii_loc_df[nii_loc_df['location_id'].isin(related_locations)]
-    temp_df = nii_loc_df[nii_loc_df['id']==_id]
+    temp_df = nii_loc_df[nii_loc_df['id'] == _id]
 
     fig, ax = plt.subplots(1)
     ax.imshow(rib_data.sum(axis=1))
@@ -56,6 +60,6 @@ for _id in files:
         ax.add_patch(rect)
         ax.text(y_max, z_max, location_part[-1], fontsize=10)
 
-    fig.savefig('{}/tools/results_for_problems/double/{}.png'.format(main_path,_id))
+    fig.savefig('{}/tools/results_for_problems/all_yoz_match/{}.png'.format(main_path, _id))
     plt.close(fig)
 
