@@ -115,3 +115,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Allow
+!models/darknet/results
+!models/darknet/cfg
+!models/darknet/data
+!data/csv_files
