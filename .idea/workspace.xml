@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tools/test_tools/compare_pred_groundtruth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data" beforeDir="false" afterPath="$PROJECT_DIR$/data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/test_tools/compare_3_project_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/test_tools/compare_3_project_box.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/test_tools/skeleton_3d.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +21,7 @@
         <counts>
           <entry key="bak" value="3" />
           <entry key="cfg" value="2" />
-          <entry key="csv" value="128" />
+          <entry key="csv" value="130" />
           <entry key="data" value="2" />
           <entry key="dddd" value="1" />
           <entry key="dual_or_three_ribs" value="1" />
@@ -36,7 +34,7 @@
           <entry key="names" value="1" />
           <entry key="out" value="1" />
           <entry key="png" value="823" />
-          <entry key="py" value="678" />
+          <entry key="py" value="682" />
           <entry key="sh" value="260" />
           <entry key="test" value="4" />
           <entry key="txt" value="7" />
@@ -46,11 +44,11 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bash" value="260" />
-          <entry key="CSV" value="128" />
+          <entry key="CSV" value="130" />
           <entry key="Image" value="825" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="37" />
-          <entry key="Python" value="678" />
+          <entry key="Python" value="682" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -60,7 +58,7 @@
           <entry key="cfg" value="8" />
           <entry key="csv" value="330" />
           <entry key="dummy" value="142" />
-          <entry key="py" value="39047" />
+          <entry key="py" value="39200" />
           <entry key="sh" value="7512" />
           <entry key="test" value="29" />
           <entry key="txt" value="4" />
@@ -71,7 +69,7 @@
           <entry key="Bash" value="7512" />
           <entry key="CSV" value="330" />
           <entry key="PLAIN_TEXT" value="183" />
-          <entry key="Python" value="39083" />
+          <entry key="Python" value="39236" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -96,10 +94,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/experiments/scripts/prepare_data.sh">
+        <entry file="file://$PROJECT_DIR$/tools/test_tools/skeleton_3d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+            <state relative-caret-position="102">
+              <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="39" selection-start-line="39" selection-end-line="46" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,8 +123,8 @@
             <state showInfoPanel="true" rowLines="3" />
           </provider>
           <provider selected="true" editor-type-id="csv-text-editor">
-            <state>
-              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+            <state relative-caret-position="285">
+              <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -173,7 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/models/metric/View_IOU.py" />
         <option value="$PROJECT_DIR$/experiments/label_data/big_box.csv" />
         <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label2csv.py" />
         <option value="$PROJECT_DIR$/experiments/label_data/ignore.csv" />
@@ -224,12 +236,13 @@
         <option value="$PROJECT_DIR$/tools/test_tools/compare_pred_groundtruth.py" />
         <option value="$PROJECT_DIR$/tools/problems_for_labels/share_box_ribs.csv" />
         <option value="$PROJECT_DIR$/tools/test_tools/compare_3_project_box.py" />
+        <option value="$PROJECT_DIR$/tools/test_tools/skeleton_3d.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="255" />
-    <option name="y" value="23" />
+    <option name="x" value="210" />
+    <option name="y" value="26" />
     <option name="width" value="1158" />
     <option name="height" value="795" />
   </component>
@@ -255,7 +268,37 @@
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
+              <item name="separated" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
+              <item name="separated" type="462c0819:PsiDirectoryNode" />
+              <item name="ribs_obtain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
               <item name="tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="problems_for_labels" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="test_tools" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -295,7 +338,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.compare_3_project_box">
+  <component name="RunManager" selected="Python.skeleton_3d">
     <configuration name="Verify_data_join_label (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -380,7 +423,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="effectofq-TwTf-0.68hq-UP" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="skeleton_3d" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -388,11 +431,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools/problems_for_labels" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools/test_tools" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/problems_for_labels/effectofq-TwTf-0.68hq-UP.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/test_tools/skeleton_3d.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -403,18 +446,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.compare_two_dataset_xml" />
-      <item itemvalue="Python.effectofq-TwTf-0.68hq-UP" />
       <item itemvalue="Python.Verify_data_join_label (1)" />
       <item itemvalue="Python.compare_3_project_box" />
       <item itemvalue="Python.compare_pred_groundtruth" />
+      <item itemvalue="Python.skeleton_3d" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.skeleton_3d" />
         <item itemvalue="Python.compare_3_project_box" />
         <item itemvalue="Python.compare_pred_groundtruth" />
         <item itemvalue="Python.Verify_data_join_label (1)" />
         <item itemvalue="Python.compare_two_dataset_xml" />
-        <item itemvalue="Python.effectofq-TwTf-0.68hq-UP" />
       </list>
     </recent_temporary>
   </component>
@@ -444,14 +487,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="255" y="23" width="1158" height="795" extended-state="0" />
+    <frame x="-11" y="25" width="1158" height="795" extended-state="1" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.745" visible="true" weight="0.27264732" />
-      <window_info id="Structure" order="1" sideWeight="0.255" side_tool="true" visible="true" weight="0.27264732" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.74572647" visible="true" weight="0.27264732" />
+      <window_info id="Structure" order="1" sideWeight="0.2542735" side_tool="true" visible="true" weight="0.27264732" />
       <window_info id="Favorites" order="2" sideWeight="0.38222224" side_tool="true" weight="0.29170159" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32290184" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.14651494" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33428165" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3371266" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -499,18 +542,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612000.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612086.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612367.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612425.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612426.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -664,16 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/problems_for_labels/share_box_ribs.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state>
-          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/test_tools/compare_3_project_box.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
@@ -688,6 +709,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/oberved_data.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/problems_for_labels/share_box_ribs.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="39" selection-start-line="39" selection-end-line="46" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/test_tools/skeleton_3d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
