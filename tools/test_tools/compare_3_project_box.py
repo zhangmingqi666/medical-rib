@@ -37,9 +37,12 @@ xoz_xml_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_xoz/Annotatio
 
 #more_image_folder = few_image_folder
 #more_xml_folder = few_xml_folder
+share_df = pd.read_csv("../problems_for_labels/share_box_ribs.csv")
 
-for file in os.listdir(xoy_image_folder):
-    id = file[0:-4]
+#for file in os.listdir(xoy_image_folder):
+#    id = file[0:-4]
+for id in share_df['jpeg_name'].unique():
+
     #if not id.startswith("135402000404094"):
     #    continue
     #if not id.__contains__('135402000612792-2800-R4_R3'):

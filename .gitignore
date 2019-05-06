@@ -120,4 +120,3 @@ venv.bak/
 !models/darknet/results
 !models/darknet/cfg
 !models/darknet/data
-!data/csv_files
