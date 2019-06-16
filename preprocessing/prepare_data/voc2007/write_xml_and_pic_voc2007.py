@@ -97,7 +97,8 @@ def generate_filename_4_xml_jpg(ct_id, rib_id, location_list):
 def generate_filename_4_xml_jpg_2(ct_id, rib_id, location_list):
     location_part = "_".join([x[(len(ct_id)+1):] for x in location_list])
     rib_part = rib_id[(len(ct_id)+1):]
-    return '-'.join([ct_id, rib_part, location_part])
+    #return '-'.join([ct_id, rib_part, location_part])
+    return '-'.join([ct_id, location_part])
 
 
 def mk_boxes_tighten(_locations_for_ribs=None, _rib_data_df=None):
@@ -219,7 +220,7 @@ if __name__ == '__main__':
             locations_for_ribs['box.%s.max' % e] = locations_for_ribs['box.%s.max' % e].\
                 apply(lambda x: x - rib_range_dict['range.%s.min' % e])
 
-        locations_for_ribs = mk_boxes_tighten(_locations_for_ribs=locations_for_ribs, _rib_data_df=local_rib_data_df)
+        # locations_for_ribs = mk_boxes_tighten(_locations_for_ribs=locations_for_ribs, _rib_data_df=local_rib_data_df)
 
         if len(locations_for_ribs) > len(map_unique_df):
             print("In {}, some locations has more than 1 boxes".format(rib_id))

@@ -28,20 +28,20 @@ def parse_rec(filename):
     return objects, {'width': width, 'height': height}
 
 
-xoy_image_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007/JPEGImages"
-xoy_xml_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007/Annotations"
-yoz_image_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_yoz/JPEGImages"
-yoz_xml_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_yoz/Annotations"
-xoz_image_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_xoz/JPEGImages"
-xoz_xml_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_xoz/Annotations"
+xoy_image_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_rawbox/JPEGImages"
+xoy_xml_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_rawbox/Annotations"
+yoz_image_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_rawbox_yoz/JPEGImages"
+yoz_xml_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_rawbox_yoz/Annotations"
+xoz_image_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_rawbox_xoz/JPEGImages"
+xoz_xml_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_rawbox_xoz/Annotations"
 
 #more_image_folder = few_image_folder
 #more_xml_folder = few_xml_folder
 share_df = pd.read_csv("../problems_for_labels/share_box_ribs.csv")
 
-#for file in os.listdir(xoy_image_folder):
-#    id = file[0:-4]
-for id in share_df['jpeg_name'].unique():
+for file in os.listdir(xoy_image_folder):
+    id = file[0:-4]
+#for id in share_df['jpeg_name'].unique():
 
     #if not id.startswith("135402000404094"):
     #    continue
@@ -110,5 +110,6 @@ for id in share_df['jpeg_name'].unique():
             plt.text(truth[2], truth[3], "diff", bbox=dict(facecolor='red', alpha=0.5))
     ax = plt.gca()
     ax.invert_yaxis()
-    plt.xlabel("_".join(tags))
+    plt.xlabel(id)
+    #plt.savefig("/Users/jiangyy/projects/medical-rib/data/raw_box/{}.png".format(id))
     plt.show()

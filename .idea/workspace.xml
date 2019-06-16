@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a7cf0e4-d707-4cdd-b572-a87f921ed667" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/models/point_cloud/mk_bird_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/point_cloud/mk_front_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/problems_for_labels/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/medical-rib.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/medical-rib.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/models/darknet/cfg/yolov3-voc.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/test_tools/skeleton_3d.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing/prepare_data/voc2007/write_xml_and_pic_voc2007.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing/prepare_data/voc2007/write_xml_and_pic_voc2007.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/test_tools/compare_3_project_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/test_tools/compare_3_project_box.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +28,7 @@
         <counts>
           <entry key="bak" value="3" />
           <entry key="cfg" value="2" />
-          <entry key="csv" value="130" />
+          <entry key="csv" value="135" />
           <entry key="data" value="2" />
           <entry key="dddd" value="1" />
           <entry key="dual_or_three_ribs" value="1" />
@@ -33,9 +40,9 @@
           <entry key="md" value="6" />
           <entry key="names" value="1" />
           <entry key="out" value="1" />
-          <entry key="png" value="823" />
-          <entry key="py" value="682" />
-          <entry key="sh" value="260" />
+          <entry key="png" value="1061" />
+          <entry key="py" value="702" />
+          <entry key="sh" value="263" />
           <entry key="test" value="4" />
           <entry key="txt" value="7" />
           <entry key="xml" value="9" />
@@ -43,12 +50,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="260" />
-          <entry key="CSV" value="130" />
-          <entry key="Image" value="825" />
+          <entry key="Bash" value="263" />
+          <entry key="CSV" value="135" />
+          <entry key="Image" value="1063" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="37" />
-          <entry key="Python" value="682" />
+          <entry key="Python" value="702" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -56,75 +63,72 @@
         <counts>
           <entry key="Python Console" value="36" />
           <entry key="cfg" value="8" />
-          <entry key="csv" value="330" />
+          <entry key="csv" value="339" />
           <entry key="dummy" value="142" />
-          <entry key="py" value="39200" />
-          <entry key="sh" value="7512" />
+          <entry key="py" value="39781" />
+          <entry key="sh" value="7532" />
           <entry key="test" value="29" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="7512" />
-          <entry key="CSV" value="330" />
+          <entry key="Bash" value="7532" />
+          <entry key="CSV" value="339" />
           <entry key="PLAIN_TEXT" value="183" />
-          <entry key="Python" value="39236" />
+          <entry key="Python" value="39817" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="15" />
+          <entry key="project.open.time.0" value="4" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="6" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FavoritesManager">
-    <favorites_list name="medical-rib" />
+    <favorites_list name="medical-rib">
+      <favorite_root url="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000611008.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tools/test_tools/compare_3_project_box.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1470">
+              <caret line="104" column="20" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/point_cloud/mk_bird_view.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tools/test_tools/skeleton_3d.py">
+        <entry file="file://$PROJECT_DIR$/models/point_cloud/mk_front_view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="39" selection-start-line="39" selection-end-line="46" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools/problems_for_labels/share_box_ribs.csv">
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" rowLines="3" />
-          </provider>
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+            <state relative-caret-position="551">
+              <caret line="121" selection-start-line="121" selection-end-line="121" />
             </state>
           </provider>
         </entry>
@@ -140,7 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>set_local_centroid</find>
       <find>zoy_center_y_axis_line_df</find>
       <find>get_zoy_symmetric_y_axis_line_df</find>
       <find>convert</find>
@@ -170,6 +173,7 @@
       <find>,</find>
       <find>CT-A1056242-1693-1</find>
       <find>135402000612949-6007</find>
+      <find>:</find>
     </findStrings>
     <replaceStrings>
       <replace>info_df_on_zoy</replace>
@@ -186,11 +190,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/experiments/label_data/big_box.csv" />
-        <option value="$PROJECT_DIR$/preprocessing/separated/nii_read/read_label2csv.py" />
-        <option value="$PROJECT_DIR$/experiments/label_data/ignore.csv" />
-        <option value="$PROJECT_DIR$/experiments/label_data/error.csv" />
-        <option value="$PROJECT_DIR$/preprocessing/prepare_data/join2.py" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/treat_repeat.py" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/view_nii.py" />
         <option value="$PROJECT_DIR$/preprocessing/separated/ribs_obtain/Spine_Remove.py" />
@@ -214,7 +213,6 @@
         <option value="$PROJECT_DIR$/tools/test_package/ttset.py" />
         <option value="$PROJECT_DIR$/rename.sh" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/test.py" />
-        <option value="$PROJECT_DIR$/preprocessing/prepare_data/voc2007/write_xml_and_pic_voc2007.py" />
         <option value="$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py" />
         <option value="$PROJECT_DIR$/models/metric/test.py" />
         <option value="$PROJECT_DIR$/tools/test_package/two_box.csv" />
@@ -225,25 +223,30 @@
         <option value="$PROJECT_DIR$/tools/test_package/dddd" />
         <option value="$PROJECT_DIR$/tools/problems_for_labels/doubleribs.csv" />
         <option value="$PROJECT_DIR$/tools/problems_for_labels/ddd.csv" />
-        <option value="$PROJECT_DIR$/tools/problems_for_labels/test.py" />
         <option value="$PROJECT_DIR$/tools/problems_for_labels/ccc.csv" />
         <option value="$PROJECT_DIR$/tools/test_package/Verify_data_join_label.py" />
         <option value="$PROJECT_DIR$/tools/problems_for_labels/effectofq-TwTf-0.68hq-UP.py" />
         <option value="$PROJECT_DIR$/tools/test_package/compare_two_dataset_xml.py" />
         <option value="$PROJECT_DIR$/tools/problems_for_labels/all_id.csv" />
         <option value="$PROJECT_DIR$/tools/test_tools/Verify_data_join_label.py" />
-        <option value="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" />
         <option value="$PROJECT_DIR$/tools/test_tools/compare_pred_groundtruth.py" />
         <option value="$PROJECT_DIR$/tools/problems_for_labels/share_box_ribs.csv" />
-        <option value="$PROJECT_DIR$/tools/test_tools/compare_3_project_box.py" />
         <option value="$PROJECT_DIR$/tools/test_tools/skeleton_3d.py" />
+        <option value="$PROJECT_DIR$/experiments/scripts/ribs_obtain.sh" />
+        <option value="$PROJECT_DIR$/tools/problems_for_labels/incomplete.csv" />
+        <option value="$PROJECT_DIR$/tools/problems_for_labels/test.py" />
+        <option value="$USER_HOME$/Downloads/2015213506_690719_8994096_2015213506-姜友友-hw5/Knn.py" />
+        <option value="$PROJECT_DIR$/preprocessing/prepare_data/voc2007/write_xml_and_pic_voc2007.py" />
+        <option value="$PROJECT_DIR$/experiments/scripts/prepare_data.sh" />
+        <option value="$PROJECT_DIR$/tools/test_tools/compare_3_project_box.py" />
+        <option value="$PROJECT_DIR$/models/point_cloud/mk_bird_view.py" />
+        <option value="$PROJECT_DIR$/models/point_cloud/mk_front_view.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="210" />
-    <option name="y" value="26" />
-    <option name="width" value="1158" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
     <option name="height" value="795" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -252,7 +255,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,52 +265,24 @@
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
               <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="separated" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessing" type="462c0819:PsiDirectoryNode" />
-              <item name="separated" type="462c0819:PsiDirectoryNode" />
-              <item name="ribs_obtain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
-              <item name="problems_for_labels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="medical-rib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="medical-rib" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
-              <item name="test_tools" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="point_cloud" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/dataSet/second100unlabeled" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -338,8 +312,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.skeleton_3d">
-    <configuration name="Verify_data_join_label (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.mk_bird_view">
+    <configuration name="Knn" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -347,11 +321,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools/test_tools" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads/2015213506_690719_8994096_2015213506-姜友友-hw5" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/test_tools/Verify_data_join_label.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/2015213506_690719_8994096_2015213506-姜友友-hw5/Knn.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -381,7 +355,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="compare_pred_groundtruth" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="mk_bird_view" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="medical-rib" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -389,32 +363,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools/test_tools" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models/point_cloud" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/test_tools/compare_pred_groundtruth.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="compare_two_dataset_xml" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="medical-rib" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools/test_package" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/test_package/compare_two_dataset_xml.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/point_cloud/mk_bird_view.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -444,20 +397,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="medical-rib" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools/problems_for_labels" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/problems_for_labels/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.compare_two_dataset_xml" />
-      <item itemvalue="Python.Verify_data_join_label (1)" />
       <item itemvalue="Python.compare_3_project_box" />
-      <item itemvalue="Python.compare_pred_groundtruth" />
       <item itemvalue="Python.skeleton_3d" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.Knn" />
+      <item itemvalue="Python.mk_bird_view" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.skeleton_3d" />
+        <item itemvalue="Python.mk_bird_view" />
         <item itemvalue="Python.compare_3_project_box" />
-        <item itemvalue="Python.compare_pred_groundtruth" />
-        <item itemvalue="Python.Verify_data_join_label (1)" />
-        <item itemvalue="Python.compare_two_dataset_xml" />
+        <item itemvalue="Python.Knn" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.skeleton_3d" />
       </list>
     </recent_temporary>
   </component>
@@ -487,14 +461,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="25" width="1158" height="795" extended-state="1" />
+    <frame x="0" y="23" width="1440" height="795" extended-state="1" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.74572647" visible="true" weight="0.27264732" />
-      <window_info id="Structure" order="1" sideWeight="0.2542735" side_tool="true" visible="true" weight="0.27264732" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.73826456" visible="true" weight="0.2184637" />
+      <window_info id="Structure" order="1" sideWeight="0.2617354" side_tool="true" visible="true" weight="0.2184637" />
       <window_info id="Favorites" order="2" sideWeight="0.38222224" side_tool="true" weight="0.29170159" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32290184" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33428165" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.16785206" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3371266" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -542,209 +516,223 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612426.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000623125.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612427.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000623157.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612624.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000623163.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612653.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000623182.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612664.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000623707.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612684.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000623971.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612702.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000623978.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612703.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000624081.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612704.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000625963.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612792.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000625981.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612793.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1028935.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612794.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056132.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612798.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056196.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612803.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056206.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612805.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056207.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612878.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056213.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612879.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056214.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612930.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056242.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612947.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056250.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612951.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056251.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612953.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056305.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000613127.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056306.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000613031.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056386.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612994.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056407.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612988.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056421.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612952.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056494.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612950.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/E02872269.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612949.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/F0255089X.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000612948.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/LX32503.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000150175.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/P05979301.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000404064.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/F02052110.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/41121210.png">
+    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/CT-A1056307.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000151454.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/tools/problems_for_labels/unavail_box.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" lean-forward="true" selection-end-line="56" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000338785.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/tools/problems_for_labels/incomplete.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="308">
+          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000404008.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/tools/problems_for_labels/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000392998.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/models/classification/slim_models/slim_others.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000357765.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/models/classification/slim_models/fragments.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-920" />
+      </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/classification/ResNet-ShiYe/resnet-50.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2025">
+          <caret line="135" column="28" lean-forward="true" selection-start-line="135" selection-start-column="28" selection-end-line="135" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/classification/ResNet-ShiYe/load_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1145" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/classification/slim_models/slim_resnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="46" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/test_tools/Verify_data_join_label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/2015213506_690719_8994096_2015213506-姜友友-hw5/Knn.py" />
     <entry file="file://$PROJECT_DIR$/tools/test_tools/compare_pred_groundtruth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="49" column="44" lean-forward="true" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
-          <folding>
-            <element signature="e#1#20#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="417">
+          <caret line="63" column="31" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000404065.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000404096.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000404095.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/results_for_problems/all_yoz_match/135402000404090.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/test_tools/compare_two_dataset_xml.py">
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/voc2007/generate_xml_voc2007.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="6" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1308" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/join_xls_nii_rib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1791" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/voc2007/write_xml_and_pic_voc2007.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="98" column="38" lean-forward="true" selection-start-line="98" selection-start-column="38" selection-end-line="98" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/test_tools/compare_two_png.py">
+    <entry file="file://$PROJECT_DIR$/preprocessing/prepare_data/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/test_tools/compare_3_project_box.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/experiments/scripts/prepare_data.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+        <state relative-caret-position="209">
+          <caret line="44" column="22" lean-forward="true" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/test.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/oberved_data.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/problems_for_labels/share_box_ribs.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing/separated/ribs_obtain/util.py">
+    <entry file="file://$PROJECT_DIR$/tools/test_tools/compare_3_project_box.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="39" selection-start-line="39" selection-end-line="46" selection-end-column="20" />
+        <state relative-caret-position="1470">
+          <caret line="104" column="20" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/test_tools/skeleton_3d.py">
+    <entry file="file://$PROJECT_DIR$/models/point_cloud/mk_bird_view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="375">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/point_cloud/mk_front_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
         </state>
       </provider>
     </entry>
