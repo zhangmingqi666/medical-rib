@@ -31,6 +31,9 @@ case ${DATA} in
                       "added151-200labeled_2.21"  \
                       "added201-237labeled_2.21")
     ;;
+  second_all_labeled)
+    batch_data_names=("RIB_Batch1" "RIB_Batch1")
+    ;;
   *)
     echo "No dataset given"
     exit
