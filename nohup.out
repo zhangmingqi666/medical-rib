@@ -1,160 +1,700 @@
-re mkdir ./data/voc2007/Annotations
-re mkdir ./data/voc2007/ImageSets
-re mkdir ./data/voc2007/JPEGImages
-re mkdir ./data/voc2007/labels
+all data batches waiting to processing are ./data/nii_files_merges/RIB_Batch1 ./data/nii_files_merges/RIB_Batch2
 Called with args:
-Namespace(data_join_label_path='./data/csv_files/join_label.csv', nii_loc_df_path='./data/csv_files/nii_loc_df.csv', rib_type_location_path='./data/csv_files/rib_type_location.xls', ribs_df_cache_folder='./data/ribs_df_cache')
-Error:135402000409065-R7 box can not cover ribs or ribs unavailable
-Error:135402000409065-L8 box can not cover ribs or ribs unavailable
-Error:135402000404222-L4 box can not cover ribs or ribs unavailable
-Error:135402000404222-L3 box can not cover ribs or ribs unavailable
-Error:135402000404098-R5 box can not cover ribs or ribs unavailable
-Error:135402000404098-R6 box can not cover ribs or ribs unavailable
-Error:135402000404098-R7 box can not cover ribs or ribs unavailable
-Error:135402000404098-R8 box can not cover ribs or ribs unavailable
-Error:135402000409347-L7 box can not cover ribs or ribs unavailable
-Error:135402000409347-L5 box can not cover ribs or ribs unavailable
-Error:135402000572309-R4 box can not cover ribs or ribs unavailable
-error: ct data 135402000150175 very few.
-Error:135402000357765-L5 box can not cover ribs or ribs unavailable
-Error:135402000357765-L4 box can not cover ribs or ribs unavailable
-Warning:335 ribs cannot dominate bounding box 41121210-L9
-Error:135402000404127-L6 box can not cover ribs or ribs unavailable
-error: ct data 135402000558459 not exist.
-Warning:2280-3 ribs cannot dominate bounding box 135402000151454-L6
-Error:135402000404097-R5 box can not cover ribs or ribs unavailable
-error: ct data 135402000404395 not exist.
-Error:135402000617470-L5 box can not cover ribs or ribs unavailable
-Error:135402000617292-L10 box can not cover ribs or ribs unavailable
-Error:135402000617292-L2 box can not cover ribs or ribs unavailable
-Error:135402000621964-R7 box can not cover ribs or ribs unavailable
-Error:135402000616599-L5 box can not cover ribs or ribs unavailable
-Error:135402000616952-R12 box can not cover ribs or ribs unavailable
-Error:135402000611010-R5 box can not cover ribs or ribs unavailable
-Error:135402000617217-L2 box can not cover ribs or ribs unavailable
-Error:135402000617415-L6 box can not cover ribs or ribs unavailable
-Error:135402000617415-L5 box can not cover ribs or ribs unavailable
-Error:135402000617233-L6 box can not cover ribs or ribs unavailable
-Error:135402000617420-L1 box can not cover ribs or ribs unavailable
-Warning:29165-2 ribs cannot dominate bounding box 135402000611660-R8
-Warning:29165-1 ribs cannot dominate bounding box 135402000611660-R9
-Error:135402000611659-L1 box can not cover ribs or ribs unavailable
-Error:135402000611805-R2 box can not cover ribs or ribs unavailable
-Error:135402000612947-R10 box can not cover ribs or ribs unavailable
-Error:135402000612947-R4 box can not cover ribs or ribs unavailable
-Error:135402000612947-R5 box can not cover ribs or ribs unavailable
-Error:135402000612947-R6 box can not cover ribs or ribs unavailable
-Error:135402000612702-L6 box can not cover ribs or ribs unavailable
-Error:135402000612702-L7 box can not cover ribs or ribs unavailable
-Error:135402000612794-L5 box can not cover ribs or ribs unavailable
-Error:135402000612794-L4 box can not cover ribs or ribs unavailable
-Error:135402000612949-R3 box can not cover ribs or ribs unavailable
-Error:135402000612949-R7 box can not cover ribs or ribs unavailable
-Error:135402000612949-R5 box can not cover ribs or ribs unavailable
-Error:135402000612949-R6 box can not cover ribs or ribs unavailable
-Error:135402000612949-L5 box can not cover ribs or ribs unavailable
-Error:135402000612949-R4 box can not cover ribs or ribs unavailable
-Error:135402000612949-L6 box can not cover ribs or ribs unavailable
-Error:135402000612703-R1 box can not cover ribs or ribs unavailable
-Error:135402000612703-R2 box can not cover ribs or ribs unavailable
-Error:CT-A1056207-R5 box can not cover ribs or ribs unavailable
-Error:CT-A1056207-R3 box can not cover ribs or ribs unavailable
-Error:CT-A1056207-R6 box can not cover ribs or ribs unavailable
-Error:135402000623182-R6 box can not cover ribs or ribs unavailable
-Error:135402000623182-R5 box can not cover ribs or ribs unavailable
-Error:135402000625963-R4 box can not cover ribs or ribs unavailable
-Error:135402000625963-R6 box can not cover ribs or ribs unavailable
-Error:135402000625963-R7 box can not cover ribs or ribs unavailable
-Error:135402000625963-R5 box can not cover ribs or ribs unavailable
-Warning:77311-41 ribs cannot dominate bounding box 135402000624081-R1
-Called with args:
-Namespace(data_join_label_path='./data/csv_files/join_label.csv', nii_loc_df_path='./data/csv_files/nii_loc_df.csv', output_format='.jpg', output_independent_rib_folder='./data/voc2007/JPEGImages', project_method='x,y', rib_type_location_path='./data/csv_files/rib_type_location.xls', ribs_df_cache_folder='./data/ribs_df_cache', voc2007_Annotations_folder='./data/voc2007/Annotations')
-error: 135402000151454-2280-3 rib data boxes from 2 labels
-A box in 135402000151454-L6 has low data, so dropped
-error: 135402000404064-144905-3 rib data boxes from 2 labels
-error: 135402000404065-117136 rib data boxes from 2 labels
-error: 135402000404693-302 rib data boxes from 2 labels
-A box in 135402000611614-R6 has low data, so dropped
-A box in 135402000611614-R6 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L9 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-A box in 135402000611660-L8 has low data, so dropped
-error: 135402000611988-64241-1 rib data boxes from 2 labels
-error: 135402000611989-90698 rib data boxes from 2 labels
-A box in 135402000612702-L5 has low data, so dropped
-A box in 135402000612702-L5 has low data, so dropped
-Error: all boxes are dropped due to covering low data
-error: 135402000612792-2800 rib data boxes from 2 labels
-error: 135402000612879-19701-1 rib data boxes from 2 labels
-error: 135402000612947-242 rib data boxes from 2 labels
-A box in 135402000612947-R3 has low data, so dropped
-error: 135402000612947-854 rib data boxes from 2 labels
-A box in 135402000612947-R7 has low data, so dropped
-A box in 135402000612947-R7 has low data, so dropped
-A box in 135402000612947-R7 has low data, so dropped
-error: 135402000612949-6007 rib data boxes from 2 labels
-A box in 135402000612949-L4 has low data, so dropped
-A box in 135402000612949-L4 has low data, so dropped
-A box in 135402000612949-L4 has low data, so dropped
-A box in 135402000612949-L4 has low data, so dropped
-error: 135402000612949-6924 rib data boxes from 2 labels
-A box in 135402000612949-R1 has low data, so dropped
-error: 135402000612952-3007 rib data boxes from 2 labels
-A box in 135402000612952-R6 has low data, so dropped
-A box in 135402000612952-R6 has low data, so dropped
-error: 135402000616561-34601-8 rib data boxes from 2 labels
-A box in 135402000616561-L2 has low data, so dropped
-error: 135402000616599-29632 rib data boxes from 2 labels
-A box in 135402000616599-L6 has low data, so dropped
-A box in 135402000616599-L6 has low data, so dropped
-A box in 135402000616599-L6 has low data, so dropped
-A box in 135402000616599-L6 has low data, so dropped
-A box in 135402000616599-L6 has low data, so dropped
-error: 135402000616599-75957 rib data boxes from 2 labels
-A box in 135402000616599-L4 has low data, so dropped
-A box in 135402000616599-L4 has low data, so dropped
-A box in 135402000616599-L4 has low data, so dropped
-A box in 135402000616599-L4 has low data, so dropped
-A box in 135402000617292-L5 has low data, so dropped
-error: 135402000617292-230355 rib data boxes from 2 labels
-A box in 135402000617296-R2 has low data, so dropped
-error: 135402000617415-42149-1 rib data boxes from 2 labels
-error: 135402000623182-130347 rib data boxes from 2 labels
-A box in 135402000623182-R4 has low data, so dropped
-error: 135402000623182-38773 rib data boxes from 2 labels
-error: 135402000624081-77311-41 rib data boxes from 2 labels
-error: 135402000625981-19173-1 rib data boxes from 2 labels
-error: CT-A1056242-1693-1 rib data boxes from 2 labels
-error: CT-A1056306-5280 rib data boxes from 2 labels
-error: F02052110-331 rib data boxes from 2 labels
-######## generate voc2007 format: imageSets ########
-Called with args:
-Namespace(voc2007_Annotations_folder='./data/voc2007/Annotations', voc2007_ImageSets_folder='./data/voc2007/ImageSets')
-sed: 1: "./data/voc2007/2007_tes ...": invalid command code .
+Namespace(keep_slicing=1, nii_folder_list=['./data/nii_files_merges/RIB_Batch1', './data/nii_files_merges/RIB_Batch2'], output_path='./data/csv_files/nii_loc_df.csv')
+keep_slicing is True
+read folder 135402000700124
+read nii 135402000700124-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.759766, 0.759766, 1.25)
+ratio [1.6452434415088135, 1.6452434415088135, 1.0]
+read nii 135402000700124-L9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.759766, 0.759766, 1.25)
+ratio [1.6452434415088135, 1.6452434415088135, 1.0]
+read nii 135402000700124-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.759766, 0.759766, 1.25)
+ratio [1.6452434415088135, 1.6452434415088135, 1.0]
+read nii 135402000700124-L3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.759766, 0.759766, 1.25)
+ratio [1.6452434415088135, 1.6452434415088135, 1.0]
+read nii 135402000700124-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.759766, 0.759766, 1.25)
+ratio [1.6452434415088135, 1.6452434415088135, 1.0]
+read nii 135402000700124-L8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.759766, 0.759766, 1.25)
+ratio [1.6452434415088135, 1.6452434415088135, 1.0]
+read nii 135402000700124-L1.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.759766, 0.759766, 1.25)
+ratio [1.6452434415088135, 1.6452434415088135, 1.0]
+read nii 135402000700124-L2.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.759766, 0.759766, 1.25)
+ratio [1.6452434415088135, 1.6452434415088135, 1.0]
+read nii 135402000700124-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.759766, 0.759766, 1.25)
+ratio [1.6452434415088135, 1.6452434415088135, 1.0]
+read folder 135402000697508
+read nii 135402000697508-R3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.826172, 0.826172, 1.25)
+ratio [1.513002145753375, 1.513002145753375, 1.0]
+read nii 135402000697508-R4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.826172, 0.826172, 1.25)
+ratio [1.513002145753375, 1.513002145753375, 1.0]
+read folder 135402000699211
+read nii 135402000699211-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.808594, 0.808594, 1.25)
+ratio [1.545893263991126, 1.545893263991126, 1.0]
+read nii 135402000699211-L8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.808594, 0.808594, 1.25)
+ratio [1.545893263991126, 1.545893263991126, 1.0]
+read nii 135402000699211-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.808594, 0.808594, 1.25)
+ratio [1.545893263991126, 1.545893263991126, 1.0]
+read nii 135402000699211-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.808594, 0.808594, 1.25)
+ratio [1.545893263991126, 1.545893263991126, 1.0]
+read nii 135402000699211-L3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.808594, 0.808594, 1.25)
+ratio [1.545893263991126, 1.545893263991126, 1.0]
+read nii 135402000699211-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.808594, 0.808594, 1.25)
+ratio [1.545893263991126, 1.545893263991126, 1.0]
+read folder 135402000726687
+read nii 135402000726687-R10.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.914063, 0.914063, 1.25)
+ratio [1.3675206541296, 1.3675206541296, 1.0]
+read nii 135402000726687-R9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.914063, 0.914063, 1.25)
+ratio [1.3675206541296, 1.3675206541296, 1.0]
+read nii 135402000726687-R8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.914063, 0.914063, 1.25)
+ratio [1.3675206541296, 1.3675206541296, 1.0]
+read folder 135402000698994
+read nii 135402000698994-L8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.777344, 0.777344, 1.25)
+ratio [1.6080397078042472, 1.6080397078042472, 1.0]
+read nii 135402000698994-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.777344, 0.777344, 1.25)
+ratio [1.6080397078042472, 1.6080397078042472, 1.0]
+read nii 135402000698994-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.777344, 0.777344, 1.25)
+ratio [1.6080397078042472, 1.6080397078042472, 1.0]
+read nii 135402000698994-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.777344, 0.777344, 1.25)
+ratio [1.6080397078042472, 1.6080397078042472, 1.0]
+read folder 135402000697745
+read nii 135402000697745-R8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.763672, 0.763672, 1.25)
+ratio [1.6368283889921318, 1.6368283889921318, 1.0]
+read nii 135402000697745-R7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.763672, 0.763672, 1.25)
+ratio [1.6368283889921318, 1.6368283889921318, 1.0]
+read nii 135402000697745-R10.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.763672, 0.763672, 1.25)
+ratio [1.6368283889921318, 1.6368283889921318, 1.0]
+read nii 135402000697745-R6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.763672, 0.763672, 1.25)
+ratio [1.6368283889921318, 1.6368283889921318, 1.0]
+read nii 135402000697745-R9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.763672, 0.763672, 1.25)
+ratio [1.6368283889921318, 1.6368283889921318, 1.0]
+read folder C1322094X
+read nii C1322094X-L3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.763672, 0.763672, 1.25)
+ratio [1.6368283889921318, 1.6368283889921318, 1.0]
+read nii C1322094X-L8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.763672, 0.763672, 1.25)
+ratio [1.6368283889921318, 1.6368283889921318, 1.0]
+read nii C1322094X-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.763672, 0.763672, 1.25)
+ratio [1.6368283889921318, 1.6368283889921318, 1.0]
+read nii C1322094X-L9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.763672, 0.763672, 1.25)
+ratio [1.6368283889921318, 1.6368283889921318, 1.0]
+read folder 135402000697571
+read nii 135402000697571-L3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.857422, 0.857422, 1.25)
+ratio [1.457858567242311, 1.457858567242311, 1.0]
+read nii 135402000697571-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.857422, 0.857422, 1.25)
+ratio [1.457858567242311, 1.457858567242311, 1.0]
+read nii 135402000697571-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.857422, 0.857422, 1.25)
+ratio [1.457858567242311, 1.457858567242311, 1.0]
+read nii 135402000697571-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.857422, 0.857422, 1.25)
+ratio [1.457858567242311, 1.457858567242311, 1.0]
+read folder 135402000698998
+read nii 135402000698998-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.890625, 0.890625, 1.25)
+ratio [1.4035087719298245, 1.4035087719298245, 1.0]
+read nii 135402000698998-R6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.890625, 0.890625, 1.25)
+ratio [1.4035087719298245, 1.4035087719298245, 1.0]
+read nii 135402000698998-L10.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.890625, 0.890625, 1.25)
+ratio [1.4035087719298245, 1.4035087719298245, 1.0]
+read nii 135402000698998-L8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.890625, 0.890625, 1.25)
+ratio [1.4035087719298245, 1.4035087719298245, 1.0]
+read nii 135402000698998-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.890625, 0.890625, 1.25)
+ratio [1.4035087719298245, 1.4035087719298245, 1.0]
+read nii 135402000698998-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.890625, 0.890625, 1.25)
+ratio [1.4035087719298245, 1.4035087719298245, 1.0]
+read nii 135402000698998-R3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.890625, 0.890625, 1.25)
+ratio [1.4035087719298245, 1.4035087719298245, 1.0]
+read nii 135402000698998-R4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.890625, 0.890625, 1.25)
+ratio [1.4035087719298245, 1.4035087719298245, 1.0]
+read nii 135402000698998-R5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.890625, 0.890625, 1.25)
+ratio [1.4035087719298245, 1.4035087719298245, 1.0]
+read nii 135402000698998-L9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.890625, 0.890625, 1.25)
+ratio [1.4035087719298245, 1.4035087719298245, 1.0]
+read nii 135402000698998-R8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.890625, 0.890625, 1.25)
+ratio [1.4035087719298245, 1.4035087719298245, 1.0]
+read nii 135402000698998-R7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.890625, 0.890625, 1.25)
+ratio [1.4035087719298245, 1.4035087719298245, 1.0]
+read folder 135402000726634
+read nii 135402000726634-L9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.708984, 0.708984, 1.25)
+ratio [1.763086288789921, 1.763086288789921, 1.0]
+read nii 135402000726634-L11.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.708984, 0.708984, 1.25)
+ratio [1.763086288789921, 1.763086288789921, 1.0]
+read nii 135402000726634-L10.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.708984, 0.708984, 1.25)
+ratio [1.763086288789921, 1.763086288789921, 1.0]
+read nii 135402000726634-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.708984, 0.708984, 1.25)
+ratio [1.763086288789921, 1.763086288789921, 1.0]
+read nii 135402000726634-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.708984, 0.708984, 1.25)
+ratio [1.763086288789921, 1.763086288789921, 1.0]
+read nii 135402000726634-L3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.708984, 0.708984, 1.25)
+ratio [1.763086288789921, 1.763086288789921, 1.0]
+read nii 135402000726634-L8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.708984, 0.708984, 1.25)
+ratio [1.763086288789921, 1.763086288789921, 1.0]
+read nii 135402000726634-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.708984, 0.708984, 1.25)
+ratio [1.763086288789921, 1.763086288789921, 1.0]
+read nii 135402000726634-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.708984, 0.708984, 1.25)
+ratio [1.763086288789921, 1.763086288789921, 1.0]
+read folder 135402000697428
+read nii 135402000697428-R5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.800781, 0.800781, 1.25)
+ratio [1.560976074509359, 1.560976074509359, 1.0]
+read nii 135402000697428-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.800781, 0.800781, 1.25)
+ratio [1.560976074509359, 1.560976074509359, 1.0]
+read nii 135402000697428-L2.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.800781, 0.800781, 1.25)
+ratio [1.560976074509359, 1.560976074509359, 1.0]
+read nii 135402000697428-L3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.800781, 0.800781, 1.25)
+ratio [1.560976074509359, 1.560976074509359, 1.0]
+read nii 135402000697428-R4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.800781, 0.800781, 1.25)
+ratio [1.560976074509359, 1.560976074509359, 1.0]
+read nii 135402000697428-R6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.800781, 0.800781, 1.25)
+ratio [1.560976074509359, 1.560976074509359, 1.0]
+read nii 135402000697428-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.800781, 0.800781, 1.25)
+ratio [1.560976074509359, 1.560976074509359, 1.0]
+read folder 135402000699021
+read nii 135402000699021-R2.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.78125, 0.78125, 1.25)
+ratio [1.6, 1.6, 1.0]
+read folder 135402000700123
+read nii 135402000700123-R3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.804688, 0.804688, 1.25)
+ratio [1.553397137749155, 1.553397137749155, 1.0]
+read nii 135402000700123-R4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.804688, 0.804688, 1.25)
+ratio [1.553397137749155, 1.553397137749155, 1.0]
+read nii 135402000700123-R6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.804688, 0.804688, 1.25)
+ratio [1.553397137749155, 1.553397137749155, 1.0]
+read nii 135402000700123-R5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.804688, 0.804688, 1.25)
+ratio [1.553397137749155, 1.553397137749155, 1.0]
+read folder 135402000697628
+read nii 135402000697628-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.683594, 0.683594, 1.25)
+ratio [1.828570790816549, 1.828570790816549, 1.0]
+read nii 135402000697628-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.683594, 0.683594, 1.25)
+ratio [1.828570790816549, 1.828570790816549, 1.0]
+read folder 135402000699174
+read nii 135402000699174-R7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.767578, 0.767578, 1.25)
+ratio [1.62849898065061, 1.62849898065061, 1.0]
+read nii 135402000699174-R5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.767578, 0.767578, 1.25)
+ratio [1.62849898065061, 1.62849898065061, 1.0]
+read nii 135402000699174-R8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.767578, 0.767578, 1.25)
+ratio [1.62849898065061, 1.62849898065061, 1.0]
+read nii 135402000699174-R3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.767578, 0.767578, 1.25)
+ratio [1.62849898065061, 1.62849898065061, 1.0]
+read nii 135402000699174-R2.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.767578, 0.767578, 1.25)
+ratio [1.62849898065061, 1.62849898065061, 1.0]
+read nii 135402000699174-R9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.767578, 0.767578, 1.25)
+ratio [1.62849898065061, 1.62849898065061, 1.0]
+read nii 135402000699174-R6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.767578, 0.767578, 1.25)
+ratio [1.62849898065061, 1.62849898065061, 1.0]
+read nii 135402000699174-R4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.767578, 0.767578, 1.25)
+ratio [1.62849898065061, 1.62849898065061, 1.0]
+read folder 135402000698854
+read nii 135402000698854-R5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.800781, 0.800781, 1.25)
+ratio [1.560976074509359, 1.560976074509359, 1.0]
+read nii 135402000698854-R4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.800781, 0.800781, 1.25)
+ratio [1.560976074509359, 1.560976074509359, 1.0]
+read nii 135402000698854-R6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.800781, 0.800781, 1.25)
+ratio [1.560976074509359, 1.560976074509359, 1.0]
+read folder 135402000698941
+read nii 135402000698941-L2.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.775391, 0.775391, 1.25)
+ratio [1.6120899365680517, 1.6120899365680517, 1.0]
+read nii 135402000698941-L3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.775391, 0.775391, 1.25)
+ratio [1.6120899365680517, 1.6120899365680517, 1.0]
+read nii 135402000698941-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.775391, 0.775391, 1.25)
+ratio [1.6120899365680517, 1.6120899365680517, 1.0]
+read nii 135402000698941-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.775391, 0.775391, 1.25)
+ratio [1.6120899365680517, 1.6120899365680517, 1.0]
+read folder 135402000697429
+read nii 135402000697429-L8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.8125, 0.8125, 1.25)
+ratio [1.5384615384615385, 1.5384615384615385, 1.0]
+read nii 135402000697429-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.8125, 0.8125, 1.25)
+ratio [1.5384615384615385, 1.5384615384615385, 1.0]
+read nii 135402000697429-L9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.8125, 0.8125, 1.25)
+ratio [1.5384615384615385, 1.5384615384615385, 1.0]
+read nii 135402000697429-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.8125, 0.8125, 1.25)
+ratio [1.5384615384615385, 1.5384615384615385, 1.0]
+read nii 135402000697429-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.8125, 0.8125, 1.25)
+ratio [1.5384615384615385, 1.5384615384615385, 1.0]
+read nii 135402000697429-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.8125, 0.8125, 1.25)
+ratio [1.5384615384615385, 1.5384615384615385, 1.0]
+read nii 135402000697429-L3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.8125, 0.8125, 1.25)
+ratio [1.5384615384615385, 1.5384615384615385, 1.0]
+read folder 135402000697552
+read nii 135402000697552-R6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.898438, 0.898438, 1.25)
+ratio [1.3913036094049287, 1.3913036094049287, 1.0]
+read nii 135402000697552-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.898438, 0.898438, 1.25)
+ratio [1.3913036094049287, 1.3913036094049287, 1.0]
+read nii 135402000697552-R9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.898438, 0.898438, 1.25)
+ratio [1.3913036094049287, 1.3913036094049287, 1.0]
+read nii 135402000697552-R5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.898438, 0.898438, 1.25)
+ratio [1.3913036094049287, 1.3913036094049287, 1.0]
+read nii 135402000697552-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.898438, 0.898438, 1.25)
+ratio [1.3913036094049287, 1.3913036094049287, 1.0]
+read nii 135402000697552-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.898438, 0.898438, 1.25)
+ratio [1.3913036094049287, 1.3913036094049287, 1.0]
+read nii 135402000697552-R7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.898438, 0.898438, 1.25)
+ratio [1.3913036094049287, 1.3913036094049287, 1.0]
+read folder 135402000697657
+read nii 135402000697657-L3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.789063, 0.789063, 1.25)
+ratio [1.584157458521802, 1.584157458521802, 1.0]
+read nii 135402000697657-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.789063, 0.789063, 1.25)
+ratio [1.584157458521802, 1.584157458521802, 1.0]
+read nii 135402000697657-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.789063, 0.789063, 1.25)
+ratio [1.584157458521802, 1.584157458521802, 1.0]
+read nii 135402000697657-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.789063, 0.789063, 1.25)
+ratio [1.584157458521802, 1.584157458521802, 1.0]
+read nii 135402000697657-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.789063, 0.789063, 1.25)
+ratio [1.584157458521802, 1.584157458521802, 1.0]
+read folder 135402000699104
+read nii 135402000699104-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read nii 135402000699104-R4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read nii 135402000699104-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read nii 135402000699104-L8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read nii 135402000699104-L9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read nii 135402000699104-R5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read nii 135402000699104-R3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read folder 135402000698956
+read nii 135402000698956-R9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read nii 135402000698956-R10.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read nii 135402000698956-R11.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read nii 135402000698956-R7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read nii 135402000698956-R6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read nii 135402000698956-R5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read nii 135402000698956-R8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.714844, 0.714844, 1.25)
+ratio [1.7486332965677243, 1.7486332965677243, 1.0]
+read folder 135402000698955
+read nii 135402000698955-R7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.736328, 0.736328, 1.25)
+ratio [1.6976130069338864, 1.6976130069338864, 1.0]
+read nii 135402000698955-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.736328, 0.736328, 1.25)
+ratio [1.6976130069338864, 1.6976130069338864, 1.0]
+read nii 135402000698955-R6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.736328, 0.736328, 1.25)
+ratio [1.6976130069338864, 1.6976130069338864, 1.0]
+read nii 135402000698955-L2.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.736328, 0.736328, 1.25)
+ratio [1.6976130069338864, 1.6976130069338864, 1.0]
+read nii 135402000698955-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.736328, 0.736328, 1.25)
+ratio [1.6976130069338864, 1.6976130069338864, 1.0]
+read nii 135402000698955-R5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.736328, 0.736328, 1.25)
+ratio [1.6976130069338864, 1.6976130069338864, 1.0]
+read nii 135402000698955-R10.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.736328, 0.736328, 1.25)
+ratio [1.6976130069338864, 1.6976130069338864, 1.0]
+read nii 135402000698955-R11.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.736328, 0.736328, 1.25)
+ratio [1.6976130069338864, 1.6976130069338864, 1.0]
+read nii 135402000698955-R8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.736328, 0.736328, 1.25)
+ratio [1.6976130069338864, 1.6976130069338864, 1.0]
+read nii 135402000698955-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.736328, 0.736328, 1.25)
+ratio [1.6976130069338864, 1.6976130069338864, 1.0]
+read nii 135402000698955-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.736328, 0.736328, 1.25)
+ratio [1.6976130069338864, 1.6976130069338864, 1.0]
+read nii 135402000698955-L3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.736328, 0.736328, 1.25)
+ratio [1.6976130069338864, 1.6976130069338864, 1.0]
+read folder 135402000697426
+read nii 135402000697426-R7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.683594, 0.683594, 1.25)
+ratio [1.828570790816549, 1.828570790816549, 1.0]
+read nii 135402000697426-R5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.683594, 0.683594, 1.25)
+ratio [1.828570790816549, 1.828570790816549, 1.0]
+read nii 135402000697426-R6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.683594, 0.683594, 1.25)
+ratio [1.828570790816549, 1.828570790816549, 1.0]
+read nii 135402000697426-R4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.683594, 0.683594, 1.25)
+ratio [1.828570790816549, 1.828570790816549, 1.0]
+read folder 135402000697425
+read nii 135402000697425-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.728516, 0.728516, 1.25)
+ratio [1.7158168520765442, 1.7158168520765442, 1.0]
+read nii 135402000697425-L8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.728516, 0.728516, 1.25)
+ratio [1.7158168520765442, 1.7158168520765442, 1.0]
+read nii 135402000697425-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.728516, 0.728516, 1.25)
+ratio [1.7158168520765442, 1.7158168520765442, 1.0]
+read nii 135402000697425-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.728516, 0.728516, 1.25)
+ratio [1.7158168520765442, 1.7158168520765442, 1.0]
+read nii 135402000697425-L9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.728516, 0.728516, 1.25)
+ratio [1.7158168520765442, 1.7158168520765442, 1.0]
+read nii 135402000697425-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.728516, 0.728516, 1.25)
+ratio [1.7158168520765442, 1.7158168520765442, 1.0]
+read folder 135402000727333
+read nii 135402000727333-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.802734, 0.802734, 1.25)
+ratio [1.5571783093135383, 1.5571783093135383, 1.0]
+read nii 135402000727333-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.802734, 0.802734, 1.25)
+ratio [1.5571783093135383, 1.5571783093135383, 1.0]
+read nii 135402000727333-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.802734, 0.802734, 1.25)
+ratio [1.5571783093135383, 1.5571783093135383, 1.0]
+read folder 135402000697471
+read nii 135402000697471-R6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.789063, 0.789063, 1.25)
+ratio [1.584157458521802, 1.584157458521802, 1.0]
+read nii 135402000697471-R5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.789063, 0.789063, 1.25)
+ratio [1.584157458521802, 1.584157458521802, 1.0]
+read nii 135402000697471-R4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.789063, 0.789063, 1.25)
+ratio [1.584157458521802, 1.584157458521802, 1.0]
+read nii 135402000697471-R3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.789063, 0.789063, 1.25)
+ratio [1.584157458521802, 1.584157458521802, 1.0]
+read folder 135402000697430
+read nii 135402000697430-R4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.820313, 0.820313, 1.25)
+ratio [1.5238086380390636, 1.5238086380390636, 1.0]
+read nii 135402000697430-R5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.820313, 0.820313, 1.25)
+ratio [1.5238086380390636, 1.5238086380390636, 1.0]
+read folder 135402000697431
+read nii 135402000697431-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.814453, 0.814453, 1.25)
+ratio [1.534772406894661, 1.534772406894661, 1.0]
+read nii 135402000697431-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.814453, 0.814453, 1.25)
+ratio [1.534772406894661, 1.534772406894661, 1.0]
+read nii 135402000697431-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.814453, 0.814453, 1.25)
+ratio [1.534772406894661, 1.534772406894661, 1.0]
+read nii 135402000697431-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.814453, 0.814453, 1.25)
+ratio [1.534772406894661, 1.534772406894661, 1.0]
+read nii 135402000697431-L8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.814453, 0.814453, 1.25)
+ratio [1.534772406894661, 1.534772406894661, 1.0]
+read nii 135402000697431-L9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.814453, 0.814453, 1.25)
+ratio [1.534772406894661, 1.534772406894661, 1.0]
+read folder 135402000698820
+read nii 135402000698820-L9.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.746094, 0.746094, 1.25)
+ratio [1.6753921347758076, 1.6753921347758076, 1.0]
+read nii 135402000698820-L5.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.746094, 0.746094, 1.25)
+ratio [1.6753921347758076, 1.6753921347758076, 1.0]
+read nii 135402000698820-L2.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.746094, 0.746094, 1.25)
+ratio [1.6753921347758076, 1.6753921347758076, 1.0]
+read nii 135402000698820-L8.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.746094, 0.746094, 1.25)
+ratio [1.6753921347758076, 1.6753921347758076, 1.0]
+read nii 135402000698820-L4.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.746094, 0.746094, 1.25)
+ratio [1.6753921347758076, 1.6753921347758076, 1.0]
+read nii 135402000698820-L7.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.746094, 0.746094, 1.25)
+ratio [1.6753921347758076, 1.6753921347758076, 1.0]
+read nii 135402000698820-L11.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.746094, 0.746094, 1.25)
+ratio [1.6753921347758076, 1.6753921347758076, 1.0]
+read nii 135402000698820-L3.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.746094, 0.746094, 1.25)
+ratio [1.6753921347758076, 1.6753921347758076, 1.0]
+read nii 135402000698820-L6.nii
+spacing [1.25, 1.25, 1.25]
+zoom (0.746094, 0.746094, 1.25)
+ratio [1.6753921347758076, 1.6753921347758076, 1.0]
+read nii 135402000698820-L10.nii
+spacing [1.25, 1.25, 1.25]

@@ -80,7 +80,7 @@ if [[ ! -d ${LOGS_DIR} ]]; then
 fi
 
 if [[ "$FORMAT" = "dcm" ]]; then
-    ribs_obtain_from_dcm 2 48
+    ribs_obtain_from_dcm 90 179
 elif [[ "$FORMAT" = "pkl" ]]; then
     ribs_obtain_from_pkl
 elif [[ "$FORMAT" = "dcm_mult" ]]; then

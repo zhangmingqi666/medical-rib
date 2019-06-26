@@ -11,7 +11,7 @@ case ${DATA} in
     batch_data_names=("updated48labeled_1.31" "added51-100labeled_2.21" "added101-150labeled_2.21" "added151-200labeled_2.21" "added201-237labeled_2.21")
     ;;
   second_all_labeled)
-    batch_data_names=("RIB_Batch1" "RIB_Batch1")
+    batch_data_names=("RIB_Batch1" "RIB_Batch2")
     ;;
   *)
     echo "No dataset given"                        i
