@@ -11,6 +11,7 @@ logs/
 *.dcm
 *.png
 *ipynb
+*.out
 data
 .idea/*
 .idea/workspace.xml

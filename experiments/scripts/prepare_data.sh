@@ -7,13 +7,13 @@ RIB_DF_CACHE_DIR=./data/ribs_df_cache
 
 # temp
 OS=`uname -s`
-if [[ ${OS} == "Linux"  ]];then
-    RIB_DF_CACHE_DIR=./data/ribs_df_cache.last
-fi
+#if [[ ${OS} == "Linux"  ]];then
+#    RIB_DF_CACHE_DIR=./data/ribs_df_cache.last
+#fi
 
 JOIN_LABEL_PATH=./data/csv_files/join_label.csv
 
-Voc2007_folder=./data/voc2007_rawbox_yoz
+Voc2007_folder=./data/voc2007
 Voc2007_Annotations_folder=${Voc2007_folder}/Annotations
 Voc2007_ImageSets_folder=${Voc2007_folder}/ImageSets
 Voc2007_JPEGImages_folder=${Voc2007_folder}/JPEGImages
@@ -44,7 +44,7 @@ python3 ./preprocessing/prepare_data/voc2007/write_xml_and_pic_voc2007.py \
                                               --data_join_label_path ${JOIN_LABEL_PATH} \
                                               --voc2007_Annotations_folder  ${Voc2007_Annotations_folder} \
                                               --output_independent_rib_folder  ${Voc2007_JPEGImages_folder} \
-                                              --project_method  "y,z" \
+                                              --project_method  "x,y" \
                                               --output_format  ".jpg"
 
 
