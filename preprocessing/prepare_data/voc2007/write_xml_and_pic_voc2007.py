@@ -1,8 +1,6 @@
 #coding=utf-8
 import pandas as pd
-import os
 import argparse
-import sys
 import imageio
 import numpy as np
 import warnings
@@ -97,8 +95,8 @@ def generate_filename_4_xml_jpg(ct_id, rib_id, location_list):
 def generate_filename_4_xml_jpg_2(ct_id, rib_id, location_list):
     location_part = "_".join([x[(len(ct_id)+1):] for x in location_list])
     rib_part = rib_id[(len(ct_id)+1):]
-    #return '-'.join([ct_id, rib_part, location_part])
-    return '-'.join([ct_id, location_part])
+    return '-'.join([ct_id, rib_part, location_part])
+    # return '-'.join([ct_id, location_part])
 
 
 def mk_boxes_tighten(_locations_for_ribs=None, _rib_data_df=None):
@@ -181,9 +179,6 @@ if __name__ == '__main__':
                                                                'box.y.max': np.int, 'box.y.min': np.int,
                                                                'box.z.max': np.int, 'box.z.min': np.int})
 
-    #filename_old_list = []
-    #filename_new_list = []
-
     for _, row in map_unique_df.iterrows():
         ct_id, rib_id = row['id'], row['dataSet_id']
         map_loc_df = map_df[map_df['dataSet_id'] == rib_id]
@@ -220,7 +215,10 @@ if __name__ == '__main__':
             locations_for_ribs['box.%s.max' % e] = locations_for_ribs['box.%s.max' % e].\
                 apply(lambda x: x - rib_range_dict['range.%s.min' % e])
 
-        # locations_for_ribs = mk_boxes_tighten(_locations_for_ribs=locations_for_ribs, _rib_data_df=local_rib_data_df)
+        print('#####, ' + ','.join([row['dataSet_id'], rib_range_dict['range.x.min'],
+                                    rib_range_dict['range.y.min'], rib_range_dict['range.z.min']]))
+
+        locations_for_ribs = mk_boxes_tighten(_locations_for_ribs=locations_for_ribs, _rib_data_df=local_rib_data_df)
 
         if len(locations_for_ribs) > len(map_unique_df):
             print("In {}, some locations has more than 1 boxes".format(rib_id))
@@ -241,5 +239,3 @@ if __name__ == '__main__':
                                                    rib_range_dict['range.%s.min' % e1]),
                                    size_depth=1,
                                    bndboxes=boxes)
-
-    # pd.DataFrame({'old': filename_old_list, 'new': filename_new_list}).to_csv('old_new.csv', index=False)

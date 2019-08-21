@@ -27,17 +27,16 @@ def parse_rec(filename):
 
     return objects, {'width': width, 'height': height}
 
+path="/Users/jiangyy/Desktop"
+xoy_image_folder = "{}/voc2007_xoy/JPEGImages".format(path)
+xoy_xml_folder = "{}/voc2007_xoy/Annotations".format(path)
+yoz_image_folder = "{}/voc2007_yoz/JPEGImages".format(path)
+yoz_xml_folder = "{}/voc2007_yoz/Annotations".format(path)
+xoz_image_folder = "{}/voc2007_xoz/JPEGImages".format(path)
+xoz_xml_folder = "{}/voc2007_xoz/Annotations".format(path)
 
-xoy_image_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_rawbox/JPEGImages"
-xoy_xml_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_rawbox/Annotations"
-yoz_image_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_rawbox_yoz/JPEGImages"
-yoz_xml_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_rawbox_yoz/Annotations"
-xoz_image_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_rawbox_xoz/JPEGImages"
-xoz_xml_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007_rawbox_xoz/Annotations"
 
-#more_image_folder = few_image_folder
-#more_xml_folder = few_xml_folder
-share_df = pd.read_csv("../problems_for_labels/share_box_ribs.csv")
+#share_df = pd.read_csv("../problems_for_labels/share_box_ribs.csv")
 
 for file in os.listdir(xoy_image_folder):
     id = file[0:-4]
@@ -111,5 +110,5 @@ for file in os.listdir(xoy_image_folder):
     ax = plt.gca()
     ax.invert_yaxis()
     plt.xlabel(id)
-    #plt.savefig("/Users/jiangyy/projects/medical-rib/data/raw_box/{}.png".format(id))
+    #plt.savefig("{}/3d_compare/{}.png".format(path,id))
     plt.show()

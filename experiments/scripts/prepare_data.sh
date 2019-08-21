@@ -47,7 +47,6 @@ python3 ./preprocessing/prepare_data/voc2007/write_xml_and_pic_voc2007.py \
                                               --project_method  "x,y" \
                                               --output_format  ".jpg"
 
-
 # separate voc2007 part from join part
 # echo "######## split ribs_dataSet into independent picture and save offset shift ########"
 #python3  ./preprocessing/prepare_data/voc2007/to_ribs_dataset_voc2007.py  --in_folder_path  ${RIB_DF_CACHE_DIR}  \

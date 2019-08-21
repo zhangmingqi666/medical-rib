@@ -17,7 +17,8 @@ def read_excel(excel_path=None):
     df = df.fillna(method='ffill', axis=0)
     return df
 
-
+# read_excel(excel_path="/Users/jiangyy/Desktop/rib_type_location.xls")
+# exit(1)
 def one_ct_df_join_one_bounding_box(data_df=None, _bounding_box_df=None, location_id=None):
 
     in_box_df = pd.DataFrame({})

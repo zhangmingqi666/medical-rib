@@ -28,10 +28,10 @@ def parse_rec(filename):
     return objects, {'width': width, 'height': height}
 
 
-few_image_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007/JPEGImages"
-few_xml_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007/Annotations"
-more_image_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007.refined/JPEGImages" #"/Users/jiangyy/voc2007.xoy/JPEGImages"
-more_xml_folder = "/Users/jiangyy/projects/medical-rib/data/voc2007.refined/Annotations.refined"
+few_image_folder = "/Users/jiangyy/voc2007.04.22/JPEGImages"
+few_xml_folder = "/Users/jiangyy/voc2007.04.22/Annotations"
+more_image_folder = "/Users/jiangyy/voc2007.test_unpredict/JPEGImages" #"/Users/jiangyy/voc2007.xoy/JPEGImages"
+more_xml_folder = "/Users/jiangyy/voc2007.test_unpredict/Annotations"
 
 #more_image_folder = few_image_folder
 #more_xml_folder = few_xml_folder
