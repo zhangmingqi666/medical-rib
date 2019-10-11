@@ -1,5 +1,5 @@
 
-![REFED_logo](.github/logo_refed_internal_white.jpg =200x)
+![REFED_logo](.github/logo_refed_internal_white.jpg)
 
 ## Refed
 
