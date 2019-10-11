@@ -13,9 +13,7 @@ logs/
 *ipynb
 *.out
 data
-.idea/*
-.idea/workspace.xml
-.idea
+.idea/
 # C extensions
 *.so
 models/darknet
