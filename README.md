@@ -1,4 +1,5 @@
-![REFED_logo](.README_IMAGES/logo_refed_side_transparent.png)
+
+![REFED_logo](.github/logo_refed_side_transparent.png)
 
 ## Refed
 
