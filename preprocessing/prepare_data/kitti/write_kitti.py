@@ -125,15 +125,16 @@ if __name__ == '__main__':
     # print('Called with args:')
     # print(args)
     #
-    #map_df = pd.read_csv(args.data_join_label_path)
+    # map_df = pd.read_csv(args.data_join_label_path)
+
     import os
     M_path = '/home/jiangyy/projects/medical-rib/data'
     map_df = pd.read_csv(os.path.join(M_path, 'csv_files', 'join_label.csv'))
     map_unique_df = map_df.groupby(['id', 'dataSet_id']).agg({'id': 'count'}).\
         rename(columns={'id': 'count'}).reset_index()
 
-    bounding_box_df = pd.read_csv(os.path.join(M_path, 'csv_files', 'nii_loc_df.csv'),
-                                  dtype={'id': np.str, 'location_id': np.str,
+    bounding_box_df = pd.read_csv(os.path.join(M_path, 'csv_files', 'restore_glb.csv'),
+                                  dtype={'location_id': np.str,
                                          'box.x.max': np.int, 'box.x.min': np.int,
                                          'box.y.max': np.int, 'box.y.min': np.int,
                                          'box.z.max': np.int, 'box.z.min': np.int})

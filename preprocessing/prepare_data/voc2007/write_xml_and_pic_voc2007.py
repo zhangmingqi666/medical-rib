@@ -116,7 +116,7 @@ def mk_boxes_tighten(_locations_for_ribs=None, _rib_data_df=None):
             print("A box in {} has low data, so dropped".format(_row['location_id']))
             continue
 
-        new_locations_for_ribs.loc[len(new_locations_for_ribs)] = {'id': _row['id'], 'location_id': _row['id'],
+        new_locations_for_ribs.loc[len(new_locations_for_ribs)] = {'id': _row['id'], 'location_id': _row['location_id'],
                                                                    'box.x.max': min(box_x_max, temp_df['x'].max()),
                                                                    'box.x.min': max(box_x_min, temp_df['x'].min()),
                                                                    'box.y.max': min(box_y_max, temp_df['y'].max()),
@@ -178,7 +178,7 @@ if __name__ == '__main__':
                                                                'box.x.max': np.int, 'box.x.min': np.int,
                                                                'box.y.max': np.int, 'box.y.min': np.int,
                                                                'box.z.max': np.int, 'box.z.min': np.int})
-
+    debug_df = pd.DataFrame({})
     for _, row in map_unique_df.iterrows():
         ct_id, rib_id = row['id'], row['dataSet_id']
         map_loc_df = map_df[map_df['dataSet_id'] == rib_id]
@@ -215,11 +215,11 @@ if __name__ == '__main__':
             locations_for_ribs['box.%s.max' % e] = locations_for_ribs['box.%s.max' % e].\
                 apply(lambda x: x - rib_range_dict['range.%s.min' % e])
 
-        print('#####, ' + ','.join([row['dataSet_id'], rib_range_dict['range.x.min'],
-                                    rib_range_dict['range.y.min'], rib_range_dict['range.z.min']]))
+        print('#####, ' + ','.join([row['dataSet_id'], str(rib_range_dict['range.x.min']),
+                                    str(rib_range_dict['range.y.min']), str(rib_range_dict['range.z.min'])]))
 
         locations_for_ribs = mk_boxes_tighten(_locations_for_ribs=locations_for_ribs, _rib_data_df=local_rib_data_df)
-
+        debug_df = debug_df.append(locations_for_ribs)
         if len(locations_for_ribs) > len(map_unique_df):
             print("In {}, some locations has more than 1 boxes".format(rib_id))
 
@@ -239,3 +239,5 @@ if __name__ == '__main__':
                                                    rib_range_dict['range.%s.min' % e1]),
                                    size_depth=1,
                                    bndboxes=boxes)
+
+    debug_df.to_csv('./after_tighten.csv', index=False)
