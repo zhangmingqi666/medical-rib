@@ -1,5 +1,5 @@
 
-![REFED_logo](.github/logo_refed_internal_white.jpg)
+![REFED_logo](.github/logo_refed_side_white.jpg)
 
 ## Refed
 
@@ -12,25 +12,25 @@ Refed is consist by two modules: **rib extraction module** and **fracture detect
 #### rib extraction module: extract ribs from source CT image
 1. *Input CT image*
 
-![source CT image](.README_IMAGES/src_ct_image.png)
+![source CT image](.github/src_ct_image.png)
 
 **Note**: the source CT image is handled by HU value binary process (HU threshold = 400)
 
 2. *Cut sternum with envelope line*
 
-![sternum envelope line](.README_IMAGES/half_front_bones_with_envelope_line.png)
+![sternum envelope line](.github/half_front_bones_with_envelope_line.png)
 
 3. *remaining spine*
 
-![remaining spine](.README_IMAGES/spine_remaining.png)
+![remaining spine](.github/spine_remaining.png)
 
 4. *collect ribs*
 
-![collect ribs](.README_IMAGES/collect_ribs.png)
+![collect ribs](.github/collect_ribs.png)
 
 you can also view every single rib as follows:
 
-![single rib](.README_IMAGES/single_rib.png)
+![single rib](.github/single_rib.png)
 
 #### fracture detection module: fracture recognition and location
 <font color=red size=5>（fraction detection 的效果）</font>
