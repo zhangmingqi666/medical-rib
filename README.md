@@ -7,51 +7,82 @@
 
 Refed is consist by two modules: **rib extraction module** and **fracture detection module**. *First*, we design algorithm based on computer vision for extracting ribs from CT images. *Second*, we design DNN based on [faster-rcnn](https://github.com/endernewton/tf-faster-rcnn) for detecting fracture location with these ribs.
 
-### Performance
----
-#### rib extraction module: extract ribs from source CT image
-1. *Input CT image*
 
-![source CT image](.github/src_ct_image.png)
+### Workflow
 
-**Note**: the source CT image is handled by HU value binary process (HU threshold = 400)
 
-2. *Cut sternum with envelope line*
+![workflow](.github/tech_route.jpeg)
 
-![sternum envelope line](.github/half_front_bones_with_envelope_line.png)
 
-3. *remaining spine*
 
-![remaining spine](.github/spine_remaining.png)
 
-4. *collect ribs*
+## Installation and Dependencies
 
-![collect ribs](.github/collect_ribs.png)
-
-you can also view every single rib as follows:
-
-![single rib](.github/single_rib.png)
-
-#### fracture detection module: fracture recognition and location
-<font color=red size=5>（fraction detection 的效果）</font>
-
----
-- **operation system**: Linux (our OS is Ubuntu 16.04)
-- **interpreter**: More advanced than python 3.6.0
-- **some python packages**: [`skimage`](https://scikit-image.org/), [`opencv`](https://opencv.org/), [`tensorflow`](https://www.tensorflow.org/), [`sklearn`](https://scikit-learn.org/)
-
-### Installation
-1. Clone the repository
-    ```shell
++ Install tensorflow. It is required that you have access to GPUs, The code is tested with Ubuntu 16.04
+Python 3.6+, CUDA 9.0.176 and cudnn 7.4.2.
++ Python dependencies (with `pip3 install`):
+```
+    tensorflow-gpu==1.12.0
+    pandas==0.23.4
+    scikit-learn==0.20.0
+    numpy==1.16.2
+    matplotlib==3.0.0
+    PIL==Pillow
+    lxml==4.2.5 
+```
++ Clone the repository
+```shell
     git clone https://github.com/jiangyy5318/medical-rib.git
-    ```
-2. Install all the python prerequisites
-    ```shell
-    pip install -r requirements
-    # or add `--user` to install to user's local directories
-    ```
-3. may be add opencv and tensorflow
+```
 
+
+## Run demo
+
+You can download pre-trained models, including GBDT model [HERE](https://drive.google.com/open?id=1_-dP4Y6wYDC5lqQ4uaIcXrAM-AHT_xd7), 
+GBDT features [HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwavt4dYaiB) and yolo-v3 models [HERE](added). Put `feature.pkl`, `gbdt.pkl` under the project root path (`/path/to/project/experiments/cfgs`) and 
+Put `?.pkl` under the project root path (`/path/to/project/demo_files`) 
+
+The demo uses a pre-trained GBDT model, 
+
+(on SUN RGB-D) to detect objects in a point cloud from an indoor room of a table and a few chairs (from SUN RGB-D val set). You can use 3D visualization software such as the [MeshLab](http://www.meshlab.net/) to open the dumped file under `demo_files/sunrgbd` to see the 3D detection output. Specifically, open `***_pc.ply` and `***_pred_confident_nms_bbox.ply` to see the input point cloud and predicted 3D bounding boxes.
+
+
+
+python3 demo.py
+
+Also, you can 
+
+
+
+## Training and evaluating
+
+### Data Preparation
+
+For GBDT models,
+
+
+
+./experiments/scripts/nii_read.sh [DATA] [SLICING]
+./experiments/scripts/dcm_read.sh [DATA]
+./experiments/scripts/ribs_obtain.sh [LOGS_DIR] [FORMAT] [SLICING]
+./experiments/scripts/prepare_data.sh 
+
+dcm file and nii file;
+
+### Data
+
+
+### train gbdt model (generated )
+
+- feature.pkl
+
+- gbdt.pkl
+
+
+### 
+
+
+### metric
 ### Generate the separated ribs
 1. Read Every patients' CT image and save its 3D array;
     ```shell
