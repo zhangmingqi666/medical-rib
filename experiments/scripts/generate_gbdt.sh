@@ -4,14 +4,13 @@
 # path=$(pwd)
 
 feature_csv_dir=./data/bone_info_merges
-update_err_path=./preprocessing/rib_recognition/update_err_bone_info.csv
+update_err_path=./data/csv_files/update_err_bone_info.csv
 bone_feature_info_path=./data/csv_files/bone_features_info.csv
 
 gbdt_model_save_dir=./experiments/cfgs/gbdt.pkl
 feature_list_save_dir=./experiments/cfgs/feature.pkl
 
 echo "Start update and melt bone_info"
-preprocessing/rib_recognition/
 python3  -W ignore  ./preprocessing/rib_recognition/update_err_labels_and_aggregate_bone_info.py \
                                                             --feature_csv_path "$feature_csv_dir" \
                                                             --update_err_path "$update_err_path" \
