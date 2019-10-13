@@ -3,11 +3,14 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
+.DS_Store
 # my projects
 models/temp_data/
 experiments/logs
 logs/
 *.csv
+*.out
 *.dcm
 *.png
 *ipynb
