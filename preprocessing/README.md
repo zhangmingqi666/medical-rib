@@ -42,7 +42,7 @@
 
 `$dataset$`中的每个子文件夹存储着原始CT的系列.dcm文件, 如下图:
 
-![dcm_file_struct](../.github/dcm_file_struct.png)
+![dcm_file_struct](.github/dcm_file_struct.png)
 
 ---
 
@@ -58,7 +58,7 @@
  
 <font size="1" color="#00dddd">**为什么对存在骨折的每个横断位影像都要进行标注**:*1. 进行骨折位置检测,需要知道骨折位置的包围盒,即x,y,z三个方向的边界, slicing能够反映z方向的边界；2.一根肋骨上有可能有两处及以上骨折, 每根肋骨的标注文件就会有多处连通区域 如果一处骨折中某个slicing没有标注，原本的的一处连通区域就会变为两处或多处，这样就会将一处骨折标注为两处甚至多处*</font>
 
-![hurt_location](../.github/location_hurt0.png)
+![hurt_location](.github/location_hurt0.png)
 
 
 - **2.1.2** 准确的勾勒骨折位置的==重要性==
@@ -73,7 +73,7 @@
 ##### 2.3 关于骨折标注文件命名
 某个CT文件存在多根肋骨骨折,分别是L3、L4、L5、L6, 则命名如下图。
 
-![hurt_location1](../.github/location_hurt1.png)
+![hurt_location1](.github/location_hurt1.png)
 
 ---
 
