@@ -56,3 +56,36 @@ Among all the folders and files, `dicom_files_merges`, `nii_files_merges`, `csv_
 + **csv_files/nii_loc_df.csv**: 3d bounding-box coordinates for every fragmented locations.
 + **csv_files/join_label.csv**:join between ribs and fragmented locations, we can get the relationship between them. There are at least one rib for a fragmented location, but the opposite is not necessary.
 + **csv_files/offset_df.csv**: used for transforming rib sparse data to local picture.
+
+### dataflow
+
+```
+graph TB
+	subgraph preprocessing
+        subgraph provided by hospitals
+            A(dicom_files_merges)
+            D(nii_files_merges)
+            E(csv_files/rib_type_location.xls)
+        end
+        
+        subgraph ribs extraction
+            A --> |ribs_obtain.sh| B(ribs_cache_df/patient_id.csv)
+        end
+
+        subgraph match
+            B --> |prepare_data.sh|H[csv_files/data_join_label.csv,ribs picture,locations]
+            D --> |nii_read.sh|F[csv_files/nii_loc_df.csv]
+            E --> |prepare_data.sh|H
+            F --> |prepare_data.sh|H
+            H --> |prepare_data.sh|J(voc2007 format)
+        end
+    end
+
+    subgraph Fracture Detection
+        J ==train==> K(yolo-v3,using darknet)
+        style K fill:#f9f,stroke:#333,stroke-width:4px
+        B -->|predict|K
+    end
+    
+    K --> L(predict scores)
+```
