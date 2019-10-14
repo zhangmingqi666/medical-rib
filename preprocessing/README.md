@@ -84,8 +84,10 @@ graph TB
     subgraph Fracture Detection
         J ==train==> K(yolo-v3,using darknet)
         style K fill:#f9f,stroke:#333,stroke-width:4px
-        B -->|predict|K
+        B -->|predict,demo.sh|K
     end
     
-    K --> L(predict scores)
+    K -->|predict,demo.sh|L(predict scores)
 ```
+
+![flowchart](.github/flow_chart.png)
