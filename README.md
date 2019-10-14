@@ -3,39 +3,51 @@
 
 ## Refed
 
-**Refed (Rib Extaction and Fracture Detection Model)** by [Youyou Jiang](jiangyy5318@gmail.com) and [Shiye Lei](leishiye@gmail.com). Our model has a great performance on **extracting ribs** and **detecting fracture** from CT images. The model is based on python 3.6. 
+**Refed (Rib Extaction and Fracture Detection Model)** by [Youyou Jiang](jiangyy5318@gmail.com) and [Shiye Lei](leishiye@gmail.com). Our model has a great performance on **extracting ribs** and **detecting fracture** from CT images.
 
-Refed is consist by two modules: **rib extraction module** and **fracture detection module**. *First*, we design algorithm based on computer vision for extracting ribs from CT images. *Second*, we design DNN based on [faster-rcnn](https://github.com/endernewton/tf-faster-rcnn) for detecting fracture location with these ribs.
-
+Refed is consist by two modules: **rib extraction module** and **fracture detection module**.
 
 ### Workflow
 
-
 ![workflow](.github/tech_route.jpeg)
 
-
-add some details for them.
-
++ read slices of CT data and reconstruct,
++ separate bones using morphology and recognize all ribs,
++ match labels to the ribs,
++ use voc2007 format and yolo-v3
 
 ## Installation and Dependencies
 
 + Install tensorflow. It is required that you have access to GPUs, The code is tested with Ubuntu 16.04
 Python 3.6+, CUDA 9.0.176 and cudnn 7.4.2.
-+ Python dependencies (with `pip3 install`):
++ Python dependencies (with `pip3 install`) or  `pip3 install -r requirements.txt`:
 ```
     tensorflow-gpu==1.12.0
-    pandas==0.23.4
-    scikit-learn==0.20.0
-    numpy==1.16.2
+    Deprecated==1.2.4
+    image==1.5.27
+    imageio==2.4.1
+    interval==1.0.0
+    lxml==4.2.5
     matplotlib==3.0.0
-    PIL==Pillow
-    lxml==4.2.5 
+    numpy==1.15.2
+    opencv-python==3.4.3.18
+    pydicom==1.2.0
+    pyparsing==2.2.2
+    scikit-image==0.14.1
+    scikit-learn==0.20.0
+    scipy==1.1.0
+    six==1.11.0
+    nibabel==2.3.1
+    pandas==0.23.4
 ```
 + Clone the repository
+
 ```shell
     git clone https://github.com/jiangyy5318/medical-rib.git
 ```
+
 + Config darknet models
+
 ```shell
     cd ${Projects}/models
     git clone https://github.com/pjreddie/darknet
@@ -43,7 +55,6 @@ Python 3.6+, CUDA 9.0.176 and cudnn 7.4.2.
     cp models/darknet_cfg/hurt_voc.data models/darknet/cfg/
     cp models/darknet_cfg/hurt_voc.names models/darknet/data/
 ```
-
 
 ## Demo and Test with pre-trained models
 
@@ -60,7 +71,7 @@ Put `?.pkl` under the project root path (`${projects}/experiments/cfgs`)
 
 ### Data Preparation
 
-data save format, you need to refer to the data [待添加]
+For dataSet, follow the [README](tree/master/preprocessing/README.md) under the `preprocessing` folder.
 
 ```shell
     ./experiments/scripts/nii_read.sh [DATA] [SLICING]
@@ -86,6 +97,7 @@ path `./data/csv_files/update_err_bone_info.csv` and run the below script.
 ### train your own yolo-v3 models
 
 ```shell
-    wget ./darknet53.conv.74
+    # only download once
+    wget https://pjreddie.com/media/files/darknet53.conv.74
     ./darknet detector train ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./darknet53.conv.74 -gpus 0,1,2,3
 ```
