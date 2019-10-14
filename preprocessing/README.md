@@ -57,6 +57,8 @@ Among all the folders and files, `dicom_files_merges`, `nii_files_merges`, `csv_
 + **csv_files/join_label.csv**:join between ribs and fragmented locations, we can get the relationship between them. There are at least one rib for a fragmented location, but the opposite is not necessary.
 + **csv_files/offset_df.csv**: used for transforming rib sparse data to local picture.
 
+If you need to expand dataSet, refer to [data annotation method](./DATA_ANNOTATION_METHODS.md)
+
 ### dataflow
 
 ```

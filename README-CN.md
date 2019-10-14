@@ -3,80 +3,103 @@
 
 ## Refed
 
-**Refed (Rib Extaction and Fracture Detection Model)** by [Youyou Jiang](jiangyy5318@gmail.com) and [Shiye Lei](leishiye@gmail.com). Our model has a great performance on **extracting ribs** and **detecting fracture** from CT images. The model is based on python 3.6. 
+**Refed (Rib Extaction and Fracture Detection Model)** by [Youyou Jiang](jiangyy5318@gmail.com) and [Shiye Lei](leishiye@gmail.com). Our model has a great performance on **extracting ribs** and **detecting fracture** from CT images.
 
-Refed is consist by two modules: **rib extraction module** and **fracture detection module**. *First*, we design algorithm based on computer vision for extracting ribs from CT images. *Second*, we design DNN based on [faster-rcnn](https://github.com/endernewton/tf-faster-rcnn) for detecting fracture location with these ribs.
+Refed is consist by two modules: **rib extraction module** and **fracture detection module**.
 
-### Performance
----
-#### rib extraction module: extract ribs from source CT image
-1. *Input CT image*
+### Workflow
 
-![source CT image](.github/src_ct_image.png)
+![workflow](.github/tech_route.jpeg)
 
-**Note**: the source CT image is handled by HU value binary process (HU threshold = 400)
++ read slices of CT data and reconstruct,
++ separate bones using morphology and recognize all ribs,
++ match labels to the ribs,
++ (Optional,only for train) data preparation for train data, voc2007,
++ yolo-v3 predict for demo/test or train for train data,
++ (Optional,only for test)predict scores.
 
-2. *Cut sternum with envelope line*
+## Installation and Dependencies
 
-![sternum envelope line](.github/half_front_bones_with_envelope_line.png)
++ Install tensorflow. It is required that you have access to GPUs, The code is tested with Ubuntu 16.04
+Python 3.6+, CUDA 9.0.176 and cudnn 7.4.2.
++ Python dependencies (with `pip3 install`) or  `pip3 install -r requirements.txt`:
+```
+    tensorflow-gpu==1.12.0
+    Deprecated==1.2.4
+    image==1.5.27
+    imageio==2.4.1
+    interval==1.0.0
+    lxml==4.2.5
+    matplotlib==3.0.0
+    numpy==1.15.2
+    opencv-python==3.4.3.18
+    pydicom==1.2.0
+    pyparsing==2.2.2
+    scikit-image==0.14.1
+    scikit-learn==0.20.0
+    scipy==1.1.0
+    six==1.11.0
+    nibabel==2.3.1
+    pandas==0.23.4
+```
++ Clone the repository
 
-3. *remaining spine*
-
-![remaining spine](.github/spine_remaining.png)
-
-4. *collect ribs*
-
-![collect ribs](.github/collect_ribs.png)
-
-you can also view every single rib as follows:
-
-![single rib](.github/single_rib.png)
-
-#### fracture detection module: fracture recognition and location
-<font color=red size=5>（fraction detection 的效果）</font>
-
----
-- **operation system**: Linux (our OS is Ubuntu 16.04)
-- **interpreter**: More advanced than python 3.6.0
-- **some python packages**: [`skimage`](https://scikit-image.org/), [`opencv`](https://opencv.org/), [`tensorflow`](https://www.tensorflow.org/), [`sklearn`](https://scikit-learn.org/)
-
-### Installation
-1. Clone the repository
-    ```shell
+```shell
     git clone https://github.com/jiangyy5318/medical-rib.git
-    ```
-2. Install all the python prerequisites
-    ```shell
-    pip install -r requirements
-    # or add `--user` to install to user's local directories
-    ```
-3. may be add opencv and tensorflow
+```
 
-### Generate the separated ribs
-1. Read Every patients' CT image and save its 3D array;
-    ```shell
-    ./preprocessing/dicom_read/dcm_to_3d_pkl.sh  [PATIENT_DCM_FOLDER]  [PATIENT_PKL_FOLDER]
-    ```
-2. Seperate all the bone and collect all the ribs among them from 3d bone structure for every patient. The method in which we sepeated and collected was detailedly described, see details,please refer to [seperated and collect]()
-    ```shell
-    /preprocessing/rib_cut_v6/run.sh 
-    ```
-3. Get the seperated-rib data;maybe need to move this title to the below parts
-    ```shell
-   ./preprocessing/create_voc2007/create_voc2007.sh [PATIENT_FOLDER]
-    ```
-4. train your own rib-recognition model to replace our internal infer models. Please refer to [link](****)
++ Config darknet models
 
-5. If you want to realize how to deal with the data, [file structure](dataSet/) and [preprocessing](preprocessing/create_voc2007) should be referenced.
+```shell
+    cd ${Projects}/models
+    git clone https://github.com/pjreddie/darknet
+    cp models/darknet_cfg/yolov3-voc.cfg models/darknet/cfg/
+    cp models/darknet_cfg/hurt_voc.data models/darknet/cfg/
+    cp models/darknet_cfg/hurt_voc.names models/darknet/data/
+```
 
-### make dataSet to train detection models
-1. here, we only supported voc2007 format,
-    ```shell
-    ./preprocessing/create_voc2007/create_voc2007.sh
-    ```
+## Demo and Test with pre-trained models
 
-### Train fragmented location detection model
-1. here, we only.
-    ```shell
-    todo
-    ```
+You can download pre-trained models, including GBDT model [HERE](https://drive.google.com/open?id=1_-dP4Y6wYDC5lqQ4uaIcXrAM-AHT_xd7), 
+GBDT features [HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwavt4dYaiB) and yolo-v3 models [HERE](added). Put `feature.pkl`, `gbdt.pkl` under the project root path (`${project}/experiments/cfgs`) and 
+Put `?.pkl` under the project root path (`${projects}/experiments/cfgs`) 
+
+```shell
+    ./experiments/scripts/demo.sh [DCM_PATH]
+    # DCM_PATH is folder path where CT slices existed.
+```
+
+## Train your own model
+
+### Data Preparation
+
+For dataSet, follow the [README](tree/master/preprocessing/README.md) under the `preprocessing` folder.
+
+```shell
+    ./experiments/scripts/nii_read.sh [DATA] [SLICING]
+    ./experiments/scripts/dcm_read.sh [DATA]
+    ./experiments/scripts/ribs_obtain.sh [LOGS_DIR] [FORMAT] [SLICING]
+    ./experiments/scripts/prepare_data.sh
+    # [DATA] in {updated48labeled_1.31, all_labeled} originated from different batches of data, has been defined in dcm_read.sh and nii_read.sh
+    # [SLICING] in {0,1} is defined for interpolation interval, if 0, interval=1mm, else interval=slicing thickness 
+    # [LOGS_DIR] used for debug
+    # [FORMAT] '.dcm'
+```
+
+### train gbdt model (generated `feature.pkl` and `gbdt.pkl`)
+
+step `./experiments/scripts/ribs_obtain.sh` will generate many separated bones and GBDT model will recognize all the ribs,
+all the features for every bone will be saved in the path `./data/bone_info_merges`, you can added the misclassified bone in the
+path `./data/csv_files/update_err_bone_info.csv` and run the below script.
+
+```shell
+    ./experiments/scripts/generate_gbdt.sh
+```
+
+### train your own yolo-v3 models
+
+```shell
+    # only download once
+    wget https://pjreddie.com/media/files/darknet53.conv.74
+    ./darknet detector train ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./darknet53.conv.74 -gpus 0,1,2,3
+```
