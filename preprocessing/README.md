@@ -61,7 +61,7 @@ Among all the folders and files, `dicom_files_merges`, `nii_files_merges`, `csv_
 
 ```
 graph TB
-	subgraph preprocessing
+    subgraph preprocessing
         subgraph provided by hospitals
             A(dicom_files_merges)
             D(nii_files_merges)
