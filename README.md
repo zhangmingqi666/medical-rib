@@ -14,7 +14,9 @@ Refed is consist by two modules: **rib extraction module** and **fracture detect
 + read slices of CT data and reconstruct,
 + separate bones using morphology and recognize all ribs,
 + match labels to the ribs,
-+ use voc2007 format and yolo-v3
++ (Optional,only for train) data preparation for train data, voc2007,
++ yolo-v3 predict for demo/test or train for train data,
++ (Optional,only for test)predict scores.
 
 ## Installation and Dependencies
 
