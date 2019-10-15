@@ -4,7 +4,7 @@
 ## Refed
 
 **Refed (Rib Extaction and Fracture Detection Model)** by [Youyou Jiang](jiangyy5318@gmail.com) and [Shiye Lei](leishiye@gmail.com). Our model has a great performance on **extracting ribs** and **detecting fracture** from CT images.
-
+In Rib extraction, we can get 23.2 ribs (96.7%) in average for every patients; In Fraction Detection, recall: 71%, 
 Refed is consist by two modules: **rib extraction module** and **fracture detection module**.
 
 ### Workflow
@@ -13,7 +13,7 @@ Refed is consist by two modules: **rib extraction module** and **fracture detect
 
 + read slices of CT data and reconstruct, see [dcm read](preprocessing/separated)
 + separate bones using morphology and recognize all ribs, see [separated](preprocessing/separated), code see [ribs_obtain](preprocessing/separated/ribs_obtain)
-+ match labels to the ribs, see [prepare_data](preprocessing/prepare_data), code see[join](preprocessing/prepare_data/join_xls_nii_rib.py)
++ match labels to the ribs, see [prepare_data](preprocessing/prepare_data), code see [join](preprocessing/prepare_data/join_xls_nii_rib.py)
 + (Optional,only for train) data preparation for train data, voc2007, see [prepare_data](preprocessing/prepare_data), code see[voc2007](preprocessing/prepare_data/voc2007/write_xml_and_pic_voc2007.py)
 + yolo-v3 predict for demo/test or train for train data, see [darknet/yolo-v3](models/README.md)
 + (Optional,only for test)predict scores.
@@ -104,3 +104,6 @@ path `./data/csv_files/update_err_bone_info.csv` and run the below script, detai
     wget https://pjreddie.com/media/files/darknet53.conv.74
     ./darknet detector train ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./darknet53.conv.74 -gpus 0,1,2,3
 ```
+
+### to do list
+- refactoring
