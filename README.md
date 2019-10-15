@@ -99,6 +99,7 @@ path `./data/csv_files/update_err_bone_info.csv` and run the below script.
 ### train your own yolo-v3 models
 
 ```shell
+    cd ${projects}/models/darknet
     # only download once
     wget https://pjreddie.com/media/files/darknet53.conv.74
     ./darknet detector train ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./darknet53.conv.74 -gpus 0,1,2,3

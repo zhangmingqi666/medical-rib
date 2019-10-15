@@ -17,21 +17,13 @@ def output_independent_rib_data(only_one_rib_df=None,
                                 output_format='.jpg'):
 
     output_independent_rib_path = "{}/{}-{}{}".format(output_independent_rib_folder, patient_id, label, output_format)
-    tmp_df = only_one_rib_df.groupby(['z', 'y']).agg({'z': 'count'})
+    tmp_df = only_one_rib_df.groupby(['x', 'y']).agg({'z': 'count'})
     tmp_df.columns = ['z.count']
     tmp_df.reset_index(inplace=True)
-    # tmp_df_max = tmp_df['z.count'].max()
-    # tmp_df['z.count'] = tmp_df['z.count'].apply(lambda x: x * 255 / tmp_df_max).astype(np.uint8)
 
-    # location x, y
-    #res_arr = None
-    #if output_format is '.jpg':
     res_arr = np.zeros(expected_shape)
-    res_arr[(tmp_df['z'].values, tmp_df['y'].values)] = tmp_df['z.count'].values
-    #else:
-    #    res_arr = np.zeros(expected_shape)
-    #    res_arr[(tmp_df['x'].values, tmp_df['y'].values)] = tmp_df['z.count'].values
-        # raise NotImplementedError
+    res_arr[(tmp_df['x'].values, tmp_df['y'].values)] = tmp_df['z.count'].values
+
     res_arr_max = res_arr.max()
     res_arr = res_arr.astype(np.float64) / res_arr_max
     res_arr = res_arr * 255

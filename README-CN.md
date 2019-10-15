@@ -3,26 +3,25 @@
 
 ## Refed
 
-**Refed (Rib Extaction and Fracture Detection Model)** by [Youyou Jiang](jiangyy5318@gmail.com) and [Shiye Lei](leishiye@gmail.com). Our model has a great performance on **extracting ribs** and **detecting fracture** from CT images.
-
-Refed is consist by two modules: **rib extraction module** and **fracture detection module**.
+**Refed (肋骨提取和骨折检测模型)**由[Youyou Jiang](jiangyy5318@gmail.com) and [Shiye Lei](leishiye@gmail.com)开发. 我们模型在肋骨提取和骨折检测方面有很突出的表现.
+其中包括两个模块: **肋骨提取模块** 和 **骨折检测模块**.
 
 ### Workflow
 
 ![workflow](.github/tech_route.jpeg)
 
-+ read slices of CT data and reconstruct,
-+ separate bones using morphology and recognize all ribs,
-+ match labels to the ribs,
-+ (Optional,only for train) data preparation for train data, voc2007,
-+ yolo-v3 predict for demo/test or train for train data,
-+ (Optional,only for test)predict scores.
++ 读取CT图像并重建,
++ 使用形态学方法分类骨骼并识别其中的肋骨,
++ 将标注分配给不同肋骨,
++ (可选,仅训练使用) 训练数据准备(voc2007)
++ 用于demo/test的yolo-v3预测 或者 训练模型
++ (可选,仅推断使用)预测
 
 ## Installation and Dependencies
 
-+ Install tensorflow. It is required that you have access to GPUs, The code is tested with Ubuntu 16.04
-Python 3.6+, CUDA 9.0.176 and cudnn 7.4.2.
-+ Python dependencies (with `pip3 install`) or  `pip3 install -r requirements.txt`:
++ 安装tensorflow, 需要可用的GPU, 我们的测试环境是python3.6+,CUDA 9.0.176,cudnn 7.4.2
+
++ Python依赖 (使用 `pip3 install` 或 `pip3 install -r requirements.txt`):
 ```
     tensorflow-gpu==1.12.0
     Deprecated==1.2.4
@@ -46,7 +45,7 @@ Python 3.6+, CUDA 9.0.176 and cudnn 7.4.2.
 
 ```shell
     git clone https://github.com/jiangyy5318/medical-rib.git
-```
+``` `
 
 + Config darknet models
 
@@ -58,22 +57,22 @@ Python 3.6+, CUDA 9.0.176 and cudnn 7.4.2.
     cp models/darknet_cfg/hurt_voc.names models/darknet/data/
 ```
 
-## Demo and Test with pre-trained models
+## 使用预训练模型demo和测试
 
-You can download pre-trained models, including GBDT model [HERE](https://drive.google.com/open?id=1_-dP4Y6wYDC5lqQ4uaIcXrAM-AHT_xd7), 
-GBDT features [HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwavt4dYaiB) and yolo-v3 models [HERE](added). Put `feature.pkl`, `gbdt.pkl` under the project root path (`${project}/experiments/cfgs`) and 
-Put `?.pkl` under the project root path (`${projects}/experiments/cfgs`) 
+下载预训练模型, 包括GBDT模型[HERE](https://drive.google.com/open?id=1_-dP4Y6wYDC5lqQ4uaIcXrAM-AHT_xd7), 
+GBDT特征[HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwavt4dYaiB)和yolo-v3 models [HERE](added).
+将`feature.pkl`, `gbdt.pkl` 路径 `${project}/experiments/cfgs`下,将`?.pkl`置于路径`${projects}/experiments/cfgs`下.
 
 ```shell
     ./experiments/scripts/demo.sh [DCM_PATH]
     # DCM_PATH is folder path where CT slices existed.
 ```
 
-## Train your own model
+## 训练自己的模型
 
-### Data Preparation
+### 数据准备
 
-For dataSet, follow the [README](tree/master/preprocessing/README.md) under the `preprocessing` folder.
+对于数据集, 更多地可以参考`preprocessing`路径下的[README](tree/master/preprocessing/README.md)文件
 
 ```shell
     ./experiments/scripts/nii_read.sh [DATA] [SLICING]
@@ -86,20 +85,22 @@ For dataSet, follow the [README](tree/master/preprocessing/README.md) under the 
     # [FORMAT] '.dcm'
 ```
 
-### train gbdt model (generated `feature.pkl` and `gbdt.pkl`)
+### 训练GBDT模型 (产生 `feature.pkl` 和 `gbdt.pkl` 文件)
 
-step `./experiments/scripts/ribs_obtain.sh` will generate many separated bones and GBDT model will recognize all the ribs,
-all the features for every bone will be saved in the path `./data/bone_info_merges`, you can added the misclassified bone in the
-path `./data/csv_files/update_err_bone_info.csv` and run the below script.
++ 在`./experiments/scripts/ribs_obtain.sh`中,产生了分离的骨骼，GBDT模型识别其中的肋骨.
++ 每个骨骼的特征被暂存在`./data/bone_info_merges`文件夹下
++ 在`./data/csv_files/update_err_bone_info.csv`文件中添加错分骨骼.
++ `./data/bone_info_merges`和`./data/csv_files/update_err_bone_info.csv`结合生成训练数据.
 
 ```shell
     ./experiments/scripts/generate_gbdt.sh
 ```
 
-### train your own yolo-v3 models
+### 训练自己 yolo-v3 模型
 
 ```shell
-    # only download once
+    cd ${projects}/models/darknet
+    # 仅下载一次
     wget https://pjreddie.com/media/files/darknet53.conv.74
     ./darknet detector train ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./darknet53.conv.74 -gpus 0,1,2,3
 ```

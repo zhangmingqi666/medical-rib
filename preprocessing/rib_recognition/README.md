@@ -1,8 +1,11 @@
-## 肋骨识别模型
-- 一张CT图片经过肋骨切割后形成多根分离的骨头，其中包括肋骨、肩胛骨、锁骨、头骨等等，我们通过肋骨识别模型来判断骨头是否为肋骨.
-- 肋骨识别模型的主体为GBDT，通过输入每根骨头的各项物理指标，例如骨头的长短、粗细等等来判断其是否为肋骨.
 
-### 特征工程
+### ribs detection
+
++ when bones separated from each other, which included ribs, scapula, clavicle, skull and so on. We use rib detection model to classify 
+whether bone is rib or not.
++ GBDT was chosen as classification model, whose features were kinds of index for every bone, eg, bone length, bone thickness
+
+### feature engineering
 
 + `z_centroid/z_shape` : relative center position on axis z
 + `x_centroid/x_shape` : relative center position on axis x
@@ -28,13 +31,14 @@
 + `class_id` : used not for training but for updating error labels
 + `target` : label
 
-### 训练模型
+### train our detection model
 
-+ `gbdt_judge_rib.py`: 使用训练数据训练GBDT模型;
-+ `update_err_labels_and_aggregate_bone_info.py`: 更改预测错误的类标并将其合成训练数据;
-+ `feature.pkl`: 用于训练的特征名包括target
-+ `gbdt.pkl`: 预训练的模型
++ `gbdt_judge_rib.py`: train gbdt models using training dataSet.
++ `update_err_labels_and_aggregate_bone_info.py`: update error predicted targets and merge bone info into training dataSet.
++ `feature.pkl`: features used for training including target
++ `gbdt.pkl`: use pre-trained models to predict rib or not
 
-### 预测
+### predict rib or not
 
 + predict
+
