@@ -62,8 +62,8 @@ Python 3.6+, CUDA 9.0.176 and cudnn 7.4.2.
 ## Demo and Test with pre-trained models
 
 You can download pre-trained models, including GBDT model [HERE](https://drive.google.com/open?id=1_-dP4Y6wYDC5lqQ4uaIcXrAM-AHT_xd7), 
-GBDT features [HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwavt4dYaiB) and yolo-v3 models [HERE](added). Put `feature.pkl`, `gbdt.pkl` under the project root path (`${project}/experiments/cfgs`) and 
-Put `?.pkl` under the project root path (`${projects}/experiments/cfgs`) 
+GBDT features [HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwavt4dYaiB) and yolo-v3 models [HERE](https://drive.google.com/open?id=1E6OMPPBoIje3YZszMEypKb2v6APsqaF8). Put `feature.pkl`, `gbdt.pkl` under the project root path (`${project}/experiments/cfgs`) and 
+Put `yolov3-voc_last.weights` under the project root path (`${projects}/experiments/cfgs`) 
 
 ```shell
     ./experiments/scripts/demo.sh [DCM_PATH]
