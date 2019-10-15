@@ -4,7 +4,8 @@
 ## Refed
 
 **Refed (Rib Extaction and Fracture Detection Model)** by [Youyou Jiang](jiangyy5318@gmail.com) and [Shiye Lei](leishiye@gmail.com). Our model has a great performance on **extracting ribs** and **detecting fracture** from CT images.
-In Rib extraction, we can get 23.2 ribs (96.7%) in average for every patients; In Fraction Detection, recall: 71%, 
+In Rib extraction, we can get 23.2 ribs (96.7%) in average for every patients; In Fraction Detection,recall: 71%, precision: 100%.
+
 Refed is consist by two modules: **rib extraction module** and **fracture detection module**.
 
 ### Workflow
