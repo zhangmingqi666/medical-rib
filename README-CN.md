@@ -61,8 +61,8 @@
 ## 使用预训练模型demo和测试
 
 下载预训练模型, 包括GBDT模型[HERE](https://drive.google.com/open?id=1_-dP4Y6wYDC5lqQ4uaIcXrAM-AHT_xd7), 
-GBDT特征[HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwavt4dYaiB)和yolo-v3 models [HERE](added).
-将`feature.pkl`, `gbdt.pkl` 路径 `${project}/experiments/cfgs`下,将`?.pkl`置于路径`${projects}/experiments/cfgs`下.
+GBDT特征[HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwavt4dYaiB)和yolo-v3 models [HERE](yolo-v3 models [HERE](https://drive.google.com/open?id=1E6OMPPBoIje3YZszMEypKb2v6APsqaF8)).
+将`feature.pkl`, `gbdt.pkl` 路径 `${project}/experiments/cfgs`下,将`yolov3-voc_last.weights`置于路径`${projects}/experiments/cfgs`下.
 
 ```shell
     ./experiments/scripts/demo.sh [DCM_PATH]
