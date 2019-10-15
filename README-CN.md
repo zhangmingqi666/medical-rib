@@ -12,7 +12,7 @@
 ![workflow](.github/tech_route.jpeg)
 
 + 读取CT图像并重建, 见[dcm read](preprocessing/separated)
-+ 使用形态学方法分类骨骼并识别其中的肋骨, 见[分割并识别肋骨](preprocessing/separated), 代码见[ribs_obtain](preprocessing/separated/ribs_obtain)
++ 使用形态学方法分割骨骼并识别其中的肋骨, 见[分割并识别肋骨](preprocessing/separated), 代码见[ribs_obtain](preprocessing/separated/ribs_obtain)
 + 将标注分配给不同肋骨, 见[数据准备](preprocessing/prepare_data), 代码见[连接](preprocessing/prepare_data/join_xls_nii_rib.py)
 + (可选,仅训练使用) 训练数据准备(voc2007), 见[数据准备](preprocessing/prepare_data), 代码见[voc2007](preprocessing/prepare_data/voc2007/write_xml_and_pic_voc2007.py)
 + 用于demo/test的yolo-v3预测 或者 训练模型, 见[darknet/yolo-v3](models/README.md)
