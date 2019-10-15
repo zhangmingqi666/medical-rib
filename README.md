@@ -69,6 +69,14 @@ Put `?.pkl` under the project root path (`${projects}/experiments/cfgs`)
     # DCM_PATH is folder path where CT slices existed.
 ```
 
+
+[preprocessing](preprocessing)
+[preprocessing/separated](preprocessing/separated)
+[preprocessing/rib_recognition](preprocessing/rib_recognition)
+[preprocessing/prepare_data](preprocessing/prepare_data)
+[models](models)
+
+
 ## Train your own model
 
 ### Data Preparation
