@@ -11,11 +11,11 @@ Refed is consist by two modules: **rib extraction module** and **fracture detect
 
 ![workflow](.github/tech_route.jpeg)
 
-+ read slices of CT data and reconstruct,
-+ separate bones using morphology and recognize all ribs,
-+ match labels to the ribs,
-+ (Optional,only for train) data preparation for train data, voc2007,
-+ yolo-v3 predict for demo/test or train for train data,
++ read slices of CT data and reconstruct, see [dcm read](preprocessing/separated)
++ separate bones using morphology and recognize all ribs, see [separated](preprocessing/separated), code see [ribs_obtain](preprocessing/separated/ribs_obtain)
++ match labels to the ribs, see [prepare_data](preprocessing/prepare_data), code see[join](preprocessing/prepare_data/join_xls_nii_rib.py)
++ (Optional,only for train) data preparation for train data, voc2007, see [prepare_data](preprocessing/prepare_data), code see[voc2007](preprocessing/prepare_data/voc2007/write_xml_and_pic_voc2007.py)
++ yolo-v3 predict for demo/test or train for train data, see [darknet/yolo-v3](models/README.md)
 + (Optional,only for test)predict scores.
 
 ## Installation and Dependencies
@@ -69,19 +69,11 @@ Put `?.pkl` under the project root path (`${projects}/experiments/cfgs`)
     # DCM_PATH is folder path where CT slices existed.
 ```
 
-
-[preprocessing](preprocessing)
-[preprocessing/separated](preprocessing/separated)
-[preprocessing/rib_recognition](preprocessing/rib_recognition)
-[preprocessing/prepare_data](preprocessing/prepare_data)
-[models](models)
-
-
 ## Train your own model
 
 ### Data Preparation
 
-For dataSet, follow the [README](tree/master/preprocessing/README.md) under the `preprocessing` folder.
+For dataSet structure and more information, follow the [README](preprocessing/README.md) under the `preprocessing` folder.
 
 ```shell
     ./experiments/scripts/nii_read.sh [DATA] [SLICING]
@@ -98,7 +90,7 @@ For dataSet, follow the [README](tree/master/preprocessing/README.md) under the 
 
 step `./experiments/scripts/ribs_obtain.sh` will generate many separated bones and GBDT model will recognize all the ribs,
 all the features for every bone will be saved in the path `./data/bone_info_merges`, you can added the misclassified bone in the
-path `./data/csv_files/update_err_bone_info.csv` and run the below script.
+path `./data/csv_files/update_err_bone_info.csv` and run the below script, details see [gbdt model](preprocessing/rib_recognition)
 
 ```shell
     ./experiments/scripts/generate_gbdt.sh
