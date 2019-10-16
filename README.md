@@ -82,9 +82,9 @@ Put `yolov3-voc_last.weights` under the project root path (`${projects}/experime
 ```shell
     mkdir [demo_dir]
     mkdir [demo_dir]/pkl_cache/ # save desensitization data, pkl
-    mkdir [demo_dir]/ribs_df_cache
-    mkdir [demo_dir]/voc_test_data
-    mkdir [demo_dir]/voc_test_predict
+    mkdir [demo_dir]/ribs_df_cache # save collected ribs (sparsely saved)
+    mkdir [demo_dir]/voc_test_data # ribs projected on xoy 
+    mkdir [demo_dir]/voc_test_predict # predict
      
     cd ${projects}
     # use raw data, slices of CT data

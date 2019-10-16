@@ -73,6 +73,7 @@ echo "separated ok"
 
 Voc2007_JPEGSImages_folder_for_patient=${Voc2007_JPEGSImages_folder}/${patient_id}
 Predict_folder_for_patient=${Predict_folder}/${patient_id}
+
 rm -rf ${Voc2007_JPEGSImages_folder_for_patient} && mkdir -p ${Voc2007_JPEGSImages_folder_for_patient}
 rm -rf ${Predict_folder_for_patient} && mkdir -p ${Predict_folder_for_patient}
 
