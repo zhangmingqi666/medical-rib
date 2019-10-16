@@ -41,16 +41,20 @@ SLICING=1
 
 RIBS_MODEL_WEIGHTS=./experiments/cfgs
 RIB_DF_CACHE_DIR=${demo_dir}/ribs_df_cache
-Voc2007_JPEGSImages_folder=${demo_dir}/voc_test_data
+Voc2007_JPEGSImages_folder=${demo_dir}/voc_test_data/${patient_id}
+Pkl_cache_folder=${demo_dir}/pkl_cache
+Predict_folder=${demo_dir}/voc_test_predict/${patient_id}
+
 
 rm -rf ${RIB_DF_CACHE_DIR} && mkdir -p ${RIB_DF_CACHE_DIR}
-
 rm -rf ${Voc2007_JPEGSImages_folder} && mkdir -p ${Voc2007_JPEGSImages_folder}
+rm -rf ${Pkl_cache_folder} && mkdir -p ${Pkl_cache_folder}
+rm -rf ${Predict_folder} && mkdir -p ${Predict_folder}
 
 
 python3  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}  \
                                             --dcm_path  ${input_f}  \
-                                            --pkl_path  ${input_f}  \
+                                            --pkl_path  ${Pkl_cache_folder}/${patient_id}".pkl"  \
                                             --keep_slicing  ${SLICING}  \
                                             --rib_df_cache_path  ${RIB_DF_CACHE_DIR}/${patient_id}".csv" \
                                             --rib_recognition_model_path  ${RIBS_MODEL_WEIGHTS}
@@ -66,6 +70,7 @@ files=$(ls ${Voc2007_JPEGSImages_folder})
 for f in ${files}
 do
     ./darknet detector test ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./backup/yolov3-voc_final.weights ${Voc2007_JPEGSImages_folder}/${f}
+    mv predictions.jpg ${Predict_folder}
 done
 
 echo "predicted ok"
