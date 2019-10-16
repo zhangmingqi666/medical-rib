@@ -217,7 +217,7 @@ def loop_opening_get_spine(binary_arr, bone_prior=None, output_prefix=None, allo
     return _remaining_bone_df
 
 
-def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', bone_info_path=None,
+def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix=None, bone_info_path=None,
                           rib_df_cache_path=None, rib_recognition_model_path=None, hyper_opening_times=2):
 
     with timer('calculate basic array and feature, data frame'):
@@ -253,8 +253,7 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', b
         sternum_remove.sternum_remove_operation(value_arr=value_arr)
 
         """plot half front bone"""
-        if allow_debug:
-
+        if output_prefix is not None:
             plot_binary_array(binary_arr=binary_arr[:, :x_center, :], title='half_front_bone',
                               save=True, save_path=os.path.join(output_prefix, 'half_front_bone.png'),
                               line_tuple_list=[(np.arange(binary_arr.shape[0]), sternum_remove.left_envelope_line),
@@ -279,7 +278,7 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', b
         spine_remove.spine_remove_operation(value_arr=value_arr)
 
         """plot split spine"""
-        if allow_debug:
+        if output_prefix is not None:
             if len(remaining_bone_df) > 0:
                 _all_index_in_envelope = spine_remove.get_all_index_in_envelope()
                 plot_yzd(temp_df=remaining_bone_df, shape_arr=(binary_arr.shape[0], binary_arr.shape[2]),
@@ -303,7 +302,7 @@ def void_cut_ribs_process(value_arr, allow_debug=False, output_prefix='hello', b
         rib_bone_df.to_csv(rib_df_cache_path, columns=['x', 'y', 'z', 'c', 'v'], index=False)
 
         """plot collected ribs_obtain"""
-        if allow_debug:
+        if output_prefix is not None:
             restore_arr = np.zeros(bone_prior.get_prior_shape())
             if len(rib_bone_df) > 0:
                 rib_index_all = rib_bone_df['z'].values, rib_bone_df['x'].values, rib_bone_df['y'].values

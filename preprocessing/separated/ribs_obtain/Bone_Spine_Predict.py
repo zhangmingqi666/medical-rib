@@ -226,8 +226,8 @@ class BoneSpine:
         local_df = self.bone_data[(self.bone_data['y'] > self.y_mid_line - 60) &
                                   (self.bone_data['y'] < self.y_mid_line + 60)]
         print("local_df and bone_data, the y_mid_line is {}".format(self.y_mid_line))
-        self.bone_data.to_csv(os.path.join(self.output_prefix, 'bone_data.csv'))
-        local_df.to_csv(os.path.join(self.output_prefix, 'local.csv'))
+        # self.bone_data.to_csv(os.path.join(self.output_prefix, 'bone_data.csv'))
+        # local_df.to_csv(os.path.join(self.output_prefix, 'local.csv'))
         if len(local_df) < 1000:
             return
         self.local_centroid = local_df['z'].mean(), local_df['x'].mean(), local_df['y'].mean()
