@@ -15,6 +15,9 @@ CUDNN=1 # 0 if use cpu or cudnn not available
 OPENCV=1 # 1 if use opencv else 0
 NVCC=/path/to/nvcc
 
+# build
+make
+
 cp darknet_cfg/cfg/* darknet/cfg/
 cp darknet_cfg/data/hurt_voc.names darknet/data/
 

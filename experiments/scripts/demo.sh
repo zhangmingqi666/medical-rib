@@ -47,9 +47,7 @@ Pkl_cache_folder=${demo_dir}/pkl_cache
 Predict_folder=${demo_dir}/voc_test_predict/${patient_id}
 
 
-rm -rf ${RIB_DF_CACHE_DIR} && mkdir -p ${RIB_DF_CACHE_DIR}
 rm -rf ${Voc2007_JPEGSImages_folder} && mkdir -p ${Voc2007_JPEGSImages_folder}
-rm -rf ${Pkl_cache_folder} && mkdir -p ${Pkl_cache_folder}
 rm -rf ${Predict_folder} && mkdir -p ${Predict_folder}
 
 
