@@ -24,7 +24,7 @@ def main():
     parser.add_argument('--keep_slicing', dest='keep_slicing', action='store', type=int,
                         help='keep_slicing', default=False)
     parser.add_argument('--pkl_path', dest='pkl_path', action='store', help='pkl_path', default=None)
-    parser.add_argument('--output_prefix',  dest='output_prefix', action='store', help='prefix', default='prefix')
+    parser.add_argument('--output_prefix',  dest='output_prefix', action='store', help='prefix', default=None)
     parser.add_argument('--rib_df_cache_path',  dest='rib_df_cache_path', action='store',
                         help='rib_df_cache_path', default=None)
     parser.add_argument('--bone_info_path', dest='bone_info_path', action='store',

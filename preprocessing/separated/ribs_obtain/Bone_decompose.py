@@ -3,7 +3,6 @@ import pandas as pd
 import skimage
 import matplotlib.pyplot as plt
 import gc
-from skimage.measure import label
 from sklearn.externals import joblib
 import sys, os
 
@@ -141,9 +140,6 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
                                       prior_zoy_center_y_axis_line_df=bone_prior.get_zoy_symmetric_y_axis_line_df())
 
         with timer("########_only rib bone predict"):
-            #if single_bone.is_multi_ribs():
-            #    rib_bone_df = rib_bone_df.append(single_bone.get_bone_data())
-            #    single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_IS_MULTI_RIB.png'.format(output_prefix, e))
 
             temp_single_bone_feature = single_bone.get_rib_feature_for_predict()
             pre_target = GBDT.predict([[temp_single_bone_feature[i] for i in FEATURE_LIST]])
@@ -152,26 +148,30 @@ def collect_ribs(value_arr, hu_threshold=150, bone_prior=None, allow_debug=False
             if pre_target[0] > 1.5:
                 single_bone.cut_multi_ribs()
                 rib_bone_df = rib_bone_df.append(single_bone.get_bone_data())
-                single_bone.plot_bone(save=True,
-                                      save_path='{}/label_{}_collect_IS_MULT_RIB.png'.format(output_prefix, e))
-                single_bone.get_bone_data().to_csv('{}/label_{}_collect_IS_MULT_RIB.csv'.format(output_prefix, e),
-                                                   index=False)
+                if output_prefix is not None:
+                    single_bone.plot_bone(save=True,
+                                          save_path='{}/label_{}_collect_IS_MULT_RIB.png'.format(output_prefix, e))
+                    single_bone.get_bone_data().to_csv('{}/label_{}_collect_IS_MULT_RIB.csv'.format(output_prefix, e),
+                                                       index=False)
             if pre_target[0] > 0.5:
                 rib_bone_df = rib_bone_df.append(single_bone.get_bone_data())
-                single_bone.plot_bone(save=True,
-                                      save_path='{}/label_{}_collect_IS_RIB.png'.format(output_prefix, e))
+                if output_prefix is not None:
+                    single_bone.plot_bone(save=True,
+                                          save_path='{}/label_{}_collect_IS_RIB.png'.format(output_prefix, e))
             else:
-                single_bone.get_bone_data().to_csv('{}/label_{}_collect_NOT_RIB.csv'.format(output_prefix, e),
-                                                   index=False)
-                single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_NOT_RIB.png'.format(output_prefix, e))
+                if output_prefix is not None:
+                    single_bone.get_bone_data().to_csv('{}/label_{}_collect_NOT_RIB.csv'.format(output_prefix, e),
+                                                       index=False)
+                    single_bone.plot_bone(save=True, save_path='{}/label_{}_collect_NOT_RIB.png'.format(output_prefix, e))
 
             temp_single_bone_feature['class_id'] = e
             bone_info_df.loc[len(bone_info_df)] = temp_single_bone_feature
 
         del single_bone
 
-    bone_info_df.sort_values(by='class_id', inplace=True)
-    bone_info_df.to_csv(bone_info_path, index=False, columns=FEATURE_LIST+['target', 'class_id'])
+    if bone_info_path is not None:
+        bone_info_df.sort_values(by='class_id', inplace=True)
+        bone_info_df.to_csv(bone_info_path, index=False, columns=FEATURE_LIST+['target', 'class_id'])
     return rib_bone_df
 
 

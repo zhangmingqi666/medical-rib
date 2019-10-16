@@ -3,13 +3,21 @@
 ### yolo-v3 operations
 
 ```
+cd ${projects}/models
+
 git clone https://github.com/pjreddie/darknet
-...
-# Install darknet
-cp darknet_cfg/yolov3-voc.cfg darknet/cfg/
-cp darknet_cfg/hurt_voc.data darknet/cfg/
-cp darknet_cfg/hurt_voc.names darknet/data/
 cd darknet
+vim Makefile
+
+# update these three values.
+GPU=1 # 0 if use cpu
+CUDNN=1 # 0 if use cpu or cudnn not available
+OPENCV=1 # 1 if use opencv else 0
+NVCC=/path/to/nvcc
+
+cp darknet_cfg/cfg/* darknet/cfg/
+cp darknet_cfg/data/hurt_voc.names darknet/data/
+
 # train yolo-v3
 ./darknet detector train ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./darknet53.conv.74 -gpus 0,1,2,3
 # test view
@@ -21,5 +29,6 @@ python3 ./models/metric/reval_voc_py3.py ./models/darknet/results \
                                          --image_set test \
                                          --classes ./models/darknet/data/hurt_voc.names
 ```
+
 
 More information, we can refer to [yolo-v3 model](https://pjreddie.com/darknet/yolo/), [darknet configurations](https://zhuanlan.zhihu.com/p/35490655), [test commnands](https://blog.csdn.net/mieleizhi0522/article/details/79989754)

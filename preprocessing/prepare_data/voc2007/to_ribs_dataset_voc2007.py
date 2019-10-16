@@ -60,7 +60,7 @@ def split_ribs_to_independent_rib(data_df=None, output_independent_rib_folder=''
                                     output_independent_rib_folder=output_independent_rib_folder,
                                     patient_id=patient_id,
                                     label=class_id,
-                                    expected_shape=(line['range.z.length'], line['range.y.length']),
+                                    expected_shape=(line['range.x.length'], line['range.y.length']),
                                     output_format=output_format)
 
 
