@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+PY=python3.6
 input_f=$1 # dcm folder or pkl path
 patient_id='patient_id'
 if [[ "$input_f" == *.pkl ]]
@@ -52,7 +53,7 @@ rm -rf ${Pkl_cache_folder} && mkdir -p ${Pkl_cache_folder}
 rm -rf ${Predict_folder} && mkdir -p ${Predict_folder}
 
 
-python3  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}  \
+${PY}  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}  \
                                             --dcm_path  ${input_f}  \
                                             --pkl_path  ${Pkl_cache_folder}/${patient_id}".pkl"  \
                                             --keep_slicing  ${SLICING}  \
@@ -60,7 +61,7 @@ python3  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}  \
                                             --rib_recognition_model_path  ${RIBS_MODEL_WEIGHTS}
 echo "separated ok"
 
-python3  ./preprocessing/prepare_data/voc2007/to_ribs_dataset_voc2007.py    --in_folder_path  ${RIB_DF_CACHE_DIR} \
+${PY}  ./preprocessing/prepare_data/voc2007/to_ribs_dataset_voc2007.py    --in_folder_path  ${RIB_DF_CACHE_DIR} \
                                                                             --output_independent_rib_folder  ${Voc2007_JPEGSImages_folder} \
                                                                             --output_format  '.jpg'
 echo "ribs saved to "${Voc2007_JPEGSImages_folder}
@@ -70,7 +71,7 @@ files=$(ls ${Voc2007_JPEGSImages_folder})
 for f in ${files}
 do
     ./darknet detector test ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./backup/yolov3-voc_final.weights ${Voc2007_JPEGSImages_folder}/${f}
-    mv predictions.jpg ${Predict_folder}
+    mv predictions.jpg ${Predict_folder}/${f}
 done
 
 echo "predicted ok"
