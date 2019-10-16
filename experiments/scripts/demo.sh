@@ -70,20 +70,22 @@ ${PY}  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}  \
                                             --rib_recognition_model_path  ${RIBS_MODEL_WEIGHTS}
 echo "separated ok"
 
-rm -rf ${Voc2007_JPEGSImages_folder}/${patient_id} && mkdir -p ${Voc2007_JPEGSImages_folder}/${patient_id}
-rm -rf ${Predict_folder}/${patient_id} && mkdir -p ${Predict_folder}/${patient_id}
+Voc2007_JPEGSImages_folder_for_patient=${Voc2007_JPEGSImages_folder}/${patient_id}
+Predict_folder_for_patient=${Predict_folder}/${patient_id}
+rm -rf ${Voc2007_JPEGSImages_folder_for_patient} && mkdir -p ${Voc2007_JPEGSImages_folder_for_patient}
+rm -rf ${Predict_folder_for_patient} && mkdir -p ${Predict_folder_for_patient}
 
-${PY}  ./preprocessing/prepare_data/voc2007/to_ribs_dataset_voc2007.py    --in_folder_path  ${RIB_DF_CACHE_DIR} \
-                                                                            --output_independent_rib_folder  ${Voc2007_JPEGSImages_folder}/${patient_id} \
-                                                                            --output_format  '.jpg'
+${PY}  ./preprocessing/prepare_data/voc2007/to_ribs_dataset_voc2007.py    --in_folder_path  ${RIB_DF_CACHE_DIR}/${patient_id}".csv" \
+                                                                          --output_independent_rib_folder  ${Voc2007_JPEGSImages_folder_for_patient} \
+                                                                          --output_format  '.jpg'
 echo "ribs saved to "${Voc2007_JPEGSImages_folder}
 
 cd models/darknet
-files=$(ls ${Voc2007_JPEGSImages_folder})
+files=$(ls ${Voc2007_JPEGSImages_folder_for_patient})
 for f in ${files}
 do
-    ./darknet detector test ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./backup/yolov3-voc_final.weights ${Voc2007_JPEGSImages_folder}/${patient_id}/${f}
-    mv predictions.jpg ${Predict_folder}/${patient_id}/${f}
+    ./darknet detector test ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./backup/yolov3-voc_final.weights ${Voc2007_JPEGSImages_folder_for_patient}/${f}
+    mv predictions.jpg ${Predict_folder_for_patient}/${f}
 done
 
 echo "predicted ok"

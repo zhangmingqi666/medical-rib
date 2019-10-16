@@ -65,24 +65,21 @@ def split_ribs_to_independent_rib(data_df=None, output_independent_rib_folder=''
 
 
 def convert_all_ribs_to_independent_rib(in_folder='', output_independent_rib_folder='', output_format='.jpg'):
-    files = os.listdir(in_folder)
-    _data_set_offset_df = pd.DataFrame({})
 
     # print(output_independent_rib_folder)
-    for file in files:
-        if not file.endswith('.csv'):
-            continue
-        patient_id = file.replace('.csv', '')
-        ribs_df = pd.read_csv(os.path.join(in_folder, file))
+    file = in_folder
 
-        if len(ribs_df) == 0:
-            print("patient id = {}, ribs_obtain df 's length = 0".format(patient_id))
-            continue
+    patient_id = file.replace('.csv', '')
+    ribs_df = pd.read_csv(file)
 
-        split_ribs_to_independent_rib(data_df=ribs_df,
-                                      output_independent_rib_folder=output_independent_rib_folder,
-                                      patient_id=patient_id,
-                                      output_format=output_format)
+    if len(ribs_df) == 0:
+        print("patient id = {}, ribs_obtain df 's length = 0".format(patient_id))
+        return
+
+    split_ribs_to_independent_rib(data_df=ribs_df,
+                                  output_independent_rib_folder=output_independent_rib_folder,
+                                  patient_id=patient_id,
+                                  output_format=output_format)
 
 
 def parse_args():
