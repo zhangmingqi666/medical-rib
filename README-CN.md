@@ -46,16 +46,28 @@
 
 ```shell
     git clone https://github.com/jiangyy5318/medical-rib.git
-``` `
+```
 
 + Config darknet models
 
-```shell
-    cd ${Projects}/models
-    git clone https://github.com/pjreddie/darknet
-    cp models/darknet_cfg/yolov3-voc.cfg models/darknet/cfg/
-    cp models/darknet_cfg/hurt_voc.data models/darknet/cfg/
-    cp models/darknet_cfg/hurt_voc.names models/darknet/data/
+```
+cd ${projects}/models
+
+git clone https://github.com/pjreddie/darknet
+cd darknet
+vim Makefile
+
+# update these three values.
+GPU=1 # 0 if use cpu
+CUDNN=1 # 0 if use cpu or cudnn not available
+OPENCV=1 # 1 if use opencv else 0
+NVCC=/path/to/nvcc
+
+# build
+make
+
+cp darknet_cfg/cfg/* darknet/cfg/
+cp darknet_cfg/data/hurt_voc.names darknet/data/
 ```
 
 ## 使用预训练模型demo和测试
@@ -79,6 +91,7 @@ GBDT特征[HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwavt4dY
     ./experiments/scripts/demo.sh [demo_dir]/pkl_cache/patient_id.pkl [demo_dir]
     # DCM_PATH is folder path where CT slices existed.
 ```
+
 
 run on 220.249.52.117
 ```shell
