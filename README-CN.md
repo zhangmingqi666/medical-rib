@@ -80,16 +80,17 @@ GBDT特征[HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwavt4dY
     # DCM_PATH is folder path where CT slices existed.
 ```
 
+run on 220.249.52.117
 ```shell
-    脱敏数据存储在matrix@220.249.52.117:/home/matrix/demo_dir/pkl_cache 路径下,里面有5个病人的CT脱敏数据
-    在/home/matrix/projects/medical-rib路径下检测135402000700080的骨折,执行
-    ./experiments/scripts/demo.sh /home/matrix/demo_dir/pkl_cache/135402000700080.pkl /home/matrix/demo_dir
-    /home/matrix/demo_dir/voc_test_data:存储分离的肋骨投影图片
-    /home/matrix/demo_dir/voc_test_predict:检测结果
+    数据:五个病人的脱敏数据
+        matrix@220.249.52.117:/home/matrix/demo_dir/pkl_cache
+    执行:检测病人135402000700080的骨折
+        cd /home/matrix/projects/medical-rib
+        ./experiments/scripts/demo.sh /home/matrix/demo_dir/pkl_cache/135402000700080.pkl /home/matrix/demo_dir
+    结果:骨折检测
+        分离的肋骨存储位置: /home/matrix/demo_dir/voc_test_data
+        骨折检测存储:/home/matrix/demo_dir/voc_test_predict:检测结果
 ```
-
-
-
 
 ## 训练自己的模型
 
