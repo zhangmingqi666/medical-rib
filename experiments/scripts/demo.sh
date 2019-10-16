@@ -47,7 +47,6 @@ rm -rf ${RIB_DF_CACHE_DIR} && mkdir -p ${RIB_DF_CACHE_DIR}
 
 rm -rf ${Voc2007_JPEGSImages_folder} && mkdir -p ${Voc2007_JPEGSImages_folder}
 
-#RIB_DF_CACHE_PATH=${RIB_DF_CACHE_DIR}/"predict.csv"
 
 python3  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}  \
                                             --dcm_path  ${input_f}  \

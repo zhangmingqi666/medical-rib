@@ -47,6 +47,7 @@ def main():
     elif args.use_pkl_or_dcm == 'dcm' and os.path.isdir(args.dcm_path):
         print("the rib data created from pkl_path {}.".format(args.dcm_path))
         rib_data, new_spacing = Dicom_Read.RibDataFrame().readDicom(path=args.dcm_path, keep_slicing=keep_slicing)
+        pickle.dump(rib_data, open(args.pkl_path, 'wb'))
         print("3d image shape is {}, new_spacing is {}".format(rib_data.shape, new_spacing))
     else:
         print('cannot create rib_data by providing path.')
