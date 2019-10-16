@@ -21,16 +21,11 @@ make
 cp darknet_cfg/cfg/* darknet/cfg/
 cp darknet_cfg/data/hurt_voc.names darknet/data/
 
-# train yolo-v3
+# train yolo-v3 from scrath
 ./darknet detector train ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./darknet53.conv.74 -gpus 0,1,2,3
-# test view
-./darknet detector test ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./backup/yolov3-voc.backup ../../data/voc2007/JPEGImages/135402000404127-73082.jpg
-# valid test saved in the results/comp4_det*.txt
-python3 ./models/metric/reval_voc_py3.py ./models/darknet/results \
-                                         --voc_dir ./data/voc2007 \
-                                         --year 2007 \
-                                         --image_set test \
-                                         --classes ./models/darknet/data/hurt_voc.names
+
+# train yolo-v3 from pretrained model.
+
 ```
 
 

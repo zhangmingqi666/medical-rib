@@ -43,9 +43,9 @@ SLICING=1
 
 RIBS_MODEL_WEIGHTS=./experiments/cfgs
 RIB_DF_CACHE_DIR=${demo_dir}/ribs_df_cache
-Voc2007_JPEGSImages_folder=${demo_dir}/voc_test_data/${patient_id}
+Voc2007_JPEGSImages_folder=${demo_dir}/voc_test_data
 Pkl_cache_folder=${demo_dir}/pkl_cache
-Predict_folder=${demo_dir}/voc_test_predict/${patient_id}
+Predict_folder=${demo_dir}/voc_test_predict
 
 function mkdir_if_not_exist(){
     if [[ ! -d "$1" ]]; then
@@ -54,12 +54,12 @@ function mkdir_if_not_exist(){
 }
 
 mkdir_if_not_exist  ${RIB_DF_CACHE_DIR}
-mkdir_if_not_exist  ${demo_dir}/voc_test_data
-mkdir_if_not_exist  ${demo_dir}/voc_test_predict
+mkdir_if_not_exist  ${Voc2007_JPEGSImages_folder}
 mkdir_if_not_exist  ${Pkl_cache_folder}
+mkdir_if_not_exist  ${Predict_folder}
 
-rm -rf ${Voc2007_JPEGSImages_folder} && mkdir -p ${Voc2007_JPEGSImages_folder}
-rm -rf ${Predict_folder} && mkdir -p ${Predict_folder}
+#rm -rf ${Voc2007_JPEGSImages_folder} && mkdir -p ${Voc2007_JPEGSImages_folder}
+#rm -rf ${Predict_folder} && mkdir -p ${Predict_folder}
 
 
 ${PY}  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}  \
@@ -70,8 +70,11 @@ ${PY}  ./preprocessing/separated/main.py  --use_pkl_or_dcm  ${FORMAT}  \
                                             --rib_recognition_model_path  ${RIBS_MODEL_WEIGHTS}
 echo "separated ok"
 
+rm -rf ${Voc2007_JPEGSImages_folder}/${patient_id} && mkdir -p ${Voc2007_JPEGSImages_folder}/${patient_id}
+rm -rf ${Predict_folder}/${patient_id} && mkdir -p ${Predict_folder}/${patient_id}
+
 ${PY}  ./preprocessing/prepare_data/voc2007/to_ribs_dataset_voc2007.py    --in_folder_path  ${RIB_DF_CACHE_DIR} \
-                                                                            --output_independent_rib_folder  ${Voc2007_JPEGSImages_folder} \
+                                                                            --output_independent_rib_folder  ${Voc2007_JPEGSImages_folder}/${patient_id} \
                                                                             --output_format  '.jpg'
 echo "ribs saved to "${Voc2007_JPEGSImages_folder}
 
@@ -79,8 +82,8 @@ cd models/darknet
 files=$(ls ${Voc2007_JPEGSImages_folder})
 for f in ${files}
 do
-    ./darknet detector test ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./backup/yolov3-voc_final.weights ${Voc2007_JPEGSImages_folder}/${f}
-    mv predictions.jpg ${Predict_folder}/${f}
+    ./darknet detector test ./cfg/hurt_voc.data ./cfg/yolov3-voc.cfg ./backup/yolov3-voc_final.weights ${Voc2007_JPEGSImages_folder}/${patient_id}/${f}
+    mv predictions.jpg ${Predict_folder}/${patient_id}/${f}
 done
 
 echo "predicted ok"
