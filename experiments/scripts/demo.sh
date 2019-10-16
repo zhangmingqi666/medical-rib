@@ -40,12 +40,23 @@ fi
 demo_dir=$2
 SLICING=1
 
+
 RIBS_MODEL_WEIGHTS=./experiments/cfgs
 RIB_DF_CACHE_DIR=${demo_dir}/ribs_df_cache
 Voc2007_JPEGSImages_folder=${demo_dir}/voc_test_data/${patient_id}
 Pkl_cache_folder=${demo_dir}/pkl_cache
 Predict_folder=${demo_dir}/voc_test_predict/${patient_id}
 
+function mkdir_if_not_exist(){
+    if [[ ! -d "$1" ]]; then
+        mkdir -p $1
+    fi
+}
+
+mkdir_if_not_exist  ${RIB_DF_CACHE_DIR}
+mkdir_if_not_exist  ${demo_dir}/voc_test_data
+mkdir_if_not_exist  ${demo_dir}/voc_test_predict
+mkdir_if_not_exist  ${Pkl_cache_folder}
 
 rm -rf ${Voc2007_JPEGSImages_folder} && mkdir -p ${Voc2007_JPEGSImages_folder}
 rm -rf ${Predict_folder} && mkdir -p ${Predict_folder}
