@@ -6,7 +6,8 @@ patient_id='patient_id'
 if [[ "$input_f" == *.pkl ]]
 then
     FORMAT=pkl
-    patient_id=${input_f%%".pkl"}
+    file_name=${input_f##*/}
+    patient_id=${file_name%%".pkl"}
     echo "input format is .pkl"
 elif [[ -d ${input_f} ]]
 then
@@ -78,7 +79,7 @@ rm -rf ${Predict_folder_for_patient} && mkdir -p ${Predict_folder_for_patient}
 ${PY}  ./preprocessing/prepare_data/voc2007/to_ribs_dataset_voc2007.py    --in_folder_path  ${RIB_DF_CACHE_DIR}/${patient_id}".csv" \
                                                                           --output_independent_rib_folder  ${Voc2007_JPEGSImages_folder_for_patient} \
                                                                           --output_format  '.jpg'
-echo "ribs saved to "${Voc2007_JPEGSImages_folder}
+echo "ribs saved to "${Voc2007_JPEGSImages_folder_for_patient}
 
 cd models/darknet
 files=$(ls ${Voc2007_JPEGSImages_folder_for_patient})
