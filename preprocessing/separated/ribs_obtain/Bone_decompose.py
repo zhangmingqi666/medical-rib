@@ -200,7 +200,7 @@ def loop_opening_get_spine(binary_arr, bone_prior=None, output_prefix=None, allo
                                                                                                   output_prefix=output_prefix,
                                                                                                   opening_times=_opening_times)
 
-        if allow_debug:
+        if output_prefix is not None:
             _remaining_bone_df.to_csv("{}/is_spine_opening_{}th.csv".format(output_prefix, _opening_times), index=False)
         del sparse_df, cluster_df
 
