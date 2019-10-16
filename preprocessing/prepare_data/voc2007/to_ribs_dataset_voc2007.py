@@ -69,7 +69,7 @@ def convert_all_ribs_to_independent_rib(in_folder='', output_independent_rib_fol
     # print(output_independent_rib_folder)
     file = in_folder
 
-    patient_id = file.replace('.csv', '')
+    patient_id = file.split('/')[-1].replace('.csv', '')
     ribs_df = pd.read_csv(file)
 
     if len(ribs_df) == 0:

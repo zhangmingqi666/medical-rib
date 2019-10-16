@@ -80,9 +80,18 @@ GBDT features [HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwav
 Put `yolov3-voc_last.weights` under the project root path (`${projects}/experiments/cfgs`) 
 
 ```shell
+    mkdir [demo_dir]
+    mkdir [demo_dir]/pkl_cache/ # save desensitization data, pkl
+    mkdir [demo_dir]/ribs_df_cache
+    mkdir [demo_dir]/voc_test_data
+    mkdir [demo_dir]/voc_test_predict
+     
     cd ${projects}
-    ./experiments/scripts/demo.sh [DCM_PATH]/[PKL_PATH] [demo_dir]
-    ./experiments/scripts/demo.sh ../../data/demo_dir/pkl_cache/135402000697720.pkl ../../data/demo_dir
+    # use raw data, slices of CT data
+    ./experiments/scripts/demo.sh [DCM_PATH] [demo_dir]
+    # use desensitization data, pkl data, CT data
+    ./experiments/scripts/demo.sh [PKL_PATH] [demo_dir]
+    ./experiments/scripts/demo.sh [demo_dir]/pkl_cache/patient_id.pkl [demo_dir]
     # DCM_PATH is folder path where CT slices existed.
 ```
 
