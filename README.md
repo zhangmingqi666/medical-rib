@@ -23,6 +23,12 @@ Refed is consist by two modules: **rib extraction module** and **fracture detect
 
 + Install tensorflow. It is required that you have access to GPUs, The code is tested with Ubuntu 16.04
 Python 3.6+, CUDA 9.0.176 and cudnn 7.4.2.
+
++ Clone the repository
+```shell
+    git clone https://github.com/jiangyy5318/medical-rib.git
+```
+
 + Python dependencies (with `pip3 install`) or  `pip3 install -r requirements.txt`:
 ```
     tensorflow-gpu==1.12.0
@@ -43,21 +49,29 @@ Python 3.6+, CUDA 9.0.176 and cudnn 7.4.2.
     nibabel==2.3.1
     pandas==0.23.4
 ```
-+ Clone the repository
-
-```shell
-    git clone https://github.com/jiangyy5318/medical-rib.git
-```
 
 + Config darknet models
 
-```shell
-    cd ${Projects}/models
-    git clone https://github.com/pjreddie/darknet
-    cp models/darknet_cfg/yolov3-voc.cfg models/darknet/cfg/
-    cp models/darknet_cfg/hurt_voc.data models/darknet/cfg/
-    cp models/darknet_cfg/hurt_voc.names models/darknet/data/
 ```
+cd ${projects}/models
+
+git clone https://github.com/pjreddie/darknet
+cd darknet
+vim Makefile
+
+# update these three values.
+GPU=1 # 0 if use cpu
+CUDNN=1 # 0 if use cpu or cudnn not available
+OPENCV=1 # 1 if use opencv else 0
+NVCC=/path/to/nvcc
+
+# build
+make
+
+cp darknet_cfg/cfg/* darknet/cfg/
+cp darknet_cfg/data/hurt_voc.names darknet/data/
+```
+
 
 ## Demo and Test with pre-trained models
 
@@ -66,7 +80,9 @@ GBDT features [HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwav
 Put `yolov3-voc_last.weights` under the project root path (`${projects}/experiments/cfgs`) 
 
 ```shell
-    ./experiments/scripts/demo.sh [DCM_PATH]
+    cd ${projects}
+    ./experiments/scripts/demo.sh [DCM_PATH]/[PKL_PATH] [demo_dir]
+    ./experiments/scripts/demo.sh ../../data/demo_dir/pkl_cache/135402000697720.pkl ../../data/demo_dir
     # DCM_PATH is folder path where CT slices existed.
 ```
 
