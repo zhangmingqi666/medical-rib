@@ -76,7 +76,7 @@ cp darknet_cfg/data/hurt_voc.names darknet/data/
 
 You can download pre-trained models, including GBDT model [HERE](https://drive.google.com/open?id=1_-dP4Y6wYDC5lqQ4uaIcXrAM-AHT_xd7), 
 GBDT features [HERE](https://drive.google.com/open?id=1R8OkfLWniBhjFkAAYDlTWYwavt4dYaiB) and yolo-v3 models [HERE](https://drive.google.com/open?id=1E6OMPPBoIje3YZszMEypKb2v6APsqaF8). Put `feature.pkl`, `gbdt.pkl` under the project root path (`${project}/experiments/cfgs`) and 
-Put `yolov3-voc_last.weights` under the project root path (`${projects}/experiments/cfgs`) 
+Put `yolov3-voc_last.weights` under the project root path (`${projects}/models/darknet/backup`) 
 
 ```shell
     mkdir [demo_dir]
