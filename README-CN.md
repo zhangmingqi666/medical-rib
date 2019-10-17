@@ -24,7 +24,6 @@
 
 + Python依赖 (使用 `pip3 install` 或 `pip3 install -r requirements.txt`):
 ```
-    tensorflow-gpu==1.12.0
     Deprecated==1.2.4
     image==1.5.27
     imageio==2.4.1
