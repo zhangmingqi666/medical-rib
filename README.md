@@ -31,7 +31,6 @@ Python 3.6+, CUDA 9.0.176 and cudnn 7.4.2.
 
 + Python dependencies (with `pip3 install`) or  `pip3 install -r requirements.txt`:
 ```
-    tensorflow-gpu==1.12.0
     Deprecated==1.2.4
     image==1.5.27
     imageio==2.4.1
